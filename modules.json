@@ -1,16 +1,42 @@
 {
-  "version": "1",
-  "lastUpdated": "2026-05-27T00:00:00Z",
+  "version": 2,
+  "updated": "2026-05-28",
   "modules": [
     {
       "id": "sample-logic",
-      "title": "Introduction to Logic",
-      "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
-      "author": "Modular Learning Team",
-      "version": "1.0.0",
-      "estimatedMinutes": 15,
+      "title": "Introduction to Logical Thinking",
+      "description": "A sample module demonstrating all exercise types with basic logic puzzles.",
+      "difficulty": "beginner",
+      "estimatedHours": 1,
       "checksum": "sha256:c3e00f69d3301110817fdc9c39e786f48854345f3bad532293b08cabd80d8b08",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/refs/heads/master/modules/sample-logic/module.json"
+      "path": "modules/sample-logic/module.json"
+    },
+    {
+      "id": "scientific-revolution",
+      "title": "From Newton to Einstein: The Scientific Revolution",
+      "description": "Trace the evolution of physics from classical mechanics through electromagnetism to the revolutionary ideas of relativity and quantum mechanics.",
+      "difficulty": "intermediate",
+      "estimatedHours": 4,
+      "checksum": "sha256:d579cd3a6b5e3fe5ccee6295b00b02b61f3ad4ad221fabef20a4bbebc9299409",
+      "path": "modules/scientific-revolution/module.json"
+    },
+    {
+      "id": "cryptography-basics",
+      "title": "Cryptography: From Caesar Ciphers to Quantum Keys",
+      "description": "Journey through the history and mathematics of secret communication, from ancient substitution ciphers to modern encryption and post-quantum cryptography.",
+      "difficulty": "intermediate",
+      "estimatedHours": 3,
+      "checksum": "sha256:ef65c9dd4a286aa2011b318f135bc0ab1dff53df9edfe2c337339a08e73d363d",
+      "path": "modules/cryptography-basics/module.json"
+    },
+    {
+      "id": "fall-of-rome",
+      "title": "The Fall of Rome: Empire in Decline",
+      "description": "Explore the political, economic, and military forces that brought down one of history's greatest empires.",
+      "difficulty": "beginner",
+      "estimatedHours": 3,
+      "checksum": "sha256:200d9ca2d5c087a95f1778740d1109aa21ff47229ba5925808aed2204031faae",
+      "path": "modules/fall-of-rome/module.json"
     }
   ]
 }

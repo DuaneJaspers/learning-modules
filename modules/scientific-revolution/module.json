@@ -1,0 +1,273 @@
+{
+  "id": "scientific-revolution",
+  "title": "From Newton to Einstein: The Scientific Revolution",
+  "description": "Trace the evolution of physics from classical mechanics through electromagnetism to the revolutionary ideas of relativity and quantum mechanics.",
+  "version": 1,
+  "author": "Modular Learning",
+  "difficulty": "intermediate",
+  "estimatedHours": 4,
+  "tags": ["physics", "history of science", "mechanics", "relativity"],
+  "sections": [
+    {
+      "id": "classical-mechanics",
+      "title": "Classical Mechanics",
+      "order": 1,
+      "prerequisiteSectionId": null,
+      "lessons": [
+        {
+          "id": "newtons-laws",
+          "title": "Newton's Laws of Motion",
+          "content": "## Newton's Three Laws\n\nIsaac Newton published his three laws of motion in 1687 in the *Principia Mathematica*. These laws formed the foundation of classical mechanics for over two centuries.\n\n**First Law (Inertia):** An object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by a net external force.\n\n**Second Law:** The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass: **F = ma**.\n\n**Third Law:** For every action, there is an equal and opposite reaction.\n\nNewton's genius was recognizing that the same laws govern both earthly objects and celestial bodies — apples and moons follow the same physics.",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "newton-first-law-q",
+              "question": "A hockey puck slides on ice with no friction. What happens to it?",
+              "options": ["It gradually slows down and stops", "It continues at constant velocity forever", "It speeds up due to gravity", "It moves in a circle"],
+              "correctIndex": 1,
+              "explanation": "With no friction (no net force), Newton's First Law says the puck maintains constant velocity indefinitely."
+            },
+            {
+              "type": "worked_example",
+              "id": "newton-fma",
+              "title": "Applying F = ma",
+              "steps": [
+                {"id": "step1", "content": "A 5 kg box is pushed with a force of 20 N. What is the acceleration?", "missingPart": {"placeholder": "{{acceleration}}", "expectedAnswer": "4", "keywords": ["m/s²", "4 m/s", "four"], "hint": "Rearrange F = ma to solve for a"}},
+                {"id": "step2", "content": "If friction provides 5 N of opposing force, the net force becomes 15 N. What is the new acceleration?", "missingPart": {"placeholder": "{{new_acceleration}}", "expectedAnswer": "3", "keywords": ["3 m/s²", "three"], "hint": "Use net force instead of total force"}}
+              ]
+            },
+            {
+              "type": "socratic",
+              "id": "newton-third-law-socratic",
+              "prompt": "If every action has an equal and opposite reaction, why doesn't a book sitting on a table fly upward?",
+              "guidingQuestions": ["What two forces act on the book?", "Are these forces acting on the same object or different objects?", "What does 'equilibrium' mean in this context?"],
+              "keywords": ["normal force", "gravity", "equilibrium", "different objects", "balanced"],
+              "sampleAnswer": "The book experiences gravity pulling it down and the table's normal force pushing it up. These forces are equal and opposite but act on the SAME object (the book), so they balance. Newton's Third Law pairs act on DIFFERENT objects."
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-newton1", "term": "Newton's First Law", "definition": "An object at rest stays at rest; an object in motion stays in motion at constant velocity — unless acted on by a net external force.", "context": "Also called the Law of Inertia"},
+            {"id": "fc-newton2", "term": "Newton's Second Law", "definition": "F = ma. Net force equals mass times acceleration.", "context": "The most used equation in classical mechanics"},
+            {"id": "fc-newton3", "term": "Newton's Third Law", "definition": "For every action, there is an equal and opposite reaction. Forces come in pairs acting on different objects.", "context": "A book pushes a table down; the table pushes the book up"}
+          ]
+        },
+        {
+          "id": "gravity-and-calculus",
+          "title": "Universal Gravitation & The Birth of Calculus",
+          "content": "## Newton's Law of Universal Gravitation\n\nNewton realized that the same force pulling an apple downward also keeps the Moon in orbit. His law:\n\n**F = G × (m₁ × m₂) / r²**\n\nWhere G is the gravitational constant (6.674 × 10⁻¹¹ N⋅m²/kg²), m₁ and m₂ are masses, and r is the distance between their centers.\n\n## The Calculus Connection\n\nTo prove his gravitational theory, Newton invented calculus. He needed mathematics that could handle instantaneous rates of change (derivatives), accumulation of quantities (integrals), and continuous change in orbits.\n\nCalculus became the language of physics, allowing precise description of motion, change, and accumulation.",
+          "exercises": [
+            {
+              "type": "drag_sequence",
+              "id": "gravity-steps",
+              "title": "Order the steps of Newton's reasoning about gravity",
+              "items": ["An apple falls toward Earth", "The Moon also falls toward Earth but misses", "Both follow the same inverse-square law", "F = Gm₁m₂/r² describes all gravitational attraction", "This unifies terrestrial and celestial mechanics"],
+              "correctOrder": [0, 1, 2, 3, 4]
+            },
+            {
+              "type": "error_spotting",
+              "id": "gravity-errors",
+              "title": "Spot the errors in this explanation of gravity",
+              "paragraphs": [
+                "Gravity is the strongest of the four fundamental forces in nature. It acts between any two objects with mass, and its strength increases with distance.",
+                "Newton's gravitational constant G has a very large value, which is why gravity is noticeable between everyday objects like apples and people."
+              ],
+              "errors": [
+                {"id": "e1", "paragraphIndex": 0, "errorText": "strongest of the four fundamental forces", "correction": "weakest of the four fundamental forces", "hint": "Compare gravity to electromagnetism"},
+                {"id": "e2", "paragraphIndex": 0, "errorText": "increases with distance", "correction": "decreases with distance (inverse-square law)", "hint": "The formula has r² in the denominator"},
+                {"id": "e3", "paragraphIndex": 1, "errorText": "very large value", "correction": "very small value (6.674 × 10⁻¹¹)", "hint": "G is tiny"}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-gravity-law", "term": "Universal Gravitation Law", "definition": "F = G × (m₁ × m₂) / r². Every mass attracts every other mass with a force proportional to both masses and inversely proportional to the square of distance.", "context": "G = 6.674 × 10⁻¹¹ N⋅m²/kg²"},
+            {"id": "fc-calculus", "term": "Why Newton invented calculus", "definition": "To handle continuous change: instantaneous rates (derivatives) and accumulation (integrals). Essential for proving gravitational theory.", "context": "Leibniz independently invented calculus around the same time"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "a1", "text": "What does Newton's Second Law state?", "options": ["F = ma", "E = mc²", "F = mg", "P = mv"], "correctIndex": 0, "explanation": "F = ma: force equals mass times acceleration."},
+          {"id": "a2", "text": "Gravity follows an inverse-square law. What does this mean?", "options": ["Force doubles when distance doubles", "Force halves when distance doubles", "Force quarters when distance doubles", "Force stays the same regardless of distance"], "correctIndex": 2, "explanation": "F ∝ 1/r², so doubling the distance makes force 1/4 of the original."},
+          {"id": "a3", "text": "Why did Newton need to invent calculus?", "options": ["To count apples", "To handle continuous change and instantaneous rates", "To measure the speed of light", "To calculate pi"], "correctIndex": 1, "explanation": "Calculus handles derivatives and integrals, needed for orbital mechanics."}
+        ],
+        "passingScore": 0.67
+      }
+    },
+    {
+      "id": "electromagnetism",
+      "title": "Electromagnetism",
+      "order": 2,
+      "prerequisiteSectionId": "classical-mechanics",
+      "lessons": [
+        {
+          "id": "maxwells-equations",
+          "title": "Maxwell's Equations",
+          "content": "## The Unification of Electricity and Magnetism\n\nJames Clerk Maxwell (1831–1879) unified electricity and magnetism into a single theory. His four equations describe how electric and magnetic fields behave:\n\n1. **Gauss's Law:** Electric charges produce electric fields\n2. **Gauss's Law for Magnetism:** No magnetic monopoles exist\n3. **Faraday's Law:** Changing magnetic fields create electric fields\n4. **Ampère-Maxwell Law:** Electric currents AND changing electric fields create magnetic fields\n\nMaxwell's addition to Ampère's law was revolutionary — it predicted electromagnetic waves propagating through space at the speed of light.",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "maxwell-addition",
+              "question": "What was Maxwell's key addition to Ampère's original law?",
+              "options": ["Electric charges produce fields", "No magnetic monopoles exist", "Changing electric fields create magnetic fields", "Changing magnetic fields create electric fields"],
+              "correctIndex": 2,
+              "explanation": "Maxwell added the displacement current term, showing changing electric fields produce magnetic fields."
+            },
+            {
+              "type": "drag_sequence",
+              "id": "em-wave-creation",
+              "title": "How is an electromagnetic wave created?",
+              "items": ["An electric charge accelerates", "A changing electric field is produced", "The changing E field creates a changing B field", "The changing B field creates a changing E field", "The fields sustain each other and propagate as a wave"],
+              "correctOrder": [0, 1, 2, 3, 4]
+            },
+            {
+              "type": "socratic",
+              "id": "maxwell-speed",
+              "prompt": "Maxwell calculated the speed of EM waves from his equations and got ~3 × 10⁸ m/s. Why was this shocking?",
+              "guidingQuestions": ["What other speed has this same value?", "What did this suggest about light?", "How did this connect two previously separate fields?"],
+              "keywords": ["speed of light", "light is electromagnetic", "same speed", "c", "3e8"],
+              "sampleAnswer": "The calculated speed matched the measured speed of light, proving light IS an electromagnetic wave. This unified optics with electromagnetism."
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-maxwell", "term": "Maxwell's Equations", "definition": "Four equations unifying electricity and magnetism. They predict EM waves traveling at c ≈ 3 × 10⁸ m/s.", "context": "Called the second great unification in physics"},
+            {"id": "fc-em-wave", "term": "Electromagnetic wave", "definition": "Self-propagating oscillation of E and B fields perpendicular to each other and to the direction of travel.", "context": "Light, radio, X-rays are all EM waves"}
+          ]
+        },
+        {
+          "id": "wave-theory-light",
+          "title": "Wave Theory of Light",
+          "content": "## Light as a Wave\n\nAfter Maxwell, light was understood as an EM wave with properties:\n\n- **Wavelength (λ):** Distance between wave crests. Determines color (380–700 nm for visible).\n- **Frequency (f):** Oscillations per second.\n- **c = λf** (speed = wavelength × frequency)\n\nThe full EM spectrum: Radio → Microwave → Infrared → **Visible** → UV → X-ray → Gamma.\n\nAll EM waves travel at c in vacuum regardless of wavelength.",
+          "exercises": [
+            {
+              "type": "worked_example",
+              "id": "wavelength-calc",
+              "title": "Calculating Wavelength",
+              "steps": [
+                {"id": "s1", "content": "A radio station broadcasts at 100 MHz. c = 3 × 10⁸ m/s. What is the wavelength?", "missingPart": {"placeholder": "{{wavelength}}", "expectedAnswer": "3", "keywords": ["3 meters", "3 m", "three meters"], "hint": "Use λ = c/f"}}
+              ]
+            },
+            {
+              "type": "error_spotting",
+              "id": "em-spectrum-errors",
+              "title": "Find the errors in this EM spectrum description",
+              "paragraphs": [
+                "Gamma rays have the longest wavelength in the electromagnetic spectrum. They are harmless and carry very little energy.",
+                "Radio waves and gamma rays travel at different speeds because radio waves have much longer wavelengths."
+              ],
+              "errors": [
+                {"id": "e1", "paragraphIndex": 0, "errorText": "longest wavelength", "correction": "shortest wavelength", "hint": "Gamma rays are high-energy"},
+                {"id": "e2", "paragraphIndex": 0, "errorText": "harmless and carry very little energy", "correction": "dangerous and carry very high energy", "hint": "E = hf"},
+                {"id": "e3", "paragraphIndex": 1, "errorText": "travel at different speeds", "correction": "travel at the same speed (c) in vacuum", "hint": "ALL EM waves travel at c"}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-c-lambda-f", "term": "Wave equation", "definition": "c = λf. Speed of light equals wavelength times frequency.", "context": "Fundamental for all EM waves"},
+            {"id": "fc-em-spectrum", "term": "EM Spectrum order", "definition": "Radio → Microwave → IR → Visible → UV → X-ray → Gamma. Longest to shortest wavelength.", "context": "All travel at c in vacuum"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "a4", "text": "What did Maxwell's addition to Ampère's law predict?", "options": ["Magnetic monopoles", "Electromagnetic waves", "Gravitational waves", "Electron orbits"], "correctIndex": 1, "explanation": "The displacement current predicted self-propagating EM waves."},
+          {"id": "a5", "text": "What is the relationship between wavelength and frequency?", "options": ["c = λf", "E = mc²", "F = ma", "V = IR"], "correctIndex": 0, "explanation": "c = λf: wave speed equals wavelength times frequency."},
+          {"id": "a6", "text": "Which EM wave has the shortest wavelength?", "options": ["Radio waves", "Visible light", "X-rays", "Gamma rays"], "correctIndex": 3, "explanation": "Gamma rays have the shortest wavelength and highest energy."}
+        ],
+        "passingScore": 0.67
+      }
+    },
+    {
+      "id": "relativity-quantum",
+      "title": "Relativity & Quantum Mechanics",
+      "order": 3,
+      "prerequisiteSectionId": "electromagnetism",
+      "lessons": [
+        {
+          "id": "special-relativity",
+          "title": "Special Relativity",
+          "content": "## Einstein's Revolutionary Postulates (1905)\n\n1. **The laws of physics are the same** in all inertial reference frames\n2. **The speed of light (c)** is constant in all reference frames\n\n## Consequences\n\n- **Time dilation:** Moving clocks run slower\n- **Length contraction:** Moving objects appear shorter\n- **Relativity of simultaneity:** Simultaneous events in one frame may not be in another\n- **E = mc²:** Mass and energy are interchangeable",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "relativity-postulates",
+              "question": "What are the two postulates of Special Relativity?",
+              "options": ["Time is absolute; light travels through ether", "Physics laws same in all inertial frames; speed of light is constant", "F = ma; E = mc²", "Gravity bends light; mass curves spacetime"],
+              "correctIndex": 1,
+              "explanation": "Built on equivalence of inertial frames and constancy of c."
+            },
+            {
+              "type": "socratic",
+              "id": "twin-paradox",
+              "prompt": "One twin stays on Earth while the other travels at 0.9c and returns younger. But from the traveler's view, the Earth twin was moving. Why isn't it symmetric?",
+              "guidingQuestions": ["Does the traveler stay in one inertial frame?", "What happens at turnaround?", "Who experiences acceleration?"],
+              "keywords": ["acceleration", "turnaround", "not inertial", "changes frame"],
+              "sampleAnswer": "The traveling twin accelerates at turnaround, changing reference frames. The Earth twin stays inertial. Special relativity only applies between inertial frames."
+            },
+            {
+              "type": "worked_example",
+              "id": "emc2-calc",
+              "title": "E = mc² in Practice",
+              "steps": [
+                {"id": "s1", "content": "A reaction converts 1 kg of mass entirely to energy. How much energy? (c = 3 × 10⁸ m/s)", "missingPart": {"placeholder": "{{energy}}", "expectedAnswer": "9e16", "keywords": ["9 × 10¹⁶", "9e16", "90 petajoules"], "hint": "E = mc² = 1 × (3×10⁸)²"}}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-sr-postulates", "term": "Special Relativity postulates", "definition": "(1) Physics laws identical in all inertial frames. (2) Speed of light c is constant in all frames.", "context": "Published 1905"},
+            {"id": "fc-emc2", "term": "E = mc²", "definition": "Energy equals mass times speed of light squared. 1 kg = 9 × 10¹⁶ joules.", "context": "Mass-energy equivalence"},
+            {"id": "fc-time-dilation", "term": "Time dilation", "definition": "Moving clocks run slower relative to stationary observers.", "context": "Verified with GPS satellites"}
+          ]
+        },
+        {
+          "id": "quantum-basics",
+          "title": "Quantum Mechanics: A New Physics",
+          "content": "## The Quantum Revolution\n\n**Planck (1900):** Energy is emitted in discrete packets: E = hf\n\n**Einstein (1905):** Light behaves as particles (photons), each with E = hf\n\n**Wave-Particle Duality:** Both light AND matter exhibit wave and particle properties\n\n**Heisenberg Uncertainty:** Δx × Δp ≥ ℏ/2 — you cannot know both exact position and momentum\n\nThese discoveries shattered determinism. The universe at its smallest scales is inherently probabilistic.",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "quantum-mcq1",
+              "question": "What did the photoelectric effect prove about light?",
+              "options": ["Light is purely a wave", "Light behaves as discrete particles called photons", "Light travels through ether", "Light has no energy"],
+              "correctIndex": 1,
+              "explanation": "Einstein showed light arrives as quantized photons, each with E = hf."
+            },
+            {
+              "type": "drag_sequence",
+              "id": "quantum-timeline",
+              "title": "Order these quantum discoveries chronologically",
+              "items": ["Planck proposes energy quanta (1900)", "Einstein explains photoelectric effect (1905)", "Bohr model with quantized orbits (1913)", "de Broglie proposes matter waves (1924)", "Heisenberg uncertainty principle (1927)"],
+              "correctOrder": [0, 1, 2, 3, 4]
+            },
+            {
+              "type": "error_spotting",
+              "id": "quantum-errors",
+              "title": "Find the misconceptions about quantum mechanics",
+              "paragraphs": [
+                "Quantum mechanics tells us we can measure both exact position and exact momentum of an electron simultaneously with precise instruments.",
+                "Energy is emitted as a continuous stream, not discrete packets. Planck's constant is only relevant at macroscopic scales."
+              ],
+              "errors": [
+                {"id": "e1", "paragraphIndex": 0, "errorText": "measure both the exact position and exact momentum simultaneously", "correction": "cannot simultaneously measure exact position AND momentum (uncertainty principle)", "hint": "Heisenberg's principle"},
+                {"id": "e2", "paragraphIndex": 1, "errorText": "continuous stream, not in discrete packets", "correction": "discrete packets called quanta (E = hf)", "hint": "Planck's hypothesis"},
+                {"id": "e3", "paragraphIndex": 1, "errorText": "only relevant at macroscopic scales", "correction": "most relevant at atomic/subatomic scales", "hint": "Quantum effects dominate at small scales"}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-planck", "term": "Planck's constant (h)", "definition": "6.626 × 10⁻³⁴ J⋅s. Relates photon energy to frequency: E = hf.", "context": "Appears in virtually every quantum equation"},
+            {"id": "fc-duality", "term": "Wave-particle duality", "definition": "Both light and matter exhibit wave-like AND particle-like properties depending on measurement.", "context": "Double-slit experiment is the classic demo"},
+            {"id": "fc-heisenberg", "term": "Heisenberg Uncertainty Principle", "definition": "Δx × Δp ≥ ℏ/2. Cannot know exact position and momentum simultaneously. Fundamental to nature, not a measurement limit.", "context": "ℏ = h/2π"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "a7", "text": "What is E = mc²?", "options": ["Mass-energy equivalence", "Wave equation", "Gravitational force", "Quantum uncertainty"], "correctIndex": 0, "explanation": "Einstein's equation showing mass and energy are interchangeable."},
+          {"id": "a8", "text": "What did the photoelectric effect demonstrate?", "options": ["Light is purely wavelike", "Light behaves as particles (photons)", "Electrons are waves", "Atoms are indivisible"], "correctIndex": 1, "explanation": "Light delivers energy in discrete photons with E = hf."},
+          {"id": "a9", "text": "What does the Heisenberg Uncertainty Principle state?", "options": ["We can measure everything precisely", "Position and momentum cannot both be known exactly", "Energy is always conserved", "Light travels at c"], "correctIndex": 1, "explanation": "Δx × Δp ≥ ℏ/2 — fundamental limit on simultaneous knowledge."}
+        ],
+        "passingScore": 0.67
+      }
+    }
+  ]
+}

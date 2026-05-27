@@ -1,0 +1,266 @@
+{
+  "id": "cryptography-basics",
+  "title": "Cryptography: From Caesar Ciphers to Quantum Keys",
+  "description": "Journey through the history and mathematics of secret communication, from ancient substitution ciphers to modern encryption and post-quantum cryptography.",
+  "version": 1,
+  "author": "Modular Learning",
+  "difficulty": "intermediate",
+  "estimatedHours": 3,
+  "tags": ["cryptography", "mathematics", "security", "history"],
+  "sections": [
+    {
+      "id": "classical-ciphers",
+      "title": "Classical Ciphers",
+      "order": 1,
+      "prerequisiteSectionId": null,
+      "lessons": [
+        {
+          "id": "caesar-cipher",
+          "title": "The Caesar Cipher",
+          "content": "## History's First Known Cipher\n\nJulius Caesar used a simple substitution cipher to protect military messages. Each letter is shifted by a fixed number of positions in the alphabet.\n\n**Example with shift of 3:**\n- A → D, B → E, C → F, ... X → A, Y → B, Z → C\n- 'HELLO' → 'KHOOR'\n\n## Modular Arithmetic\n\nThe Caesar cipher is mathematically described using **modular arithmetic**:\n\n**Encrypt:** E(x) = (x + n) mod 26\n**Decrypt:** D(x) = (x - n) mod 26\n\nWhere x is the letter position (A=0, B=1, ..., Z=25) and n is the shift.\n\n## Breaking It\n\nThe Caesar cipher is trivially broken by:\n1. **Brute force:** Only 25 possible keys (shifts 1-25)\n2. **Frequency analysis:** In English, E is the most common letter (~13%)\n\nIt provides essentially zero security by modern standards.",
+          "exercises": [
+            {
+              "type": "worked_example",
+              "id": "caesar-encrypt",
+              "title": "Encrypting with Caesar Cipher",
+              "steps": [
+                {"id": "s1", "content": "Encrypt 'ATTACK' with a Caesar shift of 5. What does A (position 0) become?", "missingPart": {"placeholder": "{{letter}}", "expectedAnswer": "F", "keywords": ["F"], "hint": "(0 + 5) mod 26 = 5 = F"}},
+                {"id": "s2", "content": "What does K (position 10) become with the same shift?", "missingPart": {"placeholder": "{{letter}}", "expectedAnswer": "P", "keywords": ["P"], "hint": "(10 + 5) mod 26 = 15 = P"}}
+              ]
+            },
+            {
+              "type": "mcq",
+              "id": "caesar-break",
+              "question": "How many unique Caesar cipher keys exist?",
+              "options": ["1", "26", "25", "676"],
+              "correctIndex": 2,
+              "explanation": "Shift of 0 is identity (no encryption), so only shifts 1-25 are valid keys = 25 possibilities."
+            },
+            {
+              "type": "socratic",
+              "id": "caesar-weakness",
+              "prompt": "The Caesar cipher shifts every letter by the same amount. Why is this a fundamental weakness even without brute force?",
+              "guidingQuestions": ["What happens to letter frequencies?", "Which English letter appears most often?", "How does this help an attacker?"],
+              "keywords": ["frequency", "pattern", "same mapping", "E is most common", "statistics"],
+              "sampleAnswer": "Every letter always maps to the same replacement, preserving the original letter frequency distribution. In English, E is most common (~13%), so the most common ciphertext letter likely maps to E, revealing the shift immediately."
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-caesar", "term": "Caesar Cipher", "definition": "A substitution cipher where each letter is shifted by n positions: E(x) = (x + n) mod 26. Only 25 possible keys.", "context": "Used by Julius Caesar with shift of 3"},
+            {"id": "fc-modular", "term": "Modular arithmetic in ciphers", "definition": "Arithmetic that 'wraps around': (x + n) mod 26 ensures Z+1 = A. Essential for all alphabetic ciphers.", "context": "The mathematical foundation of substitution ciphers"}
+          ]
+        },
+        {
+          "id": "vigenere-cipher",
+          "title": "The Vigenère Cipher",
+          "content": "## A Step Up: Polyalphabetic Substitution\n\nThe Vigenère cipher (16th century) uses a **keyword** to apply different Caesar shifts to each letter, defeating simple frequency analysis.\n\n**Example with key 'KEY':**\n- Plaintext: ATTACK\n- Key repeats: K-E-Y-K-E-Y\n- Shifts: 10-4-24-10-4-24\n- Ciphertext: KXYPFO\n\n## Breaking Vigenère\n\n1. **Find key length** using Kasiski examination (repeated substrings) or Friedman test\n2. **Apply frequency analysis** to each position separately\n\nThe Vigenère remained 'unbreakable' for ~300 years, earning the name *le chiffre indéchiffrable* (the indecipherable cipher).",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "vigenere-key",
+              "question": "Why is the Vigenère cipher stronger than Caesar?",
+              "options": ["It uses longer messages", "It applies different shifts to each letter based on a keyword", "It uses numbers instead of letters", "It reverses the alphabet"],
+              "correctIndex": 1,
+              "explanation": "The keyword causes each plaintext position to use a different Caesar shift, defeating single-frequency analysis."
+            },
+            {
+              "type": "drag_sequence",
+              "id": "vigenere-break-steps",
+              "title": "Steps to break a Vigenère cipher",
+              "items": ["Collect ciphertext", "Determine key length via Kasiski examination", "Split ciphertext into columns by key position", "Apply frequency analysis to each column", "Recover the keyword"],
+              "correctOrder": [0, 1, 2, 3, 4]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-vigenere", "term": "Vigenère Cipher", "definition": "Polyalphabetic cipher using a repeating keyword to apply different shifts per letter position. Called 'le chiffre indéchiffrable' for 300 years.", "context": "Invented by Giovan Battista Bellaso, misattributed to Vigenère"},
+            {"id": "fc-kasiski", "term": "Kasiski Examination", "definition": "Method to find Vigenère key length by identifying repeated substrings in ciphertext. The distance between repeats is likely a multiple of the key length.", "context": "Published by Friedrich Kasiski in 1863"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "ac1", "text": "In a Caesar cipher with shift 7, what does D become?", "options": ["A", "K", "H", "L"], "correctIndex": 1, "explanation": "D is position 3. (3 + 7) mod 26 = 10 = K."},
+          {"id": "ac2", "text": "What made Vigenère harder to break than Caesar?", "options": ["Longer keys", "Different shifts per position", "Mathematical complexity", "Computer requirements"], "correctIndex": 1, "explanation": "The keyword applies different shifts to each letter, defeating simple frequency analysis."},
+          {"id": "ac3", "text": "What technique finds the key length of a Vigenère cipher?", "options": ["Brute force", "Rainbow tables", "Kasiski examination", "Birthday attack"], "correctIndex": 2, "explanation": "Kasiski examination identifies repeated substrings whose spacing reveals the key length."}
+        ],
+        "passingScore": 0.67
+      }
+    },
+    {
+      "id": "symmetric-crypto",
+      "title": "Modern Symmetric Cryptography",
+      "order": 2,
+      "prerequisiteSectionId": "classical-ciphers",
+      "lessons": [
+        {
+          "id": "des-to-aes",
+          "title": "From DES to AES",
+          "content": "## The Need for Standard Encryption\n\nIn the 1970s, the US government needed a standard encryption algorithm. **DES** (Data Encryption Standard) was adopted in 1977 with a 56-bit key.\n\n**DES Problems:**\n- 56-bit key became brute-forceable (broken in 1998 by EFF's 'Deep Crack' in 56 hours)\n- Block size only 64 bits\n\n## AES (Advanced Encryption Standard)\n\nIn 2001, **AES** replaced DES after a public competition. Winner: **Rijndael** by Vincent Rijmen and Joan Daemen.\n\n**AES Properties:**\n- Key sizes: 128, 192, or 256 bits\n- Block size: 128 bits\n- Structure: Substitution-Permutation Network (SPN)\n- Operations: SubBytes, ShiftRows, MixColumns, AddRoundKey\n- 10/12/14 rounds depending on key size\n\nAES remains unbroken and is used everywhere: HTTPS, WiFi (WPA2/3), disk encryption, VPNs.",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "aes-key-size",
+              "question": "Which AES key size provides the strongest security?",
+              "options": ["56 bits", "128 bits", "192 bits", "256 bits"],
+              "correctIndex": 3,
+              "explanation": "AES-256 provides the strongest security with 2²⁵⁶ possible keys — more than atoms in the observable universe."
+            },
+            {
+              "type": "error_spotting",
+              "id": "des-aes-errors",
+              "title": "Spot the errors in this comparison of DES and AES",
+              "paragraphs": [
+                "DES uses a 128-bit key which makes it very secure against brute force attacks. Its block size is 256 bits.",
+                "AES uses a Feistel network structure and was designed by the NSA in secret."
+              ],
+              "errors": [
+                {"id": "e1", "paragraphIndex": 0, "errorText": "128-bit key", "correction": "56-bit key", "hint": "DES's key was intentionally small"},
+                {"id": "e2", "paragraphIndex": 0, "errorText": "block size is 256 bits", "correction": "block size is 64 bits", "hint": "DES blocks are quite small"},
+                {"id": "e3", "paragraphIndex": 1, "errorText": "Feistel network structure", "correction": "Substitution-Permutation Network (SPN)", "hint": "DES uses Feistel; AES does not"},
+                {"id": "e4", "paragraphIndex": 1, "errorText": "designed by the NSA in secret", "correction": "selected through a public international competition", "hint": "AES was notable for its open process"}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-des", "term": "DES", "definition": "Data Encryption Standard. 56-bit key, 64-bit blocks. Broken in 1998. First widely-used symmetric cipher standard.", "context": "Adopted 1977, replaced by AES in 2001"},
+            {"id": "fc-aes", "term": "AES", "definition": "Advanced Encryption Standard. 128/192/256-bit keys, 128-bit blocks. Uses Substitution-Permutation Network. Still unbroken.", "context": "Winner: Rijndael algorithm, adopted 2001"}
+          ]
+        },
+        {
+          "id": "block-modes",
+          "title": "Block Cipher Modes of Operation",
+          "content": "## Why Modes Matter\n\nAES encrypts 128-bit blocks. But messages are longer than 128 bits. **Modes of operation** define how to chain block encryptions.\n\n**ECB (Electronic Codebook):** Each block encrypted independently. **INSECURE** — identical plaintext blocks produce identical ciphertext blocks. The famous 'ECB penguin' demonstrates this.\n\n**CBC (Cipher Block Chaining):** Each block XORed with previous ciphertext before encryption. Requires an Initialization Vector (IV) for the first block.\n\n**CTR (Counter):** Encrypts a counter rather than the plaintext. Parallelizable and fast.\n\n**GCM (Galois/Counter Mode):** CTR mode + authentication tag. Provides both confidentiality AND integrity. Used in TLS 1.3, IPsec.\n\n**Rule: Never use ECB. Prefer GCM for new systems.**",
+          "exercises": [
+            {
+              "type": "drag_sequence",
+              "id": "cbc-encrypt-steps",
+              "title": "Steps of CBC encryption",
+              "items": ["XOR plaintext block with previous ciphertext (or IV for first block)", "Encrypt the XOR result with AES", "Output the ciphertext block", "Use this ciphertext as input for next block's XOR"],
+              "correctOrder": [0, 1, 2, 3]
+            },
+            {
+              "type": "mcq",
+              "id": "ecb-weakness",
+              "question": "Why is ECB mode insecure?",
+              "options": ["It's too slow", "Identical plaintext blocks produce identical ciphertext blocks", "It doesn't use a key", "It can only encrypt small messages"],
+              "correctIndex": 1,
+              "explanation": "ECB encrypts each block independently, so patterns in plaintext are visible in ciphertext (the 'ECB penguin' effect)."
+            },
+            {
+              "type": "socratic",
+              "id": "gcm-why",
+              "prompt": "Why does GCM (Galois/Counter Mode) add authentication when CBC + AES already provides confidentiality?",
+              "guidingQuestions": ["Can ciphertext be modified without knowing the key?", "What happens if an attacker flips bits in CBC ciphertext?", "How would the recipient know the message was tampered with?"],
+              "keywords": ["tampering", "integrity", "authentication", "bit flipping", "modified", "malleable"],
+              "sampleAnswer": "CBC only provides confidentiality — an attacker can flip bits in ciphertext, causing predictable changes in decrypted plaintext (bit-flipping attack). Without authentication, the recipient cannot detect tampering. GCM adds an authentication tag that verifies the ciphertext hasn't been modified."
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-ecb", "term": "ECB Mode", "definition": "Electronic Codebook. Each block encrypted independently. INSECURE — reveals patterns. Never use.", "context": "The 'ECB penguin' image demonstrates pattern leakage"},
+            {"id": "fc-gcm", "term": "GCM Mode", "definition": "Galois/Counter Mode. Provides confidentiality AND authentication. Used in TLS 1.3, IPsec, WPA3.", "context": "The modern default for symmetric encryption"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "ac4", "text": "What replaced DES as the encryption standard?", "options": ["3DES", "Blowfish", "AES (Rijndael)", "RC4"], "correctIndex": 2, "explanation": "AES (Rijndael) won the public NIST competition and replaced DES in 2001."},
+          {"id": "ac5", "text": "Which block mode provides both encryption and authentication?", "options": ["ECB", "CBC", "CTR", "GCM"], "correctIndex": 3, "explanation": "GCM (Galois/Counter Mode) adds an authentication tag for integrity verification."},
+          {"id": "ac6", "text": "Why was DES broken?", "options": ["Mathematical flaw in algorithm", "56-bit key was brute-forced", "Side-channel attack", "Quantum computer"], "correctIndex": 1, "explanation": "The 56-bit key space (2⁵⁶) became small enough for brute force by 1998."}
+        ],
+        "passingScore": 0.67
+      }
+    },
+    {
+      "id": "asymmetric-quantum",
+      "title": "Asymmetric & Quantum Cryptography",
+      "order": 3,
+      "prerequisiteSectionId": "symmetric-crypto",
+      "lessons": [
+        {
+          "id": "rsa-dh",
+          "title": "RSA & Diffie-Hellman",
+          "content": "## The Key Distribution Problem\n\nSymmetric crypto requires both parties to share a secret key. But how do you share a key over an insecure channel?\n\n## Diffie-Hellman Key Exchange (1976)\n\nAllows two parties to establish a shared secret over an insecure channel:\n1. Agree on public values: a large prime p and generator g\n2. Alice picks secret a, sends A = gᵃ mod p\n3. Bob picks secret b, sends B = gᵇ mod p\n4. Both compute shared secret: gᵃᵇ mod p\n\nAn eavesdropper sees A and B but cannot compute gᵃᵇ without solving the **discrete logarithm problem**.\n\n## RSA (1977)\n\nRivest, Shamir, Adleman created the first practical public-key cryptosystem:\n- **Public key:** (n, e) — anyone can encrypt\n- **Private key:** d — only holder can decrypt\n- **Security:** Factoring n = p × q (two large primes) is computationally infeasible\n\n**Key insight:** Some problems are easy in one direction (multiply two primes) but hard in reverse (factor their product).",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "rsa-security",
+              "question": "What mathematical problem provides RSA's security?",
+              "options": ["Discrete logarithm", "Integer factorization", "Knapsack problem", "Traveling salesman"],
+              "correctIndex": 1,
+              "explanation": "RSA relies on the difficulty of factoring the product of two large primes."
+            },
+            {
+              "type": "drag_sequence",
+              "id": "dh-steps",
+              "title": "Diffie-Hellman key exchange steps",
+              "items": ["Agree on public prime p and generator g", "Alice picks secret a, computes A = gᵃ mod p", "Bob picks secret b, computes B = gᵇ mod p", "Exchange public values A and B", "Both compute shared secret = gᵃᵇ mod p"],
+              "correctOrder": [0, 1, 2, 3, 4]
+            },
+            {
+              "type": "socratic",
+              "id": "asymmetric-why",
+              "prompt": "If RSA is so secure, why do we still use symmetric encryption (AES) for most data? Why not encrypt everything with RSA?",
+              "guidingQuestions": ["How fast is RSA compared to AES?", "What happens to RSA with large messages?", "How does HTTPS actually work?"],
+              "keywords": ["slow", "performance", "hybrid", "key exchange", "bulk encryption", "AES is faster"],
+              "sampleAnswer": "RSA is ~1000× slower than AES and limited to data smaller than the key size. In practice, RSA encrypts a random AES key, then AES encrypts the actual data. This hybrid approach combines RSA's key distribution with AES's speed."
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-rsa", "term": "RSA", "definition": "First practical public-key cryptosystem. Security based on integer factorization. Public key encrypts, private key decrypts.", "context": "Invented 1977 by Rivest, Shamir, Adleman"},
+            {"id": "fc-dh", "term": "Diffie-Hellman Key Exchange", "definition": "Allows two parties to establish a shared secret over an insecure channel using the discrete logarithm problem.", "context": "Published 1976 — introduced the concept of public-key cryptography"}
+          ]
+        },
+        {
+          "id": "post-quantum",
+          "title": "Post-Quantum Cryptography",
+          "content": "## The Quantum Threat\n\n**Shor's Algorithm** (1994): A sufficiently powerful quantum computer could factor large integers and compute discrete logarithms efficiently, **breaking RSA and Diffie-Hellman**.\n\nA quantum computer with ~4,000 logical qubits could break RSA-2048. Current quantum computers have ~1,000 noisy qubits (2024), but the threat is approaching.\n\n**Harvest-now, decrypt-later:** Adversaries may store encrypted traffic today to decrypt when quantum computers arrive.\n\n## Post-Quantum Algorithms\n\nNIST standardized new quantum-resistant algorithms in 2024:\n\n- **CRYSTALS-Kyber (ML-KEM):** Lattice-based key encapsulation. Replaces RSA/DH key exchange.\n- **CRYSTALS-Dilithium (ML-DSA):** Lattice-based digital signatures. Replaces RSA/ECDSA signatures.\n- **SPHINCS+:** Hash-based signatures (conservative backup).\n\n## Quantum Key Distribution (QKD)\n\nUses quantum mechanics principles (no-cloning theorem, measurement disturbance) to establish keys with **information-theoretic security** — provably unbreakable even by quantum computers.\n\nLimitation: Requires dedicated fiber optic links, short range (~100 km).",
+          "exercises": [
+            {
+              "type": "mcq",
+              "id": "shor-threat",
+              "question": "Which algorithms does Shor's algorithm threaten?",
+              "options": ["AES", "SHA-256", "RSA and Diffie-Hellman", "ChaCha20"],
+              "correctIndex": 2,
+              "explanation": "Shor's algorithm efficiently factors integers and computes discrete logarithms, breaking RSA and DH."
+            },
+            {
+              "type": "error_spotting",
+              "id": "quantum-crypto-errors",
+              "title": "Find the misconceptions about quantum computing and crypto",
+              "paragraphs": [
+                "Quantum computers will break all encryption immediately once built. AES-256 will be trivially cracked by Shor's algorithm.",
+                "Post-quantum algorithms are based on the same mathematical problems as RSA but with larger key sizes."
+              ],
+              "errors": [
+                {"id": "e1", "paragraphIndex": 0, "errorText": "break all encryption", "correction": "break RSA and DH, but NOT symmetric encryption like AES", "hint": "Shor's only breaks specific problems"},
+                {"id": "e2", "paragraphIndex": 0, "errorText": "AES-256 will be trivially cracked by Shor's algorithm", "correction": "AES-256 is weakened but not broken (Grover's algorithm halves effective key size to 128 bits)", "hint": "Shor's is for factoring/discrete log; AES faces Grover's"},
+                {"id": "e3", "paragraphIndex": 1, "errorText": "same mathematical problems as RSA but with larger key sizes", "correction": "entirely different problems (lattices, hash functions, codes)", "hint": "Post-quantum uses new hard problems"}
+              ]
+            },
+            {
+              "type": "worked_example",
+              "id": "grover-aes",
+              "title": "Grover's Algorithm Impact on AES",
+              "steps": [
+                {"id": "s1", "content": "Grover's algorithm can search an unsorted database quadratically faster. For AES-256 with 2²⁵⁶ possible keys, what effective security level remains?", "missingPart": {"placeholder": "{{bits}}", "expectedAnswer": "128", "keywords": ["128", "128 bits", "2^128"], "hint": "Grover's provides quadratic speedup: √(2²⁵⁶) = 2¹²⁸"}}
+              ]
+            }
+          ],
+          "flashcards": [
+            {"id": "fc-shor", "term": "Shor's Algorithm", "definition": "Quantum algorithm that efficiently factors integers and computes discrete logarithms. Threatens RSA and Diffie-Hellman.", "context": "Requires ~4,000 logical qubits to break RSA-2048"},
+            {"id": "fc-pqc", "term": "Post-Quantum Cryptography", "definition": "Algorithms resistant to quantum attacks. NIST standards: ML-KEM (Kyber) for key exchange, ML-DSA (Dilithium) for signatures.", "context": "Based on lattice problems, hash functions, or error-correcting codes"},
+            {"id": "fc-qkd", "term": "Quantum Key Distribution", "definition": "Uses quantum mechanics (no-cloning theorem) for provably secure key exchange. Information-theoretic security, but requires dedicated fiber links.", "context": "Limited to ~100 km range over fiber optic"}
+          ]
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {"id": "ac7", "text": "What problem provides RSA's security?", "options": ["Discrete logarithm", "Integer factorization", "Lattice reduction", "Hash collision"], "correctIndex": 1, "explanation": "Factoring n = p × q is computationally infeasible for large primes."},
+          {"id": "ac8", "text": "What does Shor's algorithm threaten?", "options": ["AES and SHA-256", "RSA and Diffie-Hellman", "Only DES", "All encryption"], "correctIndex": 1, "explanation": "Shor's breaks factoring and discrete log, the basis of RSA and DH."},
+          {"id": "ac9", "text": "What is the NIST post-quantum standard for key exchange?", "options": ["RSA-4096", "ECDSA", "CRYSTALS-Kyber (ML-KEM)", "SHA-512"], "correctIndex": 2, "explanation": "ML-KEM (Kyber) is a lattice-based key encapsulation mechanism standardized by NIST."}
+        ],
+        "passingScore": 0.67
+      }
+    }
+  ]
+}
