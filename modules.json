@@ -1,25 +1,6 @@
 {
-  "version": 2,
-  "updated": "2026-05-28",
+  "version": 4,
   "modules": [
-    {
-      "id": "sample-logic",
-      "title": "Introduction to Logical Thinking",
-      "description": "A sample module demonstrating all exercise types with basic logic puzzles.",
-      "difficulty": "beginner",
-      "estimatedHours": 1,
-      "checksum": "sha256:c3e00f69d3301110817fdc9c39e786f48854345f3bad532293b08cabd80d8b08",
-      "path": "modules/sample-logic/module.json"
-    },
-    {
-      "id": "scientific-revolution",
-      "title": "From Newton to Einstein: The Scientific Revolution",
-      "description": "Trace the evolution of physics from classical mechanics through electromagnetism to the revolutionary ideas of relativity and quantum mechanics.",
-      "difficulty": "intermediate",
-      "estimatedHours": 4,
-      "checksum": "sha256:d579cd3a6b5e3fe5ccee6295b00b02b61f3ad4ad221fabef20a4bbebc9299409",
-      "path": "modules/scientific-revolution/module.json"
-    },
     {
       "id": "cryptography-basics",
       "title": "Cryptography: From Caesar Ciphers to Quantum Keys",
@@ -32,11 +13,29 @@
     {
       "id": "fall-of-rome",
       "title": "The Fall of Rome: Empire in Decline",
-      "description": "Explore the political, economic, and military forces that brought down one of history's greatest empires.",
+      "description": "Explore the political, economic, and military forces that brought down one of history's greatest empires, from the Crisis of the Third Century to the final collapse of the Western Roman Empire.",
       "difficulty": "beginner",
       "estimatedHours": 3,
       "checksum": "sha256:200d9ca2d5c087a95f1778740d1109aa21ff47229ba5925808aed2204031faae",
       "path": "modules/fall-of-rome/module.json"
+    },
+    {
+      "id": "sample-logic",
+      "title": "Introduction to Logic",
+      "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
+      "difficulty": "beginner",
+      "estimatedHours": 1,
+      "checksum": "sha256:773dca71cef8ec35d8141d2be5b99f5085c724b87646fd25c8597c79253227c7",
+      "path": "modules/sample-logic/module.json"
+    },
+    {
+      "id": "scientific-revolution",
+      "title": "From Newton to Einstein: The Scientific Revolution",
+      "description": "Trace the evolution of physics from classical mechanics through electromagnetism to the revolutionary ideas of relativity and quantum mechanics.",
+      "difficulty": "intermediate",
+      "estimatedHours": 4,
+      "checksum": "sha256:d579cd3a6b5e3fe5ccee6295b00b02b61f3ad4ad221fabef20a4bbebc9299409",
+      "path": "modules/scientific-revolution/module.json"
     }
   ]
 }

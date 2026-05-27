@@ -4,7 +4,9 @@
   "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
   "author": "Modular Learning Team",
   "version": "1.0.0",
-  "estimatedMinutes": 15,
+  "difficulty": "beginner",
+    "estimatedHours": 1,
+    "estimatedMinutes": 30,
   "sections": [
     {
       "id": "section-1",
