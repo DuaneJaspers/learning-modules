@@ -1,0 +1,16 @@
+{
+  "version": "1",
+  "lastUpdated": "2026-05-27T00:00:00Z",
+  "modules": [
+    {
+      "id": "sample-logic",
+      "title": "Introduction to Logic",
+      "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
+      "author": "Modular Learning Team",
+      "version": "1.0.0",
+      "estimatedMinutes": 15,
+      "checksum": "sha256:c3e00f69d3301110817fdc9c39e786f48854345f3bad532293b08cabd80d8b08",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/refs/heads/master/modules/sample-logic/module.json"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "sample-logic",
+  "title": "Introduction to Logic",
+  "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
+  "author": "Modular Learning Team",
+  "version": "1.0.0",
+  "estimatedMinutes": 15,
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "Deductive Reasoning",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "title": "What is Deductive Reasoning?",
+          "content": "**Deductive reasoning** is a form of logical thinking that uses a general rule (or premise) to reach a specific, logical conclusion.\n\n### Structure\nA deductive argument has the following structure:\n1. **Major premise**: A general statement or rule\n2. **Minor premise**: A specific case related to the major premise\n3. **Conclusion**: The logical outcome\n\n### Example\n- Major premise: All mammals have lungs.\n- Minor premise: Dolphins are mammals.\n- Conclusion: Dolphins have lungs.\n\nWhen the premises are true and the reasoning is valid, the conclusion **must** be true.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "ex-1",
+          "prompt": "Which of the following is a valid deductive conclusion?",
+          "order": 1,
+          "type": "mcq",
+          "options": [
+            "All birds can fly. Penguins are birds. Therefore, penguins can fly.",
+            "All humans are mortal. Socrates is human. Therefore, Socrates is mortal.",
+            "Some cats are black. My pet is a cat. Therefore, my pet is black.",
+            "All squares have four sides. This shape has four sides. Therefore, it is a square."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option 2 is the only valid deductive argument. Option 1 has a false major premise (not all birds can fly). Option 3 commits the fallacy of the undistributed middle. Option 4 commits the fallacy of affirming the consequent."
+        },
+        {
+          "id": "ex-2",
+          "prompt": "Complete the deductive argument:\n\nPremise 1: All reptiles have scales.\nPremise 2: ___\nConclusion: Snakes have scales.",
+          "order": 2,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Premise 1: All reptiles have scales.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Premise 2: ",
+              "missingPart": {
+                "expectedAnswer": "snakes are reptiles",
+                "keywords": ["snakes", "reptiles"]
+              }
+            },
+            {
+              "id": "step-3",
+              "text": "Conclusion: Snakes have scales.",
+              "missingPart": null
+            }
+          ],
+          "hint": "Think about what category snakes belong to."
+        },
+        {
+          "id": "ex-3",
+          "prompt": "Why is it important for a deductive argument to have true premises, not just valid structure?",
+          "order": 3,
+          "type": "socratic",
+          "hints": [
+            "Consider what happens when the starting facts are wrong.",
+            "Even perfect logic can lead you astray if you start from false information.",
+            "This is the difference between validity (structure) and soundness (truth + structure)."
+          ],
+          "modelAnswer": "A deductive argument guarantees the conclusion only if the premises are actually true. Valid structure alone isn't enough — you need soundness, which requires both valid reasoning AND true premises.",
+          "keywords": ["true", "soundness", "valid", "premises", "guarantee", "facts"]
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "title": "Common Logical Fallacies",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "lesson-2-1",
+          "title": "Identifying Fallacies",
+          "content": "A **logical fallacy** is a flaw in reasoning that renders an argument invalid or unsound. Recognizing fallacies is essential for critical thinking.\n\n### Types of Fallacies\n\n**Ad Hominem**: Attacking the person instead of the argument.\n**Straw Man**: Misrepresenting someone's argument to make it easier to attack.\n**False Dilemma**: Presenting only two options when more exist.\n**Slippery Slope**: Claiming a small step will lead to extreme consequences without evidence.\n**Appeal to Authority**: Using an authority figure's opinion as evidence, even when they're not an expert in the relevant field.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "ex-4",
+          "prompt": "Identify the errors in reasoning in the following argument:\n\n\"We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.\"",
+          "order": 1,
+          "type": "error_spotting",
+          "content": "We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.",
+          "errors": [
+            {
+              "id": "err-1",
+              "description": "Ad Hominem (Genetic Fallacy) — dismissing the argument based on where Dr. Smith studied, not on the merits of his reasoning.",
+              "hint": "Is the location of someone's education relevant to the validity of their argument?"
+            },
+            {
+              "id": "err-2",
+              "description": "Hasty Generalization — claiming 'European policies are always too strict' based on a single sweeping statement.",
+              "hint": "Can you generalize about all European policies from one observation?"
+            }
+          ],
+          "explanation": "This argument contains two fallacies: an ad hominem (attacking the source) and a hasty generalization about European policies."
+        },
+        {
+          "id": "ex-5",
+          "prompt": "Arrange the steps of evaluating an argument in the correct order:",
+          "order": 2,
+          "type": "drag_sequence",
+          "items": [
+            { "id": "item-1", "text": "Check if the premises are true" },
+            { "id": "item-2", "text": "Identify the conclusion" },
+            { "id": "item-3", "text": "Check if the reasoning is valid" },
+            { "id": "item-4", "text": "Check for logical fallacies" }
+          ],
+          "correctOrder": [1, 2, 0, 3]
+        }
+      ]
+    }
+  ],
+  "assessment": {
+    "title": "Logic Fundamentals Assessment",
+    "passingScore": 0.7,
+    "exercises": [
+      { "exerciseId": "ex-1", "weight": 1.0 },
+      { "exerciseId": "ex-2", "weight": 1.0 },
+      { "exerciseId": "ex-3", "weight": 1.0 },
+      { "exerciseId": "ex-4", "weight": 1.0 },
+      { "exerciseId": "ex-5", "weight": 1.0 }
+    ]
+  },
+  "flashcardDeck": {
+    "title": "Logic Key Terms",
+    "cards": [
+      {
+        "id": "fc-1",
+        "term": "Deductive Reasoning",
+        "definition": "Reasoning from general premises to a specific, guaranteed conclusion.",
+        "context": "All mammals have lungs. Dolphins are mammals. Therefore, dolphins have lungs."
+      },
+      {
+        "id": "fc-2",
+        "term": "Logical Fallacy",
+        "definition": "A flaw in reasoning that invalidates or weakens an argument.",
+        "context": "Ad hominem, straw man, and false dilemma are common fallacies."
+      },
+      {
+        "id": "fc-3",
+        "term": "Soundness",
+        "definition": "An argument that is both valid in structure and has true premises.",
+        "context": "Validity + truth of premises = soundness."
+      }
+    ]
+  }
+}
