@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "lastUpdated": "2026-05-28T10:43:19Z",
+  "lastUpdated": "2026-05-28T16:53:56Z",
   "modules": [
     {
       "id": "cryptography-basics",
@@ -9,7 +9,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.1",
       "estimatedMinutes": 180,
-      "checksum": "sha256:ed70cd2b580de8776d37e6e2cd31d93d65dbea55aca3a568387b49b2900b0428",
+      "checksum": "sha256:a1ae8c86b1db183b6bffa9cebe43c03df21fafb25b75e4499b779595f2cf4553",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/cryptography-basics/module.json"
     },
     {
@@ -19,7 +19,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.1",
       "estimatedMinutes": 180,
-      "checksum": "sha256:10f00f87a47601e2f1a4ec9d4d2fe12b1e98020d59bd33e3ad1ae812188d4d0e",
+      "checksum": "sha256:a8714110eccf6c5187ebaa46910d69c4d91fb68d4d9c63493e78f2f277ee278b",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/fall-of-rome/module.json"
     },
     {
@@ -29,7 +29,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.1",
       "estimatedMinutes": 30,
-      "checksum": "sha256:3b27a92f818a84d8bb178e63473b6711e70b6033387733b943f5cc5800f7f1f6",
+      "checksum": "sha256:e5a0411edb2e9e860b00492062086e060307d6d761f268a2ab8881e1ebbe0c78",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/sample-logic/module.json"
     },
     {
@@ -39,7 +39,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.1",
       "estimatedMinutes": 180,
-      "checksum": "sha256:82c29a007e7e22daed6efb88a140a485c8d994043b51240f2b53b0eeff94c666",
+      "checksum": "sha256:39e055bff81d495b731f1b60fbc7021946355359db19fcc4878151e232b6ae20",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/scientific-revolution/module.json"
     }
   ]
