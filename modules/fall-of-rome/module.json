@@ -4,8 +4,6 @@
   "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
   "author": "Modular Learning Team",
   "version": "1.0.1",
-  "difficulty": "intermediate",
-  "estimatedHours": 3,
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -132,7 +130,7 @@
           "prompt": "Identify the errors in reasoning in the following argument about the Crisis of the Third Century:",
           "order": 2,
           "type": "error_spotting",
-          "content": "The Crisis of the Third Century was caused entirely by external barbarian invasions. If the Germanic tribes and Persians had not attacked, the Roman Empire would have continued to thrive. The internal problems were just excuses that weak emperors used to justify their failures.",
+          "content": "The Crisis of the Third Century was caused entirely by external barbarian invasions. If the Germanic tribes and Persians had not attacked, the Roman Empire would have continued to thrive [ERROR:1]. The internal problems were just excuses that weak emperors used to justify their failures [ERROR:2].",
           "errors": [
             {
               "id": "err-1",
@@ -239,62 +237,10 @@
     "title": "The Fall of Rome Assessment",
     "passingScore": 0.75,
     "exercises": [
-      {
-        "id": "assess-1",
-        "type": "mcq",
-        "prompt": "What political innovation allowed Augustus to maintain power while preserving the appearance of the Republic?",
-        "order": 1,
-        "options": [
-          "He abolished the Senate and ruled as a pure dictator.",
-          "He adopted the title 'Princeps' (first citizen) while retaining control of the army and provincial governance.",
-          "He established a democratic assembly that elected him for life.",
-          "He divided Rome into independent city-states."
-        ],
-        "correctIndex": 1,
-        "explanation": "Augustus maintained the facade of republican government by keeping the Senate, consuls, and assemblies while concentrating real power in his hands. This is a cross-section question testing knowledge from Section 1."
-      },
-      {
-        "id": "assess-2",
-        "type": "mcq",
-        "prompt": "Which factor was NOT a significant contributor to the Crisis of the Third Century?",
-        "order": 2,
-        "options": [
-          "The Cyprian Plague",
-          "The invention of the stirrup",
-          "Hyperinflation from currency debasement",
-          "The capture of Emperor Valerian by the Sassanians"
-        ],
-        "correctIndex": 1,
-          "explanation": "The stirrup was not invented until the 6th-8th centuries CE, long after the Third Century Crisis. The plague, hyperinflation, and Valerian's capture were all significant factors. This tests knowledge from Section 2."
-      },
-      {
-        "id": "assess-3",
-        "type": "mcq",
-        "prompt": "Why did the Eastern Roman Empire survive while the West fell?",
-        "order": 3,
-        "options": [
-          "The East had better military technology.",
-          "The East was wealthier, had better defensive positions, and faced fewer barbarian pressures.",
-          "The East had a more democratic government.",
-          "The East never experienced internal political crises."
-        ],
-        "correctIndex": 1,
-        "explanation": "The East survived due to greater economic resources (Egypt's grain, Asian trade), stronger natural defenses, and more stable governance. Options A, C, and D are factually incorrect — the East faced similar military challenges, was not democratic, and experienced significant political crises."
-      },
-      {
-        "id": "assess-4",
-        "type": "mcq",
-        "prompt": "Which statement best describes the relationship between the Crisis of the Third Century and the eventual fall of the Western Roman Empire?",
-        "order": 4,
-        "options": [
-          "The Crisis of the Third Century directly caused the fall in 476 CE.",
-          "The Crisis weakened the empire's structures and set precedents for instability that contributed to the eventual fall.",
-          "The Crisis had no connection to the fall — they were completely separate events.",
-          "The Crisis actually strengthened the empire and delayed its fall."
-        ],
-        "correctIndex": 1,
-        "explanation": "The Crisis of the Third Century weakened the empire's economic, military, and political structures, and Diocletian's reforms (including the East-West division) set precedents that contributed to the eventual fall. It was not a direct cause, but a significant contributing factor that tested and weakened the empire's foundations."
-      }
+      { "exerciseId": "economy-mcq", "weight": 1.0 },
+      { "exerciseId": "decline-mcq", "weight": 1.0 },
+      { "exerciseId": "economy-mcq", "weight": 1.0 },
+      { "exerciseId": "decline-mcq", "weight": 1.0 }
     ]
   },
   "flashcardDeck": {

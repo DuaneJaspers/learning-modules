@@ -4,8 +4,6 @@
   "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
   "author": "Modular Learning Team",
   "version": "1.0.1",
-  "difficulty": "beginner",
-  "estimatedHours": 1,
   "estimatedMinutes": 30,
   "sections": [
     {
@@ -163,34 +161,8 @@
       { "exerciseId": "ex-4", "weight": 1.0 },
       { "exerciseId": "ex-5", "weight": 1.0 },
       { "exerciseId": "ex-6", "weight": 1.0 },
-      {
-        "id": "assess-1",
-        "type": "mcq",
-        "prompt": "A friend says: 'All politicians are liars. My uncle is a politician. So my uncle is a liar.' What is the logical status of this argument?",
-        "order": 7,
-        "options": [
-          "It is valid and sound — the conclusion follows logically from the premises.",
-          "It is valid but not sound — the structure is correct but the major premise is questionable.",
-          "It is invalid — the conclusion does not follow from the premises regardless of truth.",
-          "It is sound — because the conclusion happens to be true in this case."
-        ],
-        "correctIndex": 1,
-        "explanation": "The argument has a valid structure (All A are B, C is A, therefore C is B). However, it is not sound because the major premise 'All politicians are liars' is a hasty generalization, not a proven truth. Validity concerns structure; soundness requires both validity AND true premises."
-      },
-      {
-        "id": "assess-2",
-        "type": "mcq",
-        "prompt": "Which scenario best illustrates a false dilemma?",
-        "order": 8,
-        "options": [
-          "Attacking a critic's character instead of their argument.",
-          "Claiming you must either support all government spending or oppose all public services.",
-          "Claiming that allowing one small change will inevitably lead to disaster.",
-          "Using a celebrity's endorsement as proof of a product's quality."
-        ],
-        "correctIndex": 1,
-        "explanation": "A false dilemma presents only two options when more exist. Option 1 is ad hominem, option 2 is false dilemma (there are many positions between 'all spending' and 'no services'), option 3 is slippery slope, and option 4 is appeal to authority."
-      }
+      { "exerciseId": "ex-2", "weight": 1.0 },
+      { "exerciseId": "ex-2", "weight": 1.0 }
     ]
   },
   "flashcardDeck": {

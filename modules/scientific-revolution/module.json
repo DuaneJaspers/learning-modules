@@ -4,8 +4,6 @@
   "description": "An exploration of the scientific revolution of the 16th and 17th centuries, examining the key figures, discoveries, and paradigm shifts that transformed our understanding of the natural world.",
   "author": "Modular Learning Team",
   "version": "1.0.1",
-  "difficulty": "intermediate",
-  "estimatedHours": 3,
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -150,7 +148,7 @@
           "prompt": "Identify the errors in reasoning in the following argument about the scientific method:",
           "order": 3,
           "type": "error_spotting",
-          "content": "The scientific method is the only valid way to gain knowledge. Any knowledge that cannot be tested through the scientific method — such as mathematics, ethics, or aesthetic judgment — is therefore meaningless and should be discarded. This is proven by the fact that science has been so successful.",
+          "content": "The scientific method is the only valid way to gain knowledge. Any knowledge that cannot be tested through the scientific method — such as mathematics, ethics, or aesthetic judgment — is therefore meaningless and should be discarded [ERROR:1]. This is proven by the fact that science has been so successful [ERROR:2].",
           "errors": [
             {
               "id": "err-1",
@@ -245,76 +243,11 @@
     "title": "Scientific Revolution Assessment",
     "passingScore": 0.75,
     "exercises": [
-      {
-        "id": "assess-1",
-        "type": "mcq",
-        "prompt": "Which observation provided the strongest evidence against the geocentric model?",
-        "order": 1,
-        "options": [
-          "The discovery of sunspots",
-          "The phases of Venus",
-          "The discovery of Jupiter's moons",
-          "The observation of comets"
-        ],
-        "correctIndex": 2,
-        "explanation": "Jupiter's moons directly contradicted the geocentric claim that ALL celestial bodies orbit Earth. The phases of Venus also strongly supported heliocentrism. This tests knowledge from Section 1."
-      },
-      {
-        "id": "assess-2",
-        "type": "mcq",
-        "prompt": "What is the fundamental difference between Bacon's and Descartes' approaches to the scientific method?",
-        "order": 2,
-        "options": [
-          "Bacon used experiments; Descartes rejected experiments.",
-          "Bacon used inductive reasoning (specific → general); Descartes used deductive reasoning (general → specific).",
-          "Bacon focused on physics; Descartes focused on mathematics.",
-          "Bacon relied on religious authority; Descartes rejected all authority."
-        ],
-        "correctIndex": 1,
-        "explanation": "Bacon advocated inductive reasoning — building general conclusions from specific observations. Descartes emphasized deductive reasoning — starting with self-evident truths and reasoning to conclusions. This tests knowledge from Section 2."
-      },
-      {
-        "id": "assess-3",
-        "type": "mcq",
-        "prompt": "What made Newton's Principia revolutionary?",
-        "order": 3,
-        "options": [
-          "It was the first book to discuss gravity.",
-          "It proved that the Earth orbits the Sun.",
-          "It unified celestial and terrestrial mechanics under a single mathematical framework.",
-          "It introduced the use of telescopes in scientific research."
-        ],
-        "correctIndex": 2,
-        "explanation": "Newton's revolution was in unification — showing that the same laws govern both heavenly and earthly phenomena. This tests knowledge from Section 3."
-      },
-      {
-        "id": "assess-4",
-        "type": "mcq",
-        "prompt": "How did the scientific method differ from the medieval approach to knowledge?",
-        "order": 4,
-        "options": [
-          "The scientific method relied on ancient authorities like Aristotle; the medieval approach relied on experiments.",
-          "The scientific method emphasized evidence and testing; the medieval approach relied on authority and tradition.",
-          "The scientific method was purely theoretical; the medieval approach was purely practical.",
-          "There was no significant difference — both approaches were identical."
-        ],
-        "correctIndex": 1,
-        "explanation": "The scientific method introduced evidence-based inquiry and testing, replacing reliance on ancient authorities (Aristotle, Galen) and tradition. This was a fundamental shift in how knowledge was acquired and validated."
-      },
-      {
-        "id": "assess-5",
-        "type": "mcq",
-        "prompt": "Which combination of factors was necessary for heliocentrism to gain acceptance?",
-        "order": 5,
-        "options": [
-          "Only the invention of the telescope",
-          "Only the work of Copernicus and Galileo",
-          "The telescope, mathematical models, physical theories, and intellectual freedom from religious authority",
-          "Only the decline of the Catholic Church's influence"
-        ],
-        "correctIndex": 2,
-        "explanation": "Heliocentrism required the convergence of multiple factors: technological (telescope), mathematical (Copernicus, Kepler), physical (Galileo's inertia, Newton's gravity), and intellectual (the Reformation created space for challenging authority). No single factor was sufficient."
-      }
+      { "exerciseId": "heliocentrism-mcq", "weight": 1.0 },
+      { "exerciseId": "method-mcq", "weight": 1.0 },
+      { "exerciseId": "newton-mcq", "weight": 1.0 },
+      { "exerciseId": "method-mcq", "weight": 1.0 },
+      { "exerciseId": "heliocentrism-mcq", "weight": 1.0 }
     ]
   },
   "flashcardDeck": {

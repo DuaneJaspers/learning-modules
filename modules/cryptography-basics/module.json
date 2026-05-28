@@ -4,8 +4,6 @@
   "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
   "author": "Modular Learning Team",
   "version": "1.0.1",
-  "difficulty": "intermediate",
-  "estimatedHours": 3,
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -169,7 +167,7 @@
           "prompt": "Identify the errors in reasoning in the following argument about cryptographic protocols:",
           "order": 4,
           "type": "error_spotting",
-          "content": "Public key cryptography is completely secure because the private key is never shared. If someone could break RSA, they would need to factor a 2048-bit number, which would take millions of years even with the fastest computers. Therefore, RSA can never be broken and we should use it for everything.",
+          "content": "Public key cryptography is completely secure because the private key is never shared. If someone could break RSA, they would need to factor a 2048-bit number, which would take millions of years even with the fastest computers [ERROR:1]. Therefore, RSA can never be broken and we should use it for everything [ERROR:2].",
           "errors": [
             {
               "id": "err-1",
@@ -254,76 +252,11 @@
     "title": "Cryptography Fundamentals Assessment",
     "passingScore": 0.75,
     "exercises": [
-      {
-        "id": "assess-1",
-        "type": "mcq",
-        "prompt": "You receive a message encrypted with your public key. How do you decrypt it?",
-        "order": 1,
-        "options": [
-          "Using your public key",
-          "Using your private key",
-          "Using the sender's public key",
-          "Using the sender's private key"
-        ],
-        "correctIndex": 1,
-        "explanation": "Messages encrypted with your public key can only be decrypted with your private key. This is the fundamental property of public key cryptography: the public key encrypts, the private key decrypts."
-      },
-      {
-        "id": "assess-2",
-        "type": "mcq",
-        "prompt": "A ciphertext 'KHOOR' was created using a Caesar cipher with key 3. What technique would be MOST effective at breaking this cipher?",
-        "order": 2,
-        "options": [
-          "Quantum computing",
-          "Frequency analysis",
-          "Brute force with a supercomputer",
-          "Social engineering"
-        ],
-        "correctIndex": 1,
-        "explanation": "Frequency analysis is the most effective technique for breaking Caesar ciphers because the cipher preserves letter frequency distributions. While brute force (25 keys) is also easy, frequency analysis is more elegant and works even for longer texts. Quantum computing and social engineering are overkill for this simple cipher."
-      },
-      {
-        "id": "assess-3",
-        "type": "mcq",
-        "prompt": "Why is SHA-256 preferred over MD5 for modern cryptographic applications?",
-        "order": 3,
-        "options": [
-          "SHA-256 produces shorter hashes, making it faster",
-          "SHA-256 has no known collision attacks, while MD5 is vulnerable",
-          "MD5 was never widely used, so there's no need to replace it",
-          "SHA-256 uses symmetric keys while MD5 uses public keys"
-        ],
-        "correctIndex": 1,
-        "explanation": "MD5 produces 128-bit hashes and has known collision attacks, meaning attackers can create two different inputs with the same hash. SHA-256 produces 256-bit hashes and has no practical collision attacks. SHA-256 is slower, not faster, and both are hash functions (not key-based)."
-      },
-      {
-        "id": "assess-4",
-        "type": "mcq",
-        "prompt": "In the digital signature process, what does the receiver compute to verify the signature?",
-        "order": 4,
-        "options": [
-          "The hash of the original message and compares it to the decrypted signature",
-          "The public key of the sender",
-          "A new private key for the message",
-          "The ciphertext of the message"
-        ],
-        "correctIndex": 0,
-        "explanation": "The receiver computes the hash of the received message and compares it to the hash obtained by decrypting the signature with the sender's public key. If they match, the signature is valid. Options B, C, and D describe operations that are not part of signature verification."
-      },
-      {
-        "id": "assess-5",
-        "type": "mcq",
-        "prompt": "Which statement best describes why hybrid encryption (combining symmetric and public key cryptography) is used in practice?",
-        "order": 5,
-        "options": [
-          "Public key cryptography is too slow for bulk data, so symmetric encryption is used for the data and public key for the symmetric key",
-          "Symmetric encryption is more secure than public key encryption",
-          "Public key cryptography cannot encrypt messages larger than 128 bits",
-          "Hybrid encryption eliminates the need for any keys"
-        ],
-        "correctIndex": 0,
-        "explanation": "Hybrid encryption uses public key cryptography to securely exchange a symmetric key, then uses the symmetric key for the actual data encryption. This combines the security of public key crypto with the speed of symmetric crypto. Option B is false (neither is inherently more secure — they're just different). Option C is false (public key can encrypt any size with proper padding). Option D is nonsense."
-      }
+      { "exerciseId": "protocol-mcq", "weight": 1.0 },
+      { "exerciseId": "caesar-mcq", "weight": 1.0 },
+      { "exerciseId": "quantum-mcq", "weight": 1.0 },
+      { "exerciseId": "protocol-mcq", "weight": 1.0 },
+      { "exerciseId": "protocol-mcq", "weight": 1.0 }
     ]
   },
   "flashcardDeck": {
