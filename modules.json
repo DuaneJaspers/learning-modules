@@ -10,7 +10,7 @@
       "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:a1ae8c86b1db183b6bffa9cebe43c03df21fafb25b75e4499b779595f2cf4553",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/cryptography-basics/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
     },
     {
       "id": "fall-of-rome",
@@ -20,7 +20,7 @@
       "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:a8714110eccf6c5187ebaa46910d69c4d91fb68d4d9c63493e78f2f277ee278b",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/fall-of-rome/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/fall-of-rome/module.json"
     },
     {
       "id": "sample-logic",
@@ -30,7 +30,7 @@
       "version": "1.0.1",
       "estimatedMinutes": 30,
       "checksum": "sha256:e5a0411edb2e9e860b00492062086e060307d6d761f268a2ab8881e1ebbe0c78",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/sample-logic/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/sample-logic/module.json"
     },
     {
       "id": "scientific-revolution",
@@ -40,7 +40,7 @@
       "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:39e055bff81d495b731f1b60fbc7021946355359db19fcc4878151e232b6ae20",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/scientific-revolution/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/scientific-revolution/module.json"
     }
   ]
 }
