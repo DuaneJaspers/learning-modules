@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "lastUpdated": "2026-05-28T18:50:27Z",
+  "lastUpdated": "2026-05-28T19:18:37Z",
   "modules": [
     {
       "id": "cryptography-basics",
@@ -9,7 +9,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.1",
       "estimatedMinutes": 180,
-      "checksum": "sha256:a1ae8c86b1db183b6bffa9cebe43c03df21fafb25b75e4499b779595f2cf4553",
+      "checksum": "sha256:406cdfb64ed6c15a52917d131c20530db7edd6388cd48d805a8aed0b58b3bddc",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
     },
     {

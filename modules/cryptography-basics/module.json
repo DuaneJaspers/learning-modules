@@ -106,6 +106,31 @@
             "mapping"
           ],
           "type": "socratic"
+        },
+        {
+          "id": "caesar-socratic-ai",
+          "prompt": "Why does frequency analysis work on the Caesar cipher but not on modern encryption like AES?",
+          "order": 4,
+          "type": "socratic_ai",
+          "modelAnswer": "Frequency analysis works on the Caesar cipher because it's a simple substitution cipher — each letter always maps to the same ciphertext letter, preserving the frequency distribution of the original text. Modern ciphers like AES are block ciphers that transform groups of bits, completely changing the statistical properties of the output. AES ciphertext is designed to be indistinguishable from random data, so letter frequencies are destroyed.",
+          "mustInclude": [
+            "substitution",
+            "frequency",
+            "mapping"
+          ],
+          "niceToHave": [
+            "block cipher",
+            "statistical",
+            "random",
+            "AES",
+            "preserves"
+          ],
+          "hints": [
+            "Consider what information the Caesar cipher preserves about the original text.",
+            "Think about how modern ciphers transform the entire message, not just individual letters."
+          ],
+          "minScore": 0.6,
+          "validationMode": "keyword"
         }
       ]
     },
