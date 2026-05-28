@@ -165,8 +165,10 @@ def main():
     print(f"\n✅ All {len(module_entries)} modules valid")
 
     # Generate index
+    from datetime import datetime, timezone
     index = {
-        "version": len(module_entries),
+        "version": "1",
+        "lastUpdated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "modules": module_entries,
     }
 
