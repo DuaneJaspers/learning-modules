@@ -1,230 +1,377 @@
 {
   "id": "fall-of-rome",
-  "title": "The Fall of Rome: Empire in Decline",
-  "description": "Explore the political, economic, and military forces that brought down one of history's greatest empires, from the Crisis of the Third Century to the final collapse of the Western Roman Empire.",
-  "version": 1,
-  "author": "Modular Learning",
-  "difficulty": "beginner",
+  "title": "The Fall of Rome",
+  "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
+  "author": "Modular Learning Team",
+  "version": "1.0.1",
+  "difficulty": "intermediate",
   "estimatedHours": 3,
-  "tags": ["history", "rome", "ancient history", "civilization"],
+  "estimatedMinutes": 180,
   "sections": [
     {
-      "id": "third-century-crisis",
-      "title": "Crisis of the Third Century",
+      "id": "section-1",
+      "title": "Early Republic to Empire",
       "order": 1,
-      "prerequisiteSectionId": null,
       "lessons": [
         {
-          "id": "military-anarchy",
-          "title": "Military Anarchy: The Age of Barracks Emperors",
-          "content": "## Rome's Darkest Century\n\nFrom 235–284 AD, the Roman Empire nearly collapsed. In just 50 years, **more than 20 emperors** ruled — most assassinated by their own troops.\n\n## How It Started\n\nEmperor **Alexander Severus** was murdered by his own soldiers in 235 AD for paying off Germanic tribes instead of fighting them. This triggered a catastrophic cycle:\n\n1. Generals proclaimed emperor by their legions\n2. Rival generals fought civil wars\n3. Victorious emperor assassinated within years\n4. Repeat\n\nThe army became the real power — any general with enough legionary support could claim the purple. Emperors were puppets of the military.\n\n## The Three Simultaneous Empires\n\nAt the crisis's peak (260-274 AD), Rome split into three rival states:\n- **Gallic Empire** (Gaul, Britain, Hispania)\n- **Palmyrene Empire** (Syria, Egypt, Asia Minor)\n- **Rome proper** (Italy, Africa, Balkans)",
-          "exercises": [
-            {
-              "type": "mcq",
-              "id": "barracks-emperors",
-              "question": "Why was this period called 'Military Anarchy'?",
-              "options": ["Barbarians controlled the army", "Emperors were chosen by the military and frequently assassinated", "There was no army at all", "The Senate seized military power"],
-              "correctIndex": 1,
-              "explanation": "Generals were proclaimed emperor by their troops, ruled briefly, and were usually assassinated — the military controlled imperial succession."
-            },
-            {
-              "type": "drag_sequence",
-              "id": "crisis-cycle",
-              "title": "Order the cycle of the Third Century Crisis",
-              "items": ["General's troops proclaim him emperor", "Civil war against rival claimants", "Victorious emperor takes power", "Empire neglected under constant warfare", "Emperor assassinated by his own troops", "New general proclaimed by different legion"],
-              "correctOrder": [0, 1, 2, 3, 4, 5]
-            },
-            {
-              "type": "socratic",
-              "id": "why-pay-tribe",
-              "prompt": "Emperor Alexander Severus was killed for paying tribute to Germanic tribes rather than fighting. Was paying tribute always a bad strategy?",
-              "guidingQuestions": ["What did Rome gain from fighting vs. paying?", "How much did legions cost to maintain?", "What happened to the economy during constant warfare?"],
-              "keywords": ["cheaper", "resources", "economy", "overextended", "soldier pay", "short-term vs long-term"],
-              "sampleAnswer": "Paying tribute was often cheaper than fielding armies. But the army viewed itself as Rome's defenders — paying 'barbarians' felt like cowardice and undermined military prestige. The soldiers' pride and dependence on loot for pay made diplomacy politically impossible."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-crisis", "term": "Crisis of the Third Century", "definition": "Period 235-284 AD when Rome had 20+ emperors, nearly all assassinated. The empire split into three rival states.", "context": "Triggered by assassination of Alexander Severus in 235 AD"},
-            {"id": "fc-barracks", "term": "Barracks Emperors", "definition": "Emperors proclaimed by the army rather than through legitimate succession. Most ruled briefly and died violently.", "context": "Named because they were 'made in the barracks' by soldiers"}
-          ]
-        },
-        {
-          "id": "economic-collapse",
-          "title": "Economic Collapse & Diocletian's Reforms",
-          "content": "## Hyperinflation and Collapse\n\nThe crisis devastated Rome's economy:\n\n- **Army costs skyrocketed** (bribing troops, civil wars)\n- Emperors **debased the coinage** — reducing silver content to mint more coins\n- **Antoninianus** went from 50% silver to just **3% silver** by 270 AD\n- Result: **hyperinflation** — prices rose 1,000% in some regions\n- Tax collection became impossible as currency lost all value\n\n## Diocletian's Rescue (284-305 AD)\n\nEmperor **Diocletian** ended the crisis through radical reforms:\n\n1. **Tetrarchy:** Divided rule among four emperors (two Augusti, two Caesars)\n2. **Price controls:** Edict on Maximum Prices (301 AD) — failed, created black markets\n3. **Tax reform:** Shifted from money taxes to taxes in kind (grain, goods)\n4. **Army reform:** Doubled army size to ~400,000 soldiers\n5. **Administrative reform:** Split provinces into smaller units for better control",
-          "exercises": [
-            {
-              "type": "error_spotting",
-              "id": "inflation-errors",
-              "title": "Find the errors in this description of Rome's economic crisis",
-              "paragraphs": [
-                "Rome solved its financial problems by minting more coins with higher silver content. This increased public confidence in the currency and stabilized prices.",
-                "Diocletian's price controls were highly successful and eliminated inflation throughout the empire."
-              ],
-              "errors": [
-                {"id": "e1", "paragraphIndex": 0, "errorText": "higher silver content", "correction": "lower silver content (debasement)", "hint": "They diluted coins to mint more"},
-                {"id": "e2", "paragraphIndex": 0, "errorText": "stabilized prices", "correction": "caused hyperinflation (prices rose ~1,000%)", "hint": "More money chasing same goods = inflation"},
-                {"id": "e3", "paragraphIndex": 1, "errorText": "highly successful and eliminated inflation", "correction": "failed and created black markets", "hint": "Price controls rarely work in hyperinflation"}
-              ]
-            },
-            {
-              "type": "mcq",
-              "id": "tetrarchy",
-              "question": "What was the Tetrarchy?",
-              "options": ["A four-person Senate committee", "Rule by four emperors (two Augusti, two Caesars)", "A military formation with four divisions", "A four-province administrative system"],
-              "correctIndex": 1,
-              "explanation": "Diocletian divided imperial power among four rulers to improve governance and succession."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-debasement", "term": "Coin debasement", "definition": "Reducing precious metal content in coins to mint more. Roman emperors debased silver from 50% to 3%, causing hyperinflation.", "context": "The antoninianus became essentially bronze by 270 AD"},
-            {"id": "fc-tetrarchy", "term": "Tetrarchy", "definition": "Diocletian's system of four rulers: two senior Augusti and two junior Caesars. Designed to solve succession crises.", "context": "Lasted until Constantine defeated his rivals and reunited the empire"}
-          ]
+          "id": "lesson-1-1",
+          "title": "The Transformation of Rome",
+          "content": "The Roman Republic, which began in 509 BCE after the overthrow of the monarchy, transformed over centuries into an empire. This transformation was driven by political instability, military ambition, and social upheaval.\n\n### The Republic's Structure\nThe Roman Republic had a complex system of checks and balances:\n- **Consuls**: Two executives elected annually\n- **Senate**: An advisory body of aristocrats\n- **Assemblies**: Popular assemblies that elected officials and passed laws\n- **Tribunes**: Officials who could veto Senate decisions\n\n### The Crisis of the Republic\nBy the 1st century BCE, the Republic was in crisis:\n- **Military loyalty shifted**: Soldiers pledged loyalty to generals (like Julius Caesar) rather than to the state\n- **Social inequality**: Wealth concentrated in the hands of the patrician class\n- **Political violence**: Figures like Marius, Sulla, and Caesar used military force to achieve political goals\n\n### The Rise of Augustus\nIn 27 BCE, Octavian (Augustus) became the first Roman Emperor, effectively ending the Republic. He maintained the appearance of republican institutions while concentrating power in his own hands.\n\n### The Pax Romana\nAugustus established the Pax Romana (Roman Peace), a period of relative stability and prosperity that lasted approximately 200 years (27 BCE – 180 CE). This era saw significant achievements in law, architecture, engineering, and culture.",
+          "order": 1
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ar1", "text": "How many emperors ruled during the Crisis of the Third Century?", "options": ["3", "5", "More than 20", "Exactly 12"], "correctIndex": 2, "explanation": "Over 20 emperors in ~50 years, most assassinated."},
-          {"id": "ar2", "text": "What caused Roman hyperinflation?", "options": ["Barbarian raids on mints", "Coin debasement (reducing silver content)", "Trade embargo with China", "Over-mining of gold"], "correctIndex": 1, "explanation": "Emperors debased coins to pay armies, flooding the economy with near-worthless money."},
-          {"id": "ar3", "text": "What was Diocletian's most successful reform?", "options": ["Price controls", "Dividing power (Tetrarchy) and administrative reform", "Freeing all slaves", "Abolishing the army"], "correctIndex": 1, "explanation": "The Tetrarchy and province reforms stabilized governance. His price controls actually failed."}
-        ],
-        "passingScore": 0.67
-      }
+      "exercises": [
+        {
+          "id": "economy-example",
+          "prompt": "Analyze how the shift from Republic to Empire affected military loyalty.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: Under the Republic, soldiers swore allegiance to the Roman state and its institutions.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: As Rome expanded, generals like Marius and Sulla began paying their soldiers from personal wealth and spoils of war.",
+              "missingPart": null
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: Soldiers' loyalty shifted from the state to their generals because:",
+              "missingPart": {
+                "expectedAnswer": "generals paid them",
+                "keywords": ["generals paid", "generals", "paid", "loyalty shifted", "personal wealth", "spoils", "generals provided"]
+              }
+            },
+            {
+              "id": "step-4",
+              "text": "Step 4: This shift enabled Julius Caesar to cross the Rubicon with his legions, effectively ending the Republic.",
+              "missingPart": null
+            }
+          ],
+          "hint": "Consider who provided the soldiers' pay and land grants."
+        },
+        {
+          "id": "economy-mcq",
+          "prompt": "What was the primary political innovation that allowed Augustus to maintain power while preserving the appearance of the Republic?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "He abolished the Senate and ruled as a pure dictator.",
+            "He adopted the title 'Princeps' (first citizen) while retaining control of the army and provincial governance.",
+            "He established a democratic assembly that elected him for life.",
+            "He divided Rome into independent city-states that each elected their own ruler."
+          ],
+          "correctIndex": 1,
+          "explanation": "Augustus maintained the facade of republican government by keeping the Senate, consuls, and assemblies while concentrating real power in his hands through control of the military and provinces. Option A is wrong — he kept the Senate. Option C is wrong — Rome was never a democracy. Option D is wrong — Rome remained a unified state."
+        },
+        {
+          "id": "economy-drag",
+          "prompt": "Arrange the key events in Rome's transition from Republic to Empire in chronological order:",
+          "order": 3,
+          "type": "drag_sequence",
+          "items": [
+            { "id": "item-1", "text": "Julius Caesar crosses the Rubicon" },
+            { "id": "item-2", "text": "Augustus becomes first Emperor" },
+            { "id": "item-3", "text": "Assassination of Julius Caesar" },
+            { "id": "item-4", "text": "Battle of Actium" }
+          ],
+          "correctOrder": [0, 2, 3, 1]
+        }
+      ]
     },
     {
-      "id": "barbarian-migrations",
-      "title": "Barbarian Migrations",
+      "id": "section-2",
+      "title": "Crisis of the Third Century",
       "order": 2,
-      "prerequisiteSectionId": "third-century-crisis",
       "lessons": [
         {
-          "id": "goths-and-huns",
-          "title": "Goths, Vandals, and the Hunnic Storm",
-          "content": "## The Great Migrations\n\nIn the late 4th century, the **Huns** swept westward from Central Asia, pushing Germanic tribes into Roman territory:\n\n**Goths** (divided into Visigoths and Ostrogoths):\n- Originally from Scandinavia, settled north of the Danube\n- Fled from the Huns into Roman territory in 376 AD\n- Mistreated by Roman officials, they rebelled\n\n**Vandals:**\n- Crossed the frozen Rhine in 406 AD\n- Marched through Gaul and Hispania\n- Crossed to North Africa in 429 AD (capturing Carthage in 439)\n- Built a pirate fleet that raided Rome itself in 455 AD\n\n**Huns under Attila:**\n- United Hunnic tribes into a devastating military force\n- Ravaged Gaul (451) and northern Italy (452)\n- Stopped at the Catalaunian Plains by a Roman-Visigothic alliance\n- Attila died in 453; his empire collapsed immediately",
-          "exercises": [
-            {
-              "type": "drag_sequence",
-              "id": "migration-chain",
-              "title": "Chain of events: barbarian migrations",
-              "items": ["Huns expand westward from Central Asia", "Germanic tribes flee across Roman borders", "Rome struggles to integrate or repel refugees", "Barbarian groups settle within Roman territory", "Settled barbarians become semi-independent kingdoms"],
-              "correctOrder": [0, 1, 2, 3, 4]
-            },
-            {
-              "type": "mcq",
-              "id": "adrianople",
-              "question": "What was the significance of the Battle of Adrianople (378 AD)?",
-              "options": ["Rome conquered Gaul", "Goths destroyed a Roman army and killed Emperor Valens", "Attila was defeated", "The Vandals sacked Rome"],
-              "correctIndex": 1,
-              "explanation": "Goths annihilated two-thirds of the Roman eastern army and killed Emperor Valens — the worst Roman defeat since Cannae."
-            },
-            {
-              "type": "socratic",
-              "id": "migration-cause",
-              "prompt": "The Germanic tribes didn't primarily want to destroy Rome — they wanted to live within it. Why couldn't Rome integrate them successfully?",
-              "guidingQuestions": ["What happened when Goths crossed the Danube in 376?", "How did Roman officials treat the refugees?", "What economic pressures made integration difficult?"],
-              "keywords": ["mistreated", "corruption", "food", "slavery", "broken promises", "resources", "overwhelmed"],
-              "sampleAnswer": "Roman officials saw the Goths as a source of slaves and military recruits, not citizens. They sold them dog meat at inflated prices, took their children as hostages, and planned to disarm them. The Goths had no choice but to rebel. Rome was too economically strained to properly integrate hundreds of thousands of refugees."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-adrianople", "term": "Battle of Adrianople (378 AD)", "definition": "Goths destroyed a major Roman army and killed Emperor Valens. Demonstrated that barbarian armies could defeat Rome in open battle.", "context": "Called the beginning of the end for the Western Roman Empire"},
-            {"id": "fc-huns", "term": "The Huns", "definition": "Nomadic warriors from Central Asia whose westward expansion pushed Germanic tribes into Roman territory, triggering the Great Migrations.", "context": "Attila the Hun: 'The Scourge of God'"},
-            {"id": "fc-vandals", "term": "The Vandals", "definition": "Germanic tribe that crossed the Rhine (406), marched to North Africa, and sacked Rome in 455 AD. Their name became synonymous with destruction.", "context": "Captured Carthage in 439, threatening Rome's grain supply"}
-          ]
+          "id": "lesson-2-1",
+          "title": "The Empire in Peril",
+          "content": "The third century CE (235–284 CE) was a period of near-collapse for the Roman Empire, known as the Crisis of the Third Century.\n\n### The Crisis Unfolds\n- **Political instability**: Over 20 emperors in 50 years, most dying violently\n- **Economic collapse**: Hyperinflation due to debasement of the currency\n- **External threats**: Germanic tribes pressed on the northern borders; the Sassanian Empire threatened the east\n- **Civil wars**: Constant internal conflict drained military resources\n- **Plague**: The Cyprian Plague (249–262 CE) killed an estimated 5 million people\n\n### Key Events\n- **235 CE**: Assassination of Severus Alexander begins the crisis\n- **251 CE**: Decius becomes emperor; the plague begins\n- **260 CE**: Emperor Valerian captured by the Sassanians\n- **268 CE**: Claudius Gothicus defeats the Goths at the Battle of Naissus\n- **270 CE**: Aurelian reunites the empire after defeating the Palmyrene and Gallic breakaway states\n- **284 CE**: Diocletian becomes emperor, beginning the end of the crisis\n\n### Diocletian's Reforms\nDiocletian (r. 284–305 CE) implemented sweeping reforms:\n- **Tetrarchy**: Division of the empire into four parts, ruled by two senior and two junior emperors\n- **Military reform**: Increased troop numbers and separated military from civil administration\n- **Economic reform**: Attempted to control inflation through the Edict on Maximum Prices\n- **Administrative reform**: Divided provinces into smaller units for better control",
+          "order": 1
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ar4", "text": "What pushed the Germanic tribes into Roman territory?", "options": ["Climate change", "The Huns expanding westward", "Roman conquest of Germania", "Viking raids"], "correctIndex": 1, "explanation": "Hunnic expansion displaced Germanic peoples, who fled across Roman borders."},
-          {"id": "ar5", "text": "Who sacked Rome in 455 AD?", "options": ["Goths", "Huns", "Vandals", "Franks"], "correctIndex": 2, "explanation": "The Vandals, after building a fleet from their North African kingdom, sailed to Rome and looted it for two weeks."},
-          {"id": "ar6", "text": "What happened at Adrianople in 378 AD?", "options": ["Rome defeated the Goths", "Goths destroyed a Roman army and killed Emperor Valens", "Attila invaded Italy", "The empire officially split in two"], "correctIndex": 1, "explanation": "A catastrophic Roman defeat showing barbarian armies could match Rome in open battle."}
-        ],
-        "passingScore": 0.67
-      }
-    },
-    {
-      "id": "final-collapse",
-      "title": "The Final Collapse",
-      "order": 3,
-      "prerequisiteSectionId": "barbarian-migrations",
-      "lessons": [
+      "exercises": [
         {
-          "id": "division-empire",
-          "title": "East and West: The Great Schism",
-          "content": "## A House Divided\n\nAfter Theodosius I died in 395 AD, the empire was permanently divided between his sons:\n\n- **Western Empire:** Honorius (age 10), capital at Ravenna\n- **Eastern Empire:** Arcadius, capital at Constantinople\n\n## Why the West Fell and the East Survived\n\n**Eastern advantages:**\n- Wealthier economy (trade routes, larger cities)\n- Shorter borders to defend\n- Professional bureaucracy\n- Constantinople's impregnable Theodosian Walls\n\n**Western problems:**\n- Longer borders with more threats\n- Collapsed tax base\n- Army dependent on barbarian mercenaries\n- Capital moved from Rome to Ravenna (more defensible, but symbolically devastating)\n- Series of weak child-emperors controlled by generals",
-          "exercises": [
+          "id": "crisis-example",
+          "prompt": "Analyze how Diocletian's Tetrarchy was designed to solve the problem of imperial succession.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
             {
-              "type": "mcq",
-              "id": "east-west-split",
-              "question": "When was the Roman Empire permanently divided?",
-              "options": ["284 AD", "330 AD", "395 AD", "476 AD"],
-              "correctIndex": 2,
-              "explanation": "After Theodosius I's death in 395, the empire split between his sons Honorius (West) and Arcadius (East)."
+              "id": "step-1",
+              "text": "Step 1: The problem — previous successions were chaotic, often involving civil war and assassination.",
+              "missingPart": null
             },
             {
-              "type": "error_spotting",
-              "id": "east-west-errors",
-              "title": "Find the errors about the Eastern Roman Empire",
-              "paragraphs": [
-                "The Eastern Roman Empire collapsed at the same time as the Western Empire in 476 AD. Its capital was Alexandria.",
-                "The Eastern Empire had a weaker economy than the West because it lacked agricultural land and trade routes."
-              ],
-              "errors": [
-                {"id": "e1", "paragraphIndex": 0, "errorText": "collapsed at the same time as the Western Empire in 476 AD", "correction": "survived nearly 1,000 more years until 1453 AD", "hint": "The East became the Byzantine Empire"},
-                {"id": "e2", "paragraphIndex": 0, "errorText": "capital was Alexandria", "correction": "capital was Constantinople", "hint": "Constantine's city"},
-                {"id": "e3", "paragraphIndex": 1, "errorText": "weaker economy", "correction": "much stronger economy with wealthy trade routes", "hint": "The East controlled Silk Road endpoints"}
-              ]
+              "id": "step-2",
+              "text": "Step 2: Diocletian's solution — the Tetrarchy created a clear succession mechanism: each senior emperor (Augustus) would appoint a junior emperor (Caesar) who would automatically succeed him.",
+              "missingPart": null
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: The system divided the empire into four regions, each with its own ruler:",
+              "missingPart": {
+                "expectedAnswer": "east, west, east junior, west junior",
+                "keywords": ["four regions", "east", "west", "Augustus", "Caesar", "four rulers", "two senior", "two junior", "regional division"]
+              }
+            },
+            {
+              "id": "step-4",
+              "text": "Step 4: While the Tetrarchy ultimately failed (civil wars resumed after Diocletian's abdication), it did provide 20 years of relative stability.",
+              "missingPart": null
             }
           ],
-          "flashcards": [
-            {"id": "fc-395", "term": "Empire Division (395 AD)", "definition": "Theodosius I's death permanently split Rome into Western (Honorius) and Eastern (Arcadius) empires.", "context": "The West fell in 476; the East survived until 1453"},
-            {"id": "fc-byzantine", "term": "Why the East survived", "definition": "Stronger economy, shorter borders, professional bureaucracy, and Constantinople's Theodosian Walls made the East resilient.", "context": "Byzantine Empire lasted ~1,000 years after the West fell"}
-          ]
+          "hint": "Think about how dividing power among multiple rulers could prevent single points of failure."
         },
         {
-          "id": "fall-western-rome",
-          "title": "476 AD: The Fall of the Western Roman Empire",
-          "content": "## The Final Act\n\nThe Western Empire didn't fall in a dramatic battle — it **faded away**:\n\n1. **Barbarian generals** held real power; emperors were figureheads\n2. **Odoacer**, a Germanic chieftain, deposed the last emperor **Romulus Augustulus** in 476 AD\n3. Odoacer sent the imperial regalia to Constantinople, saying 'one emperor is enough'\n4. The Senate continued meeting for a few more decades, but the empire was gone\n\n## Why Rome Fell — Multiple Causes\n\n- **Military overextension:** Borders too long to defend\n- **Economic collapse:** Tax base eroded, currency worthless\n- **Barbarian integration:** Army became dependent on Germanic mercenaries\n- **Political instability:** Civil wars, assassinations, child-emperors\n- **Cultural factors:** Loss of civic virtue, Christianization shifted focus\n- **Climate change:** Cooling temperatures reduced agricultural output\n- **Plague:** Antonine Plague (165-180) and Plague of Cyprian (249-262)\n\nNo single cause killed Rome — it was a cascade of interconnected failures.",
-          "exercises": [
+          "id": "crisis-errors",
+          "prompt": "Identify the errors in reasoning in the following argument about the Crisis of the Third Century:",
+          "order": 2,
+          "type": "error_spotting",
+          "content": "The Crisis of the Third Century was caused entirely by external barbarian invasions. If the Germanic tribes and Persians had not attacked, the Roman Empire would have continued to thrive. The internal problems were just excuses that weak emperors used to justify their failures.",
+          "errors": [
             {
-              "type": "drag_sequence",
-              "id": "rome-decline-timeline",
-              "title": "Key events in Rome's decline",
-              "items": ["Crisis of the Third Century (235-284)", "Battle of Adrianople (378)", "Empire permanently divided (395)", "Vandals sack Rome (455)", "Odoacer deposes last Western Emperor (476)"],
-              "correctOrder": [0, 1, 2, 3, 4]
+              "id": "err-1",
+              "description": "Oversimplification — attributing a complex historical event to a single cause ignores economic, political, and social factors.",
+              "hint": "Can a single factor explain the collapse of a 300-year-old empire?"
             },
             {
-              "type": "socratic",
-              "id": "rome-legacy",
-              "prompt": "Edward Gibbon wrote that Rome fell due to 'barbarism and religion.' Is it fair to say Christianity caused Rome's fall?",
-              "guidingQuestions": ["When did Christianity become dominant?", "Did the Eastern Empire also Christianize?", "What other factors coincided with Rome's Christianization?"],
-              "keywords": ["correlation not causation", "East survived", "many factors", "simplistic", "Gibbon's bias"],
-              "sampleAnswer": "This is correlation, not causation. The Eastern Empire was equally Christian yet survived 1,000 years longer. Christianity may have shifted some civic priorities, but the West fell due to military, economic, and political failures — not theology. Gibbon, writing in the Enlightenment, had anti-religious bias."
-            },
-            {
-              "type": "worked_example",
-              "id": "rome-causes-analysis",
-              "title": "Analyzing Rome's Fall",
-              "steps": [
-                {"id": "s1", "content": "Which single factor was most critical: military, economic, or political? Explain your reasoning.", "missingPart": {"placeholder": "{{answer}}", "expectedAnswer": "economic", "keywords": ["economic", "military", "interconnected", "cascade", "tax base", "debasement", "multiple"], "hint": "Consider which factor enables or undermines the others"}}
-              ]
+              "id": "err-2",
+              "description": "Ad Hominem — dismissing internal problems as 'excuses' attacks the motives of emperors rather than addressing the actual structural issues.",
+              "hint": "Does questioning someone's motives prove their arguments are wrong?"
             }
           ],
-          "flashcards": [
-            {"id": "fc-476", "term": "Fall of Western Rome (476 AD)", "definition": "Odoacer deposed Romulus Augustulus, the last Western Roman Emperor. Not a dramatic battle but a quiet end to centuries of decline.", "context": "The East (Byzantine Empire) continued until 1453"},
-            {"id": "fc-odoacer", "term": "Odoacer", "definition": "Germanic chieftain who deposed the last Western Emperor. Sent imperial regalia to Constantinople, declaring 'one emperor is enough.'", "context": "Became King of Italy, ruling with Roman administrative structures"},
-            {"id": "fc-rome-legacy", "term": "Rome's lasting legacy", "definition": "Roman law (basis of civil law systems), Latin language, Christianity, engineering (roads, aqueducts, concrete), and republican government concepts.", "context": "The idea of Rome persisted — Charlemagne and Holy Roman Emperors claimed its legacy"}
-          ]
+          "explanation": "The argument commits two errors: it oversimplifies by attributing the crisis solely to barbarian invasions (ignoring economic collapse, plague, political instability, and military overextension), and it uses ad hominem reasoning by dismissing internal problems as mere excuses."
+        },
+        {
+          "id": "crisis-socratic",
+          "prompt": "Why did Diocletian's reforms stabilize the empire temporarily but fail to prevent its eventual decline?",
+          "order": 3,
+          "hints": [
+            "Consider whether the Tetrarchy addressed the underlying economic problems.",
+            "Think about what happens when a system depends on the competence of individual rulers.",
+            "How did the division of the empire affect its long-term unity?"
+          ],
+          "modelAnswer": "Diocletian's reforms addressed symptoms rather than root causes. The Tetrarchy solved the immediate succession problem but couldn't fix the economic collapse (hyperinflation, debased currency), military overextension, or the fundamental tension between a unified empire and regional loyalties. When competent leaders like Diocletian and Constantine died, the system reverted to civil war. The division into East and West ultimately led to the permanent split — the West fell in 476 CE while the East (Byzantine) survived until 1453.",
+          "keywords": ["economic", "root causes", "Tetrarchy", "succession", "inflation", "military", "division", "East", "West", "temporary", "underlying", "symptoms"]
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "title": "Final Decline",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "lesson-3-1",
+          "title": "The Fall of the Western Roman Empire",
+          "content": "The Western Roman Empire officially fell in 476 CE when the Germanic chieftain Odoacer deposed the last Western Roman Emperor, Romulus Augustulus. However, this 'fall' was the culmination of centuries of decline.\n\n### Long-term Causes\n- **Economic decay**: Heavy taxation, reliance on slave labor, and the debasement of currency weakened the economy\n- **Military overextension**: The empire was too large to defend effectively with available resources\n- **Political corruption**: The imperial succession system broke down, leading to frequent civil wars\n- **Barbarian migrations**: Germanic tribes (Goths, Vandals, Franks, Huns) pressed into Roman territory\n- **Division of the empire**: The split between East and West weakened both halves\n- **Christianity's impact**: Some historians argue Christianity shifted focus from civic duty to spiritual concerns\n\n### Key Events in the Final Century\n- **378 CE**: Battle of Adrianople — Goths defeat and kill Emperor Valens\n- **410 CE**: Alaric and the Visigoths sack Rome\n- **451 CE**: Attila the Hun defeated at the Battle of the Catalaunian Plains\n- **455 CE**: Vandals sack Rome\n- **476 CE**: Odoacer deposes Romulus Augustulus, ending the Western Roman Empire\n\n### Legacy\nThe fall of Rome had profound consequences:\n- **Political fragmentation**: Europe fractured into medieval kingdoms\n- **Cultural preservation**: The Catholic Church preserved Roman culture and learning\n- **Legal legacy**: Roman law influenced European legal systems for centuries\n- **Language**: Latin evolved into the Romance languages (French, Spanish, Italian, Portuguese, Romanian)",
+          "order": 1
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ar7", "text": "Who deposed the last Western Roman Emperor?", "options": ["Attila the Hun", "Odoacer", "Alaric the Goth", "Constantine"], "correctIndex": 1, "explanation": "Odoacer, a Germanic chieftain, deposed Romulus Augustulus in 476 AD."},
-          {"id": "ar8", "text": "How long did the Eastern Roman Empire survive after the West fell?", "options": ["50 years", "200 years", "About 1,000 years", "It fell the same year"], "correctIndex": 2, "explanation": "The Byzantine (Eastern Roman) Empire survived until Constantinople fell to the Ottomans in 1453."},
-          {"id": "ar9", "text": "What best describes why Rome fell?", "options": ["A single decisive battle", "Barbarians were simply stronger", "A cascade of interconnected military, economic, and political failures", "Christianity weakened the army"], "correctIndex": 2, "explanation": "No single cause — military overextension, economic collapse, political instability, and barbarian pressure all contributed."}
-        ],
-        "passingScore": 0.67
-      }
+      "exercises": [
+        {
+          "id": "decline-example",
+          "prompt": "Analyze how the division of the Roman Empire contributed to the fall of the West.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: The empire was divided in 395 CE between sons of Theodosius I: Honorius (West) and Arcadius (East).",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: The East was wealthier (Egypt's grain, Asian trade) and had better defensive positions.",
+              "missingPart": null
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: The West faced more pressure from barbarian invasions and had fewer resources to defend itself:",
+              "missingPart": {
+                "expectedAnswer": "less wealth, more invasions",
+                "keywords": ["less wealth", "fewer resources", "more invasions", "barbarian pressure", "Egypt", "grain", "trade", "economic disparity", "resource gap"]
+              }
+            },
+            {
+              "id": "step-4",
+              "text": "Step 4: The East survived because it had greater economic resources, stronger defenses, and more stable governance — eventually becoming the Byzantine Empire.",
+              "missingPart": null
+            }
+          ],
+          "hint": "Compare the economic and geographic advantages of the East vs. the West."
+        },
+        {
+          "id": "decline-mcq",
+          "prompt": "Which event is most commonly cited as the traditional 'fall' date of the Western Roman Empire?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "378 CE — Battle of Adrianople",
+            "410 CE — Sack of Rome by the Visigoths",
+            "455 CE — Sack of Rome by the Vandals",
+            "476 CE — Deposition of Romulus Augustulus"
+          ],
+          "correctIndex": 3,
+          "explanation": "476 CE is the traditional date, when Odoacer deposed Romulus Augustulus, the last Western Roman Emperor. While Adrianople (378) and the Sacks of Rome (410, 455) were devastating events, 476 marks the formal end of imperial rule in the West. The empire had been declining for centuries — 476 was the endpoint of a long process, not a sudden catastrophe."
+        },
+        {
+          "id": "decline-socratic",
+          "prompt": "Was the fall of Rome truly a 'fall,' or was it a transformation? Consider what survived and what changed.",
+          "order": 3,
+          "hints": [
+            "What Roman institutions, laws, and culture survived the political collapse?",
+            "Consider the role of the Catholic Church in preserving Roman traditions.",
+            "How did the Eastern Roman (Byzantine) Empire continue Roman traditions?"
+          ],
+          "modelAnswer": "The fall of Rome was more accurately a transformation than a sudden collapse. Roman law, Latin language, Christian religion, and administrative structures persisted and evolved. The Catholic Church preserved Roman learning and became the dominant institution in Western Europe. Roman law influenced medieval legal systems and modern civil law. The Eastern Roman Empire continued for nearly another thousand years. The 'fall' was really a gradual transformation of Roman institutions into medieval European civilizations.",
+          "keywords": ["transformation", "survived", "church", "law", "language", "culture", "Byzantine", "institutions", "evolved", "gradual", "continuity", "medieval"]
+        }
+      ]
     }
-  ]
+  ],
+  "assessment": {
+    "title": "The Fall of Rome Assessment",
+    "passingScore": 0.75,
+    "exercises": [
+      {
+        "id": "assess-1",
+        "type": "mcq",
+        "prompt": "What political innovation allowed Augustus to maintain power while preserving the appearance of the Republic?",
+        "order": 1,
+        "options": [
+          "He abolished the Senate and ruled as a pure dictator.",
+          "He adopted the title 'Princeps' (first citizen) while retaining control of the army and provincial governance.",
+          "He established a democratic assembly that elected him for life.",
+          "He divided Rome into independent city-states."
+        ],
+        "correctIndex": 1,
+        "explanation": "Augustus maintained the facade of republican government by keeping the Senate, consuls, and assemblies while concentrating real power in his hands. This is a cross-section question testing knowledge from Section 1."
+      },
+      {
+        "id": "assess-2",
+        "type": "mcq",
+        "prompt": "Which factor was NOT a significant contributor to the Crisis of the Third Century?",
+        "order": 2,
+        "options": [
+          "The Cyprian Plague",
+          "The invention of the stirrup",
+          "Hyperinflation from currency debasement",
+          "The capture of Emperor Valerian by the Sassanians"
+        ],
+        "correctIndex": 1,
+          "explanation": "The stirrup was not invented until the 6th-8th centuries CE, long after the Third Century Crisis. The plague, hyperinflation, and Valerian's capture were all significant factors. This tests knowledge from Section 2."
+      },
+      {
+        "id": "assess-3",
+        "type": "mcq",
+        "prompt": "Why did the Eastern Roman Empire survive while the West fell?",
+        "order": 3,
+        "options": [
+          "The East had better military technology.",
+          "The East was wealthier, had better defensive positions, and faced fewer barbarian pressures.",
+          "The East had a more democratic government.",
+          "The East never experienced internal political crises."
+        ],
+        "correctIndex": 1,
+        "explanation": "The East survived due to greater economic resources (Egypt's grain, Asian trade), stronger natural defenses, and more stable governance. Options A, C, and D are factually incorrect — the East faced similar military challenges, was not democratic, and experienced significant political crises."
+      },
+      {
+        "id": "assess-4",
+        "type": "mcq",
+        "prompt": "Which statement best describes the relationship between the Crisis of the Third Century and the eventual fall of the Western Roman Empire?",
+        "order": 4,
+        "options": [
+          "The Crisis of the Third Century directly caused the fall in 476 CE.",
+          "The Crisis weakened the empire's structures and set precedents for instability that contributed to the eventual fall.",
+          "The Crisis had no connection to the fall — they were completely separate events.",
+          "The Crisis actually strengthened the empire and delayed its fall."
+        ],
+        "correctIndex": 1,
+        "explanation": "The Crisis of the Third Century weakened the empire's economic, military, and political structures, and Diocletian's reforms (including the East-West division) set precedents that contributed to the eventual fall. It was not a direct cause, but a significant contributing factor that tested and weakened the empire's foundations."
+      }
+    ]
+  },
+  "flashcardDeck": {
+    "title": "Fall of Rome Key Terms",
+    "cards": [
+      {
+        "id": "fc-1",
+        "term": "Pax Romana",
+        "definition": "A period of relative peace and stability in the Roman Empire lasting approximately 200 years (27 BCE – 180 CE).",
+        "context": "Established by Augustus, the Pax Romana saw significant achievements in law, architecture, and culture."
+      },
+      {
+        "id": "fc-2",
+        "term": "Tetrarchy",
+        "definition": "A system of government established by Diocletian dividing the Roman Empire into four parts, ruled by two senior and two junior emperors.",
+        "context": "Designed to solve the succession problem, but ultimately failed when civil wars resumed after Diocletian's abdication."
+      },
+      {
+        "id": "fc-3",
+        "term": "Barbarian Invasions",
+        "definition": "Migrations and attacks by Germanic and other non-Roman peoples that pressured and ultimately overwhelmed the Western Roman Empire.",
+        "context": "Goths, Vandals, Franks, and Huns all played roles in the fall of Rome."
+      },
+      {
+        "id": "fc-4",
+        "term": "Diocletian",
+        "definition": "Roman Emperor (r. 284–305 CE) who ended the Crisis of the Third Century through sweeping political, military, and economic reforms.",
+        "context": "Introduced the Tetrarchy, reformed the military, and attempted to control inflation through price controls."
+      },
+      {
+        "id": "fc-5",
+        "term": "Odoacer",
+        "definition": "Germanic chieftain who deposed the last Western Roman Emperor, Romulus Augustulus, in 476 CE.",
+        "context": "His action marks the traditional 'fall' date of the Western Roman Empire."
+      },
+      {
+        "id": "fc-6",
+        "term": "Romulus Augustulus",
+        "definition": "The last Western Roman Emperor, deposed by Odoacer in 476 CE.",
+        "context": "His deposition marked the end of imperial rule in the West, though the Eastern Empire continued for nearly another thousand years."
+      },
+      {
+        "id": "fc-7",
+        "term": "Battle of Adrianople",
+        "definition": "A battle in 378 CE where Gothic forces defeated and killed Emperor Valens, a major blow to Roman military prestige.",
+        "context": "Demonstrated that Roman legions could be decisively defeated by barbarian forces."
+      },
+      {
+        "id": "fc-8",
+        "term": "Cyprian Plague",
+        "definition": "A pandemic that struck the Roman Empire between 249–262 CE, killing an estimated 5 million people.",
+        "context": "One of the factors contributing to the Crisis of the Third Century, weakening the empire's population and economy."
+      },
+      {
+        "id": "fc-9",
+        "term": "Romance Languages",
+        "definition": "Languages that evolved from Latin, including French, Spanish, Italian, Portuguese, and Romanian.",
+        "context": "One of Rome's lasting legacies — over 900 million people speak a Romance language."
+      },
+      {
+        "id": "fc-10",
+        "term": "Roman Law",
+        "definition": "The legal system of ancient Rome, which influenced European and civil law systems for centuries.",
+        "context": "The Corpus Juris Civilis (Justinian Code) preserved Roman law for future generations."
+      },
+      {
+        "id": "fc-11",
+        "term": "Byzantine Empire",
+        "definition": "The continuation of the Roman Empire in the East after the fall of the West, lasting until 1453 CE.",
+        "context": "Also called the Eastern Roman Empire, it preserved Roman culture, law, and Greek scholarship."
+      },
+      {
+        "id": "fc-12",
+        "term": "Augustus",
+        "definition": "Octavian, the first Roman Emperor (r. 27 BCE – 14 CE), who established the Pax Romana and the principate system of government.",
+        "context": "He maintained the appearance of republican institutions while concentrating power in his own hands."
+      }
+    ]
+  }
 }

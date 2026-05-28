@@ -1,266 +1,406 @@
 {
   "id": "cryptography-basics",
-  "title": "Cryptography: From Caesar Ciphers to Quantum Keys",
-  "description": "Journey through the history and mathematics of secret communication, from ancient substitution ciphers to modern encryption and post-quantum cryptography.",
-  "version": 1,
-  "author": "Modular Learning",
+  "title": "Cryptography Basics",
+  "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
+  "author": "Modular Learning Team",
+  "version": "1.0.1",
   "difficulty": "intermediate",
   "estimatedHours": 3,
-  "tags": ["cryptography", "mathematics", "security", "history"],
+  "estimatedMinutes": 180,
   "sections": [
     {
-      "id": "classical-ciphers",
+      "id": "section-1",
       "title": "Classical Ciphers",
       "order": 1,
-      "prerequisiteSectionId": null,
       "lessons": [
         {
-          "id": "caesar-cipher",
-          "title": "The Caesar Cipher",
-          "content": "## History's First Known Cipher\n\nJulius Caesar used a simple substitution cipher to protect military messages. Each letter is shifted by a fixed number of positions in the alphabet.\n\n**Example with shift of 3:**\n- A → D, B → E, C → F, ... X → A, Y → B, Z → C\n- 'HELLO' → 'KHOOR'\n\n## Modular Arithmetic\n\nThe Caesar cipher is mathematically described using **modular arithmetic**:\n\n**Encrypt:** E(x) = (x + n) mod 26\n**Decrypt:** D(x) = (x - n) mod 26\n\nWhere x is the letter position (A=0, B=1, ..., Z=25) and n is the shift.\n\n## Breaking It\n\nThe Caesar cipher is trivially broken by:\n1. **Brute force:** Only 25 possible keys (shifts 1-25)\n2. **Frequency analysis:** In English, E is the most common letter (~13%)\n\nIt provides essentially zero security by modern standards.",
-          "exercises": [
-            {
-              "type": "worked_example",
-              "id": "caesar-encrypt",
-              "title": "Encrypting with Caesar Cipher",
-              "steps": [
-                {"id": "s1", "content": "Encrypt 'ATTACK' with a Caesar shift of 5. What does A (position 0) become?", "missingPart": {"placeholder": "{{letter}}", "expectedAnswer": "F", "keywords": ["F"], "hint": "(0 + 5) mod 26 = 5 = F"}},
-                {"id": "s2", "content": "What does K (position 10) become with the same shift?", "missingPart": {"placeholder": "{{letter}}", "expectedAnswer": "P", "keywords": ["P"], "hint": "(10 + 5) mod 26 = 15 = P"}}
-              ]
-            },
-            {
-              "type": "mcq",
-              "id": "caesar-break",
-              "question": "How many unique Caesar cipher keys exist?",
-              "options": ["1", "26", "25", "676"],
-              "correctIndex": 2,
-              "explanation": "Shift of 0 is identity (no encryption), so only shifts 1-25 are valid keys = 25 possibilities."
-            },
-            {
-              "type": "socratic",
-              "id": "caesar-weakness",
-              "prompt": "The Caesar cipher shifts every letter by the same amount. Why is this a fundamental weakness even without brute force?",
-              "guidingQuestions": ["What happens to letter frequencies?", "Which English letter appears most often?", "How does this help an attacker?"],
-              "keywords": ["frequency", "pattern", "same mapping", "E is most common", "statistics"],
-              "sampleAnswer": "Every letter always maps to the same replacement, preserving the original letter frequency distribution. In English, E is most common (~13%), so the most common ciphertext letter likely maps to E, revealing the shift immediately."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-caesar", "term": "Caesar Cipher", "definition": "A substitution cipher where each letter is shifted by n positions: E(x) = (x + n) mod 26. Only 25 possible keys.", "context": "Used by Julius Caesar with shift of 3"},
-            {"id": "fc-modular", "term": "Modular arithmetic in ciphers", "definition": "Arithmetic that 'wraps around': (x + n) mod 26 ensures Z+1 = A. Essential for all alphabetic ciphers.", "context": "The mathematical foundation of substitution ciphers"}
-          ]
+          "id": "lesson-1-1",
+          "title": "Caesar Cipher",
+          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down or up the alphabet.\n\n### How It Works\nThe Caesar cipher is named after Julius Caesar, who reportedly used it to communicate with his generals. The encryption process involves:\n1. Choosing a **key** (a number between 1 and 25)\n2. Shifting each letter of the plaintext by the key amount\n3. Wrapping around the alphabet (Z wraps to A)\n\n### Example\nPlaintext: **HELLO**\nKey: **3**\n\nH → K, E → H, L → O, L → O, O → R\n\nCiphertext: **KHOOR**\n\n### Decryption\nTo decrypt, shift each letter back by the key amount.\n\n### Security\nThe Caesar cipher has only 25 possible keys, making it vulnerable to brute-force attacks. It provides no real security in modern contexts but is useful for understanding the basics of encryption.",
+          "order": 1
         },
         {
-          "id": "vigenere-cipher",
-          "title": "The Vigenère Cipher",
-          "content": "## A Step Up: Polyalphabetic Substitution\n\nThe Vigenère cipher (16th century) uses a **keyword** to apply different Caesar shifts to each letter, defeating simple frequency analysis.\n\n**Example with key 'KEY':**\n- Plaintext: ATTACK\n- Key repeats: K-E-Y-K-E-Y\n- Shifts: 10-4-24-10-4-24\n- Ciphertext: KXYPFO\n\n## Breaking Vigenère\n\n1. **Find key length** using Kasiski examination (repeated substrings) or Friedman test\n2. **Apply frequency analysis** to each position separately\n\nThe Vigenère remained 'unbreakable' for ~300 years, earning the name *le chiffre indéchiffrable* (the indecipherable cipher).",
-          "exercises": [
-            {
-              "type": "mcq",
-              "id": "vigenere-key",
-              "question": "Why is the Vigenère cipher stronger than Caesar?",
-              "options": ["It uses longer messages", "It applies different shifts to each letter based on a keyword", "It uses numbers instead of letters", "It reverses the alphabet"],
-              "correctIndex": 1,
-              "explanation": "The keyword causes each plaintext position to use a different Caesar shift, defeating single-frequency analysis."
-            },
-            {
-              "type": "drag_sequence",
-              "id": "vigenere-break-steps",
-              "title": "Steps to break a Vigenère cipher",
-              "items": ["Collect ciphertext", "Determine key length via Kasiski examination", "Split ciphertext into columns by key position", "Apply frequency analysis to each column", "Recover the keyword"],
-              "correctOrder": [0, 1, 2, 3, 4]
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-vigenere", "term": "Vigenère Cipher", "definition": "Polyalphabetic cipher using a repeating keyword to apply different shifts per letter position. Called 'le chiffre indéchiffrable' for 300 years.", "context": "Invented by Giovan Battista Bellaso, misattributed to Vigenère"},
-            {"id": "fc-kasiski", "term": "Kasiski Examination", "definition": "Method to find Vigenère key length by identifying repeated substrings in ciphertext. The distance between repeats is likely a multiple of the key length.", "context": "Published by Friedrich Kasiski in 1863"}
-          ]
+          "id": "lesson-1-2",
+          "title": "Breaking the Caesar Cipher",
+          "content": "Despite its simplicity, the Caesar cipher can be broken using several techniques:\n\n### Brute Force\nSince there are only 25 possible keys, an attacker can try all of them and look for meaningful plaintext.\n\n### Frequency Analysis\nIn English text, certain letters appear more frequently than others. The most common letters are E, T, A, O, I, and N. By analyzing the frequency of letters in the ciphertext, an attacker can make educated guesses about the key.\n\nFor example, if the most common letter in the ciphertext is 'H', and we assume it corresponds to 'E' (the most common letter in English), the key would be 3 (since E+3=H).",
+          "order": 2
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ac1", "text": "In a Caesar cipher with shift 7, what does D become?", "options": ["A", "K", "H", "L"], "correctIndex": 1, "explanation": "D is position 3. (3 + 7) mod 26 = 10 = K."},
-          {"id": "ac2", "text": "What made Vigenère harder to break than Caesar?", "options": ["Longer keys", "Different shifts per position", "Mathematical complexity", "Computer requirements"], "correctIndex": 1, "explanation": "The keyword applies different shifts to each letter, defeating simple frequency analysis."},
-          {"id": "ac3", "text": "What technique finds the key length of a Vigenère cipher?", "options": ["Brute force", "Rainbow tables", "Kasiski examination", "Birthday attack"], "correctIndex": 2, "explanation": "Kasiski examination identifies repeated substrings whose spacing reveals the key length."}
-        ],
-        "passingScore": 0.67
-      }
+      "exercises": [
+        {
+          "id": "caesar-example",
+          "prompt": "Encrypt the word 'HELLO' with a Caesar cipher using key 5.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: Start with the first letter 'H'.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: Shift H by 5 positions: H → I → J → K → L → M",
+              "missingPart": {
+                "expectedAnswer": "M",
+                "keywords": ["M", "m", "M (13th letter)", "13", "13th letter"]
+              }
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: Apply the same shift to all letters: E→J, L→Q, L→Q, O→T",
+              "missingPart": null
+            },
+            {
+              "id": "step-4",
+              "text": "Result: HELLO encrypted with key 5 is:",
+              "missingPart": {
+                "expectedAnswer": "MJQQT",
+                "keywords": ["MJQQT", "mjqqt"]
+              }
+            }
+          ],
+          "hint": "Count 5 positions forward in the alphabet from each letter."
+        },
+        {
+          "id": "caesar-mcq",
+          "prompt": "If the ciphertext 'KHOOR' was encrypted with a Caesar cipher using key 3, what is the plaintext?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "HELLO",
+            "WORLD",
+            "PYTHON",
+            "CIPHER"
+          ],
+          "correctIndex": 0,
+          "explanation": "Shifting each letter back by 3: K→H, H→E, O→L, O→L, R→O gives 'HELLO'. Option B (WORLD) would give 'THOIA' with key 3. Option C (PYTHON) would give 'MKEFK' with key 3. Option D (CIPHER) would give 'ZFEBO' with key 3."
+        },
+        {
+          "id": "caesar-socratic",
+          "prompt": "Why does frequency analysis work on the Caesar cipher but not on modern encryption like AES?",
+          "order": 3,
+          "hints": [
+            "Consider what information the Caesar cipher preserves about the original text.",
+            "Think about how modern ciphers transform the entire message, not just individual letters.",
+            "What happens to letter frequencies when you use a block cipher with a strong key?"
+          ],
+          "modelAnswer": "Frequency analysis works on the Caesar cipher because it's a simple substitution cipher — each letter always maps to the same ciphertext letter, preserving the frequency distribution of the original text. Modern ciphers like AES are block ciphers that transform groups of bits, completely changing the statistical properties of the output. AES ciphertext is designed to be indistinguishable from random data, so letter frequencies are destroyed.",
+          "keywords": ["substitution", "preserves", "distribution", "random", "block", "AES", "transformation", "statistical", "properties", "mapping"]
+        }
+      ]
     },
     {
-      "id": "symmetric-crypto",
-      "title": "Modern Symmetric Cryptography",
+      "id": "section-2",
+      "title": "Cryptographic Protocols",
       "order": 2,
-      "prerequisiteSectionId": "classical-ciphers",
       "lessons": [
         {
-          "id": "des-to-aes",
-          "title": "From DES to AES",
-          "content": "## The Need for Standard Encryption\n\nIn the 1970s, the US government needed a standard encryption algorithm. **DES** (Data Encryption Standard) was adopted in 1977 with a 56-bit key.\n\n**DES Problems:**\n- 56-bit key became brute-forceable (broken in 1998 by EFF's 'Deep Crack' in 56 hours)\n- Block size only 64 bits\n\n## AES (Advanced Encryption Standard)\n\nIn 2001, **AES** replaced DES after a public competition. Winner: **Rijndael** by Vincent Rijmen and Joan Daemen.\n\n**AES Properties:**\n- Key sizes: 128, 192, or 256 bits\n- Block size: 128 bits\n- Structure: Substitution-Permutation Network (SPN)\n- Operations: SubBytes, ShiftRows, MixColumns, AddRoundKey\n- 10/12/14 rounds depending on key size\n\nAES remains unbroken and is used everywhere: HTTPS, WiFi (WPA2/3), disk encryption, VPNs.",
-          "exercises": [
-            {
-              "type": "mcq",
-              "id": "aes-key-size",
-              "question": "Which AES key size provides the strongest security?",
-              "options": ["56 bits", "128 bits", "192 bits", "256 bits"],
-              "correctIndex": 3,
-              "explanation": "AES-256 provides the strongest security with 2²⁵⁶ possible keys — more than atoms in the observable universe."
-            },
-            {
-              "type": "error_spotting",
-              "id": "des-aes-errors",
-              "title": "Spot the errors in this comparison of DES and AES",
-              "paragraphs": [
-                "DES uses a 128-bit key which makes it very secure against brute force attacks. Its block size is 256 bits.",
-                "AES uses a Feistel network structure and was designed by the NSA in secret."
-              ],
-              "errors": [
-                {"id": "e1", "paragraphIndex": 0, "errorText": "128-bit key", "correction": "56-bit key", "hint": "DES's key was intentionally small"},
-                {"id": "e2", "paragraphIndex": 0, "errorText": "block size is 256 bits", "correction": "block size is 64 bits", "hint": "DES blocks are quite small"},
-                {"id": "e3", "paragraphIndex": 1, "errorText": "Feistel network structure", "correction": "Substitution-Permutation Network (SPN)", "hint": "DES uses Feistel; AES does not"},
-                {"id": "e4", "paragraphIndex": 1, "errorText": "designed by the NSA in secret", "correction": "selected through a public international competition", "hint": "AES was notable for its open process"}
-              ]
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-des", "term": "DES", "definition": "Data Encryption Standard. 56-bit key, 64-bit blocks. Broken in 1998. First widely-used symmetric cipher standard.", "context": "Adopted 1977, replaced by AES in 2001"},
-            {"id": "fc-aes", "term": "AES", "definition": "Advanced Encryption Standard. 128/192/256-bit keys, 128-bit blocks. Uses Substitution-Permutation Network. Still unbroken.", "context": "Winner: Rijndael algorithm, adopted 2001"}
-          ]
-        },
-        {
-          "id": "block-modes",
-          "title": "Block Cipher Modes of Operation",
-          "content": "## Why Modes Matter\n\nAES encrypts 128-bit blocks. But messages are longer than 128 bits. **Modes of operation** define how to chain block encryptions.\n\n**ECB (Electronic Codebook):** Each block encrypted independently. **INSECURE** — identical plaintext blocks produce identical ciphertext blocks. The famous 'ECB penguin' demonstrates this.\n\n**CBC (Cipher Block Chaining):** Each block XORed with previous ciphertext before encryption. Requires an Initialization Vector (IV) for the first block.\n\n**CTR (Counter):** Encrypts a counter rather than the plaintext. Parallelizable and fast.\n\n**GCM (Galois/Counter Mode):** CTR mode + authentication tag. Provides both confidentiality AND integrity. Used in TLS 1.3, IPsec.\n\n**Rule: Never use ECB. Prefer GCM for new systems.**",
-          "exercises": [
-            {
-              "type": "drag_sequence",
-              "id": "cbc-encrypt-steps",
-              "title": "Steps of CBC encryption",
-              "items": ["XOR plaintext block with previous ciphertext (or IV for first block)", "Encrypt the XOR result with AES", "Output the ciphertext block", "Use this ciphertext as input for next block's XOR"],
-              "correctOrder": [0, 1, 2, 3]
-            },
-            {
-              "type": "mcq",
-              "id": "ecb-weakness",
-              "question": "Why is ECB mode insecure?",
-              "options": ["It's too slow", "Identical plaintext blocks produce identical ciphertext blocks", "It doesn't use a key", "It can only encrypt small messages"],
-              "correctIndex": 1,
-              "explanation": "ECB encrypts each block independently, so patterns in plaintext are visible in ciphertext (the 'ECB penguin' effect)."
-            },
-            {
-              "type": "socratic",
-              "id": "gcm-why",
-              "prompt": "Why does GCM (Galois/Counter Mode) add authentication when CBC + AES already provides confidentiality?",
-              "guidingQuestions": ["Can ciphertext be modified without knowing the key?", "What happens if an attacker flips bits in CBC ciphertext?", "How would the recipient know the message was tampered with?"],
-              "keywords": ["tampering", "integrity", "authentication", "bit flipping", "modified", "malleable"],
-              "sampleAnswer": "CBC only provides confidentiality — an attacker can flip bits in ciphertext, causing predictable changes in decrypted plaintext (bit-flipping attack). Without authentication, the recipient cannot detect tampering. GCM adds an authentication tag that verifies the ciphertext hasn't been modified."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-ecb", "term": "ECB Mode", "definition": "Electronic Codebook. Each block encrypted independently. INSECURE — reveals patterns. Never use.", "context": "The 'ECB penguin' image demonstrates pattern leakage"},
-            {"id": "fc-gcm", "term": "GCM Mode", "definition": "Galois/Counter Mode. Provides confidentiality AND authentication. Used in TLS 1.3, IPsec, WPA3.", "context": "The modern default for symmetric encryption"}
-          ]
+          "id": "lesson-2-1",
+          "title": "Public Key Cryptography",
+          "content": "**Public key cryptography** (also called asymmetric cryptography) uses a pair of keys: a public key for encryption and a private key for decryption.\n\n### Key Concepts\n- **Public key**: Can be shared with anyone. Used to encrypt messages.\n- **Private key**: Must be kept secret. Used to decrypt messages.\n- **Key pair**: The public and private keys are mathematically related.\n\n### How It Works\n1. Alice generates a key pair (public + private)\n2. Alice shares her public key with Bob\n3. Bob encrypts a message using Alice's public key\n4. Alice decrypts the message using her private key\n\n### Common Algorithms\n- **RSA**: Based on the difficulty of factoring large prime numbers\n- **Diffie-Hellman**: Allows two parties to establish a shared secret over an insecure channel\n- **Elliptic Curve Cryptography (ECC)**: Uses elliptic curve math for equivalent security with smaller keys",
+          "order": 1
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ac4", "text": "What replaced DES as the encryption standard?", "options": ["3DES", "Blowfish", "AES (Rijndael)", "RC4"], "correctIndex": 2, "explanation": "AES (Rijndael) won the public NIST competition and replaced DES in 2001."},
-          {"id": "ac5", "text": "Which block mode provides both encryption and authentication?", "options": ["ECB", "CBC", "CTR", "GCM"], "correctIndex": 3, "explanation": "GCM (Galois/Counter Mode) adds an authentication tag for integrity verification."},
-          {"id": "ac6", "text": "Why was DES broken?", "options": ["Mathematical flaw in algorithm", "56-bit key was brute-forced", "Side-channel attack", "Quantum computer"], "correctIndex": 1, "explanation": "The 56-bit key space (2⁵⁶) became small enough for brute force by 1998."}
-        ],
-        "passingScore": 0.67
-      }
+      "exercises": [
+        {
+          "id": "protocol-example",
+          "prompt": "Demonstrate the public key encryption process with a simple example.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: Alice generates her key pair. Her public key is (n=33, e=5) and her private key is d=5.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: Bob wants to send the message 'M=4'. He encrypts using Alice's public key: C = M^e mod n = 4^5 mod 33",
+              "missingPart": null
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: Calculate 4^5 = 1024. Then 1024 mod 33 =",
+              "missingPart": {
+                "expectedAnswer": "16",
+                "keywords": ["16", "16 (ciphertext)", "ciphertext is 16"]
+              }
+            },
+            {
+              "id": "step-4",
+              "text": "Step 4: Alice receives ciphertext C=16 and decrypts: M = C^d mod n = 16^5 mod 33 =",
+              "missingPart": {
+                "expectedAnswer": "4",
+                "keywords": ["4", "4 (original message)", "M=4", "original message is 4"]
+              }
+            }
+          ],
+          "hint": "Use modular exponentiation: compute the power, then take the remainder when divided by n."
+        },
+        {
+          "id": "protocol-mcq",
+          "prompt": "In a public key cryptosystem, who can encrypt a message that only the intended recipient can decrypt?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "Only the sender, using their own private key",
+            "Anyone, using the recipient's public key",
+            "Only the recipient, using their own private key",
+            "Anyone, using a shared secret key"
+          ],
+          "correctIndex": 1,
+          "explanation": "In public key cryptography, anyone can encrypt a message using the recipient's public key. Only the recipient can decrypt it using their private key. Option A describes digital signatures (authentication), not encryption. Option C is backwards — the recipient uses their private key for decryption, but they don't encrypt. Option D describes symmetric encryption, not public key cryptography."
+        },
+        {
+          "id": "protocol-socratic",
+          "prompt": "Why is public key cryptography considered more secure than symmetric cryptography for distributing keys over an insecure channel?",
+          "order": 3,
+          "hints": [
+            "Consider what happens when you need to send a symmetric key to someone who doesn't have it yet.",
+            "Think about whether the public key itself needs to be kept secret.",
+            "What problem does the Diffie-Hellman key exchange solve?"
+          ],
+          "modelAnswer": "In symmetric cryptography, both parties need the same secret key, which must be shared beforehand over a secure channel — creating a chicken-and-egg problem. If you send the key over an insecure channel, an attacker can intercept it. Public key cryptography solves this because the encryption key (public) can be freely shared — it cannot be used to derive the decryption key (private). This allows secure communication without any prior shared secret.",
+          "keywords": ["shared", "secret", "channel", "intercept", "derive", "private", "public", "distribution", "key exchange", "Diffie-Hellman", "secure"]
+        },
+        {
+          "id": "protocol-errors",
+          "prompt": "Identify the errors in reasoning in the following argument about cryptographic protocols:",
+          "order": 4,
+          "type": "error_spotting",
+          "content": "Public key cryptography is completely secure because the private key is never shared. If someone could break RSA, they would need to factor a 2048-bit number, which would take millions of years even with the fastest computers. Therefore, RSA can never be broken and we should use it for everything.",
+          "errors": [
+            {
+              "id": "err-1",
+              "description": "False Absolute — claiming RSA 'can never be broken' ignores that computational power grows and new algorithms may emerge.",
+              "hint": "Is it accurate to say any encryption 'can never' be broken?"
+            },
+            {
+              "id": "err-2",
+              "description": "Overgeneralization — RSA may not be suitable for all use cases (e.g., it's slower than symmetric encryption for bulk data).",
+              "hint": "Does the best encryption method depend on the specific application?"
+            }
+          ],
+          "explanation": "The argument makes two errors: it falsely claims RSA can never be broken (ignoring advances in computing and quantum computing threats), and it overgeneralizes by suggesting RSA should be used for everything (when hybrid approaches are often better)."
+        }
+      ]
     },
     {
-      "id": "asymmetric-quantum",
-      "title": "Asymmetric & Quantum Cryptography",
+      "id": "section-3",
+      "title": "Modern Cryptography",
       "order": 3,
-      "prerequisiteSectionId": "symmetric-crypto",
       "lessons": [
         {
-          "id": "rsa-dh",
-          "title": "RSA & Diffie-Hellman",
-          "content": "## The Key Distribution Problem\n\nSymmetric crypto requires both parties to share a secret key. But how do you share a key over an insecure channel?\n\n## Diffie-Hellman Key Exchange (1976)\n\nAllows two parties to establish a shared secret over an insecure channel:\n1. Agree on public values: a large prime p and generator g\n2. Alice picks secret a, sends A = gᵃ mod p\n3. Bob picks secret b, sends B = gᵇ mod p\n4. Both compute shared secret: gᵃᵇ mod p\n\nAn eavesdropper sees A and B but cannot compute gᵃᵇ without solving the **discrete logarithm problem**.\n\n## RSA (1977)\n\nRivest, Shamir, Adleman created the first practical public-key cryptosystem:\n- **Public key:** (n, e) — anyone can encrypt\n- **Private key:** d — only holder can decrypt\n- **Security:** Factoring n = p × q (two large primes) is computationally infeasible\n\n**Key insight:** Some problems are easy in one direction (multiply two primes) but hard in reverse (factor their product).",
-          "exercises": [
-            {
-              "type": "mcq",
-              "id": "rsa-security",
-              "question": "What mathematical problem provides RSA's security?",
-              "options": ["Discrete logarithm", "Integer factorization", "Knapsack problem", "Traveling salesman"],
-              "correctIndex": 1,
-              "explanation": "RSA relies on the difficulty of factoring the product of two large primes."
-            },
-            {
-              "type": "drag_sequence",
-              "id": "dh-steps",
-              "title": "Diffie-Hellman key exchange steps",
-              "items": ["Agree on public prime p and generator g", "Alice picks secret a, computes A = gᵃ mod p", "Bob picks secret b, computes B = gᵇ mod p", "Exchange public values A and B", "Both compute shared secret = gᵃᵇ mod p"],
-              "correctOrder": [0, 1, 2, 3, 4]
-            },
-            {
-              "type": "socratic",
-              "id": "asymmetric-why",
-              "prompt": "If RSA is so secure, why do we still use symmetric encryption (AES) for most data? Why not encrypt everything with RSA?",
-              "guidingQuestions": ["How fast is RSA compared to AES?", "What happens to RSA with large messages?", "How does HTTPS actually work?"],
-              "keywords": ["slow", "performance", "hybrid", "key exchange", "bulk encryption", "AES is faster"],
-              "sampleAnswer": "RSA is ~1000× slower than AES and limited to data smaller than the key size. In practice, RSA encrypts a random AES key, then AES encrypts the actual data. This hybrid approach combines RSA's key distribution with AES's speed."
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-rsa", "term": "RSA", "definition": "First practical public-key cryptosystem. Security based on integer factorization. Public key encrypts, private key decrypts.", "context": "Invented 1977 by Rivest, Shamir, Adleman"},
-            {"id": "fc-dh", "term": "Diffie-Hellman Key Exchange", "definition": "Allows two parties to establish a shared secret over an insecure channel using the discrete logarithm problem.", "context": "Published 1976 — introduced the concept of public-key cryptography"}
-          ]
-        },
-        {
-          "id": "post-quantum",
-          "title": "Post-Quantum Cryptography",
-          "content": "## The Quantum Threat\n\n**Shor's Algorithm** (1994): A sufficiently powerful quantum computer could factor large integers and compute discrete logarithms efficiently, **breaking RSA and Diffie-Hellman**.\n\nA quantum computer with ~4,000 logical qubits could break RSA-2048. Current quantum computers have ~1,000 noisy qubits (2024), but the threat is approaching.\n\n**Harvest-now, decrypt-later:** Adversaries may store encrypted traffic today to decrypt when quantum computers arrive.\n\n## Post-Quantum Algorithms\n\nNIST standardized new quantum-resistant algorithms in 2024:\n\n- **CRYSTALS-Kyber (ML-KEM):** Lattice-based key encapsulation. Replaces RSA/DH key exchange.\n- **CRYSTALS-Dilithium (ML-DSA):** Lattice-based digital signatures. Replaces RSA/ECDSA signatures.\n- **SPHINCS+:** Hash-based signatures (conservative backup).\n\n## Quantum Key Distribution (QKD)\n\nUses quantum mechanics principles (no-cloning theorem, measurement disturbance) to establish keys with **information-theoretic security** — provably unbreakable even by quantum computers.\n\nLimitation: Requires dedicated fiber optic links, short range (~100 km).",
-          "exercises": [
-            {
-              "type": "mcq",
-              "id": "shor-threat",
-              "question": "Which algorithms does Shor's algorithm threaten?",
-              "options": ["AES", "SHA-256", "RSA and Diffie-Hellman", "ChaCha20"],
-              "correctIndex": 2,
-              "explanation": "Shor's algorithm efficiently factors integers and computes discrete logarithms, breaking RSA and DH."
-            },
-            {
-              "type": "error_spotting",
-              "id": "quantum-crypto-errors",
-              "title": "Find the misconceptions about quantum computing and crypto",
-              "paragraphs": [
-                "Quantum computers will break all encryption immediately once built. AES-256 will be trivially cracked by Shor's algorithm.",
-                "Post-quantum algorithms are based on the same mathematical problems as RSA but with larger key sizes."
-              ],
-              "errors": [
-                {"id": "e1", "paragraphIndex": 0, "errorText": "break all encryption", "correction": "break RSA and DH, but NOT symmetric encryption like AES", "hint": "Shor's only breaks specific problems"},
-                {"id": "e2", "paragraphIndex": 0, "errorText": "AES-256 will be trivially cracked by Shor's algorithm", "correction": "AES-256 is weakened but not broken (Grover's algorithm halves effective key size to 128 bits)", "hint": "Shor's is for factoring/discrete log; AES faces Grover's"},
-                {"id": "e3", "paragraphIndex": 1, "errorText": "same mathematical problems as RSA but with larger key sizes", "correction": "entirely different problems (lattices, hash functions, codes)", "hint": "Post-quantum uses new hard problems"}
-              ]
-            },
-            {
-              "type": "worked_example",
-              "id": "grover-aes",
-              "title": "Grover's Algorithm Impact on AES",
-              "steps": [
-                {"id": "s1", "content": "Grover's algorithm can search an unsorted database quadratically faster. For AES-256 with 2²⁵⁶ possible keys, what effective security level remains?", "missingPart": {"placeholder": "{{bits}}", "expectedAnswer": "128", "keywords": ["128", "128 bits", "2^128"], "hint": "Grover's provides quadratic speedup: √(2²⁵⁶) = 2¹²⁸"}}
-              ]
-            }
-          ],
-          "flashcards": [
-            {"id": "fc-shor", "term": "Shor's Algorithm", "definition": "Quantum algorithm that efficiently factors integers and computes discrete logarithms. Threatens RSA and Diffie-Hellman.", "context": "Requires ~4,000 logical qubits to break RSA-2048"},
-            {"id": "fc-pqc", "term": "Post-Quantum Cryptography", "definition": "Algorithms resistant to quantum attacks. NIST standards: ML-KEM (Kyber) for key exchange, ML-DSA (Dilithium) for signatures.", "context": "Based on lattice problems, hash functions, or error-correcting codes"},
-            {"id": "fc-qkd", "term": "Quantum Key Distribution", "definition": "Uses quantum mechanics (no-cloning theorem) for provably secure key exchange. Information-theoretic security, but requires dedicated fiber links.", "context": "Limited to ~100 km range over fiber optic"}
-          ]
+          "id": "lesson-3-1",
+          "title": "Hash Functions and Digital Signatures",
+          "content": "**Cryptographic hash functions** take an input of any size and produce a fixed-size output (the hash). They are designed to be:\n- **Deterministic**: Same input always produces the same hash\n- **One-way**: Cannot be reversed to find the original input\n- **Collision-resistant**: It's computationally infeasible to find two inputs that produce the same hash\n\n### Common Hash Functions\n- **SHA-256**: Produces a 256-bit hash, widely used in blockchain and TLS\n- **SHA-3**: The latest standard, based on a different design than SHA-2\n\n### Digital Signatures\nDigital signatures use public key cryptography to provide:\n- **Authentication**: Proving the message came from the claimed sender\n- **Integrity**: Proving the message hasn't been altered\n- **Non-repudiation**: The sender cannot deny sending the message\n\n### How Digital Signatures Work\n1. The sender computes a hash of the message\n2. The sender encrypts the hash with their private key (this is the signature)\n3. The receiver decrypts the signature with the sender's public key\n4. The receiver computes the hash of the received message\n5. If the hashes match, the signature is valid",
+          "order": 1
         }
       ],
-      "assessment": {
-        "questions": [
-          {"id": "ac7", "text": "What problem provides RSA's security?", "options": ["Discrete logarithm", "Integer factorization", "Lattice reduction", "Hash collision"], "correctIndex": 1, "explanation": "Factoring n = p × q is computationally infeasible for large primes."},
-          {"id": "ac8", "text": "What does Shor's algorithm threaten?", "options": ["AES and SHA-256", "RSA and Diffie-Hellman", "Only DES", "All encryption"], "correctIndex": 1, "explanation": "Shor's breaks factoring and discrete log, the basis of RSA and DH."},
-          {"id": "ac9", "text": "What is the NIST post-quantum standard for key exchange?", "options": ["RSA-4096", "ECDSA", "CRYSTALS-Kyber (ML-KEM)", "SHA-512"], "correctIndex": 2, "explanation": "ML-KEM (Kyber) is a lattice-based key encapsulation mechanism standardized by NIST."}
-        ],
-        "passingScore": 0.67
-      }
+      "exercises": [
+        {
+          "id": "quantum-calc",
+          "prompt": "Calculate the hash output size for SHA-256 in bytes.",
+          "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: SHA-256 produces a 256-bit hash.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: Convert bits to bytes: 256 / 8 =",
+              "missingPart": {
+                "expectedAnswer": "32",
+                "keywords": ["32", "32 bytes", "32 byte", "32B"]
+              }
+            }
+          ],
+          "hint": "There are 8 bits in a byte."
+        },
+        {
+          "id": "quantum-mcq",
+          "prompt": "Which property of a hash function ensures that two different messages cannot produce the same hash?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "One-way property",
+            "Collision resistance",
+            "Determinism",
+            "Avalanche effect"
+          ],
+          "correctIndex": 1,
+          "explanation": "Collision resistance means it's computationally infeasible to find two different inputs that produce the same hash. The one-way property means you can't reverse the hash. Determinism means the same input always gives the same hash. The avalanche effect means a small change in input causes a large change in output."
+        },
+        {
+          "id": "quantum-socratic",
+          "prompt": "How does a digital signature differ from encryption in terms of which key is used for the initial operation?",
+          "order": 3,
+          "hints": [
+            "For encryption, the sender uses the recipient's key. What key does the sender use for a signature?",
+            "Think about what you're trying to prove: that a message came from a specific person vs. that only one person can read it.",
+            "In both cases, the receiver uses the sender's public key — but for what purpose in each case?"
+          ],
+          "modelAnswer": "In encryption, the sender uses the RECIPIENT's public key to encrypt, so only the recipient's private key can decrypt. In a digital signature, the sender uses their OWN private key to sign (encrypt the hash), so anyone with the sender's public key can verify. Both use the sender's public key at the verification stage, but for different purposes: for encryption, to verify the sender's identity (optional); for signatures, to actually verify the signature itself.",
+          "keywords": ["private", "public", "recipient", "sender", "encrypt", "sign", "verify", "hash", "authentication", "integrity"]
+        }
+      ]
     }
-  ]
+  ],
+  "assessment": {
+    "title": "Cryptography Fundamentals Assessment",
+    "passingScore": 0.75,
+    "exercises": [
+      {
+        "id": "assess-1",
+        "type": "mcq",
+        "prompt": "You receive a message encrypted with your public key. How do you decrypt it?",
+        "order": 1,
+        "options": [
+          "Using your public key",
+          "Using your private key",
+          "Using the sender's public key",
+          "Using the sender's private key"
+        ],
+        "correctIndex": 1,
+        "explanation": "Messages encrypted with your public key can only be decrypted with your private key. This is the fundamental property of public key cryptography: the public key encrypts, the private key decrypts."
+      },
+      {
+        "id": "assess-2",
+        "type": "mcq",
+        "prompt": "A ciphertext 'KHOOR' was created using a Caesar cipher with key 3. What technique would be MOST effective at breaking this cipher?",
+        "order": 2,
+        "options": [
+          "Quantum computing",
+          "Frequency analysis",
+          "Brute force with a supercomputer",
+          "Social engineering"
+        ],
+        "correctIndex": 1,
+        "explanation": "Frequency analysis is the most effective technique for breaking Caesar ciphers because the cipher preserves letter frequency distributions. While brute force (25 keys) is also easy, frequency analysis is more elegant and works even for longer texts. Quantum computing and social engineering are overkill for this simple cipher."
+      },
+      {
+        "id": "assess-3",
+        "type": "mcq",
+        "prompt": "Why is SHA-256 preferred over MD5 for modern cryptographic applications?",
+        "order": 3,
+        "options": [
+          "SHA-256 produces shorter hashes, making it faster",
+          "SHA-256 has no known collision attacks, while MD5 is vulnerable",
+          "MD5 was never widely used, so there's no need to replace it",
+          "SHA-256 uses symmetric keys while MD5 uses public keys"
+        ],
+        "correctIndex": 1,
+        "explanation": "MD5 produces 128-bit hashes and has known collision attacks, meaning attackers can create two different inputs with the same hash. SHA-256 produces 256-bit hashes and has no practical collision attacks. SHA-256 is slower, not faster, and both are hash functions (not key-based)."
+      },
+      {
+        "id": "assess-4",
+        "type": "mcq",
+        "prompt": "In the digital signature process, what does the receiver compute to verify the signature?",
+        "order": 4,
+        "options": [
+          "The hash of the original message and compares it to the decrypted signature",
+          "The public key of the sender",
+          "A new private key for the message",
+          "The ciphertext of the message"
+        ],
+        "correctIndex": 0,
+        "explanation": "The receiver computes the hash of the received message and compares it to the hash obtained by decrypting the signature with the sender's public key. If they match, the signature is valid. Options B, C, and D describe operations that are not part of signature verification."
+      },
+      {
+        "id": "assess-5",
+        "type": "mcq",
+        "prompt": "Which statement best describes why hybrid encryption (combining symmetric and public key cryptography) is used in practice?",
+        "order": 5,
+        "options": [
+          "Public key cryptography is too slow for bulk data, so symmetric encryption is used for the data and public key for the symmetric key",
+          "Symmetric encryption is more secure than public key encryption",
+          "Public key cryptography cannot encrypt messages larger than 128 bits",
+          "Hybrid encryption eliminates the need for any keys"
+        ],
+        "correctIndex": 0,
+        "explanation": "Hybrid encryption uses public key cryptography to securely exchange a symmetric key, then uses the symmetric key for the actual data encryption. This combines the security of public key crypto with the speed of symmetric crypto. Option B is false (neither is inherently more secure — they're just different). Option C is false (public key can encrypt any size with proper padding). Option D is nonsense."
+      }
+    ]
+  },
+  "flashcardDeck": {
+    "title": "Cryptography Key Terms",
+    "cards": [
+      {
+        "id": "fc-1",
+        "term": "Caesar Cipher",
+        "definition": "A substitution cipher where each letter is shifted by a fixed number of positions in the alphabet.",
+        "context": "HELLO with key 3 becomes KHOOR."
+      },
+      {
+        "id": "fc-2",
+        "term": "Frequency Analysis",
+        "definition": "A cryptanalysis technique that exploits the frequency distribution of letters in the ciphertext to break substitution ciphers.",
+        "context": "In English, 'E' is the most common letter. If 'H' is most common in ciphertext, the key might be 3 (E→H)."
+      },
+      {
+        "id": "fc-3",
+        "term": "Public Key Cryptography",
+        "definition": "A cryptographic system using a pair of mathematically related keys: a public key for encryption and a private key for decryption.",
+        "context": "Anyone can encrypt with the public key, but only the private key holder can decrypt."
+      },
+      {
+        "id": "fc-4",
+        "term": "RSA",
+        "definition": "A public key cryptosystem based on the computational difficulty of factoring large prime numbers.",
+        "context": "RSA-2048 uses a 2048-bit modulus, which would take millions of years to factor with current technology."
+      },
+      {
+        "id": "fc-5",
+        "term": "Hash Function",
+        "definition": "A function that maps input data of arbitrary size to a fixed-size output, designed to be deterministic, one-way, and collision-resistant.",
+        "context": "SHA-256 takes any input and produces a 256-bit (32-byte) hash."
+      },
+      {
+        "id": "fc-6",
+        "term": "Digital Signature",
+        "definition": "A cryptographic mechanism that provides authentication, integrity, and non-repudiation for digital messages.",
+        "context": "The sender signs with their private key; anyone can verify with the sender's public key."
+      },
+      {
+        "id": "fc-7",
+        "term": "Collision Resistance",
+        "definition": "The property of a hash function that makes it computationally infeasible to find two different inputs that produce the same output.",
+        "context": "MD5 is collision-resistant in theory but has practical collision attacks. SHA-256 remains collision-resistant."
+      },
+      {
+        "id": "fc-8",
+        "term": "Diffie-Hellman Key Exchange",
+        "definition": "A protocol that allows two parties to establish a shared secret over an insecure channel without prior shared knowledge.",
+        "context": "Alice and Bob each generate public/private key pairs, exchange public values, and compute the same shared secret."
+      },
+      {
+        "id": "fc-9",
+        "term": "Symmetric Encryption",
+        "definition": "An encryption method where the same key is used for both encryption and decryption.",
+        "context": "AES is a symmetric cipher. Both parties must share the secret key securely before communication."
+      },
+      {
+        "id": "fc-10",
+        "term": "Asymmetric Encryption",
+        "definition": "An encryption method using different keys for encryption and decryption — the public and private key pair.",
+        "context": "Also called public key cryptography. Solves the key distribution problem of symmetric encryption."
+      },
+      {
+        "id": "fc-11",
+        "term": "Hybrid Encryption",
+        "definition": "A system combining symmetric and public key cryptography: public key for key exchange, symmetric for data encryption.",
+        "context": "TLS uses hybrid encryption: RSA for key exchange, AES for data transfer."
+      },
+      {
+        "id": "fc-12",
+        "term": "SHA-256",
+        "definition": "A cryptographic hash function that produces a 256-bit (32-byte) hash value, part of the SHA-2 family.",
+        "context": "Used in Bitcoin mining, TLS certificates, and file integrity verification."
+      }
+    ]
+  }
 }

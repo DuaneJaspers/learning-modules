@@ -3,10 +3,10 @@
   "title": "Introduction to Logic",
   "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
   "author": "Modular Learning Team",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "difficulty": "beginner",
-    "estimatedHours": 1,
-    "estimatedMinutes": 30,
+  "estimatedHours": 1,
+  "estimatedMinutes": 30,
   "sections": [
     {
       "id": "section-1",
@@ -23,22 +23,8 @@
       "exercises": [
         {
           "id": "ex-1",
-          "prompt": "Which of the following is a valid deductive conclusion?",
-          "order": 1,
-          "type": "mcq",
-          "options": [
-            "All birds can fly. Penguins are birds. Therefore, penguins can fly.",
-            "All humans are mortal. Socrates is human. Therefore, Socrates is mortal.",
-            "Some cats are black. My pet is a cat. Therefore, my pet is black.",
-            "All squares have four sides. This shape has four sides. Therefore, it is a square."
-          ],
-          "correctIndex": 1,
-          "explanation": "Option 2 is the only valid deductive argument. Option 1 has a false major premise (not all birds can fly). Option 3 commits the fallacy of the undistributed middle. Option 4 commits the fallacy of affirming the consequent."
-        },
-        {
-          "id": "ex-2",
           "prompt": "Complete the deductive argument:\n\nPremise 1: All reptiles have scales.\nPremise 2: ___\nConclusion: Snakes have scales.",
-          "order": 2,
+          "order": 1,
           "type": "worked_example",
           "steps": [
             {
@@ -51,7 +37,7 @@
               "text": "Premise 2: ",
               "missingPart": {
                 "expectedAnswer": "snakes are reptiles",
-                "keywords": ["snakes", "reptiles"]
+                "keywords": ["snakes are reptiles", "snakes", "reptiles", "all snakes are reptiles"]
               }
             },
             {
@@ -61,6 +47,20 @@
             }
           ],
           "hint": "Think about what category snakes belong to."
+        },
+        {
+          "id": "ex-2",
+          "prompt": "Which of the following is a valid deductive conclusion?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "All birds can fly. Penguins are birds. Therefore, penguins can fly.",
+            "All humans are mortal. Socrates is human. Therefore, Socrates is mortal.",
+            "Some cats are black. My pet is a cat. Therefore, my pet is black.",
+            "All squares have four sides. This shape has four sides. Therefore, it is a square."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option 2 is the only valid deductive argument. Option 1 has a false major premise (not all birds can fly). Option 3 commits the fallacy of the undistributed middle. Option 4 commits the fallacy of affirming the consequent (having four sides doesn't guarantee it's a square — rectangles also have four sides)."
         },
         {
           "id": "ex-3",
@@ -92,8 +92,35 @@
       "exercises": [
         {
           "id": "ex-4",
-          "prompt": "Identify the errors in reasoning in the following argument:\n\n\"We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.\"",
+          "prompt": "Identify the errors in reasoning in the following argument:\n\n\\\"We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.\\\"",
           "order": 1,
+          "type": "worked_example",
+          "steps": [
+            {
+              "id": "step-1",
+              "text": "Step 1: Identify the conclusion being argued. The claim is that we should not trust Dr. Smith's opinion on climate policy.",
+              "missingPart": null
+            },
+            {
+              "id": "step-2",
+              "text": "Step 2: Examine the reason given. The reason is that Dr. Smith went to college in Europe.",
+              "missingPart": null
+            },
+            {
+              "id": "step-3",
+              "text": "Step 3: Check if the reason supports the conclusion. Does where someone studied affect the quality of their climate policy arguments? No. This is an ad hominem fallacy.",
+              "missingPart": {
+                "expectedAnswer": "ad hominem",
+                "keywords": ["ad hominem", "ad hominem fallacy", "attacking the person", "personal attack", "irrelevant"]
+              }
+            }
+          ],
+          "hint": "What type of fallacy attacks a person's background rather than their argument?"
+        },
+        {
+          "id": "ex-5",
+          "prompt": "Identify the errors in reasoning in the following argument:\n\n\\\"We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.\\\"",
+          "order": 2,
           "type": "error_spotting",
           "content": "We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.",
           "errors": [
@@ -111,9 +138,9 @@
           "explanation": "This argument contains two fallacies: an ad hominem (attacking the source) and a hasty generalization about European policies."
         },
         {
-          "id": "ex-5",
+          "id": "ex-6",
           "prompt": "Arrange the steps of evaluating an argument in the correct order:",
-          "order": 2,
+          "order": 3,
           "type": "drag_sequence",
           "items": [
             { "id": "item-1", "text": "Check if the premises are true" },
@@ -134,7 +161,36 @@
       { "exerciseId": "ex-2", "weight": 1.0 },
       { "exerciseId": "ex-3", "weight": 1.0 },
       { "exerciseId": "ex-4", "weight": 1.0 },
-      { "exerciseId": "ex-5", "weight": 1.0 }
+      { "exerciseId": "ex-5", "weight": 1.0 },
+      { "exerciseId": "ex-6", "weight": 1.0 },
+      {
+        "id": "assess-1",
+        "type": "mcq",
+        "prompt": "A friend says: 'All politicians are liars. My uncle is a politician. So my uncle is a liar.' What is the logical status of this argument?",
+        "order": 7,
+        "options": [
+          "It is valid and sound — the conclusion follows logically from the premises.",
+          "It is valid but not sound — the structure is correct but the major premise is questionable.",
+          "It is invalid — the conclusion does not follow from the premises regardless of truth.",
+          "It is sound — because the conclusion happens to be true in this case."
+        ],
+        "correctIndex": 1,
+        "explanation": "The argument has a valid structure (All A are B, C is A, therefore C is B). However, it is not sound because the major premise 'All politicians are liars' is a hasty generalization, not a proven truth. Validity concerns structure; soundness requires both validity AND true premises."
+      },
+      {
+        "id": "assess-2",
+        "type": "mcq",
+        "prompt": "Which scenario best illustrates a false dilemma?",
+        "order": 8,
+        "options": [
+          "Attacking a critic's character instead of their argument.",
+          "Claiming you must either support all government spending or oppose all public services.",
+          "Claiming that allowing one small change will inevitably lead to disaster.",
+          "Using a celebrity's endorsement as proof of a product's quality."
+        ],
+        "correctIndex": 1,
+        "explanation": "A false dilemma presents only two options when more exist. Option 1 is ad hominem, option 2 is false dilemma (there are many positions between 'all spending' and 'no services'), option 3 is slippery slope, and option 4 is appeal to authority."
+      }
     ]
   },
   "flashcardDeck": {
@@ -157,6 +213,48 @@
         "term": "Soundness",
         "definition": "An argument that is both valid in structure and has true premises.",
         "context": "Validity + truth of premises = soundness."
+      },
+      {
+        "id": "fc-4",
+        "term": "Validity",
+        "definition": "The property of an argument where the conclusion follows logically from the premises, regardless of whether the premises are true.",
+        "context": "An argument can be valid even if the premises are false — e.g., 'All cats can fly. Dogs are cats. Therefore dogs can fly.' is valid but unsound."
+      },
+      {
+        "id": "fc-5",
+        "term": "Ad Hominem",
+        "definition": "A fallacy where you attack the person making an argument rather than the argument itself.",
+        "context": "'You can't trust her economics advice — she's not even rich.' This attacks her background, not her reasoning."
+      },
+      {
+        "id": "fc-6",
+        "term": "False Dilemma",
+        "definition": "A fallacy that presents only two options when more exist.",
+        "context": "'You're either with us or against us.' This ignores neutral or partially-aligned positions."
+      },
+      {
+        "id": "fc-7",
+        "term": "Straw Man",
+        "definition": "A fallacy where you misrepresent someone's argument to make it easier to attack.",
+        "context": "Person A: 'I think we should reduce military spending.' Person B: 'So you want to leave our country defenseless?'"
+      },
+      {
+        "id": "fc-8",
+        "term": "Slippery Slope",
+        "definition": "A fallacy claiming a small step will inevitably lead to extreme consequences without evidence.",
+        "context": "'If we allow students to redo this test, next they'll want to redo every test, and then grades won't mean anything.'"
+      },
+      {
+        "id": "fc-9",
+        "term": "Hasty Generalization",
+        "definition": "Drawing a broad conclusion from insufficient or unrepresentative evidence.",
+        "context": "'I met two rude people from that city, so everyone there must be rude.' This ignores the full population."
+      },
+      {
+        "id": "fc-10",
+        "term": "Appeal to Authority",
+        "definition": "Using an authority figure's opinion as evidence, even when they're not an expert in the relevant field.",
+        "context": "'This famous actor says this diet works, so it must be effective.' Celebrity status doesn't make someone a nutrition expert."
       }
     ]
   }
