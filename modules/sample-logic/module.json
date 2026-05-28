@@ -35,7 +35,12 @@
               "text": "Premise 2: ",
               "missingPart": {
                 "expectedAnswer": "snakes are reptiles",
-                "keywords": ["snakes are reptiles", "snakes", "reptiles", "all snakes are reptiles"]
+                "keywords": [
+                  "snakes are reptiles",
+                  "snakes",
+                  "reptiles",
+                  "all snakes are reptiles"
+                ]
               }
             },
             {
@@ -71,7 +76,14 @@
             "This is the difference between validity (structure) and soundness (truth + structure)."
           ],
           "modelAnswer": "A deductive argument guarantees the conclusion only if the premises are actually true. Valid structure alone isn't enough — you need soundness, which requires both valid reasoning AND true premises.",
-          "keywords": ["true", "soundness", "valid", "premises", "guarantee", "facts"]
+          "keywords": [
+            "true",
+            "soundness",
+            "valid",
+            "premises",
+            "guarantee",
+            "facts"
+          ]
         }
       ]
     },
@@ -109,7 +121,13 @@
               "text": "Step 3: Check if the reason supports the conclusion. Does where someone studied affect the quality of their climate policy arguments? No. This is an ad hominem fallacy.",
               "missingPart": {
                 "expectedAnswer": "ad hominem",
-                "keywords": ["ad hominem", "ad hominem fallacy", "attacking the person", "personal attack", "irrelevant"]
+                "keywords": [
+                  "ad hominem",
+                  "ad hominem fallacy",
+                  "attacking the person",
+                  "personal attack",
+                  "irrelevant"
+                ]
               }
             }
           ],
@@ -141,12 +159,29 @@
           "order": 3,
           "type": "drag_sequence",
           "items": [
-            { "id": "item-1", "text": "Check if the premises are true" },
-            { "id": "item-2", "text": "Identify the conclusion" },
-            { "id": "item-3", "text": "Check if the reasoning is valid" },
-            { "id": "item-4", "text": "Check for logical fallacies" }
+            {
+              "id": "item-1",
+              "text": "Check if the premises are true"
+            },
+            {
+              "id": "item-2",
+              "text": "Identify the conclusion"
+            },
+            {
+              "id": "item-3",
+              "text": "Check if the reasoning is valid"
+            },
+            {
+              "id": "item-4",
+              "text": "Check for logical fallacies"
+            }
           ],
-          "correctOrder": [1, 2, 0, 3]
+          "correctOrder": [
+            1,
+            2,
+            0,
+            3
+          ]
         }
       ]
     }
@@ -155,14 +190,48 @@
     "title": "Logic Fundamentals Assessment",
     "passingScore": 0.7,
     "exercises": [
-      { "exerciseId": "ex-1", "weight": 1.0 },
-      { "exerciseId": "ex-2", "weight": 1.0 },
-      { "exerciseId": "ex-3", "weight": 1.0 },
-      { "exerciseId": "ex-4", "weight": 1.0 },
-      { "exerciseId": "ex-5", "weight": 1.0 },
-      { "exerciseId": "ex-6", "weight": 1.0 },
-      { "exerciseId": "ex-2", "weight": 1.0 },
-      { "exerciseId": "ex-2", "weight": 1.0 }
+      {
+        "exerciseId": "ex-1",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-2",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-3",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-4",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-5",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-6",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-2",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "ex-2",
+        "weight": 1.0
+      }
+    ],
+    "exerciseIds": [
+      "ex-1",
+      "ex-2",
+      "ex-3",
+      "ex-4",
+      "ex-5",
+      "ex-6",
+      "ex-2",
+      "ex-2"
     ]
   },
   "flashcardDeck": {

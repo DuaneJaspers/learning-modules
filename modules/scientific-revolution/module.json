@@ -40,7 +40,15 @@
               "text": "Step 3: This observation demonstrated that:",
               "missingPart": {
                 "expectedAnswer": "not everything orbits Earth",
-                "keywords": ["not everything orbits Earth", "some things orbit Jupiter", "Jupiter has moons", "Earth is not center", "not all celestial bodies", "counterexample", "geocentrism challenged"]
+                "keywords": [
+                  "not everything orbits Earth",
+                  "some things orbit Jupiter",
+                  "Jupiter has moons",
+                  "Earth is not center",
+                  "not all celestial bodies",
+                  "counterexample",
+                  "geocentrism challenged"
+                ]
               }
             },
             {
@@ -75,7 +83,21 @@
             "What technological advances were necessary before heliocentrism could be properly demonstrated?"
           ],
           "modelAnswer": "Ptolemy's model was deeply embedded in religious doctrine (Earth as God's creation at the center), philosophical tradition (Aristotelian physics), and everyday experience (we don't feel Earth moving). Overturning it required: 1) The telescope (technology), 2) Mathematical models showing heliocentrism could make accurate predictions (Copernicus, Kepler), 3) Physical theories explaining why we don't feel Earth's motion (Galileo, Newton), and 4) A willingness to challenge authority (the Reformation created intellectual space for this). It took the convergence of all these factors.",
-          "keywords": ["religious", "philosophical", "authority", "telescope", "evidence", "technology", "prediction", "mathematical", "challenge", "tradition", "experience", "convergence"]
+          "keywords": [
+            "religious",
+            "philosophical",
+            "authority",
+            "telescope",
+            "evidence",
+            "technology",
+            "prediction",
+            "mathematical",
+            "challenge",
+            "tradition",
+            "experience",
+            "convergence"
+          ],
+          "type": "socratic"
         }
       ]
     },
@@ -123,7 +145,15 @@
               "text": "Step 5: Expected result — Plants will grow toward the light source, supporting the hypothesis. If they grow randomly, the hypothesis is rejected.",
               "missingPart": {
                 "expectedAnswer": "toward the light",
-                "keywords": ["toward the light", "towards the light", "grow toward", "grow towards", "light direction", "support hypothesis", "consistent with hypothesis"]
+                "keywords": [
+                  "toward the light",
+                  "towards the light",
+                  "grow toward",
+                  "grow towards",
+                  "light direction",
+                  "support hypothesis",
+                  "consistent with hypothesis"
+                ]
               }
             }
           ],
@@ -204,7 +234,16 @@
               "text": "Step 4: F ≈",
               "missingPart": {
                 "expectedAnswer": "1.98 × 10^20",
-                "keywords": ["1.98", "1.98 × 10^20", "1.98e20", "1.98 * 10^20", "1.99 × 10^20", "2.0 × 10^20", "approximately 2 × 10^20", "1.98e20 N"]
+                "keywords": [
+                  "1.98",
+                  "1.98 × 10^20",
+                  "1.98e20",
+                  "1.98 * 10^20",
+                  "1.99 × 10^20",
+                  "2.0 × 10^20",
+                  "approximately 2 × 10^20",
+                  "1.98e20 N"
+                ]
               }
             }
           ],
@@ -234,7 +273,22 @@
             "What was the philosophical impact of showing that the same laws apply everywhere in the universe?"
           ],
           "modelAnswer": "Newton's revolution was in synthesis and unification. Previous scientists had made important discoveries, but Newton showed that the same mathematical laws applied to both celestial and terrestrial phenomena. Before Newton, people thought heavenly and earthly physics were different. His Principia demonstrated that the force that makes an apple fall is the same force that keeps the Moon in orbit. This unified, mathematical approach to nature became the model for all subsequent science and had profound philosophical implications — suggesting the universe is orderly and predictable.",
-          "keywords": ["unification", "synthesis", "mathematical", "celestial", "terrestrial", "universal", "orderly", "predictable", "framework", "previous", "combined", "gravity", "laws"]
+          "keywords": [
+            "unification",
+            "synthesis",
+            "mathematical",
+            "celestial",
+            "terrestrial",
+            "universal",
+            "orderly",
+            "predictable",
+            "framework",
+            "previous",
+            "combined",
+            "gravity",
+            "laws"
+          ],
+          "type": "socratic"
         }
       ]
     }
@@ -243,11 +297,33 @@
     "title": "Scientific Revolution Assessment",
     "passingScore": 0.75,
     "exercises": [
-      { "exerciseId": "heliocentrism-mcq", "weight": 1.0 },
-      { "exerciseId": "method-mcq", "weight": 1.0 },
-      { "exerciseId": "newton-mcq", "weight": 1.0 },
-      { "exerciseId": "method-mcq", "weight": 1.0 },
-      { "exerciseId": "heliocentrism-mcq", "weight": 1.0 }
+      {
+        "exerciseId": "heliocentrism-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "method-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "newton-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "method-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "heliocentrism-mcq",
+        "weight": 1.0
+      }
+    ],
+    "exerciseIds": [
+      "heliocentrism-mcq",
+      "method-mcq",
+      "newton-mcq",
+      "method-mcq",
+      "heliocentrism-mcq"
     ]
   },
   "flashcardDeck": {

@@ -41,7 +41,13 @@
               "text": "Step 2: Shift H by 5 positions: H → I → J → K → L → M",
               "missingPart": {
                 "expectedAnswer": "M",
-                "keywords": ["M", "m", "M (13th letter)", "13", "13th letter"]
+                "keywords": [
+                  "M",
+                  "m",
+                  "M (13th letter)",
+                  "13",
+                  "13th letter"
+                ]
               }
             },
             {
@@ -54,7 +60,10 @@
               "text": "Result: HELLO encrypted with key 5 is:",
               "missingPart": {
                 "expectedAnswer": "MJQQT",
-                "keywords": ["MJQQT", "mjqqt"]
+                "keywords": [
+                  "MJQQT",
+                  "mjqqt"
+                ]
               }
             }
           ],
@@ -84,7 +93,19 @@
             "What happens to letter frequencies when you use a block cipher with a strong key?"
           ],
           "modelAnswer": "Frequency analysis works on the Caesar cipher because it's a simple substitution cipher — each letter always maps to the same ciphertext letter, preserving the frequency distribution of the original text. Modern ciphers like AES are block ciphers that transform groups of bits, completely changing the statistical properties of the output. AES ciphertext is designed to be indistinguishable from random data, so letter frequencies are destroyed.",
-          "keywords": ["substitution", "preserves", "distribution", "random", "block", "AES", "transformation", "statistical", "properties", "mapping"]
+          "keywords": [
+            "substitution",
+            "preserves",
+            "distribution",
+            "random",
+            "block",
+            "AES",
+            "transformation",
+            "statistical",
+            "properties",
+            "mapping"
+          ],
+          "type": "socratic"
         }
       ]
     },
@@ -122,7 +143,11 @@
               "text": "Step 3: Calculate 4^5 = 1024. Then 1024 mod 33 =",
               "missingPart": {
                 "expectedAnswer": "16",
-                "keywords": ["16", "16 (ciphertext)", "ciphertext is 16"]
+                "keywords": [
+                  "16",
+                  "16 (ciphertext)",
+                  "ciphertext is 16"
+                ]
               }
             },
             {
@@ -130,7 +155,12 @@
               "text": "Step 4: Alice receives ciphertext C=16 and decrypts: M = C^d mod n = 16^5 mod 33 =",
               "missingPart": {
                 "expectedAnswer": "4",
-                "keywords": ["4", "4 (original message)", "M=4", "original message is 4"]
+                "keywords": [
+                  "4",
+                  "4 (original message)",
+                  "M=4",
+                  "original message is 4"
+                ]
               }
             }
           ],
@@ -160,7 +190,20 @@
             "What problem does the Diffie-Hellman key exchange solve?"
           ],
           "modelAnswer": "In symmetric cryptography, both parties need the same secret key, which must be shared beforehand over a secure channel — creating a chicken-and-egg problem. If you send the key over an insecure channel, an attacker can intercept it. Public key cryptography solves this because the encryption key (public) can be freely shared — it cannot be used to derive the decryption key (private). This allows secure communication without any prior shared secret.",
-          "keywords": ["shared", "secret", "channel", "intercept", "derive", "private", "public", "distribution", "key exchange", "Diffie-Hellman", "secure"]
+          "keywords": [
+            "shared",
+            "secret",
+            "channel",
+            "intercept",
+            "derive",
+            "private",
+            "public",
+            "distribution",
+            "key exchange",
+            "Diffie-Hellman",
+            "secure"
+          ],
+          "type": "socratic"
         },
         {
           "id": "protocol-errors",
@@ -213,7 +256,12 @@
               "text": "Step 2: Convert bits to bytes: 256 / 8 =",
               "missingPart": {
                 "expectedAnswer": "32",
-                "keywords": ["32", "32 bytes", "32 byte", "32B"]
+                "keywords": [
+                  "32",
+                  "32 bytes",
+                  "32 byte",
+                  "32B"
+                ]
               }
             }
           ],
@@ -243,7 +291,19 @@
             "In both cases, the receiver uses the sender's public key — but for what purpose in each case?"
           ],
           "modelAnswer": "In encryption, the sender uses the RECIPIENT's public key to encrypt, so only the recipient's private key can decrypt. In a digital signature, the sender uses their OWN private key to sign (encrypt the hash), so anyone with the sender's public key can verify. Both use the sender's public key at the verification stage, but for different purposes: for encryption, to verify the sender's identity (optional); for signatures, to actually verify the signature itself.",
-          "keywords": ["private", "public", "recipient", "sender", "encrypt", "sign", "verify", "hash", "authentication", "integrity"]
+          "keywords": [
+            "private",
+            "public",
+            "recipient",
+            "sender",
+            "encrypt",
+            "sign",
+            "verify",
+            "hash",
+            "authentication",
+            "integrity"
+          ],
+          "type": "socratic"
         }
       ]
     }
@@ -252,11 +312,33 @@
     "title": "Cryptography Fundamentals Assessment",
     "passingScore": 0.75,
     "exercises": [
-      { "exerciseId": "protocol-mcq", "weight": 1.0 },
-      { "exerciseId": "caesar-mcq", "weight": 1.0 },
-      { "exerciseId": "quantum-mcq", "weight": 1.0 },
-      { "exerciseId": "protocol-mcq", "weight": 1.0 },
-      { "exerciseId": "protocol-mcq", "weight": 1.0 }
+      {
+        "exerciseId": "protocol-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "caesar-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "quantum-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "protocol-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "protocol-mcq",
+        "weight": 1.0
+      }
+    ],
+    "exerciseIds": [
+      "protocol-mcq",
+      "caesar-mcq",
+      "quantum-mcq",
+      "protocol-mcq",
+      "protocol-mcq"
     ]
   },
   "flashcardDeck": {

@@ -40,7 +40,15 @@
               "text": "Step 3: Soldiers' loyalty shifted from the state to their generals because:",
               "missingPart": {
                 "expectedAnswer": "generals paid them",
-                "keywords": ["generals paid", "generals", "paid", "loyalty shifted", "personal wealth", "spoils", "generals provided"]
+                "keywords": [
+                  "generals paid",
+                  "generals",
+                  "paid",
+                  "loyalty shifted",
+                  "personal wealth",
+                  "spoils",
+                  "generals provided"
+                ]
               }
             },
             {
@@ -71,12 +79,29 @@
           "order": 3,
           "type": "drag_sequence",
           "items": [
-            { "id": "item-1", "text": "Julius Caesar crosses the Rubicon" },
-            { "id": "item-2", "text": "Augustus becomes first Emperor" },
-            { "id": "item-3", "text": "Assassination of Julius Caesar" },
-            { "id": "item-4", "text": "Battle of Actium" }
+            {
+              "id": "item-1",
+              "text": "Julius Caesar crosses the Rubicon"
+            },
+            {
+              "id": "item-2",
+              "text": "Augustus becomes first Emperor"
+            },
+            {
+              "id": "item-3",
+              "text": "Assassination of Julius Caesar"
+            },
+            {
+              "id": "item-4",
+              "text": "Battle of Actium"
+            }
           ],
-          "correctOrder": [0, 2, 3, 1]
+          "correctOrder": [
+            0,
+            2,
+            3,
+            1
+          ]
         }
       ]
     },
@@ -114,7 +139,17 @@
               "text": "Step 3: The system divided the empire into four regions, each with its own ruler:",
               "missingPart": {
                 "expectedAnswer": "east, west, east junior, west junior",
-                "keywords": ["four regions", "east", "west", "Augustus", "Caesar", "four rulers", "two senior", "two junior", "regional division"]
+                "keywords": [
+                  "four regions",
+                  "east",
+                  "west",
+                  "Augustus",
+                  "Caesar",
+                  "four rulers",
+                  "two senior",
+                  "two junior",
+                  "regional division"
+                ]
               }
             },
             {
@@ -155,7 +190,21 @@
             "How did the division of the empire affect its long-term unity?"
           ],
           "modelAnswer": "Diocletian's reforms addressed symptoms rather than root causes. The Tetrarchy solved the immediate succession problem but couldn't fix the economic collapse (hyperinflation, debased currency), military overextension, or the fundamental tension between a unified empire and regional loyalties. When competent leaders like Diocletian and Constantine died, the system reverted to civil war. The division into East and West ultimately led to the permanent split — the West fell in 476 CE while the East (Byzantine) survived until 1453.",
-          "keywords": ["economic", "root causes", "Tetrarchy", "succession", "inflation", "military", "division", "East", "West", "temporary", "underlying", "symptoms"]
+          "keywords": [
+            "economic",
+            "root causes",
+            "Tetrarchy",
+            "succession",
+            "inflation",
+            "military",
+            "division",
+            "East",
+            "West",
+            "temporary",
+            "underlying",
+            "symptoms"
+          ],
+          "type": "socratic"
         }
       ]
     },
@@ -193,7 +242,17 @@
               "text": "Step 3: The West faced more pressure from barbarian invasions and had fewer resources to defend itself:",
               "missingPart": {
                 "expectedAnswer": "less wealth, more invasions",
-                "keywords": ["less wealth", "fewer resources", "more invasions", "barbarian pressure", "Egypt", "grain", "trade", "economic disparity", "resource gap"]
+                "keywords": [
+                  "less wealth",
+                  "fewer resources",
+                  "more invasions",
+                  "barbarian pressure",
+                  "Egypt",
+                  "grain",
+                  "trade",
+                  "economic disparity",
+                  "resource gap"
+                ]
               }
             },
             {
@@ -228,7 +287,21 @@
             "How did the Eastern Roman (Byzantine) Empire continue Roman traditions?"
           ],
           "modelAnswer": "The fall of Rome was more accurately a transformation than a sudden collapse. Roman law, Latin language, Christian religion, and administrative structures persisted and evolved. The Catholic Church preserved Roman learning and became the dominant institution in Western Europe. Roman law influenced medieval legal systems and modern civil law. The Eastern Roman Empire continued for nearly another thousand years. The 'fall' was really a gradual transformation of Roman institutions into medieval European civilizations.",
-          "keywords": ["transformation", "survived", "church", "law", "language", "culture", "Byzantine", "institutions", "evolved", "gradual", "continuity", "medieval"]
+          "keywords": [
+            "transformation",
+            "survived",
+            "church",
+            "law",
+            "language",
+            "culture",
+            "Byzantine",
+            "institutions",
+            "evolved",
+            "gradual",
+            "continuity",
+            "medieval"
+          ],
+          "type": "socratic"
         }
       ]
     }
@@ -237,10 +310,28 @@
     "title": "The Fall of Rome Assessment",
     "passingScore": 0.75,
     "exercises": [
-      { "exerciseId": "economy-mcq", "weight": 1.0 },
-      { "exerciseId": "decline-mcq", "weight": 1.0 },
-      { "exerciseId": "economy-mcq", "weight": 1.0 },
-      { "exerciseId": "decline-mcq", "weight": 1.0 }
+      {
+        "exerciseId": "economy-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "decline-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "economy-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "decline-mcq",
+        "weight": 1.0
+      }
+    ],
+    "exerciseIds": [
+      "economy-mcq",
+      "decline-mcq",
+      "economy-mcq",
+      "decline-mcq"
     ]
   },
   "flashcardDeck": {
