@@ -130,7 +130,7 @@
             "Think about how modern ciphers transform the entire message, not just individual letters."
           ],
           "minScore": 0.6,
-          "validationMode": "keyword"
+          "validationMode": "llm"
         }
       ]
     },
