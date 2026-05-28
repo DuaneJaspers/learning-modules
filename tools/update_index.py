@@ -3,7 +3,7 @@
 Regenerates modules.json from all module.json files in modules/*/.
 
 Validates:
-  - Required fields (id, title, description, version, author, difficulty, sections)
+  - Required fields (id, title, description, version, author, sections)
   - At least one section with at least one lesson
   - All exercise types are recognized
   - Assessment questions have valid correctIndex
