@@ -143,13 +143,16 @@ def main():
 
         if not errors:
             checksum = sha256_file(module_file)
+            download_url = f"https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/{data['id']}/module.json"
             module_entries.append({
                 "id": data["id"],
                 "title": data["title"],
                 "description": data["description"],
+                "author": data.get("author", ""),
+                "version": data.get("version", "1.0.0"),
                 "estimatedMinutes": data.get("estimatedMinutes", 60),
                 "checksum": f"sha256:{checksum}",
-                "path": f"modules/{module_dir.name}/module.json",
+                "downloadUrl": download_url,
             })
 
     # Report

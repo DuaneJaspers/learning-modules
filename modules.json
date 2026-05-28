@@ -5,33 +5,41 @@
       "id": "cryptography-basics",
       "title": "Cryptography Basics",
       "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
+      "author": "Modular Learning Team",
+      "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:ed70cd2b580de8776d37e6e2cd31d93d65dbea55aca3a568387b49b2900b0428",
-      "path": "modules/cryptography-basics/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/cryptography-basics/module.json"
     },
     {
       "id": "fall-of-rome",
       "title": "The Fall of Rome",
       "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
+      "author": "Modular Learning Team",
+      "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:10f00f87a47601e2f1a4ec9d4d2fe12b1e98020d59bd33e3ad1ae812188d4d0e",
-      "path": "modules/fall-of-rome/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/fall-of-rome/module.json"
     },
     {
       "id": "sample-logic",
       "title": "Introduction to Logic",
       "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
+      "author": "Modular Learning Team",
+      "version": "1.0.1",
       "estimatedMinutes": 30,
       "checksum": "sha256:3b27a92f818a84d8bb178e63473b6711e70b6033387733b943f5cc5800f7f1f6",
-      "path": "modules/sample-logic/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/sample-logic/module.json"
     },
     {
       "id": "scientific-revolution",
       "title": "The Scientific Revolution",
       "description": "An exploration of the scientific revolution of the 16th and 17th centuries, examining the key figures, discoveries, and paradigm shifts that transformed our understanding of the natural world.",
+      "author": "Modular Learning Team",
+      "version": "1.0.1",
       "estimatedMinutes": 180,
       "checksum": "sha256:82c29a007e7e22daed6efb88a140a485c8d994043b51240f2b53b0eeff94c666",
-      "path": "modules/scientific-revolution/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/scientific-revolution/module.json"
     }
   ]
 }
