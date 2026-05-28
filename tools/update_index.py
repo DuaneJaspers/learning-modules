@@ -143,7 +143,7 @@ def main():
 
         if not errors:
             checksum = sha256_file(module_file)
-            download_url = f"https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/{data['id']}/module.json"
+            download_url = f"https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/{data['id']}/module.json"
             module_entries.append({
                 "id": data["id"],
                 "title": data["title"],
