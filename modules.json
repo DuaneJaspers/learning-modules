@@ -3,20 +3,20 @@
   "modules": [
     {
       "id": "cryptography-basics",
-      "title": "Cryptography: From Caesar Ciphers to Quantum Keys",
-      "description": "Journey through the history and mathematics of secret communication, from ancient substitution ciphers to modern encryption and post-quantum cryptography.",
+      "title": "Cryptography Basics",
+      "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
       "difficulty": "intermediate",
       "estimatedHours": 3,
-      "checksum": "sha256:ef65c9dd4a286aa2011b318f135bc0ab1dff53df9edfe2c337339a08e73d363d",
+      "checksum": "sha256:a937bcab1032e138ab680e0a5acb58089d06cdd20d4af87c9c5f3340527cff8d",
       "path": "modules/cryptography-basics/module.json"
     },
     {
       "id": "fall-of-rome",
-      "title": "The Fall of Rome: Empire in Decline",
-      "description": "Explore the political, economic, and military forces that brought down one of history's greatest empires, from the Crisis of the Third Century to the final collapse of the Western Roman Empire.",
-      "difficulty": "beginner",
+      "title": "The Fall of Rome",
+      "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
+      "difficulty": "intermediate",
       "estimatedHours": 3,
-      "checksum": "sha256:200d9ca2d5c087a95f1778740d1109aa21ff47229ba5925808aed2204031faae",
+      "checksum": "sha256:bab31d024491df5da357afd21202c2c3056e8b853da38ac43ae292d6ee8ef6a5",
       "path": "modules/fall-of-rome/module.json"
     },
     {
@@ -25,16 +25,16 @@
       "description": "A foundational module covering basic logical reasoning, including deductive reasoning, common fallacies, and argument analysis.",
       "difficulty": "beginner",
       "estimatedHours": 1,
-      "checksum": "sha256:773dca71cef8ec35d8141d2be5b99f5085c724b87646fd25c8597c79253227c7",
+      "checksum": "sha256:2fde938aa3486e32af99fdc1b95c98590106904d1e9535a4e503afe7ec16c0f5",
       "path": "modules/sample-logic/module.json"
     },
     {
       "id": "scientific-revolution",
-      "title": "From Newton to Einstein: The Scientific Revolution",
-      "description": "Trace the evolution of physics from classical mechanics through electromagnetism to the revolutionary ideas of relativity and quantum mechanics.",
+      "title": "The Scientific Revolution",
+      "description": "An exploration of the scientific revolution of the 16th and 17th centuries, examining the key figures, discoveries, and paradigm shifts that transformed our understanding of the natural world.",
       "difficulty": "intermediate",
-      "estimatedHours": 4,
-      "checksum": "sha256:d579cd3a6b5e3fe5ccee6295b00b02b61f3ad4ad221fabef20a4bbebc9299409",
+      "estimatedHours": 3,
+      "checksum": "sha256:30298ea506ab69598df9761cc4d27a40ff88db9f518cac158abd856c3b1d9601",
       "path": "modules/scientific-revolution/module.json"
     }
   ]
