@@ -25,8 +25,7 @@ MODULES_DIR = ROOT / "modules"
 INDEX_FILE = ROOT / "modules.json"
 
 VALID_EXERCISE_TYPES = {"mcq", "worked_example", "socratic", "drag_sequence", "error_spotting"}
-VALID_DIFFICULTIES = {"beginner", "intermediate", "advanced"}
-REQUIRED_MODULE_FIELDS = {"id", "title", "description", "version", "author", "difficulty", "sections"}
+REQUIRED_MODULE_FIELDS = {"id", "title", "description", "version", "author", "sections"}
 REQUIRED_SECTION_FIELDS = {"id", "title", "order", "lessons"}
 REQUIRED_LESSON_FIELDS = {"id", "title", "content"}
 
@@ -48,10 +47,6 @@ def validate_module(data: dict, path: Path) -> list[str]:
     if missing:
         errors.append(f"{path}: missing fields: {missing}")
         return errors  # can't validate further without basics
-
-    # Difficulty
-    if data["difficulty"] not in VALID_DIFFICULTIES:
-        errors.append(f"{path}: invalid difficulty '{data['difficulty']}', expected one of {VALID_DIFFICULTIES}")
 
     # Sections
     sections = data.get("sections", [])
@@ -152,8 +147,7 @@ def main():
                 "id": data["id"],
                 "title": data["title"],
                 "description": data["description"],
-                "difficulty": data["difficulty"],
-                "estimatedHours": data.get("estimatedHours", 1),
+                "estimatedMinutes": data.get("estimatedMinutes", 60),
                 "checksum": f"sha256:{checksum}",
                 "path": f"modules/{module_dir.name}/module.json",
             })
