@@ -410,5 +410,17 @@
         "context": "He maintained the appearance of republican institutions while concentrating power in his own hands."
       }
     ]
-  }
+  },
+  "category": "history",
+  "tags": [
+    "ancient-history",
+    "rome",
+    "civilization",
+    "politics"
+  ],
+  "difficulty": "intermediate",
+  "prerequisites": [],
+  "recommendedNext": [
+    "scientific-revolution"
+  ]
 }

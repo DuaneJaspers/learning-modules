@@ -609,5 +609,20 @@
         "context": "Used in Bitcoin mining, TLS certificates, and file integrity verification."
       }
     ]
-  }
+  },
+  "category": "computer-science",
+  "tags": [
+    "cryptography",
+    "algorithms",
+    "history-of-tech",
+    "mathematics"
+  ],
+  "difficulty": "beginner",
+  "prerequisites": [
+    "sample-logic"
+  ],
+  "recommendedNext": [
+    "network-security",
+    "advanced-cryptography"
+  ]
 }

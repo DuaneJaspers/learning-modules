@@ -402,5 +402,20 @@
         "context": "Emerged during the Scientific Revolution as a replacement for reliance on ancient authorities."
       }
     ]
-  }
+  },
+  "category": "history",
+  "tags": [
+    "science",
+    "history",
+    "scientific-method",
+    "paradigm-shift"
+  ],
+  "difficulty": "intermediate",
+  "prerequisites": [
+    "fall-of-rome"
+  ],
+  "recommendedNext": [
+    "enlightenment",
+    "industrial-revolution"
+  ]
 }

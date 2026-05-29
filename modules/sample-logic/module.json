@@ -280,5 +280,18 @@
         "context": "'This famous actor says this diet works, so it must be effective.' Celebrity status doesn't make someone a nutrition expert."
       }
     ]
-  }
+  },
+  "category": "logic",
+  "tags": [
+    "logic",
+    "reasoning",
+    "critical-thinking",
+    "beginner-friendly"
+  ],
+  "difficulty": "beginner",
+  "prerequisites": [],
+  "recommendedNext": [
+    "cryptography-basics",
+    "scientific-revolution"
+  ]
 }
