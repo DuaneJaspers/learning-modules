@@ -7,9 +7,9 @@
       "title": "Cryptography Basics",
       "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
       "author": "Modular Learning Team",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "estimatedMinutes": 180,
-      "checksum": "sha256:f8cc422fef2d74d9698dd88da96b295ceb455fdc186cf0de64eb770416ed3e3f",
+      "checksum": "sha256:201820c5e238b42e74b9acebafc19271f3a76cc10fd45cb7196948a38d9d0f37",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
     },
     {

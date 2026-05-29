@@ -3,7 +3,7 @@
   "title": "Cryptography Basics",
   "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
   "author": "Modular Learning Team",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -109,27 +109,28 @@
         },
         {
           "id": "caesar-socratic-ai",
-          "prompt": "Why does frequency analysis work on the Caesar cipher but not on modern encryption like AES?",
+          "prompt": "You intercept two encrypted messages. Message A was encrypted with a Caesar cipher, and Message B with AES-256. You only have the ciphertext for both — no key, no plaintext. Explain why you have a realistic chance of reading Message A but not Message B, in terms of what each cipher does and does not reveal about the original text.",
           "order": 4,
           "type": "socratic_ai",
-          "modelAnswer": "Frequency analysis works on the Caesar cipher because it's a simple substitution cipher — each letter always maps to the same ciphertext letter, preserving the frequency distribution of the original text. Modern ciphers like AES are block ciphers that transform groups of bits, completely changing the statistical properties of the output. AES ciphertext is designed to be indistinguishable from random data, so letter frequencies are destroyed.",
+          "modelAnswer": "Message A uses a simple letter shift, so every occurrence of the same plaintext letter produces the same ciphertext letter. This means the statistical patterns of the original language — like which letters appear most often — are preserved in the ciphertext, just relabeled. You can exploit this: count letter frequencies in the ciphertext, compare to known language statistics, and work backwards to recover the original message without the key. Message B uses AES, which processes data in fixed-size blocks and produces output designed to be indistinguishable from random noise. Even small changes to the input completely change the output (diffusion), and no statistical patterns from the plaintext survive in the ciphertext. Without the key, there is nothing to exploit.",
           "mustInclude": [
-            "substitution",
-            "frequency",
-            "mapping"
+            "same plaintext letter produces same ciphertext",
+            "statistical patterns preserved",
+            "indistinguishable from random",
+            "without the key"
           ],
           "niceToHave": [
-            "block cipher",
-            "statistical",
-            "random",
-            "AES",
-            "preserves"
+            "diffusion",
+            "fixed-size blocks",
+            "frequency counting",
+            "work backwards",
+            "relabeled"
           ],
           "hints": [
-            "Consider what information the Caesar cipher preserves about the original text.",
-            "Think about how modern ciphers transform the entire message, not just individual letters."
+            "Think about what happens when you encrypt the letter 'E' ten times in a Caesar cipher versus AES. Does each method produce the same or different output each time?",
+            "If you looked at a histogram of letter frequencies in each ciphertext, what would you expect to see for each message?"
           ],
-          "minScore": 0.6,
+          "minScore": 0.55,
           "validationMode": "embedding"
         }
       ]
