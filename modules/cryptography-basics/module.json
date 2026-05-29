@@ -3,7 +3,7 @@
   "title": "Cryptography Basics",
   "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
   "author": "Modular Learning Team",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -92,7 +92,7 @@
         {
           "id": "lesson-1-2",
           "title": "Breaking the Caesar Cipher",
-          "content": "Despite its simplicity, the Caesar cipher can be broken using several techniques:\n\n### Brute Force\nSince there are only 25 possible keys, an attacker can try all of them and look for meaningful plaintext.\n\n### Frequency Analysis\nIn English text, certain letters appear more frequently than others. The most common letters are E, T, A, O, I, and N. By analyzing the frequency of letters in the ciphertext, an attacker can make educated guesses about the key.\n\nFor example, if the most common letter in the ciphertext is 'H', and we assume it corresponds to 'E' (the most common letter in English), the key would be 3 (since E+3=H).",
+          "content": "Despite its simplicity, the Caesar cipher can be broken using several well-established techniques. Understanding these attacks teaches fundamental principles of cryptanalysis that apply to all ciphers.\n\n## Brute Force Attack\n\nSince there are only 25 possible keys (shifts of 1-25), an attacker can try all of them and look for meaningful plaintext. This is the simplest possible attack and works against any cipher with a small key space.\n\nFor the Caesar cipher, brute force is trivial:\n- Try shift 1: \"HELLO\" → \"GDKKN\" (not meaningful)\n- Try shift 2: \"HELLO\" → \"FCJJM\" (not meaningful)\n- ...\n- Try shift 3: \"KHOOR\" → \"HELLO\" ✓\n\nA key space of only 25 is catastrophically small by modern standards. AES-256 has 2²⁵⁶ possible keys — more than the number of atoms in the observable universe.\n\n## Frequency Analysis\n\nA more elegant approach exploits the statistical properties of language. In English text, certain letters appear with predictable frequency:\n- **E** appears ~12.7% of the time\n- **T** appears ~9.1% of the time\n- **A** appears ~8.2% of the time\n- **Z** appears ~0.07% of the time\n\nBy counting letter frequencies in the ciphertext and comparing them to known language statistics, you can make educated guesses about the key. If the most common letter in the ciphertext is 'H', and we hypothesize it represents 'E' (the most common English letter), the key would be 3 (since E+3=H).\n\n### Why Frequency Analysis Matters\n\nThis technique isn't just historical — it breaks any cipher that preserves statistical patterns. The Caesar cipher, Vigenère cipher, and simple substitution ciphers all leak statistical information. Modern ciphers like AES are specifically designed to produce output indistinguishable from random noise, eliminating frequency patterns entirely.\n\n## Known Plaintext Attack\n\nIf you know even a small part of the original message (like a standard header or greeting), you can deduce the key immediately. For example, if you know the message starts with \"DEAR\" and the ciphertext starts with \"GHDU\", the shift is clearly 3.\n\nThis illustrates a broader principle: **a cipher's security should depend only on the secrecy of the key, not on the secrecy of the algorithm or any known plaintext patterns.** This is Kerckhoffs' principle, formulated in 1883, and it remains a cornerstone of modern cryptography.",
           "order": 2,
           "diagrams": [
             {
@@ -194,13 +194,13 @@
           "order": 2,
           "type": "mcq",
           "options": [
-            "HELLO",
-            "WORLD",
-            "PYTHON",
-            "CIPHER"
+            "MJQQT — each letter is shifted forward by 5 positions in the alphabet",
+            "WORLD — the cipher wraps around to common English words",
+            "CZGGJ — each letter is shifted by 2 positions instead of 5",
+            "PYTHON — the result depends on the programming language used to encrypt"
           ],
           "correctIndex": 0,
-          "explanation": "Shifting each letter back by 3: K→H, H→E, O→L, O→L, R→O gives 'HELLO'. Option B (WORLD) would give 'THOIA' with key 3. Option C (PYTHON) would give 'MKEFK' with key 3. Option D (CIPHER) would give 'ZFEBO' with key 3."
+          "explanation": "The correct answer is MJQQT. Each letter shifts forward by 5: H→M, E→J, L→Q, L→Q, O→T. Option B is a random word with no cipher relationship. Option C uses the wrong shift value. Option D is nonsensical — Caesar cipher doesn't involve programming languages."
         },
         {
           "id": "caesar-socratic",
@@ -212,19 +212,19 @@
             "What happens to letter frequencies when you use a block cipher with a strong key?"
           ],
           "modelAnswer": "Frequency analysis works on the Caesar cipher because it's a simple substitution cipher — each letter always maps to the same ciphertext letter, preserving the frequency distribution of the original text. Modern ciphers like AES are block ciphers that transform groups of bits, completely changing the statistical properties of the output. AES ciphertext is designed to be indistinguishable from random data, so letter frequencies are destroyed.",
-          "keywords": [
-            "substitution",
-            "preserves",
-            "distribution",
-            "random",
-            "block",
-            "AES",
-            "transformation",
-            "statistical",
-            "properties",
-            "mapping"
+          "type": "socratic_ai",
+          "mustInclude": [
+            "Caesar cipher preserves statistical patterns of the language",
+            "only 25 possible keys makes brute force trivial",
+            "modern ciphers produce output indistinguishable from random"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "frequency analysis exploits letter distribution",
+            "key space is catastrophically small",
+            "Kerckhoffs principle"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         },
         {
           "id": "caesar-socratic-ai",
@@ -262,7 +262,7 @@
         {
           "id": "lesson-2-1",
           "title": "Public Key Cryptography",
-          "content": "**Public key cryptography** (also called asymmetric cryptography) uses a pair of keys: a public key for encryption and a private key for decryption.\n\n### Key Concepts\n- **Public key**: Can be shared with anyone. Used to encrypt messages.\n- **Private key**: Must be kept secret. Used to decrypt messages.\n- **Key pair**: The public and private keys are mathematically related.\n\n### How It Works\n1. Alice generates a key pair (public + private)\n2. Alice shares her public key with Bob\n3. Bob encrypts a message using Alice's public key\n4. Alice decrypts the message using her private key\n\n### Common Algorithms\n- **RSA**: Based on the difficulty of factoring large prime numbers\n- **Diffie-Hellman**: Allows two parties to establish a shared secret over an insecure channel\n- **Elliptic Curve Cryptography (ECC)**: Uses elliptic curve math for equivalent security with smaller keys",
+          "content": "**Public key cryptography** is one of the most important inventions in computer science. It solves a fundamental problem: how can two people communicate securely without having met to share a secret key?\n\n## The Key Distribution Problem\n\nIn traditional (symmetric) cryptography, both sender and receiver need the same key. If Caesar wants to send a message to his general, he must first share the shift value (the key) through some secure channel. But if you already have a secure channel, why not just send the message through it?\n\nThis chicken-and-egg problem — the **key distribution problem** — plagued cryptography for millennia. Military and diplomatic organizations solved it with human couriers carrying codebooks, but this was slow, expensive, and vulnerable to interception.\n\n## The Asymmetric Breakthrough (1970s)\n\nThe solution was elegant: instead of one key, use **two keys** that are mathematically related but in different directions:\n\n- **Public key** — shared openly with everyone, used to *encrypt* messages\n- **Private key** — kept secret by the owner, used to *decrypt* messages\n\nThe mathematical relationship is a **trapdoor function**: easy to compute in one direction (encrypt), computationally infeasible to reverse (derive the private key from the public key).\n\n### RSA (1977)\n\nRivest, Shamir, and Adleman created the first practical public key system. It relies on the fact that:\n- **Easy**: Multiply two large prime numbers together → get their product N\n- **Hard**: Given N, find the two prime factors\n\nA 2048-bit RSA key uses primes that are each ~300 digits long. There is no known algorithm (including quantum algorithms other than Shor's) that can factor such numbers in reasonable time on classical computers.\n\n### Diffie-Hellman Key Exchange (1976)\n\nEven before RSA, Diffie and Hellman showed how two parties could establish a shared secret over an insecure channel. Their protocol doesn't encrypt messages directly — it creates a shared secret that can then be used as a symmetric key.\n\n## Digital Signatures\n\nPublic key cryptography also enables **digital signatures** — the electronic equivalent of a handwritten signature:\n- The sender encrypts a message hash with their *private* key (signing)\n- Anyone can verify the signature using the sender's *public* key\n\nThis provides both authentication (proving who sent it) and integrity (proving it wasn't modified). Without digital signatures, modern e-commerce, banking, and secure communication would be impossible.",
           "order": 1,
           "diagrams": [
             {
@@ -381,21 +381,21 @@
             "Think about whether the public key itself needs to be kept secret.",
             "What problem does the Diffie-Hellman key exchange solve?"
           ],
-          "modelAnswer": "In symmetric cryptography, both parties need the same secret key, which must be shared beforehand over a secure channel — creating a chicken-and-egg problem. If you send the key over an insecure channel, an attacker can intercept it. Public key cryptography solves this because the encryption key (public) can be freely shared — it cannot be used to derive the decryption key (private). This allows secure communication without any prior shared secret.",
-          "keywords": [
-            "shared",
-            "secret",
-            "channel",
-            "intercept",
-            "derive",
-            "private",
-            "public",
-            "distribution",
-            "key exchange",
-            "Diffie-Hellman",
-            "secure"
+          "modelAnswer": "Public key cryptography solves the key distribution problem by splitting the key into two parts: a public key that anyone can use to encrypt messages, and a private key that only the recipient possesses for decryption. This means two parties who have never met can establish secure communication over an insecure channel without sharing any secret information beforehand. The mathematical relationship between the keys makes it computationally infeasible to derive the private key from the public one.",
+          "type": "socratic_ai",
+          "mustInclude": [
+            "public key encrypts and private key decrypts",
+            "parties who have never met can communicate securely",
+            "computationally infeasible to derive the private key"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "key distribution problem",
+            "asymmetric encryption",
+            "mathematical relationship between the keys",
+            "no shared secret required"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         },
         {
           "id": "protocol-errors",
@@ -427,7 +427,7 @@
         {
           "id": "lesson-3-1",
           "title": "Hash Functions and Digital Signatures",
-          "content": "**Cryptographic hash functions** take an input of any size and produce a fixed-size output (the hash). They are designed to be:\n- **Deterministic**: Same input always produces the same hash\n- **One-way**: Cannot be reversed to find the original input\n- **Collision-resistant**: It's computationally infeasible to find two inputs that produce the same hash\n\n### Common Hash Functions\n- **SHA-256**: Produces a 256-bit hash, widely used in blockchain and TLS\n- **SHA-3**: The latest standard, based on a different design than SHA-2\n\n### Digital Signatures\nDigital signatures use public key cryptography to provide:\n- **Authentication**: Proving the message came from the claimed sender\n- **Integrity**: Proving the message hasn't been altered\n- **Non-repudiation**: The sender cannot deny sending the message\n\n### How Digital Signatures Work\n1. The sender computes a hash of the message\n2. The sender encrypts the hash with their private key (this is the signature)\n3. The receiver decrypts the signature with the sender's public key\n4. The receiver computes the hash of the received message\n5. If the hashes match, the signature is valid",
+          "content": "**Hash functions** and **digital signatures** are the invisible backbone of modern digital security. You use them hundreds of times a day — every HTTPS connection, every software update, every password verification relies on these tools.\n\n## Hash Functions\n\nA hash function takes input of any size and produces a fixed-size output (the \"hash\" or \"digest\"). A cryptographic hash function has three essential properties:\n\n1. **Deterministic**: The same input always produces the same hash\n2. **One-way**: Given a hash, it is computationally infeasible to find the input that produced it\n3. **Collision-resistant**: It is extremely unlikely that two different inputs produce the same hash\n\n### SHA-256\n\nThe most widely used hash function today. It produces a 256-bit (32-byte) digest:\n- \"hello\" → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824`\n- \"hello!\" → `ce0609...` (completely different — the avalanche effect)\n\nThe **avalanche effect** means that changing even one bit of input changes approximately 50% of the output bits. This makes it impossible to predict how changes to the input affect the hash.\n\n### What Hashes Are Used For\n- **Password storage**: Websites store hashes of passwords, not the passwords themselves\n- **File integrity**: Verify that a downloaded file hasn't been tampered with\n- **Blockchain**: Each block contains the hash of the previous block, creating a tamper-evident chain\n- **Digital signatures**: Sign the hash of a message (efficient) rather than the full message\n\n## The Quantum Threat\n\nCurrent public key cryptography (RSA, ECC) relies on mathematical problems that quantum computers could potentially solve:\n- **Shor's algorithm** can factor large numbers efficiently → breaks RSA and ECC\n- **Grover's algorithm** provides quadratic speedup for brute force → weakens symmetric ciphers but doesn't break them (doubling key size is sufficient)\n\n### Post-Quantum Cryptography\n\nNIST has begun standardizing **post-quantum algorithms** based on mathematical problems believed to resist quantum attacks:\n- **Lattice-based**: Shortest Vector Problem in high dimensions\n- **Hash-based**: Merkle tree signatures\n- **Code-based**: Error-correcting code problems\n- **Multivariate**: Systems of multivariate polynomial equations\n\nThe transition to post-quantum cryptography is already underway — Google, Apple, and Signal have begun implementing hybrid systems that combine classical and post-quantum algorithms to protect against both current and future threats.",
           "order": 1
         }
       ],
@@ -465,13 +465,13 @@
           "order": 2,
           "type": "mcq",
           "options": [
-            "One-way property",
-            "Collision resistance",
+            "Lattice-based cryptography, which relies on the hardness of high-dimensional lattice problems",
             "Determinism",
-            "Avalanche effect"
+            "AES-256 with a longer key length, since quantum computers cannot brute-force symmetric ciphers efficiently",
+            "Classical RSA with larger key sizes, since quantum computers would just take longer to break them"
           ],
-          "correctIndex": 1,
-          "explanation": "Collision resistance means it's computationally infeasible to find two different inputs that produce the same hash. The one-way property means you can't reverse the hash. Determinism means the same input always gives the same hash. The avalanche effect means a small change in input causes a large change in output."
+          "correctIndex": 0,
+          "explanation": "Lattice-based cryptography is a leading post-quantum approach because the underlying mathematical problems (like Learning With Errors) are believed to be hard for both classical and quantum computers. Option B is not an algorithm. Option C is partially true (Grover's algorithm only provides quadratic speedup against symmetric ciphers) but doesn't address the asymmetric encryption gap. Option D is wrong — larger RSA keys don't help against Shor's algorithm, which factors numbers in polynomial time."
         },
         {
           "id": "quantum-socratic",
@@ -482,34 +482,35 @@
             "Think about what you're trying to prove: that a message came from a specific person vs. that only one person can read it.",
             "In both cases, the receiver uses the sender's public key — but for what purpose in each case?"
           ],
-          "modelAnswer": "In encryption, the sender uses the RECIPIENT's public key to encrypt, so only the recipient's private key can decrypt. In a digital signature, the sender uses their OWN private key to sign (encrypt the hash), so anyone with the sender's public key can verify. Both use the sender's public key at the verification stage, but for different purposes: for encryption, to verify the sender's identity (optional); for signatures, to actually verify the signature itself.",
-          "keywords": [
-            "private",
-            "public",
-            "recipient",
-            "sender",
-            "encrypt",
-            "sign",
-            "verify",
-            "hash",
-            "authentication",
-            "integrity"
+          "modelAnswer": "Quantum computing threatens current cryptography because Shor's algorithm can factor large numbers exponentially faster than classical algorithms. RSA and ECC rely on the computational difficulty of factoring large numbers or solving discrete logarithm problems — tasks that would become tractable on a sufficiently powerful quantum computer. Post-quantum algorithms use different mathematical problems (lattice-based, hash-based, code-based) that are believed to resist quantum attacks because they don't rely on the specific structures that quantum algorithms exploit.",
+          "type": "socratic_ai",
+          "mustInclude": [
+            "Shor's algorithm factors large numbers efficiently",
+            "RSA and ECC rely on factoring or discrete logarithms",
+            "post-quantum algorithms use different mathematical problems"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "lattice-based cryptography",
+            "exponentially faster than classical",
+            "structures that quantum algorithms exploit",
+            "resist quantum attacks"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         }
       ]
     }
   ],
   "assessment": {
     "title": "Cryptography Fundamentals Assessment",
-    "passingScore": 0.75,
+    "passingScore": 0.7,
     "exercises": [
       {
-        "exerciseId": "protocol-mcq",
+        "exerciseId": "caesar-mcq",
         "weight": 1.0
       },
       {
-        "exerciseId": "caesar-mcq",
+        "exerciseId": "protocol-mcq",
         "weight": 1.0
       },
       {
@@ -517,20 +518,13 @@
         "weight": 1.0
       },
       {
-        "exerciseId": "protocol-mcq",
-        "weight": 1.0
+        "exerciseId": "caesar-socratic-ai",
+        "weight": 1.5
       },
       {
-        "exerciseId": "protocol-mcq",
+        "exerciseId": "protocol-error",
         "weight": 1.0
       }
-    ],
-    "exerciseIds": [
-      "protocol-mcq",
-      "caesar-mcq",
-      "quantum-mcq",
-      "protocol-mcq",
-      "protocol-mcq"
     ]
   },
   "flashcardDeck": {

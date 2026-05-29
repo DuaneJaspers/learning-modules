@@ -3,7 +3,7 @@
   "title": "The Fall of Rome",
   "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
   "author": "Modular Learning Team",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -14,8 +14,71 @@
         {
           "id": "lesson-1-1",
           "title": "The Transformation of Rome",
-          "content": "The Roman Republic, which began in 509 BCE after the overthrow of the monarchy, transformed over centuries into an empire. This transformation was driven by political instability, military ambition, and social upheaval.\n\n### The Republic's Structure\nThe Roman Republic had a complex system of checks and balances:\n- **Consuls**: Two executives elected annually\n- **Senate**: An advisory body of aristocrats\n- **Assemblies**: Popular assemblies that elected officials and passed laws\n- **Tribunes**: Officials who could veto Senate decisions\n\n### The Crisis of the Republic\nBy the 1st century BCE, the Republic was in crisis:\n- **Military loyalty shifted**: Soldiers pledged loyalty to generals (like Julius Caesar) rather than to the state\n- **Social inequality**: Wealth concentrated in the hands of the patrician class\n- **Political violence**: Figures like Marius, Sulla, and Caesar used military force to achieve political goals\n\n### The Rise of Augustus\nIn 27 BCE, Octavian (Augustus) became the first Roman Emperor, effectively ending the Republic. He maintained the appearance of republican institutions while concentrating power in his own hands.\n\n### The Pax Romana\nAugustus established the Pax Romana (Roman Peace), a period of relative stability and prosperity that lasted approximately 200 years (27 BCE – 180 CE). This era saw significant achievements in law, architecture, engineering, and culture.",
-          "order": 1
+          "content": "The story of Rome's fall begins not with invasion or disaster, but with **success**. The Roman Empire at its height under Trajan (117 CE) stretched from Britain to Mesopotamia, governing roughly 70 million people across three continents. Understanding how such an empire unraveled requires tracing a chain of interconnected causes across centuries.\n\n## From Republic to Empire\n\nRome's political journey began as a kingdom (753-509 BCE), evolved into a republic (509-27 BCE), and then transformed into an autocratic empire. The republic's system of checks and balances — two consuls, the Senate, popular assemblies — worked well for governing a city-state. But as Rome conquered the Mediterranean, the republic's institutions strained under the weight of empire.\n\n### The Crisis of the Republic\n\nBy the 1st century BCE, Rome was effectively ruled by military strongmen. Marius reformed the army so soldiers were loyal to their general rather than the state. Sulla marched on Rome itself (88 BCE) — the first time a Roman army entered the city as an enemy. Julius Caesar crossed the Rubicon in 49 BCE, plunging the republic into civil war.\n\nOctavian (later Augustus) emerged victorious in 30 BCE, but rather than declare himself king — which Romans despised — he maintained the *appearance* of republican institutions while concentrating all real power in his own hands. This was the **Principate**: an empire disguised as a republic.\n\n## The Pax Romana\n\nThe first two centuries of empire (27 BCE - 180 CE) are known as the **Pax Romana** — the Roman Peace. During this period:\n\n- Trade flourished across the Mediterranean\n- Roman engineering built roads, aqueducts, and monumental architecture\n- A common legal system provided stability\n- The population reached an estimated 60-80 million\n\nBut the Pax Romana was maintained by military force and financed by conquest. When expansion slowed, the economic model began to falter. The reliance on slave labor from conquered territories discouraged technological innovation. And the succession system — there was no formal mechanism for choosing the next emperor — led to periodic civil wars.\n\n### The Seeds of Decline\n\nEven during the golden age, structural weaknesses were developing:\n- **Military dependency on auxiliaries**: Non-Roman soldiers increasingly filled the legions\n- **Economic inequality**: Massive latifundia (slave-worked estates) drove small farmers out of business\n- **Succession crises**: Without a formal succession system, every emperor's death risked civil war\n- **Overextension**: The empire's borders had become too long to defend with available forces\n\nThese were not fatal flaws in 100 CE. But they would become critical vulnerabilities when external pressures intensified centuries later.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "roman-timeline",
+              "type": "timeline",
+              "title": "Key Milestones in Roman History",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "753 BCE — Rome Founded"
+                },
+                {
+                  "id": "n2",
+                  "label": "509 BCE — Republic Established"
+                },
+                {
+                  "id": "n3",
+                  "label": "27 BCE — Augustus, First Emperor"
+                },
+                {
+                  "id": "n4",
+                  "label": "117 CE — Empire at Peak (Trajan)"
+                },
+                {
+                  "id": "n5",
+                  "label": "235-284 — Crisis of 3rd Century"
+                },
+                {
+                  "id": "n6",
+                  "label": "395 — Empire Divided"
+                },
+                {
+                  "id": "n7",
+                  "label": "476 — Western Empire Falls"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n2"
+                },
+                {
+                  "from": "n2",
+                  "to": "n3"
+                },
+                {
+                  "from": "n3",
+                  "to": "n4"
+                },
+                {
+                  "from": "n4",
+                  "to": "n5"
+                },
+                {
+                  "from": "n5",
+                  "to": "n6"
+                },
+                {
+                  "from": "n6",
+                  "to": "n7"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -113,8 +176,74 @@
         {
           "id": "lesson-2-1",
           "title": "The Empire in Peril",
-          "content": "The third century CE (235–284 CE) was a period of near-collapse for the Roman Empire, known as the Crisis of the Third Century.\n\n### The Crisis Unfolds\n- **Political instability**: Over 20 emperors in 50 years, most dying violently\n- **Economic collapse**: Hyperinflation due to debasement of the currency\n- **External threats**: Germanic tribes pressed on the northern borders; the Sassanian Empire threatened the east\n- **Civil wars**: Constant internal conflict drained military resources\n- **Plague**: The Cyprian Plague (249–262 CE) killed an estimated 5 million people\n\n### Key Events\n- **235 CE**: Assassination of Severus Alexander begins the crisis\n- **251 CE**: Decius becomes emperor; the plague begins\n- **260 CE**: Emperor Valerian captured by the Sassanians\n- **268 CE**: Claudius Gothicus defeats the Goths at the Battle of Naissus\n- **270 CE**: Aurelian reunites the empire after defeating the Palmyrene and Gallic breakaway states\n- **284 CE**: Diocletian becomes emperor, beginning the end of the crisis\n\n### Diocletian's Reforms\nDiocletian (r. 284–305 CE) implemented sweeping reforms:\n- **Tetrarchy**: Division of the empire into four parts, ruled by two senior and two junior emperors\n- **Military reform**: Increased troop numbers and separated military from civil administration\n- **Economic reform**: Attempted to control inflation through the Edict on Maximum Prices\n- **Administrative reform**: Divided provinces into smaller units for better control",
-          "order": 1
+          "content": "The **Crisis of the Third Century** (235-284 CE) nearly destroyed the Roman Empire. In just 49 years, more than 20 men claimed the title of emperor — most were assassinated by their own troops. This period reveals how military, economic, and plague-related disasters can reinforce each other in a deadly feedback loop.\n\n## Military Collapse\n\nIn 235 CE, Emperor Alexander Severus was murdered by his own soldiers for negotiating with Germanic tribes rather than fighting them. This assassination unleashed half a century of military anarchy:\n\n- Legions began proclaiming their generals as emperor, knowing they would be rewarded with donatives (cash bonuses)\n- Rival emperors fought civil wars, draining the military and treasury\n- The Gallic Empire (260-274 CE) seceded in the West\n- The Palmyrene Empire (260-273 CE) broke away in the East\n- Rome's borders became porous as troops were pulled into internal conflicts\n\n### The Battle of Adrianople — A Turning Point\n\nIn 378 CE, Emperor Valens faced Gothic invaders at Adrianople (modern Edirne, Turkey). The battle was a catastrophe: two-thirds of the Roman army was destroyed, and Valens himself was killed. This was not just a military defeat — it was a psychological blow. The myth of Roman invincibility, already weakened by decades of crisis, shattered.\n\nThe aftermath of Adrianople forced Rome to settle Gothic tribes *inside* the empire as **foederati** (allied troops). This was pragmatic short-term, but it meant that large, militarily capable groups now lived within Roman borders with their own leaders and loyalties.\n\n## The Cyprian Plague\n\nBetween 249 and 262 CE, a devastating pandemic — probably smallpox or measles — swept through the empire. Named after St. Cyprian, the bishop of Carthage who documented its horrors, the plague killed an estimated 5 million people, including two emperors.\n\nThe demographic impact was devastating:\n- **Agricultural output plummeted** — fewer farmers meant less food\n- **Tax revenue collapsed** — fewer taxpayers meant less money for the army\n- **Military recruitment suffered** — fewer eligible men to fill the legions\n- **Trade networks broke down** — fear of contagion disrupted commerce\n\nThis created a vicious cycle: less revenue → weaker military → more invasions → more disruption → even less revenue.\n\n## Economic Freefall\n\nTo pay for armies during the crisis, emperors began debasing the currency — reducing the silver content of coins while keeping their face value the same. This triggered massive inflation:\n\n- The denarius went from ~50% silver under Nero to <5% silver by 270 CE\n- Prices rose by thousands of percent\n- Diocletian's price controls (301 CE) failed because they couldn't address the underlying currency debasement\n- People reverted to barter, undermining the monetary economy\n\nThe economic damage outlasted the political crisis. Even after Diocletian and Constantine restored order, the Western economy never fully recovered.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "crisis-feedback-loop",
+              "type": "flowchart",
+              "title": "The Crisis Feedback Loop",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Military\nDefeat",
+                  "shape": "rounded",
+                  "color": "#B71C1C"
+                },
+                {
+                  "id": "n2",
+                  "label": "Civil War /\nUsurpers",
+                  "shape": "rounded",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "n3",
+                  "label": "Currency\nDebasement",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "n4",
+                  "label": "Inflation /\nEconomic Collapse",
+                  "shape": "rounded",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "n5",
+                  "label": "Less Revenue\nfor Army",
+                  "shape": "rounded",
+                  "color": "#37474F"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n2",
+                  "label": "generals seize power"
+                },
+                {
+                  "from": "n2",
+                  "to": "n3",
+                  "label": "need money"
+                },
+                {
+                  "from": "n3",
+                  "to": "n4",
+                  "label": ""
+                },
+                {
+                  "from": "n4",
+                  "to": "n5",
+                  "label": ""
+                },
+                {
+                  "from": "n5",
+                  "to": "n1",
+                  "label": "weaker defense"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -138,17 +267,15 @@
               "id": "step-3",
               "text": "Step 3: The system divided the empire into four regions, each with its own ruler:",
               "missingPart": {
-                "expectedAnswer": "east, west, east junior, west junior",
+                "expectedAnswer": "devaluation of the currency",
                 "keywords": [
-                  "four regions",
-                  "east",
-                  "west",
-                  "Augustus",
-                  "Caesar",
-                  "four rulers",
-                  "two senior",
-                  "two junior",
-                  "regional division"
+                  "devaluation",
+                  "currency",
+                  "coinage",
+                  "debased",
+                  "inflation",
+                  "currency devaluation",
+                  "devaluation of currency"
                 ]
               }
             },
@@ -190,21 +317,19 @@
             "How did the division of the empire affect its long-term unity?"
           ],
           "modelAnswer": "Diocletian's reforms addressed symptoms rather than root causes. The Tetrarchy solved the immediate succession problem but couldn't fix the economic collapse (hyperinflation, debased currency), military overextension, or the fundamental tension between a unified empire and regional loyalties. When competent leaders like Diocletian and Constantine died, the system reverted to civil war. The division into East and West ultimately led to the permanent split — the West fell in 476 CE while the East (Byzantine) survived until 1453.",
-          "keywords": [
-            "economic",
-            "root causes",
-            "Tetrarchy",
-            "succession",
-            "inflation",
-            "military",
-            "division",
-            "East",
-            "West",
-            "temporary",
-            "underlying",
-            "symptoms"
+          "type": "socratic_ai",
+          "mustInclude": [
+            "multiple overlapping crises rather than a single cause",
+            "political instability weakened military response",
+            "economic collapse and plague reduced population"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "feedback loop between crisis types",
+            "loss of tax revenue",
+            "could not pay armies"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         }
       ]
     },
@@ -216,8 +341,55 @@
         {
           "id": "lesson-3-1",
           "title": "The Fall of the Western Roman Empire",
-          "content": "The Western Roman Empire officially fell in 476 CE when the Germanic chieftain Odoacer deposed the last Western Roman Emperor, Romulus Augustulus. However, this 'fall' was the culmination of centuries of decline.\n\n### Long-term Causes\n- **Economic decay**: Heavy taxation, reliance on slave labor, and the debasement of currency weakened the economy\n- **Military overextension**: The empire was too large to defend effectively with available resources\n- **Political corruption**: The imperial succession system broke down, leading to frequent civil wars\n- **Barbarian migrations**: Germanic tribes (Goths, Vandals, Franks, Huns) pressed into Roman territory\n- **Division of the empire**: The split between East and West weakened both halves\n- **Christianity's impact**: Some historians argue Christianity shifted focus from civic duty to spiritual concerns\n\n### Key Events in the Final Century\n- **378 CE**: Battle of Adrianople — Goths defeat and kill Emperor Valens\n- **410 CE**: Alaric and the Visigoths sack Rome\n- **451 CE**: Attila the Hun defeated at the Battle of the Catalaunian Plains\n- **455 CE**: Vandals sack Rome\n- **476 CE**: Odoacer deposes Romulus Augustulus, ending the Western Roman Empire\n\n### Legacy\nThe fall of Rome had profound consequences:\n- **Political fragmentation**: Europe fractured into medieval kingdoms\n- **Cultural preservation**: The Catholic Church preserved Roman culture and learning\n- **Legal legacy**: Roman law influenced European legal systems for centuries\n- **Language**: Latin evolved into the Romance languages (French, Spanish, Italian, Portuguese, Romanian)",
-          "order": 1
+          "content": "The final century of the Western Roman Empire was a slow, uneven process of disintegration — not the dramatic single-event collapse that popular imagination often pictures. Understanding why the West fell while the East persisted reveals crucial lessons about institutional resilience.\n\n## The Division of the Empire\n\nIn 395 CE, Emperor Theodosius I permanently divided the empire between his two sons:\n- **The West**: Capital at Ravenna (later), covering Italy, Gaul, Britain, Spain, and North Africa\n- **The East**: Capital at Constantinople, covering the Balkans, Anatolia, the Levant, and Egypt\n\nThis division was administrative pragmatism, but it sealed the West's fate. The East was wealthier, more urbanized, better defended, and had shorter borders. The West was larger, more rural, had longer borders to defend, and faced the primary pressure of Germanic migrations.\n\n## The Final Century: A Timeline\n\n- **406-407 CE**: Vandals, Alans, and Suebi cross the frozen Rhine into Gaul. Rome cannot stop them.\n- **410 CE**: Visigoths under Alaric sack Rome — the first time the city was breached in 800 years. The psychological impact was enormous, though the physical damage was limited.\n- **429-439 CE**: Vandals cross from Spain to North Africa and capture Carthage. Rome loses its richest province and its grain supply.\n- **455 CE**: Vandals sack Rome again — this time more thoroughly.\n- **476 CE**: Odoacer, a Germanic chieftain, deposes the last Western emperor, Romulus Augustulus. This is the traditional \"fall\" date, though it was almost anticlimactic — Odoacer simply sent the imperial regalia to Constantinople and ruled as King of Italy.\n\n## Why the East Survived\n\nThe Eastern Roman Empire (Byzantine Empire) persisted for nearly another thousand years after the West fell. Why?\n\n1. **Geographic advantages**: Constantinople was surrounded by water on three sides and defended by massive walls that resisted sieges until 1453\n2. **Economic health**: The East controlled the wealthy provinces — Egypt's grain, Anatolia's metals, and the Silk Road trade routes\n3. **Diplomatic sophistication**: The East skillfully played barbarian groups against each other, paying tribute when necessary and fighting when advantageous\n4. **Shorter borders**: The East had less territory to defend\n5. **Continuity of institutions**: The Eastern bureaucracy, legal system, and Church remained functional\n\n## The Big Question: Collapse or Transformation?\n\nModern historians debate whether 476 CE was really a \"fall.\" In important ways, Roman civilization persisted:\n\n- The **Catholic Church** adopted Roman administrative structures and became the unifying institution of Western Europe\n- **Latin** didn't die — it evolved into French, Spanish, Italian, Portuguese, and Romanian (spoken by 900+ million people today)\n- **Roman law** was preserved in the Corpus Juris Civilis (Justinian's code, 529-534 CE) and influenced every European legal system\n- **Roman engineering** — roads, aqueducts, buildings — remained in use for centuries\n\nThe fall was real for Roman political institutions, the military, and the tax system. But culturally, Rome never truly disappeared — it was absorbed and transformed by the societies that followed.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "east-west-comparison",
+              "type": "process",
+              "title": "Why the East Survived",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Defensible Capital\n(Constantinople)"
+                },
+                {
+                  "id": "n2",
+                  "label": "Wealthy Provinces\n(Egypt, Anatolia)"
+                },
+                {
+                  "id": "n3",
+                  "label": "Shorter Borders\nto Defend"
+                },
+                {
+                  "id": "n4",
+                  "label": "Diplomatic\nSophistication"
+                },
+                {
+                  "id": "n5",
+                  "label": "Continuity of\nInstitutions"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n2"
+                },
+                {
+                  "from": "n2",
+                  "to": "n3"
+                },
+                {
+                  "from": "n3",
+                  "to": "n4"
+                },
+                {
+                  "from": "n4",
+                  "to": "n5"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -279,59 +451,55 @@
         },
         {
           "id": "decline-socratic",
-          "prompt": "Was the fall of Rome truly a 'fall,' or was it a transformation? Consider what survived and what changed.",
+          "prompt": "Historians continue to debate whether the end of the Western Roman Empire was a collapse, a transition, or something in between. Using specific evidence from the module, argue for one interpretation and address the strongest counterargument.",
           "order": 3,
           "hints": [
             "What Roman institutions, laws, and culture survived the political collapse?",
             "Consider the role of the Catholic Church in preserving Roman traditions.",
             "How did the Eastern Roman (Byzantine) Empire continue Roman traditions?"
           ],
-          "modelAnswer": "The fall of Rome was more accurately a transformation than a sudden collapse. Roman law, Latin language, Christian religion, and administrative structures persisted and evolved. The Catholic Church preserved Roman learning and became the dominant institution in Western Europe. Roman law influenced medieval legal systems and modern civil law. The Eastern Roman Empire continued for nearly another thousand years. The 'fall' was really a gradual transformation of Roman institutions into medieval European civilizations.",
-          "keywords": [
-            "transformation",
-            "survived",
-            "church",
-            "law",
-            "language",
-            "culture",
-            "Byzantine",
-            "institutions",
-            "evolved",
-            "gradual",
-            "continuity",
-            "medieval"
+          "modelAnswer": "The 'fall' was both a collapse and a transition, depending on the layer of society you examine. Politically and militarily, it was a clear collapse: the Western imperial government ceased to function, Roman legions dissolved, and Germanic kingdoms took over territory. However, culturally and institutionally, much persisted: the Christian Church carried forward Roman administrative structures, Latin evolved into Romance languages rather than disappearing, Roman law was preserved through the Corpus Juris Civilis, and the Eastern Roman Empire continued for nearly another millennium. The Eastern half's survival demonstrates that Roman institutions were not inherently doomed — the West fell due to specific military, economic, and political pressures that the East managed to withstand.",
+          "type": "socratic_ai",
+          "mustInclude": [
+            "depends on which layer of society you examine",
+            "Eastern Roman Empire continued for nearly another millennium",
+            "culturally and institutionally much persisted"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "Christian Church carried forward Roman administrative structures",
+            "Latin evolved into Romance languages",
+            "specific military and economic pressures the East withstood"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         }
       ]
     }
   ],
   "assessment": {
     "title": "The Fall of Rome Assessment",
-    "passingScore": 0.75,
+    "passingScore": 0.7,
     "exercises": [
       {
+        "exerciseId": "republic-mcq",
+        "weight": 1.0
+      },
+      {
+        "exerciseId": "crisis-error",
+        "weight": 1.0
+      },
+      {
         "exerciseId": "economy-mcq",
         "weight": 1.0
       },
       {
-        "exerciseId": "decline-mcq",
-        "weight": 1.0
+        "exerciseId": "decline-socratic-ai",
+        "weight": 1.5
       },
       {
-        "exerciseId": "economy-mcq",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "decline-mcq",
+        "exerciseId": "republic-drag",
         "weight": 1.0
       }
-    ],
-    "exerciseIds": [
-      "economy-mcq",
-      "decline-mcq",
-      "economy-mcq",
-      "decline-mcq"
     ]
   },
   "flashcardDeck": {

@@ -3,7 +3,7 @@
   "title": "The Scientific Revolution",
   "description": "An exploration of the scientific revolution of the 16th and 17th centuries, examining the key figures, discoveries, and paradigm shifts that transformed our understanding of the natural world.",
   "author": "Modular Learning Team",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -14,8 +14,74 @@
         {
           "id": "lesson-1-1",
           "title": "The Heliocentric Model",
-          "content": "The **heliocentric model** places the Sun at the center of the solar system, with Earth and other planets orbiting around it. This was a radical departure from the geocentric (Earth-centered) model that had dominated Western thought for over a millennium.\n\n### Historical Context\n- **Ptolemy's Geocentrism** (2nd century CE): The Earth-centered model dominated astronomy for over 1,400 years. It was incorporated into Christian theology and became the accepted view.\n- **Copernicus's Challenge** (1543): Nicolaus Copernicus published 'De Revolutionibus Orbium Coelestium' (On the Revolutions of the Heavenly Spheres), proposing a Sun-centered system.\n- **Galileo's Support** (1609-1632): Galileo Galilei used his telescope to discover Jupiter's moons, phases of Venus, and sunspots — evidence supporting heliocentrism.\n\n### Key Evidence for Heliocentrism\n1. **Phases of Venus**: Galileo observed that Venus goes through phases like the Moon, which is only possible if Venus orbits the Sun.\n2. **Jupiter's Moons**: The discovery of moons orbiting Jupiter showed that not everything orbits Earth.\n3. **Stellar Parallax**: The apparent shift in star positions (though not measurable with 16th-century instruments).\n\n### The Conflict with the Church\nGalileo's support of heliocentrism brought him into conflict with the Catholic Church. In 1633, he was tried by the Inquisition, forced to recant, and spent the rest of his life under house arrest.",
-          "order": 1
+          "content": "The **heliocentric model** places the Sun at the center of the solar system, with Earth and other planets orbiting around it. This was a radical departure from the geocentric (Earth-centered) model that had dominated Western thought for over a millennium — and understanding why it was so controversial reveals how scientific revolutions actually happen.\n\n## Ptolemy's Geocentrism: A Thousand-Year Consensus\n\nClaudius Ptolemy (c. 100-170 CE) developed a sophisticated Earth-centered model that could predict planetary positions with reasonable accuracy. His system used **epicycles** — small circles that planets traveled along while simultaneously orbiting Earth — to explain the retrograde motion of planets (their apparent backward movement in the sky).\n\nPtolemy's model was not foolish. It was consistent with everyday experience: we don't feel the Earth moving, and everything in the sky appears to revolve around us. It was also integrated into Christian theology — if humans were God's special creation, shouldn't their home be at the center of the universe?\n\nThe model's persistence for 1,400 years wasn't just due to dogma — it actually worked for navigation and calendar-keeping. A scientific theory is rarely replaced until a better alternative can do everything the old theory did, plus explain things it couldn't.\n\n## Copernicus's Challenge (1543)\n\nNicolaus Copernicus (1473-1543) proposed a Sun-centered system in *De Revolutionibus Orbium Coelestium*, published in the year of his death. His motivations were partly aesthetic — the heliocentric model was mathematically simpler, eliminating many of the ad-hoc epicycles that Ptolemy required.\n\nHowever, Copernicus's model was not immediately more accurate than Ptolemy's. He still insisted on perfect circular orbits (planets actually move in ellipses), so he needed epicycles too — just fewer of them. The real advantage was conceptual simplicity: retrograde motion became a natural consequence of Earth's own motion rather than an awkward feature requiring special explanation.\n\n## Galileo's Observations (1609-1632)\n\nGalileo Galilei didn't invent the telescope, but he was the first to point it at the sky systematically. His observations provided direct evidence that challenged geocentrism:\n\n1. **Phases of Venus**: Galileo observed that Venus goes through a full set of phases (like the Moon), which is only possible if Venus orbits the Sun, not Earth. In Ptolemy's model, Venus would only ever show crescent and new phases.\n\n2. **Jupiter's Moons**: The discovery of four moons orbiting Jupiter (Io, Europa, Ganymede, Callisto) showed that not everything orbits Earth. This directly contradicted the geocentric claim that Earth was the center of all celestial motion.\n\n3. **Sunspots**: Observing imperfections on the Sun challenged the Aristotelian idea that celestial bodies were perfect and unchanging.\n\n### The Church Conflict\n\nGalileo's support of heliocentrism brought him into direct conflict with the Catholic Church. In 1633, he was tried by the Inquisition, forced to publicly recant, and spent the rest of his life under house arrest. The Church's objection was not purely theological — it was also about authority: who gets to decide what is true about the natural world?\n\nThis conflict illustrates a pattern that repeats throughout the history of science: new ideas are resisted not because the evidence is weak, but because the implications threaten existing power structures.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "heliocentric-evidence",
+              "type": "flowchart",
+              "title": "Evidence Against Geocentrism",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Telescope\nObservations",
+                  "shape": "rounded",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "n2",
+                  "label": "Phases of Venus\n→ Venus orbits Sun",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "n3",
+                  "label": "Jupiter's Moons\n→ Not all orbits Earth",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "n4",
+                  "label": "Sunspots\n→ Heavens not perfect",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "n5",
+                  "label": "Geocentrism\nFalsified",
+                  "shape": "pill",
+                  "color": "#B71C1C"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n2",
+                  "label": ""
+                },
+                {
+                  "from": "n1",
+                  "to": "n3",
+                  "label": ""
+                },
+                {
+                  "from": "n1",
+                  "to": "n4",
+                  "label": ""
+                },
+                {
+                  "from": "n2",
+                  "to": "n5",
+                  "label": ""
+                },
+                {
+                  "from": "n3",
+                  "to": "n5",
+                  "label": ""
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -83,21 +149,19 @@
             "What technological advances were necessary before heliocentrism could be properly demonstrated?"
           ],
           "modelAnswer": "Ptolemy's model was deeply embedded in religious doctrine (Earth as God's creation at the center), philosophical tradition (Aristotelian physics), and everyday experience (we don't feel Earth moving). Overturning it required: 1) The telescope (technology), 2) Mathematical models showing heliocentrism could make accurate predictions (Copernicus, Kepler), 3) Physical theories explaining why we don't feel Earth's motion (Galileo, Newton), and 4) A willingness to challenge authority (the Reformation created intellectual space for this). It took the convergence of all these factors.",
-          "keywords": [
-            "religious",
-            "philosophical",
-            "authority",
-            "telescope",
-            "evidence",
-            "technology",
-            "prediction",
-            "mathematical",
-            "challenge",
-            "tradition",
-            "experience",
-            "convergence"
+          "type": "socratic_ai",
+          "mustInclude": [
+            "telescope was necessary technology",
+            "deeply embedded in religious and philosophical doctrine",
+            "convergence of mathematical models and physical evidence"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "Ptolemy's model made accurate predictions too",
+            "willingness to challenge authority",
+            "Reformation created intellectual space"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         }
       ]
     },
@@ -109,8 +173,85 @@
         {
           "id": "lesson-2-1",
           "title": "The Birth of the Scientific Method",
-          "content": "The **scientific method** is a systematic approach to understanding the natural world through observation, hypothesis, experimentation, and conclusion. It emerged during the Scientific Revolution as a replacement for reliance on ancient authorities.\n\n### Key Figures\n- **Francis Bacon (1561-1626)**: Advocated for inductive reasoning — building general conclusions from specific observations. His work 'Novum Organum' (1620) laid out this approach.\n- **René Descartes (1596-1650)**: Emphasized deductive reasoning and mathematical certainty. His 'Discourse on Method' (1637) proposed systematic doubt as a path to knowledge.\n- **Isaac Newton (1642-1727)**: Combined empirical observation with mathematical rigor. His 'Principia Mathematica' (1687) demonstrated the power of the scientific method.\n\n### The Method\n1. **Observation**: Notice a phenomenon or pattern\n2. **Question**: Ask why or how it occurs\n3. **Hypothesis**: Propose a testable explanation\n4. **Experiment**: Design a test to verify or falsify the hypothesis\n5. **Analysis**: Examine the results\n6. **Conclusion**: Accept, reject, or modify the hypothesis\n7. **Peer review**: Share results for independent verification\n\n### Importance\nThe scientific method introduced the principle that knowledge should be based on evidence and reasoning, not on authority or tradition. This was revolutionary in an era when Aristotle and the Bible were considered the ultimate sources of truth.",
-          "order": 1
+          "content": "The **scientific method** is a systematic approach to understanding the natural world through observation, hypothesis, experimentation, and conclusion. Its emergence during the Scientific Revolution replaced a millennium of reliance on ancient authorities — and it remains the foundation of all modern science.\n\n## The Problem with Authority\n\nBefore the Scientific Revolution, the primary sources of truth were **Aristotle** (for natural philosophy) and **the Bible** (for spiritual truth). If Aristotle said heavy objects fall faster than light ones, that was accepted without testing. If the Bible described the Earth as immovable, that settled the question.\n\nThe problem? Both sources were sometimes wrong. Aristotle had claimed that women have fewer teeth than men — he could have counted but didn't. The Bible described a stationary Earth, but it also described the Sun standing still for Joshua, which implied the Sun normally moves. Relying on authority alone produced a patchwork of truths and errors that couldn't be sorted out from within the system.\n\n## Francis Bacon: Inductive Reasoning (1620)\n\nFrancis Bacon (1561-1626) argued that knowledge should be built from the ground up. In his *Novum Organum* (\"New Instrument\"), he proposed:\n\n1. **Observe** the natural world carefully and systematically\n2. **Collect** many instances of the phenomenon under study\n3. **Identify** what is common to all instances (and absent when the phenomenon is absent)\n4. **Gradually build** toward general conclusions\n\nThis was radical because it meant truth came from *observation and evidence*, not from interpreting ancient texts. Bacon's approach — **inductive reasoning** — became the foundation of empirical science.\n\n## René Descartes: Deductive Reasoning (1637)\n\nRené Descartes (1596-1650) took a different approach. In *Discourse on Method*, he proposed starting from self-evident truths and reasoning deductively to specific conclusions. His famous \"I think, therefore I am\" (*Cogito ergo sum*) was his starting point — the one thing he could not doubt.\n\nDescartes' method of **systematic doubt** — rejecting any belief that could possibly be false — was a tool for finding absolutely certain foundations for knowledge. He then built upward from these foundations using mathematical-style deduction.\n\n## The Combined Method\n\nNeither induction nor deduction alone is sufficient for science. The scientific method as we know it combines both:\n\n1. **Observation** (inductive): Notice patterns in nature\n2. **Hypothesis** (creative leap): Propose a testable explanation\n3. **Prediction** (deductive): If the hypothesis is true, then X should happen\n4. **Experiment** (empirical test): Test the prediction\n5. **Analysis**: Compare results to the prediction\n6. **Conclusion**: Accept, reject, or modify the hypothesis\n7. **Peer Review**: Share results so others can verify or challenge\n\n### Why Peer Review Matters\n\nIndividual scientists can be biased, make errors, or misinterpret data. Peer review introduces independent verification — other scientists try to replicate results, find flaws, or confirm findings. This social process is what makes science self-correcting over time.\n\n## Bacon vs Descartes: Complementary, Not Competing\n\nThe tension between Bacon's induction and Descartes' deduction wasn't a competition — both are essential. You need induction to discover patterns and generate hypotheses. You need deduction to derive testable predictions from those hypotheses. Newton's genius was combining both approaches: using mathematical deduction to derive predictions from general principles, and then using empirical observation to test them.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "scientific-method-cycle",
+              "type": "flowchart",
+              "title": "The Scientific Method",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Observation",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "n2",
+                  "label": "Hypothesis",
+                  "shape": "rounded",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "n3",
+                  "label": "Deductive\nPrediction",
+                  "shape": "diamond",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "n4",
+                  "label": "Experiment",
+                  "shape": "rounded",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "n5",
+                  "label": "Analysis",
+                  "shape": "rounded",
+                  "color": "#37474F"
+                },
+                {
+                  "id": "n6",
+                  "label": "Conclusion",
+                  "shape": "pill",
+                  "color": "#2D5A27"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n2",
+                  "label": "inductive leap"
+                },
+                {
+                  "from": "n2",
+                  "to": "n3",
+                  "label": "if-then"
+                },
+                {
+                  "from": "n3",
+                  "to": "n4",
+                  "label": "test"
+                },
+                {
+                  "from": "n4",
+                  "to": "n5",
+                  "label": ""
+                },
+                {
+                  "from": "n5",
+                  "to": "n6",
+                  "label": ""
+                },
+                {
+                  "from": "n6",
+                  "to": "n2",
+                  "label": "revise"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -203,8 +344,59 @@
         {
           "id": "lesson-3-1",
           "title": "The Principia and the Laws of Nature",
-          "content": "Isaac Newton's 'Philosophiæ Naturalis Principia Mathematica' (Mathematical Principles of Natural Philosophy), published in 1687, is one of the most important works in the history of science. It synthesized the work of Copernicus, Kepler, and Galileo into a unified framework.\n\n### Newton's Laws of Motion\n1. **First Law (Inertia)**: An object at rest stays at rest, and an object in motion stays in motion, unless acted upon by an external force.\n2. **Second Law (F=ma)**: Force equals mass times acceleration.\n3. **Third Law (Action-Reaction)**: For every action, there is an equal and opposite reaction.\n\n### The Law of Universal Gravitation\nNewton proposed that every object in the universe attracts every other object with a force proportional to their masses and inversely proportional to the square of the distance between them:\n\n**F = G × (m₁ × m₂) / r²**\n\nThis single law explained:\n- Why planets orbit the Sun (Kepler's laws)\n- Why objects fall to Earth\n- Why the Moon orbits Earth\n- The tides\n\n### Impact\nNewton's work demonstrated that the universe operates according to mathematical laws that can be discovered and predicted. This had profound implications for philosophy, theology, and the Enlightenment.",
-          "order": 1
+          "content": "Isaac Newton's *Philosophiæ Naturalis Principia Mathematica* (Mathematical Principles of Natural Philosophy), published in 1687, is one of the most important scientific works ever written. It didn't just describe how objects move — it demonstrated that the entire universe operates according to mathematical laws that humans can discover and express precisely.\n\n## Newton's Laws of Motion\n\n### First Law (Inertia)\nAn object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by an external force.\n\nThis overturned 2,000 years of Aristotelian physics, which held that objects naturally come to rest. Newton showed that rest is not a \"natural state\" — motion continues unless something stops it. This explains why a hockey puck keeps sliding on ice: friction is the external force slowing it, and less friction means longer motion.\n\n### Second Law (F = ma)\nForce equals mass times acceleration. This is the most practical of the three laws — it gives you a formula for calculating how any object will move when forces are applied to it.\n\nThe equation is deceptively simple. It unified the concepts of force, mass, and acceleration into a single relationship that works for everything from falling apples to orbiting planets. Want to know how fast a rocket accelerates? F = ma. How much force does a car need to stop? F = ma.\n\n### Third Law (Action-Reaction)\nFor every action, there is an equal and opposite reaction.\n\nWhen you push against a wall, the wall pushes back with equal force. A rocket expels gas downward, and the reaction force pushes the rocket upward. This is why you can't pull yourself up by your own bootstraps — you need to push against something external.\n\n## Universal Gravitation\n\nNewton's most revolutionary insight was the **Law of Universal Gravitation**: every object in the universe attracts every other object with a force proportional to their masses and inversely proportional to the square of the distance between them.\n\n**F = G × (m₁ × m₂) / r²**\n\nThis single equation explained:\n- Why planets orbit the Sun (confirming Kepler's laws)\n- Why objects fall to Earth (Galileo's observations)\n- Why the Moon orbits Earth\n- Why tides rise and fall\n- Why comets follow elliptical paths\n\nBefore Newton, people believed celestial mechanics and earthly mechanics were governed by different rules. Newton showed they are the same. The force that makes an apple fall is the same force that keeps the Moon in orbit — just at different distances and scales.\n\n## The Philosophical Impact\n\nNewton's success had implications far beyond physics:\n\n1. **Determinism**: If the universe follows mathematical laws, then in principle, everything is predictable. This idea fueled the Enlightenment and influenced philosophy, theology, and politics.\n\n2. **Reductionism**: Complex phenomena can be understood by breaking them into simpler parts governed by basic laws. This became the template for all sciences.\n\n3. **Human reason**: If humans could discover the laws governing the universe, perhaps they could also discover the laws governing society, economics, and morality. The Enlightenment was, in many ways, an attempt to do for human affairs what Newton did for physics.\n\n### What Newton Got Wrong\n\nNewton himself couldn't explain *why* gravity works — only *how* it works mathematically. He famously wrote \"hypotheses non fingo\" (\"I frame no hypotheses\") about gravity's cause. It wasn't until Einstein's General Relativity (1915) that gravity was explained as the curvature of spacetime. Newton's laws remain accurate for everyday purposes, but they break down at very high speeds, very strong gravitational fields, and very small scales.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "newton-unification",
+              "type": "process",
+              "title": "Newton's Unification",
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Kepler's Planetary\nLaws (celestial)"
+                },
+                {
+                  "id": "n2",
+                  "label": "Galileo's Falling\nBodies (terrestrial)"
+                },
+                {
+                  "id": "n3",
+                  "label": "Newton's Universal\nGravitation F = Gm₁m₂/r²"
+                },
+                {
+                  "id": "n4",
+                  "label": "One Law Explains\nBoth Realms"
+                },
+                {
+                  "id": "n5",
+                  "label": "Deterministic,\nMathematical Universe"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "n1",
+                  "to": "n3",
+                  "label": ""
+                },
+                {
+                  "from": "n2",
+                  "to": "n3",
+                  "label": ""
+                },
+                {
+                  "from": "n3",
+                  "to": "n4",
+                  "label": "unifies"
+                },
+                {
+                  "from": "n4",
+                  "to": "n5",
+                  "label": "implies"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -264,7 +456,7 @@
           "explanation": "Newton's greatest contribution was unifying the laws governing the heavens (planetary motion) with the laws governing Earth (falling objects, tides) under a single framework of universal gravitation. Option A: Galileo improved the telescope. Option B: Kepler discovered planetary motion laws. Option C is correct. Option D: Copernicus proposed heliocentrism; Galileo provided evidence."
         },
         {
-          "id": "newton-socratic",
+          "id": "newton-socratic-ai",
           "prompt": "Why was Newton's Principia considered such a revolutionary work, even though many of his ideas built on the work of earlier scientists?",
           "order": 3,
           "hints": [
@@ -273,22 +465,19 @@
             "What was the philosophical impact of showing that the same laws apply everywhere in the universe?"
           ],
           "modelAnswer": "Newton's revolution was in synthesis and unification. Previous scientists had made important discoveries, but Newton showed that the same mathematical laws applied to both celestial and terrestrial phenomena. Before Newton, people thought heavenly and earthly physics were different. His Principia demonstrated that the force that makes an apple fall is the same force that keeps the Moon in orbit. This unified, mathematical approach to nature became the model for all subsequent science and had profound philosophical implications — suggesting the universe is orderly and predictable.",
-          "keywords": [
-            "unification",
-            "synthesis",
-            "mathematical",
-            "celestial",
-            "terrestrial",
-            "universal",
-            "orderly",
-            "predictable",
-            "framework",
-            "previous",
-            "combined",
-            "gravity",
-            "laws"
+          "type": "socratic_ai",
+          "mustInclude": [
+            "same mathematical laws applied to both celestial and terrestrial phenomena",
+            "synthesis and unification of earlier discoveries",
+            "demonstrated the universe operates according to discoverable mathematical laws"
           ],
-          "type": "socratic"
+          "niceToHave": [
+            "force that makes an apple fall is the same that keeps the Moon in orbit",
+            "model for all subsequent science",
+            "philosophical implications of an orderly predictable universe"
+          ],
+          "minScore": 0.55,
+          "validationMode": "embedding"
         }
       ]
     }
@@ -310,20 +499,13 @@
         "weight": 1.0
       },
       {
-        "exerciseId": "method-mcq",
+        "exerciseId": "method-errors",
         "weight": 1.0
       },
       {
-        "exerciseId": "heliocentrism-mcq",
-        "weight": 1.0
+        "exerciseId": "newton-socratic-ai",
+        "weight": 1.5
       }
-    ],
-    "exerciseIds": [
-      "heliocentrism-mcq",
-      "method-mcq",
-      "newton-mcq",
-      "method-mcq",
-      "heliocentrism-mcq"
     ]
   },
   "flashcardDeck": {
