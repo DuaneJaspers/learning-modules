@@ -7,10 +7,20 @@
       "title": "Cryptography Basics",
       "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
       "author": "Modular Learning Team",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "estimatedMinutes": 180,
-      "checksum": "sha256:201820c5e238b42e74b9acebafc19271f3a76cc10fd45cb7196948a38d9d0f37",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
+      "checksum": "sha256:1761552aaf8a6689ddf3783b51f9a72d84e8187de76c9267cee4bb3afd69a26d",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json",
+      "assets": [
+        {
+          "path": "assets/illustrations/caesar-wheel.svg",
+          "checksum": "sha256:421139ddad849d9306f99782ea3ba3249ea48abd462df1cfc9c7bcd6a3c47e2a"
+        },
+        {
+          "path": "assets/illustrations/encryption-flow.svg",
+          "checksum": "sha256:3ff1cf035f21c766a1ede5c2a0006b1dbe76cf9ddd48b752f9ea2b0998ecaca9"
+        }
+      ]
     },
     {
       "id": "fall-of-rome",

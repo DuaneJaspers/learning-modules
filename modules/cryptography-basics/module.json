@@ -3,7 +3,7 @@
   "title": "Cryptography Basics",
   "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
   "author": "Modular Learning Team",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "estimatedMinutes": 180,
   "sections": [
     {
@@ -14,14 +14,133 @@
         {
           "id": "lesson-1-1",
           "title": "Caesar Cipher",
-          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down or up the alphabet.\n\n### How It Works\nThe Caesar cipher is named after Julius Caesar, who reportedly used it to communicate with his generals. The encryption process involves:\n1. Choosing a **key** (a number between 1 and 25)\n2. Shifting each letter of the plaintext by the key amount\n3. Wrapping around the alphabet (Z wraps to A)\n\n### Example\nPlaintext: **HELLO**\nKey: **3**\n\nH → K, E → H, L → O, L → O, O → R\n\nCiphertext: **KHOOR**\n\n### Decryption\nTo decrypt, shift each letter back by the key amount.\n\n### Security\nThe Caesar cipher has only 25 possible keys, making it vulnerable to brute-force attacks. It provides no real security in modern contexts but is useful for understanding the basics of encryption.",
-          "order": 1
+          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.\n\n![Caesar cipher wheel showing the shift pattern](assets/illustrations/caesar-wheel.svg)\n\n## How It Works\n\nNamed after Julius Caesar, who used it in his private correspondence, the cipher replaces each letter with another letter a fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n- A → D\n- B → E  \n- C → F\n- ...\n\n![Encryption flow: plaintext through Caesar cipher to ciphertext](assets/illustrations/encryption-flow.svg)\n\n### Mathematical Notation\n\nThe encryption function is: **E(x) = (x + n) mod 26**\n\nWhere:\n- **x** is the position of the letter in the alphabet (0-25)\n- **n** is the shift value (the key)\n- **mod 26** wraps around the alphabet\n\nTo decrypt: **D(x) = (x - n) mod 26**\n\n### Historical Context\n\nDespite its simplicity, the Caesar cipher was reasonably secure in Caesar's time because most of Caesar's enemies were illiterate. Today, it's trivially broken using frequency analysis or brute force (only 25 possible keys).",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "encrypt-decrypt-flow",
+              "type": "flowchart",
+              "title": "Encryption & Decryption Flow",
+              "nodes": [
+                {
+                  "id": "plaintext",
+                  "label": "Plaintext",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "encrypt",
+                  "label": "Apply Shift (key)",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "ciphertext",
+                  "label": "Ciphertext",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "transmit",
+                  "label": "Transmit Message",
+                  "shape": "pill",
+                  "color": "#37474F"
+                },
+                {
+                  "id": "decrypt",
+                  "label": "Reverse Shift (key)",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "original",
+                  "label": "Original Message",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "plaintext",
+                  "to": "encrypt",
+                  "label": ""
+                },
+                {
+                  "from": "encrypt",
+                  "to": "ciphertext",
+                  "label": "+3"
+                },
+                {
+                  "from": "ciphertext",
+                  "to": "transmit",
+                  "label": ""
+                },
+                {
+                  "from": "transmit",
+                  "to": "decrypt",
+                  "label": ""
+                },
+                {
+                  "from": "decrypt",
+                  "to": "original",
+                  "label": "-3"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "lesson-1-2",
           "title": "Breaking the Caesar Cipher",
           "content": "Despite its simplicity, the Caesar cipher can be broken using several techniques:\n\n### Brute Force\nSince there are only 25 possible keys, an attacker can try all of them and look for meaningful plaintext.\n\n### Frequency Analysis\nIn English text, certain letters appear more frequently than others. The most common letters are E, T, A, O, I, and N. By analyzing the frequency of letters in the ciphertext, an attacker can make educated guesses about the key.\n\nFor example, if the most common letter in the ciphertext is 'H', and we assume it corresponds to 'E' (the most common letter in English), the key would be 3 (since E+3=H).",
-          "order": 2
+          "order": 2,
+          "diagrams": [
+            {
+              "id": "freq-analysis-process",
+              "type": "process",
+              "title": "Frequency Analysis Process",
+              "nodes": [
+                {
+                  "id": "collect",
+                  "label": "Collect ciphertext samples"
+                },
+                {
+                  "id": "count",
+                  "label": "Count letter frequencies"
+                },
+                {
+                  "id": "compare",
+                  "label": "Compare to language norms"
+                },
+                {
+                  "id": "hypothesis",
+                  "label": "Form shift hypothesis"
+                },
+                {
+                  "id": "verify",
+                  "label": "Verify against known words"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "collect",
+                  "to": "count"
+                },
+                {
+                  "from": "count",
+                  "to": "compare"
+                },
+                {
+                  "from": "compare",
+                  "to": "hypothesis"
+                },
+                {
+                  "from": "hypothesis",
+                  "to": "verify"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -144,7 +263,54 @@
           "id": "lesson-2-1",
           "title": "Public Key Cryptography",
           "content": "**Public key cryptography** (also called asymmetric cryptography) uses a pair of keys: a public key for encryption and a private key for decryption.\n\n### Key Concepts\n- **Public key**: Can be shared with anyone. Used to encrypt messages.\n- **Private key**: Must be kept secret. Used to decrypt messages.\n- **Key pair**: The public and private keys are mathematically related.\n\n### How It Works\n1. Alice generates a key pair (public + private)\n2. Alice shares her public key with Bob\n3. Bob encrypts a message using Alice's public key\n4. Alice decrypts the message using her private key\n\n### Common Algorithms\n- **RSA**: Based on the difficulty of factoring large prime numbers\n- **Diffie-Hellman**: Allows two parties to establish a shared secret over an insecure channel\n- **Elliptic Curve Cryptography (ECC)**: Uses elliptic curve math for equivalent security with smaller keys",
-          "order": 1
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "crypto-timeline",
+              "type": "timeline",
+              "title": "Evolution of Cryptographic Protocols",
+              "nodes": [
+                {
+                  "id": "symmetric",
+                  "label": "Symmetric key (same key for encrypt/decrypt)"
+                },
+                {
+                  "id": "key-exchange",
+                  "label": "Diffie-Hellman key exchange (1976)"
+                },
+                {
+                  "id": "asymmetric",
+                  "label": "RSA asymmetric encryption (1977)"
+                },
+                {
+                  "id": "tls",
+                  "label": "TLS/SSL for secure web (1995)"
+                },
+                {
+                  "id": "e2e",
+                  "label": "End-to-end encryption (2010s+)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "symmetric",
+                  "to": "key-exchange"
+                },
+                {
+                  "from": "key-exchange",
+                  "to": "asymmetric"
+                },
+                {
+                  "from": "asymmetric",
+                  "to": "tls"
+                },
+                {
+                  "from": "tls",
+                  "to": "e2e"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [

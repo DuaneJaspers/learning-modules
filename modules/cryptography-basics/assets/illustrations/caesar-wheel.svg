@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Caesar Cipher Wheel -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#4A90D9" stroke-width="3"/>
+  <circle cx="200" cy="200" r="140" fill="none" stroke="#6AB0FF" stroke-width="2"/>
+  <circle cx="200" cy="200" r="100" fill="none" stroke="#4A90D9" stroke-width="2"/>
+  
+  <!-- Outer ring: Plain text -->
+  <text x="200" y="30" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">A</text>
+  <text x="290" y="55" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">B</text>
+  <text x="355" y="125" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">C</text>
+  <text x="375" y="210" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">D</text>
+  <text x="355" y="290" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">E</text>
+  <text x="290" y="355" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">F</text>
+  <text x="200" y="380" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">G</text>
+  <text x="110" y="355" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">H</text>
+  <text x="45" y="290" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">I</text>
+  <text x="25" y="210" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">J</text>
+  <text x="45" y="125" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">K</text>
+  <text x="110" y="55" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">L</text>
+  
+  <!-- Inner ring: Shifted by 3 -->
+  <text x="248" y="62" text-anchor="middle" fill="#6AB0FF" font-size="14">D</text>
+  <text x="320" y="105" text-anchor="middle" fill="#6AB0FF" font-size="14">E</text>
+  <text x="365" y="175" text-anchor="middle" fill="#6AB0FF" font-size="14">F</text>
+  <text x="365" y="255" text-anchor="middle" fill="#6AB0FF" font-size="14">G</text>
+  <text x="320" y="320" text-anchor="middle" fill="#6AB0FF" font-size="14">H</text>
+  <text x="248" y="360" text-anchor="middle" fill="#6AB0FF" font-size="14">I</text>
+  <text x="162" y="360" text-anchor="middle" fill="#6AB0FF" font-size="14">J</text>
+  <text x="90" y="320" text-anchor="middle" fill="#6AB0FF" font-size="14">K</text>
+  <text x="40" y="255" text-anchor="middle" fill="#6AB0FF" font-size="14">L</text>
+  <text x="40" y="175" text-anchor="middle" fill="#6AB0FF" font-size="14">M</text>
+  <text x="90" y="105" text-anchor="middle" fill="#6AB0FF" font-size="14">N</text>
+  <text x="162" y="62" text-anchor="middle" fill="#6AB0FF" font-size="14">O</text>
+  
+  <!-- Center arrow showing shift -->
+  <line x1="200" y1="100" x2="248" y2="72" stroke="#FF6B6B" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="200" y="215" text-anchor="middle" fill="#FF6B6B" font-size="14" font-weight="bold">Shift +3</text>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF6B6B"/>
+    </marker>
+  </defs>
+</svg>
