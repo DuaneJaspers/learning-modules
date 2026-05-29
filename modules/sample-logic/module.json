@@ -213,25 +213,7 @@
       {
         "exerciseId": "ex-6",
         "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-2",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-2",
-        "weight": 1.0
       }
-    ],
-    "exerciseIds": [
-      "ex-1",
-      "ex-2",
-      "ex-3",
-      "ex-4",
-      "ex-5",
-      "ex-6",
-      "ex-2",
-      "ex-2"
     ]
   },
   "flashcardDeck": {
