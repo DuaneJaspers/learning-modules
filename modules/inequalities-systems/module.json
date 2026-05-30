@@ -1,0 +1,207 @@
+{
+  "id": "inequalities-systems",
+  "title": "Inequalities & Systems",
+  "description": "Solve and graph linear inequalities, represent solution sets on a number line, and analyze systems of linear equations using substitution and elimination.",
+  "author": "Modular Learning Team",
+  "version": "1.0.0",
+  "estimatedMinutes": 90,
+  "sections": [
+    {
+      "id": "is-s1",
+      "title": "Linear Inequalities",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "is-lesson-1",
+          "title": "Solving One-Step Inequalities",
+          "content": "A **linear inequality** is like a linear equation, but instead of an equals sign it uses one of four inequality symbols:\n\n| Symbol | Meaning |\n|--------|---------|\n| `<` | Less than |\n| `>` | Greater than |\n| `≤` | Less than or equal |\n| `≥` | Greater than or equal |\n\n## The Critical Difference\n\n**When you multiply or divide both sides of an inequality by a negative number, you must reverse the direction of the inequality.** This is the most commonly forgotten rule.\n\n\nFor example: `−2x > 8` → dividing by `−2` gives `x < −4` (notice the `>` became `<`!)\n\n\n## Solving One-Step Inequalities\n\n`x + 3 > 7` → subtract 3 → `x > 4`\n`5x ≤ 20` → divide by 5 → `x ≤ 4`\n`−2x ≥ 10` → divide by `−2`, reverse! → `x ≤ −5`\n\n## Checking\n\nCheck `x > 4` with a test value: `5 > 4` ✓, `3 > 4` ✗ — the solution is all values greater than 4.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "is-ex-1",
+          "prompt": "Solve for x:\n\nx + 5 > 9",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "Subtract 5 from both sides: x > 9 − 5 = 4"
+        },
+        {
+          "id": "is-ex-2",
+          "prompt": "Solve for x:\n\n3x ≤ 21",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "Divide by 3: x ≤ 21 ÷ 3 = 7"
+        },
+        {
+          "id": "is-ex-3",
+          "prompt": "Solve for x:\n\n−2x > 8\n\nRemember: when dividing by a negative, flip the sign.",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-4", "tolerance": 0}],
+          "hint": "Divide by −2: −2x > 8 → x < 8 ÷ (−2) = x < −4"
+        },
+        {
+          "id": "is-ex-4",
+          "prompt": "Solve for x:\n\nx − 3 ≥ −7",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-4", "tolerance": 0}],
+          "hint": "Add 3 to both sides: x ≥ −7 + 3 = −4"
+        }
+      ]
+    },
+    {
+      "id": "is-s2",
+      "title": "Two-Step Inequalities",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "is-lesson-2",
+          "title": "Multistep Inequalities",
+          "content": "Two-step inequalities follow the same process as two-step equations with one key difference: **reverse the inequality sign when multiplying or dividing by a negative.**\n\n## Process\n\n1. Undo addition/subtraction first (like always)\n2. Undo multiplication/division — and reverse if dividing by negative\n\n**Example:** `4x − 3 < 13`\n**Step 1:** Add 3 to both sides: `4x < 16`\n**Step 2:** Divide by 4: `x < 4`\n\n**Check:** Try x = 0: `4(0) − 3 = −3 < 13` ✓\n\n**Example with negative** `−3x + 4 ≥ 1`\n**Step 1:** Subtract 4: `−3x ≥ −3`\n**Step 2:** Divide by `−3` (negative!): `x ≤ 1`\n\n## Compound Inequalities\n\nTwo inequalities combined:\n`−3 < 2x + 1 ≤ 5`\nSolve each part:\n−3 < 2x + 1 → −4 < 2x → −2 < x\n2x + 1 ≤ 5 → 2x ≤ 4 → x ≤ 2\nCombined: `−2 < x ≤ 2`",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "is-ex-5",
+          "prompt": "Solve for x:\n\n2x − 4 > 8",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "6", "tolerance": 0}],
+          "hint": "2x − 4 > 8 → add 4: 2x > 12 → divide: x > 6"
+        },
+        {
+          "id": "is-ex-6",
+          "prompt": "Solve for x:\n\n5x + 2 ≤ 22",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "5x + 2 ≤ 22 → subtract 2: 5x ≤ 20 → x ≤ 4"
+        },
+        {
+          "id": "is-ex-7",
+          "prompt": "Solve for x:\n\n−4x + 3 < 11\n\nRemember: when dividing by a negative, flip the inequality sign.",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-2", "tolerance": 0}],
+          "hint": "−4x + 3 < 11 → subtract 3: −4x < 8 → divide by −4, FLIP the sign: x > 8 ÷ (−4) = x > −2. So the solution set is all x > −2."
+        },
+        {
+          "id": "is-ex-8",
+          "prompt": "At a bookstore, each paperback costs $6 and the group must spend less than $50 on books. How many paperbacks can they buy at most?\n\nLet n = number of paperbacks. Inequality: 6n < 50",
+          "order": 5,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "8", "tolerance": 0}],
+          "hint": "6n < 50 → n < 50 ÷ 6 ≈ 8.33. Since n must be a whole number, the largest integer less than 8.33 is 8."
+        }
+      ]
+    },
+    {
+      "id": "is-s3",
+      "title": "Systems of Equations",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "is-lesson-3",
+          "title": "Solving by Substitution",
+          "content": "A **system of equations** is two or more equations that must both be true at the same time. The solution is the point where their lines intersect.\n\n\n## Substitution Method\n\n**Best when one equation already has an isolated variable or is easy to isolate.**\n\n**Example:**\n`y = 2x + 3`\n`x + y = 9`\n\n**Step 1:** The first equation already gives `y` — substitute it into the second:\n`x + (2x + 3) = 9`\n\n**Step 2:** Solve: `3x + 3 = 9` → `3x = 6` → `x = 2`\n\n\n**Step 3:** Substitute back to find y:\n`y = 2(2) + 3 = 7`\n\n**Solution: (2, 7)**\n\n**Check:** `2(2) + 3 = 7 ✓`, `2 + 7 = 9 ✓`",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "is-ex-9",
+          "prompt": "Solve the system:\n\ny = x + 5\n2x + y = 10\n\nFind x.",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "1.67", "tolerance": 0.05}],
+          "hint": "Substitute y = x + 5 into 2x + (x + 5) = 10: 3x + 5 = 10 → 3x = 5 → x = 5/3. Then y = 5/3 + 5 = 20/3. So x = 5/3."
+        },
+        {
+          "id": "is-ex-10",
+          "prompt": "Solve the system:\n\ny = 3x − 1\nx + y = 9\n\nFind x.",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "2.5", "tolerance": 0}],
+          "hint": "Substitute y = 3x − 1 into x + y = 9: x + 3x − 1 = 9 → 4x − 1 = 9 → 4x = 10 → x = 2.5"
+        },
+        {
+          "id": "is-ex-11",
+          "prompt": "What does it mean if two linear equations have no solution?",
+          "order": 3,
+          "type": "mcq",
+          "options": [
+            "The lines intersect at one point",
+            "The lines are parallel (same slope, different intercepts)",
+            "The lines are the same (coincident)",
+            "The lines intersect at infinitely many points"
+          ],
+          "correctIndex": 1,
+          "explanation": "Parallel lines with the same slope but different intercepts never intersect, so the system has no solution. This is called an inconsistent system."
+        }
+      ]
+    },
+    {
+      "id": "is-s4",
+      "title": "Elimination Method",
+      "order": 4,
+      "lessons": [
+        {
+          "id": "is-lesson-4",
+          "title": "Adding and Subtracting Equations",
+          "content": "The **elimination method** works by adding or subtracting equations to cancel out one variable. This is useful when neither variable is isolated and neither coefficient is already opposing.\n\n## Basic Process\n\n1. Arrange equations in the form `ax + by = c`\n2. Decide which variable to eliminate\n3. Multiply one or both equations so the coefficients of that variable are opposites (same magnitude, opposite signs)\n4. Add the equations (the eliminated variable vanishes)\n5. Solve for the remaining variable\n6. Substitute back to find the eliminated variable\n\n## Example\n\n`2x + 3y = 21`\n`4x − 3y = 9`\n\nNotice the coefficients of y are already opposites (+3 and −3). **Add** the equations:\n\n`6x = 30` → `x = 5`\n\n\nSubstitute back: `2(5) + 3y = 21` → `10 + 3y = 21` → `3y = 11` → `y = 11/3`\n\n**Solution: (5, 11/3)**",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "is-ex-12",
+          "prompt": "Solve the system using elimination:\n\nx + y = 8\nx − y = 4\n\nFind x.",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "6", "tolerance": 0}],
+          "hint": "Add the equations: x + y + x − y = 8 + 4 → 2x = 12 → x = 6"
+        },
+        {
+          "id": "is-ex-13",
+          "prompt": "Solve the system:\n\n3x + 2y = 16\n3x − 2y = 8\n\nFind y.",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "2", "tolerance": 0}],
+          "hint": "Add: 3x + 2y + 3x − 2y = 16 + 8 → 6x = 24 → x = 4. Then 3(4) + 2y = 16 → 12 + 2y = 16 → 2y = 4 → y = 2"
+        },
+        {
+          "id": "is-ex-14",
+          "prompt": "When using elimination, if the coefficients of a variable are already opposites, what should you do with the two equations?",
+          "order": 3,
+          "type": "mcq",
+          "options": [
+            "Subtract one from the other",
+            "Multiply both to make them the same",
+            "Add them together",
+            "Divide one by the other"
+          ],
+          "correctIndex": 2,
+          "explanation": "If coefficients are opposites (e.g., +3y and −3y), adding the equations cancels out that variable immediately, making it easy to solve for the other."
+        }
+      ]
+    }
+  ],
+  "flashcardDeck": {
+    "id": "is-fc",
+    "title": "Inequalities & Systems Key Terms",
+    "description": "Core vocabulary from the Inequalities & Systems module",
+    "cards": [
+      {"id": "fc-is-1", "term": "Linear inequality", "definition": "An inequality where the variable's highest exponent is 1. Uses symbols: <, >, ≤, ≥."},
+      {"id": "fc-is-2", "term": "System of equations", "definition": "Two or more equations considered simultaneously. The solution is the point(s) that satisfy ALL equations."},
+      {"id": "fc-is-3", "term": "Elimination method", "definition": "Solving a system by adding/subtracting equations after aligning coefficients to eliminate one variable."},
+      {"id": "fc-is-4", "term": "Substitution method", "definition": "Solving a system by replacing a variable with its expression from one equation into the other equation."},
+      {"id": "fc-is-5", "term": "Inconsistent system", "definition": "A system with no solution — typically two parallel lines with the same slope but different y-intercepts."},
+      {"id": "fc-is-6", "term": "Coincident lines", "definition": "Two identical lines (same equation). The system has infinitely many solutions — every point on the line satisfies both."}
+    ]
+  }
+}

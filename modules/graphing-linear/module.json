@@ -1,0 +1,236 @@
+{
+  "id": "graphing-linear",
+  "title": "Graphing & Linear Relationships",
+  "description": "Learn to plot linear equations on the coordinate plane, understand slope and intercepts, and interpret graphs as real-world models.",
+  "author": "Modular Learning Team",
+  "version": "1.0.0",
+  "estimatedMinutes": 75,
+  "sections": [
+    {
+      "id": "gl-s1",
+      "title": "The Coordinate Plane",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gl-lesson-1",
+          "title": "Plotting Points and Reading Graphs",
+          "content": "The **coordinate plane** is a two-dimensional surface formed by two perpendicular number lines:\n- **x-axis** — horizontal axis\n- **y-axis** — vertical axis\nTheir intersection is the **origin** (0, 0).\n\n## Ordered Pairs\n\nA point is written as **(x, y)**:\n- First number = horizontal position (x-coordinate)\n- Second number = vertical position (y-coordinate)\n\n## Quadrants\n\nThe axes divide the plane into four **quadrants**:\n\n| Quadrant | x | y | Example |\n|----------|---|---|---------|\n| I | + | + | (3, 4) |\n| II | − | + | (−2, 5) |\n| III | − | − | (−4, −3) |\n| IV | + | − | (3, −2) |\n\n## Why It Matters\n\nEvery point on a line corresponds to a solution of the line's equation. Reading a graph means translating visual position into (x, y) values.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "gl-ex-1",
+          "prompt": "In which quadrant is the point (3, −4) located?",
+          "order": 1,
+          "type": "mcq",
+          "options": ["Quadrant I", "Quadrant II", "Quadrant III", "Quadrant IV"],
+          "correctIndex": 3,
+          "explanation": "(3, −4) has a positive x and negative y, placing it in Quadrant IV."
+        },
+        {
+          "id": "gl-ex-2",
+          "prompt": "What is the x-coordinate of the point (−7, 3)?",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-7", "tolerance": 0}],
+          "hint": "The x-coordinate is always the first value in (x, y)"
+        },
+        {
+          "id": "gl-ex-3",
+          "prompt": "Which ordered pair is the origin?",
+          "order": 3,
+          "type": "mcq",
+          "options": ["(1, 1)", "(0, 5)", "(0, 0)", "(−1, −1)"],
+          "correctIndex": 2,
+          "explanation": "The origin is where both axes intersect: (0, 0)."
+        },
+        {
+          "id": "gl-ex-4",
+          "prompt": "A point has x-coordinate −5 and y-coordinate 2. What is its ordered pair?",
+          "order": 4,
+          "type": "mcq",
+          "options": ["(5, 2)", "(−5, 2)", "(2, −5)", "(−5, −2)"],
+          "correctIndex": 1,
+          "explanation": "x is first (−5), y is second (2), so the pair is (−5, 2)."
+        }
+      ]
+    },
+    {
+      "id": "gl-s2",
+      "title": "Slope",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gl-lesson-2",
+          "title": "Understanding Rate of Change",
+          "content": "**Slope** measures the steepness and direction of a line. It tells you how much y changes for each unit change in x. The formula:\n\n`slope (m) = rise ÷ run = (y₂ − y₁) ÷ (x₂ − x₁)`\n\n## Rise and Run\n\n- **Rise** = change in y (vertical change)\n- **Run** = change in x (horizontal change)\n\n\n\n## Positive vs Negative Slope\n\n- **Positive slope** — line rises left to right (y increases as x increases)\n- **Negative slope** — line falls left to right (y decreases as x increases)\n\n- **Zero slope** — horizontal line (no change in y)\n- **Undefined slope** — vertical line (no change in x — cannot divide by zero)\n\n## Worked Example\n\nFind the slope between (2, 3) and (6, 11):\n\nm = (11 − 3) ÷ (6 − 2) = 8 ÷ 4 = **2**\n\n\nThis means for every 1-unit increase in x, y increases by 2.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "gl-ex-5",
+          "prompt": "Find the slope between points (1, 2) and (5, 10).\n\nUse: m = (y₂ − y₁) ÷ (x₂ − x₁)",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "2", "tolerance": 0}],
+          "hint": "m = (10 − 2) ÷ (5 − 1) = 8 ÷ 4 = 2"
+        },
+        {
+          "id": "gl-ex-6",
+          "prompt": "Find the slope between points (3, 4) and (7, 4).\n\n\nBoth y values are the same — what does that mean for the slope?",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "0", "tolerance": 0}],
+          "hint": "m = (4 − 4) ÷ (7 − 3) = 0 ÷ 4 = 0 — horizontal line has zero slope"
+        },
+        {
+          "id": "gl-ex-7",
+          "prompt": "Find the slope between points (2, 3) and (2, 8).\n\n\nWhat kind of line is this?",
+          "order": 3,
+          "type": "mcq",
+          "options": ["Slope = 1", "Slope = 0", "Slope = undefined", "Slope = −1"],
+          "correctIndex": 2,
+          "explanation": "The run (x₂ − x₁) = 2 − 2 = 0. Division by zero means the slope is undefined — this is a vertical line."
+        },
+        {
+          "id": "gl-ex-8",
+          "prompt": "Find the slope between points (1, 3) and (4, −3).\n\n\nm = (y₂ − y₁) ÷ (x₂ − x₁)",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-2", "tolerance": 0}],
+          "hint": "m = (−3 − 3) ÷ (4 − 1) = (−6) ÷ 3 = −2"
+        },
+        {
+          "id": "gl-ex-9",
+          "prompt": "A mountain trail drops 240 meters vertically over a horizontal distance of 800 meters. What is the slope of the trail?",
+          "order": 5,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "-0.3", "tolerance": 0.05}],
+          "hint": "m = rise ÷ run = −240 ÷ 800 = −0.3. Negative because it drops."
+        }
+      ]
+    },
+    {
+      "id": "gl-s3",
+      "title": "Slope-Intercept Form",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "gl-lesson-3",
+          "title": "y = mx + b",
+          "content": "The **slope-intercept form** of a linear equation is:\n\n`y = mx + b`\n\nwhere:\n- **m** = slope (rate of change)\n- **b** = y-intercept (where the line crosses the y-axis)\n\n## Why This Form Matters\n\n`y = mx + b` tells you everything about a line instantly:\n- Slope m tells you how steep it is\n- Y-intercept b tells you where it starts on the y-axis\n- From b, you can trace the whole line using m\n\n## Worked Example\n\n`y = 3x − 2`\n- Slope = 3 (rises 3 units for every 1 unit right)\n- Y-intercept = −2 (crosses y-axis at (0, −2))\n\nTo plot: start at (0, −2), then rise 3, run 1 repeatedly to get points (1, 1), (2, 4), (3, 7)...",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "gl-ex-10",
+          "prompt": "In the equation y = 2x + 5, what are the values of m and b?",
+          "order": 1,
+          "type": "mcq",
+          "options": ["m = 2, b = 5", "m = 5, b = 2", "m = 2x, b = 5", "m = 7, b = 0"],
+          "correctIndex": 0,
+          "explanation": "Comparing to y = mx + b: m (slope) = 2, b (y-intercept) = 5."
+        },
+        {
+          "id": "gl-ex-11",
+          "prompt": "What is the y-intercept of the line y = −3x + 4?",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "The y-intercept b is the constant term = 4. The point is (0, 4)."
+        },
+        {
+          "id": "gl-ex-12",
+          "prompt": "A line has slope 4 and y-intercept −3. Write its equation in slope-intercept form.",
+          "order": 3,
+          "type": "mcq",
+          "options": ["y = 4x − 3", "y = −3x + 4", "y = x + 4", "y = 4x + 3"],
+          "correctIndex": 0,
+          "explanation": "y = mx + b with m = 4 and b = −3 gives y = 4x − 3."
+        },
+        {
+          "id": "gl-ex-13",
+          "prompt": "A taxi charges $2 per mile and has a $4 base fare. The cost C of a trip of m miles is C = 2m + 4. What does the slope represent in this context?",
+          "order": 4,
+          "type": "mcq",
+          "options": [
+            "The base fare of $4",
+            "The cost per mile, $2",
+            "The total number of miles",
+            "The y-intercept"
+          ],
+          "correctIndex": 1,
+          "explanation": "In C = 2m + 4, the slope is 2 — this is the rate of change: $2 per mile extra for each additional mile traveled."
+        }
+      ]
+    },
+    {
+      "id": "gl-s4",
+      "title": "Interpreting Graphs",
+      "order": 4,
+      "lessons": [
+        {
+          "id": "gl-lesson-4",
+          "title": "Real-World Graphs",
+          "content": "Linear graphs are everywhere in real life — tracking cost vs quantity, distance vs time, demand vs price. Reading them properly is a key analytical skill.\n\n## Key Features to Identify\n\n1. **Y-intercept** — starting value (when x = 0)\n2. **Slope** — unit rate of change\n3. **The meaning of the x-axis** — what does x represent?\n4. **The meaning of the y-axis** — what does y represent?\n5. **Reading points** — what does a specific (x, y) point represent?\n\n## Example: Cell Phone Plan\n\nA plan charges $20/month plus $0.05 per text.\n`Cost = 0.05T + 20`\n- Y-intercept: $20 (even with zero texts)\n- Slope: $0.01/text\n- After 100 texts: Cost = 0.05(100) + 20 = $25\n\nThe graph shows cost rising predictably with text volume.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "gl-ex-14",
+          "prompt": "A gym membership costs $30/month. The total cost C after m months is C = 30m. What is the slope of this graph, and what does it represent?",
+          "order": 1,
+          "type": "mcq",
+          "options": [
+            "Slope = 0, gym is a flat monthly rate",
+            "Slope = 30, monthly cost of $30",
+            "Slope = 1, one month = one unit of time",
+            "Slope = 0 and intercept = 30"
+          ],
+          "correctIndex": 1,
+          "explanation": "C = 30m is in the form y = mx + b with b = 0. Slope m = 30 means the cost increases by $30 for each additional month."
+        },
+        {
+          "id": "gl-ex-15",
+          "prompt": "A rental car costs $50 fixed fee plus $0.25 per mile. The total cost is C = 0.25m + 50. How much does the slope represent?",
+          "order": 2,
+          "type": "mcq",
+          "options": [
+            "The fixed rental fee of $50",
+            "The cost per mile driven of $0.25",
+            "The total number of miles driven",
+            "The y-intercept in dollars"
+          ],
+          "correctIndex": 1,
+          "explanation": "Slope = 0.25 in C = 0.25m + 50 means the cost rises by $0.25 for every additional mile driven — the per-mile rate."
+        },
+        {
+          "id": "gl-ex-16",
+          "prompt": "Using y = −2x + 7, predict the value of y when x = 3.",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "1", "tolerance": 0}],
+          "hint": "y = −2(3) + 7 = −6 + 7 = 1"
+        }
+      ]
+    }
+  ],
+  "flashcardDeck": {
+    "id": "gl-fc",
+    "title": "Graphing Key Terms",
+    "description": "Core vocabulary from the Graphing & Linear Relationships module",
+    "cards": [
+      {"id": "fc-gl-1", "term": "Coordinate plane", "definition": "A 2D surface formed by two perpendicular axes (x-axis and y-axis), used to locate points by ordered pairs."},
+      {"id": "fc-gl-2", "term": "Slope", "definition": "The ratio of rise to run between two points on a line: m = (y₂ − y₁) ÷ (x₂ − x₁). Measures rate of change."},
+      {"id": "fc-gl-3", "term": "Y-intercept", "definition": "The point where a line crosses the y-axis (when x = 0). Written as b in y = mx + b."},
+      {"id": "fc-gl-4", "term": "Slope-intercept form", "definition": "y = mx + b, where m is slope and b is the y-intercept. The most useful form for graphing and interpreting linear relationships."},
+      {"id": "fc-gl-5", "term": "Positive slope", "definition": "A line that rises left to right — y increases as x increases."},
+      {"id": "fc-gl-6", "term": "Negative slope", "definition": "A line that falls left to right — y decreases as x increases."},
+      {"id": "fc-gl-7", "term": "Undefined slope", "definition": "A vertical line where x₂ − x₁ = 0, making division by zero impossible. Represented by x = a constant."}
+    ]
+  }
+}

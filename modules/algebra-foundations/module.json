@@ -1,0 +1,241 @@
+{
+  "id": "algebra-foundations",
+  "title": "Algebra Foundations",
+  "description": "Master the building blocks of algebra: evaluating expressions, order of operations, and substituting values into algebraic expressions.",
+  "author": "Modular Learning Team",
+  "version": "1.0.0",
+  "estimatedMinutes": 45,
+  "sections": [
+    {
+      "id": "af-s1",
+      "title": "Evaluating Expressions",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "af-lesson-1",
+          "title": "What is an Algebraic Expression?",
+          "content": "An **algebraic expression** is a mathematical phrase that can contain numbers, variables (letters that stand for unknown values), and operation symbols (+, −, ×, ÷). Unlike an equation, an expression does not have an equals sign — it simply *represents a value*.\n\n## Why Expressions Matter\n\nExpressions are the raw material of algebra. Before you can solve equations, you need to be able to evaluate and simplify expressions. Every problem in algebra eventually comes down to manipulating these expressions.\n\n\n## Key Vocabulary\n\n- **Variable** — A symbol (usually a letter) that represents an unknown or changing value. Example: *x*, *n*, *a*\n- **Coefficient** — The number multiplied by a variable. In *3x*, the coefficient is 3.\n- **Term** — A single number, variable, or product of numbers and variables. *5x²* and *−2y* are terms.\n- **Constant** — A term that is just a number, with no variables. *7* is a constant.\n\n## Evaluating an Expression\n\nTo **evaluate** an expression means to find its value when the variables are replaced with specific numbers.\n\n> Expression: `3x + 2`\n> If x = 4, then: `3(4) + 2 = 12 + 2 = 14`\n\nThe substitution step is where students most often make mistakes — replacing the wrong variable or forgetting to multiply before adding.\n\n## A Simple Worked Example\n\nEvaluate: `2x + 7` when `x = 5`\n\n**Step 1:** Substitute the value: `2(5) + 7`\n**Step 2:** Multiply first (distribute the coefficient): `10 + 7`\n**Step 3:** Add: `17`",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "af-ex-1",
+          "prompt": "Evaluate the expression: 2x + 7\n\nWhen x = 5, what is 2x + 7?",
+          "order": 1,
+          "type": "numeric_input",
+          "prompt": "Evaluate the expression: 2x + 7\n\nWhen x = 5, what is 2x + 7?",
+          "acceptedAnswers": [
+            { "answer": "17", "tolerance": 0 }
+          ],
+          "hint": "Substitute x = 5, then multiply before adding."
+        },
+        {
+          "id": "af-ex-2",
+          "prompt": "A rectangle has width w = 8 and height h = 3. What is its perimeter?\n\nUse the formula: P = 2w + 2h",
+          "order": 2,
+          "type": "numeric_input",
+          "prompt": "A rectangle has width w = 8 and height h = 3. What is its perimeter?\n\nUse the formula: P = 2w + 2h",
+          "acceptedAnswers": [
+            { "answer": "22", "tolerance": 0 }
+          ],
+          "hint": "Perimeter = 2 × width + 2 × height = 2(8) + 2(3)"
+        },
+        {
+          "id": "af-ex-3",
+          "prompt": "Which of the following is a valid algebraic expression?",
+          "order": 3,
+          "type": "mcq",
+          "options": [
+            "x + 5 = 10",
+            "3x − 7",
+            "5 −→ 3",
+            "4x² = x + 1"
+          ],
+          "correctIndex": 1,
+          "explanation": "An algebraic expression has no equals sign. '3x − 7' is a valid expression. The others are equations or contain invalid symbols."
+        },
+        {
+          "id": "af-ex-4",
+          "prompt": "Evaluate the expression: 4y − 3\n\nWhen y = 6, what is 4y − 3?",
+          "order": 4,
+          "type": "numeric_input",
+          "prompt": "Evaluate the expression: 4y − 3\n\nWhen y = 6, what is 4y − 3?",
+          "acceptedAnswers": [
+            { "answer": "21", "tolerance": 0 }
+          ],
+          "hint": "Substitute y = 6, then multiply before subtracting."
+        }
+      ]
+    },
+    {
+      "id": "af-s2",
+      "title": "Order of Operations",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "af-lesson-2",
+          "title": "PEMDAS and the Order of Operations",
+          "content": "When an expression has multiple operations, the order in which you perform them changes the answer. **PEMDAS** is the standard order:\n\n## PEMDAS\n\n1. **P**arentheses — anything inside parentheses first\n2. **E**xponents — powers and roots\n3. **M**ultiplication and **D**ivision — left to right\n4. **A**dition and **S**ubtraction — left to right\n\n## Why It Matters\n\n`8 + 2 × 4` could mean very different things depending on order:\n- Wrong: (8 + 2) × 4 = 40\n- Correct: 8 + (2 × 4) = 16\n\nThe only correct answer is **16** because multiplication comes before addition.\n\n\n## Common Mistakes\n\nStudents often work left-to-right regardless of operation type, giving `8 + 2 × 4 = 40`. The error is evaluating addition before multiplication.\n\n## Embedding vs Chaining\n\nExpressions in parentheses are evaluated to a single value first. When those parentheses are nested, evaluate the innermost one first.\n\n> `2 × (3 + (4 × 2))`\n> = `2 × (3 + 8)` [innermost parentheses first]\n> = `2 × 11` [outer parentheses]\n> = `22`\n\n## Worked Example\n\nevaluate: `3 + 2 × (5 − 2)²`\n\n**Step 1:** Parentheses: `(5 − 2) = 3`\n**Step 2:** Exponents: `3² = 9`\n**Step 3:** Multiplication: `2 × 9 = 18`\n**Step 4:** Addition: `3 + 18 = 21`",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "af-ex-5",
+          "prompt": "Evaluate: 10 − 2 × 3\n\nRemember: multiplication before subtraction.",
+          "order": 1,
+          "type": "numeric_input",
+          "prompt": "Evaluate: 10 − 2 × 3\n\nRemember: multiplication before subtraction.",
+          "acceptedAnswers": [
+            { "answer": "4", "tolerance": 0 }
+          ],
+          "hint": "Multiply first: 2 × 3 = 6, then subtract: 10 − 6"
+        },
+        {
+          "id": "af-ex-6",
+          "prompt": "Evaluate: (8 + 4) ÷ 3\n\nWork inside parentheses first.",
+          "order": 2,
+          "type": "numeric_input",
+          "prompt": "Evaluate: (8 + 4) ÷ 3\n\nWork inside parentheses first.",
+          "acceptedAnswers": [
+            { "answer": "4", "tolerance": 0 }
+          ],
+          "hint": "8 + 4 = 12, then divide: 12 ÷ 3"
+        },
+        {
+          "id": "af-ex-7",
+          "prompt": "Evaluate: 2³ + 5 × 2\n\nExponents first, then multiplication, then addition.",
+          "order": 3,
+          "type": "numeric_input",
+          "prompt": "Evaluate: 2³ + 5 × 2\n\nExponents first, then multiplication, then addition.",
+          "acceptedAnswers": [
+            { "answer": "18", "tolerance": 0 }
+          ],
+          "hint": "2³ = 8; 5 × 2 = 10; 8 + 10 = 18"
+        },
+        {
+          "id": "af-ex-8",
+          "prompt": "Evaluate: 15 ÷ (3 + 2)\n\n\nWork inside parentheses first.",
+          "order": 4,
+          "type": "numeric_input",
+          "prompt": "Evaluate: 15 ÷ (3 + 2)\n\n\nWork inside parentheses first.",
+          "acceptedAnswers": [
+            { "answer": "3", "tolerance": 0 }
+          ],
+          "hint": "3 + 2 = 5, then 15 ÷ 5"
+        },
+        {
+          "id": "af-ex-9",
+          "prompt": "Arjun evaluates 6 + 2 × 4 and gets 32. What mistake did he make?",
+          "order": 5,
+          "type": "socratic_ai",
+          "modelAnswer": "Arjun added 6 + 2 first to get 8, then multiplied by 4 to get 32. This is incorrect because multiplication has higher priority than addition in the order of operations. He should have multiplied 2 × 4 first to get 8, then added 6 to get 14.",
+          "mustInclude": [
+            "multiplication before addition",
+            "multiply 2 × 4 first"
+          ],
+          "niceToHave": [
+            "PEMDAS",
+            "order of operations"
+          ],
+          "hints": [
+            "What operation comes before addition in PEMDAS?",
+            "What does PEMDAS tell you to do with 6 + 2 × 4?"
+          ],
+          "minScore": 0.6,
+          "validationMode": "embedding"
+        }
+      ]
+    },
+    {
+      "id": "af-s3",
+      "title": "Substitution",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "af-lesson-3",
+          "title": "Substituting Values into Expressions",
+          "content": "**Substitution** is the process of replacing a variable in an expression with a given number value, then evaluating the result. It is the bridge between pure arithmetic and algebraic reasoning.\n\n## The Process\n\n1. Identify the variable and its given value\n2. Replace every occurrence of that variable with the value (use parentheses around the number to preserve signs correctly)\n3. Evaluate using PEMDAS\n\n## The Parentheses Trick\n\nWhen substituting negative numbers, put them in parentheses:\n\n`x² − 3x + 1` when `x = −2`\n= `(−2)² − 3(−2) + 1`\n= `4 + 6 + 1`\n= `11`\n\nWithout parentheses, `−2²` would be interpreted as `−(2²) = −4`, which is wrong.\n\n\n## Multiple Variables\n\nWhen an expression has more than one variable, substitute each one independently, then evaluate:\n\n`3a + 2b` when `a = 4` and `b = −1`\n= `3(4) + 2(−1)`\n= `12 − 2`\n= `10`",
+          "order": 1
+        },
+        {
+          "id": "af-lesson-4",
+          "title": "Substitution in Real-World Contexts",
+          "content": "Substitution becomes powerful when we use it to model real situations. Formulas from science, finance, and geometry all require substitution.\n\n\n## Geometry: Area of a Trapezoid\n\n`A = ½(a + b)h`\n\nFind area when a = 5, b = 7, h = 4:\n`A = ½(5 + 7)(4) = ½(12)(4) = 24`\n\n## Physics: Object in Free Fall\n\n`d = ½gt²` where g = 9.8 m/s²\nFind distance fallen at t = 3 seconds:\n`d = ½(9.8)(3)² = ½(9.8)(9) = 44.1 m`\n\n\n## Finance: Simple Interest\n\n`I = prt` where p = principal, r = rate, t = time\n$1000 at 5% for 3 years:\n`I = (1000)(0.05)(3) = $150`",
+          "order": 2
+        }
+      ],
+      "exercises": [
+        {
+          "id": "af-ex-10",
+          "prompt": "Evaluate x² − 2x + 1 when x = 3",
+          "order": 1,
+          "type": "numeric_input",
+          "prompt": "Evaluate x² − 2x + 1 when x = 3\n\nRemember: cube the value first, then multiply, then add.",
+          "acceptedAnswers": [{"answer": "9", "tolerance": 0}],
+          "hint": "3² = 9, then 2 × 3 = 6, then 9 − 6 + 1 = 4"
+        },
+        {
+          "id": "af-ex-11",
+          "prompt": "If 3a + b = 10, and a = 2, what is b?",
+          "order": 2,
+          "type": "numeric_input",
+          "prompt": "If 3a + b = 10, and a = 2, what is b?\n\nThis is a linear equation in one variable.",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "3(2) + b = 10 → 6 + b = 10 → b = 4"
+        },
+        {
+          "id": "af-ex-12",
+          "prompt": "A taxi charges $3 base fare plus $2 per mile. The cost is modeled by C = 3 + 2m. How much does a 7-mile trip cost?",
+          "order": 3,
+          "type": "numeric_input",
+          "prompt": "A taxi charges $3 base fare plus $2 per mile. The cost is modeled by C = 3 + 2m. How much does a 7-mile trip cost?",
+          "acceptedAnswers": [{"answer": "17", "tolerance": 0}],
+          "hint": "C = 3 + 2(7) = 3 + 14 = 17"
+        },
+        {
+          "id": "af-ex-13",
+          "prompt": "Substitute x = −3 into the expression 5 − x. What is the result?",
+          "order": 4,
+          "type": "numeric_input",
+          "prompt": "Substitute x = −3 into the expression 5 − x. What is the result?\n\nBe careful with the negative sign.",
+          "acceptedAnswers": [{"answer": "8", "tolerance": 0}],
+          "hint": "5 − (−3) = 5 + 3 = 8"
+        }
+      ]
+    }
+  ],
+  "flashcardDeck": {
+    "id": "af-fc",
+    "title": "Algebra Foundations Review",
+    "description": "Key terms from the Algebra Foundations module",
+    "cards": [
+      {
+        "id": "fc-af-1",
+        "term": "Variable",
+        "definition": "A symbol (usually a letter) that represents an unknown or changing value in an expression or equation."
+      },
+      {
+        "id": "fc-af-2",
+        "term": "Coefficient",
+        "definition": "The numerical factor multiplied by a variable in a term. In 4x, 4 is the coefficient."
+      },
+      {
+        "id": "fc-af-3",
+        "term": "Evaluate an expression",
+        "definition": "To find the numerical value of an expression by substituting given values for the variables and applying the order of operations."
+      },
+      {
+        "id": "fc-af-4",
+        "term": "PEMDAS",
+        "definition": "The order of operations: Parentheses, Exponents, Multiplication/Division (left to right), Addition/Subtraction (left to right)."
+      },
+      {
+        "id": "fc-af-5",
+        "term": "Substitution",
+        "definition": "Replacing a variable in an expression with a given number value to evaluate the expression."
+      }
+    ]
+  }
+}

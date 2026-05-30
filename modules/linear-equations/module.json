@@ -1,0 +1,233 @@
+{
+  "id": "linear-equations",
+  "title": "Linear Equations",
+  "description": "Solve one-step, two-step, and multi-step linear equations. Learn to isolate variables, check solutions, and translate word problems into algebraic form.",
+  "author": "Modular Learning Team",
+  "version": "1.0.0",
+  "estimatedMinutes": 60,
+  "sections": [
+    {
+      "id": "le-s1",
+      "title": "One-Step Equations",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "le-lesson-1",
+          "title": "Isolating the Variable",
+          "content": "A **linear equation** states that two expressions are equal. The goal of solving an equation is to find the value of the variable that makes the equation true.\n\n\n## The Core Idea\n\nAn equation is like a balance scale. Whatever you do to one side, you must do exactly the same to the other side to keep it balanced.\n\n\n## One-Step Equations\n\nA one-step equation requires exactly one operation to isolate the variable.\n\n### Addition/Subtraction\n\n`x − 5 = 12`\nAdd 5 to both sides: `x − 5 + 5 = 12 + 5`\nResult: `x = 17`\n\n\n### Multiplication/Division\n\n`3x = 21`\nDivide both sides by 3: `3x ÷ 3 = 21 ÷ 3`\nResult: `x = 7`\n\n**Check:** `3(7) = 21 ✓`\n\n## Why We Check\n\nChecking is not optional — it catches sign errors, arithmetic mistakes, and ensures you solved the original equation correctly.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "le-ex-1",
+          "prompt": "Solve for x:\n\nx + 8 = 15",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "Subtract 8 from both sides: x = 15 − 8"
+        },
+        {
+          "id": "le-ex-2",
+          "prompt": "Solve for x:\n\nx − 4 = 11",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "15", "tolerance": 0}],
+          "hint": "Add 4 to both sides: x = 11 + 4"
+        },
+        {
+          "id": "le-ex-3",
+          "prompt": "Solve for x:\n\n5x = 35",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "Divide both sides by 5: x = 35 ÷ 5"
+        },
+        {
+          "id": "le-ex-4",
+          "prompt": "Solve for x:\n\n\nx ÷ 3 = 9",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "27", "tolerance": 0}],
+          "hint": "Multiply both sides by 3: x = 9 × 3"
+        },
+        {
+          "id": "le-ex-5",
+          "prompt": "Solve for x:\n\n\nx − (−6) = 14",
+          "order": 5,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "8", "tolerance": 0}],
+          "hint": "x − (−6) = x + 6 = 14, so x = 14 − 6"
+        }
+      ]
+    },
+    {
+      "id": "le-s2",
+      "title": "Two-Step Equations",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "le-lesson-2",
+          "title": "Reversing Two Operations",
+          "content": "A **two-step equation** requires two operations to solve. The key principle is **reverse order** — undo addition/subtraction first, then undo multiplication/division.\n\n## The Process\n\n`3x + 5 = 20`\n\n**Step 1:** Undo addition/subtraction — subtract 5 from both sides:\n`3x + 5 − 5 = 20 − 5`\n→ `3x = 15`\n\n**Step 2:** Undo multiplication/division — divide both sides by 3:\n`3x ÷ 3 = 15 ÷ 3`\n→ `x = 5`\n\n**Check:** `3(5) + 5 = 15 + 5 = 20 ✓`\n\n## Error students make\n\nMany students try dividing first. That's wrong because `3x + 5 = 20` means `3x = 20 − 5`, not `3x = 20 ÷ 3`. You must undo in reverse PEMDAS order.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "le-ex-6",
+          "prompt": "Solve for x:\n\n2x + 3 = 13",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "5", "tolerance": 0}],
+          "hint": "2x + 3 = 13 → subtract 3: 2x = 10 → divide by 2: x = 5"
+        },
+        {
+          "id": "le-ex-7",
+          "prompt": "Solve for x:\n\n4x − 7 = 21",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "4x − 7 = 21 → add 7: 4x = 28 → divide by 4: x = 7"
+        },
+        {
+          "id": "le-ex-8",
+          "prompt": "Solve for x:\n\n3x + 10 = 31",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "3x + 10 = 31 → subtract 10: 3x = 21 → divide by 3: x = 7"
+        },
+        {
+          "id": "le-ex-9",
+          "prompt": "Solve for x:\n\n\n5x − 3 = 22",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "5", "tolerance": 0}],
+          "hint": "5x − 3 = 22 → add 3: 5x = 25 → divide by 5: x = 5"
+        },
+        {
+          "id": "le-ex-10",
+          "prompt": "Sofia solved 4x + 6 = 30 and got x = 9. Check her answer by substitution. Is she correct?",
+          "order": 5,
+          "type": "mcq",
+          "options": [
+            "Yes — 4(9) + 6 = 36 + 6 = 42, which equals 30",
+            "No — 4(9) + 6 = 36 + 6 = 42, which does not equal 30",
+            "Yes — 4(9) + 6 = 36 + 6 = 42, so 42 = 30 is true",
+            "No — 4(9) + 6 = 36, not 42, and 36 ≠ 30"
+          ],
+          "correctIndex": 1,
+          "explanation": "The correct answer is x = 6. Checking Sofia's answer: 4(9) + 6 = 42 ≠ 30. The right solution is 4x = 24 → x = 6. Then 4(6) + 6 = 30 ✓"
+        }
+      ]
+    },
+    {
+      "id": "le-s3",
+      "title": "Variables on Both Sides",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "le-lesson-3",
+          "title": "Moving Terms to One Side",
+          "content": "Some equations have the variable on both sides. The goal is to collect all variable terms on one side before isolating.\n\n## The Process\n\n`5x + 2 = 2x + 14`\n\n\n**Step 1:** Move variable terms to one side — subtract `2x` from both sides:\n`5x − 2x + 2 = 14`\n→ `3x + 2 = 14`\n\n**Step 2:** Now it's a two-step equation. Subtract 2:\n`3x = 12`\n\n\n**Step 3:** Divide by 3:\n`x = 4`\n\n**Check:** `5(4) + 2 = 22` and `2(4) + 14 = 22` ✓\n\n## Key Principle\n\nWhatever you do to one side, you must do to the other. When moving a term across the equals sign, change its sign.",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "le-ex-11",
+          "prompt": "Solve for x:\n\n3x + 5 = x + 11",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "3", "tolerance": 0}],
+          "hint": "3x + 5 = x + 11 → subtract x: 2x + 5 = 11 → subtract 5: 2x = 6 → x = 3"
+        },
+        {
+          "id": "le-ex-12",
+          "prompt": "Solve for x:\n\n7x − 4 = 3x + 12",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "7x − 4 = 3x + 12 → subtract 3x: 4x − 4 = 12 → add 4: 4x = 16 → x = 4"
+        },
+        {
+          "id": "le-ex-13",
+          "prompt": "Solve for x:\n\n4x + 1 = 2x + 9",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "4x + 1 = 2x + 9 → subtract 2x: 2x + 1 = 9 → subtract 1: 2x = 8 → x = 4"
+        },
+        {
+          "id": "le-ex-14",
+          "prompt": "Solve for x:\n\n\n9x − 6 = 3x + 18",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "9x − 6 = 3x + 18 → subtract 3x: 6x − 6 = 18 → add 6: 6x = 24 → x = 4"
+        }
+      ]
+    },
+    {
+      "id": "le-s4",
+      "title": "Word Problems",
+      "order": 4,
+      "lessons": [
+        {
+          "id": "le-lesson-4",
+          "title": "From Words to Equations",
+          "content": "Translating word problems into equations is the most important skill in applied algebra. The structure is always: **identify what the variable represents, find theequation from the context, solve, then interpret.**\n\n\n## Translation Guide\n\n| Words | Math |\n|-------|------|\n| \"a number increased by 3\" | `x + 3` |\n| \"twice a number\" | `2x` |\n| \"the difference of x and 7\" | `x − 7` |\n| \"x times 5 equals 20\" | `5x = 20` |\n| \"a number divided by 4 is 12\" | `x ÷ 4 = 12` |\n| \"3 more than x is 11\" | `x + 3 = 11` |\n\n\n## Example\n\n\"Chen bought some notebooks for $4 each and a $2 pen. He spent $30 total. How many notebooks did he buy?\"\n\n\nLet `n` = number of notebooks.\nCost: `4n + 2 = 30`\n`4n = 28`\n`n = 7`\n\nChen bought **7 notebooks**. Check: `4(7) + 2 = 30 ✓`",
+          "order": 1
+        }
+      ],
+      "exercises": [
+        {
+          "id": "le-ex-15",
+          "prompt": "A taxi charges a $5 base fare plus $2 per mile. If a ride costs $17, how many miles was the trip?\n\nLet m = miles. Equation: 5 + 2m = 17",
+          "order": 1,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "6", "tolerance": 0}],
+          "hint": "5 + 2m = 17 → 2m = 12 → m = 6"
+        },
+        {
+          "id": "le-ex-16",
+          "prompt": "Maria is twice as old as her brother. Maria is 24 years old. How old is her brother?\n\nLet b = brother's age. Equation: 2b = 24",
+          "order": 2,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "12", "tolerance": 0}],
+          "hint": "2b = 24 → divide by 2: b = 12"
+        },
+        {
+          "id": "le-ex-17",
+          "prompt": "A rectangle has a perimeter of 26 cm. Its length is 9 cm. What is its width?\n\nPerimeter formula: P = 2l + 2w → 2(9) + 2w = 26",
+          "order": 3,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "4", "tolerance": 0}],
+          "hint": "18 + 2w = 26 → 2w = 8 → w = 4"
+        },
+        {
+          "id": "le-ex-18",
+          "prompt": "Three times a number minus 7 equals 14. What is the number?\n\nLet x = the number. Equation: 3x − 7 = 14",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [{"answer": "7", "tolerance": 0}],
+          "hint": "3x − 7 = 14 → 3x = 21 → x = 7"
+        }
+      ]
+    }
+  ],
+  "flashcardDeck": {
+    "id": "le-fc",
+    "title": "Linear Equations Key Terms",
+    "description": "Core vocabulary from the Linear Equations module",
+    "cards": [
+      {"id": "fc-le-1", "term": "Linear equation", "definition": "An equation where the highest power of the variable is 1. Its graph is a straight line."},
+      {"id": "fc-le-2", "term": "Isolate the variable", "definition": "To get the variable alone on one side of the equation using inverse operations."},
+      {"id": "fc-le-3", "term": "Inverse operation", "definition": "The opposite operation that undoes another. Addition ↔ subtraction. Multiplication ↔ division."},
+      {"id": "fc-le-4", "term": "Check a solution", "definition": "Substitute the found value back into the original equation to verify both sides are equal."},
+      {"id": "fc-le-5", "term": "One-step equation", "definition": "A linear equation requiring exactly one inverse operation to solve."},
+      {"id": "fc-le-6", "term": "Two-step equation", "definition": "A linear equation requiring two inverse operations to solve (typically undo addition/subtraction first, then multiplication/division)."}
+    ]
+  }
+}

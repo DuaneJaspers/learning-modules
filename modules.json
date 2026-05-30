@@ -1,26 +1,119 @@
 {
-  "version": "1",
-  "lastUpdated": "2026-05-29T20:59:12Z",
-  "modules": [
+  "version": "2",
+  "lastUpdated": "2026-05-30T00:00:00Z",
+  "categories": [
     {
-      "id": "cryptography-basics",
-      "title": "Cryptography Basics",
-      "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
-      "author": "Modular Learning Team",
-      "version": "2.0.0",
-      "estimatedMinutes": 180,
-      "checksum": "sha256:644adc2c59b5160e2456eb134687a1845d142792c96e25b1f26bc3c7d3547932",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
+      "id": "computer-science",
+      "label": "Computer Science",
+      "icon": "💻"
     },
     {
-      "id": "fall-of-rome",
-      "title": "The Fall of Rome",
-      "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
+      "id": "history",
+      "label": "History",
+      "icon": "📜"
+    },
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "icon": "📐"
+    },
+    {
+      "id": "logic",
+      "label": "Logic & Reasoning",
+      "icon": "🧠"
+    }
+  ],
+  "paths": [
+    {
+      "id": "algebra-track",
+      "title": "Algebra Track",
+      "description": "From algebraic expressions to systems of equations — a complete path through high school algebra",
+      "modules": [
+        "algebra-foundations",
+        "linear-equations",
+        "graphing-linear",
+        "inequalities-systems"
+      ]
+    },
+    {
+      "id": "crypto-track",
+      "title": "Cryptography Track",
+      "description": "From logical reasoning to classical ciphers and beyond",
+      "modules": [
+        "sample-logic",
+        "cryptography-basics"
+      ]
+    },
+    {
+      "id": "civilization-shifts",
+      "title": "Civilization Shifts",
+      "description": "How empires fall and paradigms break",
+      "modules": [
+        "fall-of-rome",
+        "scientific-revolution"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "algebra-foundations",
+      "title": "Algebra Foundations",
+      "description": "Master the building blocks of algebra: evaluating expressions, order of operations, and substituting values into algebraic expressions.",
       "author": "Modular Learning Team",
-      "version": "2.0.0",
-      "estimatedMinutes": 180,
-      "checksum": "sha256:737993d813b55e72411bb31125366b7ab5347f17c363a0bfab38cf30d0d65bcb",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/fall-of-rome/module.json"
+      "version": "1.0.0",
+      "estimatedMinutes": 45,
+      "checksum": "sha256:e339e7d0bf52a42eb104c0b3cc3a0dedd79a676efe4d260ab13dcda0910253ca",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/algebra-foundations/module.json",
+      "category": "mathematics",
+      "tags": ["algebra", "expressions", "order-of-operations", "substitution", "beginner"],
+      "difficulty": "beginner",
+      "prerequisites": [],
+      "recommendedNext": ["linear-equations"]
+    },
+    {
+      "id": "linear-equations",
+      "title": "Linear Equations",
+      "description": "Solve one-step, two-step, and multi-step linear equations. Learn to isolate variables, check solutions, and translate word problems into algebraic form.",
+      "author": "Modular Learning Team",
+      "version": "1.0.0",
+      "estimatedMinutes": 60,
+      "checksum": "sha256:dc5c8cb57fbbf987b4504392311f41d23c739d791d666a1f282a0344ac469728",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/linear-equations/module.json",
+      "category": "mathematics",
+      "tags": ["algebra", "equations", "linear", "word-problems", "beginner"],
+      "difficulty": "beginner",
+      "prerequisites": ["algebra-foundations"],
+      "recommendedNext": ["graphing-linear"]
+    },
+    {
+      "id": "graphing-linear",
+      "title": "Graphing & Linear Relationships",
+      "description": "Learn to plot linear equations on the coordinate plane, understand slope and intercepts, and interpret graphs as real-world models.",
+      "author": "Modular Learning Team",
+      "version": "1.0.0",
+      "estimatedMinutes": 75,
+      "checksum": "sha256:a5ea4b912bd576836df5ab4aeaab97887e6981b96898208b91225245165cf793",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/graphing-linear/module.json",
+      "category": "mathematics",
+      "tags": ["algebra", "graphing", "slope", "linear-functions", "intermediate"],
+      "difficulty": "intermediate",
+      "prerequisites": ["linear-equations"],
+      "recommendedNext": ["inequalities-systems"]
+    },
+    {
+      "id": "inequalities-systems",
+      "title": "Inequalities & Systems",
+      "description": "Solve and graph linear inequalities, represent solution sets on a number line, and analyze systems of linear equations using substitution and elimination.",
+      "author": "Modular Learning Team",
+      "version": "1.0.0",
+      "estimatedMinutes": 90,
+      "checksum": "sha256:22d5d97b54edc9e68060175bc8df7493b3900e09df00a8a7e62ba0ad9dc65995",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/inequalities-systems/module.json",
+      "category": "mathematics",
+      "tags": ["algebra", "inequalities", "systems-of-equations", "elimination", "substitution", "intermediate"],
+      "difficulty": "intermediate",
+      "prerequisites": ["graphing-linear"],
+      "recommendedNext": []
     },
     {
       "id": "sample-logic",
@@ -30,7 +123,63 @@
       "version": "2.0.0",
       "estimatedMinutes": 60,
       "checksum": "sha256:88ad3d271d24a6794b705e1cfba3a65d4fc815b8a18f923a8432344a35cfc30b",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/sample-logic/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/sample-logic/module.json",
+      "category": "logic",
+      "tags": [
+        "logic",
+        "reasoning",
+        "critical-thinking",
+        "beginner-friendly"
+      ],
+      "difficulty": "beginner",
+      "prerequisites": [],
+      "recommendedNext": [
+        "cryptography-basics"
+      ]
+    },
+    {
+      "id": "cryptography-basics",
+      "title": "Cryptography Basics",
+      "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
+      "author": "Modular Learning Team",
+      "version": "2.0.0",
+      "estimatedMinutes": 180,
+      "checksum": "sha256:644adc2c59b5160e2456eb134687a1845d142792c96e25b1f26bc3c7d3547932",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json",
+      "category": "computer-science",
+      "tags": [
+        "cryptography",
+        "algorithms",
+        "history-of-tech",
+        "mathematics"
+      ],
+      "difficulty": "beginner",
+      "prerequisites": [
+        "sample-logic"
+      ],
+      "recommendedNext": []
+    },
+    {
+      "id": "fall-of-rome",
+      "title": "The Fall of Rome",
+      "description": "An exploration of the factors that led to the decline and eventual fall of the Western Roman Empire, examining political, economic, military, and social causes.",
+      "author": "Modular Learning Team",
+      "version": "2.0.0",
+      "estimatedMinutes": 180,
+      "checksum": "sha256:737993d813b55e72411bb31125366b7ab5347f17c363a0bfab38cf30d0d65bcb",
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/fall-of-rome/module.json",
+      "category": "history",
+      "tags": [
+        "rome",
+        "empire",
+        "decline",
+        "ancient-history"
+      ],
+      "difficulty": "intermediate",
+      "prerequisites": [],
+      "recommendedNext": [
+        "scientific-revolution"
+      ]
     },
     {
       "id": "scientific-revolution",
@@ -40,7 +189,19 @@
       "version": "2.0.0",
       "estimatedMinutes": 180,
       "checksum": "sha256:2b1f18a1bf1f4e952793d6c78be8b93599086255f3d3a74544abaf9ad8d52774",
-      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/scientific-revolution/module.json"
+      "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/scientific-revolution/module.json",
+      "category": "history",
+      "tags": [
+        "science",
+        "history",
+        "scientific-method",
+        "paradigm-shift"
+      ],
+      "difficulty": "intermediate",
+      "prerequisites": [
+        "fall-of-rome"
+      ],
+      "recommendedNext": []
     }
   ]
 }
