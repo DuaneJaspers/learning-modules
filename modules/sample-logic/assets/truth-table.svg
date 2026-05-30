@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1a1a2e" />
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e94560" font-size="28" font-family="Arial, sans-serif" font-weight="bold">Truth Table: P → Q</text>
+
+  <!-- Table -->
+  <g>
+    <!-- Headers -->
+    <rect x="50" y="80" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="100" y="105" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">P</text>
+
+    <rect x="150" y="80" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="200" y="105" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">Q</text>
+
+    <rect x="250" y="80" width="150" height="40" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="325" y="105" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">P → Q</text>
+
+    <!-- Rows -->
+    <!-- Row 1: T, T -->
+    <rect x="50" y="120" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="100" y="145" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <rect x="150" y="120" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="200" y="145" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <rect x="250" y="120" width="150" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="325" y="145" text-anchor="middle" fill="#4caf50" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <!-- Row 2: T, F -->
+    <rect x="50" y="160" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="100" y="185" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <rect x="150" y="160" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="200" y="185" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">F</text>
+
+    <rect x="250" y="160" width="150" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="325" y="185" text-anchor="middle" fill="#e94560" font-size="16" font-family="Arial, sans-serif">F</text>
+
+    <!-- Row 3: F, T -->
+    <rect x="50" y="200" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="100" y="225" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">F</text>
+
+    <rect x="150" y="200" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="200" y="225" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <rect x="250" y="200" width="150" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="325" y="225" text-anchor="middle" fill="#4caf50" font-size="16" font-family="Arial, sans-serif">T</text>
+
+    <!-- Row 4: F, F -->
+    <rect x="50" y="240" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="100" y="265" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">F</text>
+
+    <rect x="150" y="240" width="100" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="200" y="265" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">F</text>
+
+    <rect x="250" y="240" width="150" height="40" fill="#0f3460" stroke="#e94560" stroke-width="1" />
+    <text x="325" y="265" text-anchor="middle" fill="#4caf50" font-size="16" font-family="Arial, sans-serif">T</text>
+  </g>
+
+  <!-- Explanation -->
+  <rect x="420" y="120" width="350" height="160" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+  <text x="440" y="150" text-anchor="start" fill="white" font-size="16" font-family="Arial, sans-serif" font-weight="bold">Definition: P → Q</text>
+  <text x="440" y="175" text-anchor="start" fill="#a5a5a5" font-size="14" font-family="Arial, sans-serif">- P → Q is **false** only when P is true and Q is false.</text>
+  <text x="440" y="200" text-anchor="start" fill="#a5a5a5" font-size="14" font-family="Arial, sans-serif">- Otherwise, P → Q is **true**.</text>
+  <text x="440" y="230" text-anchor="start" fill="white" font-size="14" font-family="Arial, sans-serif">Example:</text>
+  <text x="440" y="250" text-anchor="start" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">- P: 'It is raining.'</text>
+  <text x="440" y="270" text-anchor="start" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">- Q: 'The ground is wet.'</text>
+  <text x="440" y="290" text-anchor="start" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">- P → Q: 'If it is raining, then the ground is wet.'</text>
+
+  <!-- Legend -->
+  <rect x="50" y="320" width="700" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+  <text x="80" y="345" text-anchor="start" fill="white" font-size="14" font-family="Arial, sans-serif">Truth Table: A tool to evaluate the validity of logical statements.</text>
+  <text x="80" y="365" text-anchor="start" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">Use truth tables to test arguments, identify fallacies, and understand conditional statements.</text>
+</svg>

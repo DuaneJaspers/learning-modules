@@ -1,0 +1,157 @@
+{
+  "id": "section-6",
+  "title": "Logic in the Real World",
+  "order": 6,
+  "lessons": [
+    {
+      "id": "lesson-6-1",
+      "title": "Logic in Debates and Discussions",
+      "content": "Logic is the backbone of effective debate. Whether in formal settings (e.g., courtrooms, academic papers) or casual conversations, applying logical principles helps you **persuade**, **refute**, and **learn**.\n\n## Debate Strategies\n### 1. Structure Your Argument\nUse the **PREP method** (Point, Reason, Example, Point):\n- **Point**: State your claim clearly.\n- **Reason**: Explain why it’s true.\n- **Example**: Provide evidence or analogies.\n- **Point**: Restate your claim.\n\nExample:\n**Point**: We should reduce sugar in school lunches.\n**Reason**: High sugar intake is linked to childhood obesity.\n**Example**: A study found schools with low-sugar lunches had 30% fewer obese students.\n**Point**: Reducing sugar improves student health.\n\n### 2. Anticipate Counterarguments\n- **Weak Man**: Address the weakest version of the opposing argument (easy to refute).\n- **Steel Man**: Address the strongest version (shows intellectual honesty).\n\n### 3. Avoid Fallacies\nCommon debate fallacies to avoid:\n- **Straw Man**: Misrepresenting an opponent’s argument.\n- **Ad Hominem**: Attacking the person, not the argument.\n- **False Dilemma**: Presenting only two options when more exist.\n- **Appeal to Authority**: Citing an unqualified source.\n\n### 4. Use Analogies\nAnalogies simplify complex ideas by comparing them to familiar concepts.\nExample:\n**Argument**: AI is like a tool—it’s only as good as the person using it.\n**Why it works**: Highlights human responsibility in AI development.\n\n## Real-World Example: Climate Change Debate\n| Side | Argument | Fallacy to Avoid |\n|------|----------|-------------------|\n| Pro | 97% of scientists agree climate change is human-caused. | Appeal to Popularity (if used as sole evidence) |\n| Con | Climate has always changed naturally. | Red Herring (ignores human impact) |\n\n**Logical Approach**:\n- Pro: Cite peer-reviewed studies, not just consensus.\n- Con: Acknowledge natural changes but address human contributions.\n\n## Tools for Debate\n- **Flowcharts**: Map arguments and counterarguments.\n- **Fact-Checking**: Use sources like Snopes or PolitiFact.\n- **Logic Checkers**: Tools like Logically Fallacious to spot fallacies.",
+      "order": 1
+    },
+    {
+      "id": "lesson-6-2",
+      "title": "Media Literacy and Critical Thinking",
+      "content": "Media shapes our perceptions, but not all sources are reliable. **Media literacy** is the ability to critically evaluate information.\n\n## Red Flags in Media\n### 1. Sensationalism\n- **Sign**: Overly emotional headlines (e.g., 'You Won’t Believe What Happened Next!').\n- **Why it’s bad**: Prioritizes clicks over accuracy.\n- **Example**: Tabloids exaggerating celebrity scandals.\n\n### 2. Bias\n- **Sign**: One-sided reporting, loaded language.\n- **Why it’s bad**: Distorts reality.\n- **Example**: A news outlet calling a policy 'brilliant' or 'disastrous' without evidence.\n\n### 3. Misleading Statistics\n- **Sign**: Cherry-picked data, missing context.\n- **Why it’s bad**: Numbers can be manipulated.\n- **Example**: 'Crime rates doubled!' (But the sample size was tiny.)\n\n### 4. Fake News\n- **Sign**: Fabricated stories, doctored images.\n- **Why it’s bad**: Spreads misinformation.\n- **Example**: False claims about political candidates.\n\n## How to Evaluate Sources\n1. **Check the Author**: Are they credible? Do they have expertise?\n2. **Verify the Evidence**: Are claims supported by data or sources?\n3. **Cross-Reference**: Do other reputable sources agree?\n4. **Look for Bias**: Does the source have a political or financial agenda?\n5. **Check the Date**: Is the information up-to-date?\n\n## Tools for Media Literacy\n- **Reverse Image Search**: Google Images or TinEye to verify photos.\n- **Fact-Checking Sites**: FactCheck.org, Media Bias/Fact Check.\n- **Bias Charts**: Ad Fontes Media rates news sources for bias and reliability.\n\n## Example: Evaluating a News Article\n**Headline**: 'New Study Shows Coffee Causes Cancer'\n**Steps to Verify**:\n1. **Find the Study**: Is it published in a peer-reviewed journal?\n2. **Check the Sample Size**: Was the study done on 10 people or 10,000?\n3. **Look for Conflicts of Interest**: Was the study funded by a tea company?\n4. **Cross-Reference**: Do other studies support this claim?\n\n**Result**: The study might show a *correlation* (e.g., heavy coffee drinkers had higher cancer rates), but not *causation* (e.g., other factors like smoking could explain it).",
+      "order": 2
+    },
+    {
+      "id": "lesson-6-3",
+      "title": "Logic in AI and Algorithms",
+      "content": "AI and algorithms make decisions based on **logic**, but they’re not immune to fallacies or biases. Understanding their limitations is crucial for **ethical AI** and **critical use**.\n\n## How AI Uses Logic\n1. **Rule-Based Systems**: Follows strict 'if-then' logic (e.g., spam filters).\n   Example: If an email contains 'FREE OFFER,' mark it as spam.\n2. **Machine Learning**: Learns patterns from data (e.g., recommendation algorithms).\n   Example: If users who like X also like Y, recommend Y to new users.\n3. **Natural Language Processing (NLP)**: Interprets human language (e.g., chatbots).\n   Example: If a user says 'I’m sad,' respond with empathy.\n\n## Logical Flaws in AI\n### 1. Bias in Training Data\n- **Problem**: AI learns biases present in data.\n- **Example**: A hiring algorithm favoring male candidates because historical data shows more male hires.\n- **Solution**: Use diverse, representative datasets.\n\n### 2. Overfitting\n- **Problem**: AI memorizes training data instead of generalizing.\n- **Example**: A model predicts house prices perfectly for training data but fails on new data.\n- **Solution**: Use cross-validation and regularization.\n\n### 3. Black Box Problem\n- **Problem**: AI decisions aren’t transparent.\n- **Example**: A loan denial without explanation.\n- **Solution**: Use **explainable AI (XAI)** techniques.\n\n### 4. Fallacies in AI Reasoning\n- **False Cause**: Assuming correlation = causation.\n  Example: An AI predicts crime rates based on ice cream sales (both rise in summer).\n- **Hasty Generalization**: Drawing broad conclusions from small data.\n  Example: An AI labels all images of people in hoodies as 'suspicious.'\n\n## Ethical AI Principles\n1. **Fairness**: Avoid bias in data and algorithms.\n2. **Transparency**: Explain how decisions are made.\n3. **Accountability**: Identify who is responsible for AI outcomes.\n4. **Privacy**: Protect user data.\n\n## Real-World Example: AI in Hiring\n**Problem**: An AI hiring tool downgraded resumes with words like 'women’s chess club.'\n**Cause**: The training data favored male candidates.\n**Solution**: Audit the algorithm for bias and retrain it with balanced data.\n\n## Tools for Ethical AI\n- **Bias Detection**: AI Fairness 360 (IBM).\n- **Explainability**: LIME or SHAP.\n- **Ethics Guidelines**: EU Ethics Guidelines for Trustworthy AI.",
+      "order": 3
+    },
+    {
+      "id": "lesson-6-4",
+      "title": "Logic in Everyday Decision-Making",
+      "content": "Logic isn’t just for philosophers—it’s a **practical tool** for daily life. From choosing a career to buying a car, logical thinking helps you make **better decisions**.\n\n## Decision-Making Frameworks\n### 1. Pros and Cons List\n- **How to Use**: List advantages and disadvantages of each option.\n- **Example**: Deciding whether to accept a job offer.\n  Pros: Higher salary, better benefits.\n  Cons: Longer commute, less work-life balance.\n- **Limitation**: Doesn’t account for emotional factors.\n\n### 2. Cost-Benefit Analysis\n- **How to Use**: Assign monetary or numerical values to pros and cons.\n- **Example**: Should you buy a gym membership?\n  Cost: $50/month.\n  Benefit: Improved health ($200/month in long-term savings).\n- **Limitation**: Hard to quantify intangible benefits (e.g., happiness).\n\n### 3. Decision Trees\n- **How to Use**: Map out possible outcomes and their probabilities.\n- **Example**: Should you invest in stocks or bonds?\n  [Invest?] → Yes → [Stocks] → 70% gain, 30% loss\n           → No → [Bonds] → 3% gain, 1% loss\n- **Limitation**: Requires estimating probabilities.\n\n### 4. Pre-Mortem Analysis\n- **How to Use**: Imagine a decision failed. What went wrong?\n- **Example**: Launching a new product.\n  Failure Scenario: Low sales due to poor marketing.\n  Solution: Invest in market research.\n- **Benefit**: Identifies risks before they happen.\n\n## Common Decision-Making Fallacies\n1. **Sunk Cost Fallacy**: Continuing a project because you’ve already invested time/money.\n   Example: Finishing a bad movie because you paid for the ticket.\n2. **Anchoring**: Relying too heavily on the first piece of information.\n   Example: Buying a car because the first price you saw was high.\n3. **Confirmation Bias**: Only seeking information that confirms your beliefs.\n   Example: Ignoring negative reviews of a product you want.\n4. **Overconfidence**: Overestimating your knowledge or abilities.\n   Example: Investing in stocks without research.\n\n## Real-World Example: Buying a House\n**Decision**: Should you buy a house now or wait?\n**Logical Approach**:\n1. **List Options**: Buy now, wait 1 year, rent.\n2. **Gather Data**: Interest rates, housing market trends, personal savings.\n3. **Evaluate Outcomes**:\n   - Buy now: Lower interest rates but higher prices.\n   - Wait: Higher interest rates but lower prices.\n   - Rent: Flexibility but no equity.\n4. **Make a Decision**: Choose the option with the best balance of risk and reward.\n\n## Tools for Better Decisions\n- **Decision-Making Apps**: Trello (pros/cons lists), MindMeister (decision trees).\n- **Probability Calculators**: Estimate risks and rewards.\n- **Journaling**: Reflect on past decisions to improve future ones.",
+      "order": 4
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-20",
+      "prompt": "Identify the debate strategy used in this argument: 'We should invest in renewable energy because it reduces pollution, creates jobs, and is supported by 80% of scientists.'",
+      "order": 1,
+      "type": "mcq",
+      "options": [
+        "Straw Man",
+        "PREP Method",
+        "Appeal to Authority",
+        "Steel Man"
+      ],
+      "correctIndex": 1,
+      "explanation": "This uses the **PREP method**: Point (invest in renewable energy), Reason (reduces pollution, creates jobs), Example (supported by 80% of scientists), Point (implicitly restated)."
+    },
+    {
+      "id": "ex-21",
+      "prompt": "Evaluate this headline: 'Scientists Say Eating Chocolate Makes You Smarter.' What’s the most likely issue with this claim?",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Sensationalism",
+        "Fake News",
+        "Misleading Statistics",
+        "All of the above"
+      ],
+      "correctIndex": 3,
+      "explanation": "This headline likely suffers from **sensationalism** (overhyped), **fake news** (if the study doesn’t exist), and **misleading statistics** (e.g., small sample size or correlation ≠ causation)."
+    },
+    {
+      "id": "ex-22",
+      "prompt": "Explain how bias in training data can affect an AI hiring tool.",
+      "order": 3,
+      "type": "socratic_ai",
+      "modelAnswer": "Bias in training data can cause an AI hiring tool to favor certain groups over others. For example:\n1. **Historical Bias**: If past hiring data favored male candidates, the AI may learn to downgrade resumes with words like 'women’s chess club.'\n2. **Underrepresentation**: If the training data lacks diversity (e.g., few resumes from minority groups), the AI may perform poorly for those groups.\n3. **Stereotyping**: The AI might associate certain traits (e.g., names, schools) with 'good' or 'bad' candidates based on biased patterns.\n\nThis leads to **unfair hiring practices** and reinforces existing inequalities. To fix it, audit the data for bias, use diverse datasets, and test the AI for fairness.",
+      "mustInclude": [
+        "historical bias",
+        "underrepresentation",
+        "stereotyping",
+        "unfair hiring practices"
+      ],
+      "hints": [
+        "What patterns might the AI learn from past hiring data?",
+        "How could the training data lack diversity?",
+        "What are the consequences of biased AI in hiring?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    },
+    {
+      "id": "ex-23",
+      "prompt": "You’re deciding whether to start a business. Use a decision tree to map out the outcomes:\n- 60% chance of success (profit: $100,000).\n- 40% chance of failure (loss: $50,000).\n\nWhat’s the expected value of starting the business?",
+      "order": 4,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: Calculate the expected value of success.\nExpected Value (Success) = Probability × Profit\nExpected Value (Success) = 0.60 × $100,000",
+          "missingPart": {
+            "expectedAnswer": "$60,000",
+            "keywords": ["$60,000"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Calculate the expected value of failure.\nExpected Value (Failure) = Probability × Loss\nExpected Value (Failure) = 0.40 × -$50,000",
+          "missingPart": {
+            "expectedAnswer": "-$20,000",
+            "keywords": ["-$20,000"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Calculate the total expected value.\nExpected Value (Total) = Expected Value (Success) + Expected Value (Failure)\nExpected Value (Total) = $60,000 + (-$20,000)",
+          "missingPart": {
+            "expectedAnswer": "$40,000",
+            "keywords": ["$40,000"]
+          }
+        },
+        {
+          "id": "step-4",
+          "text": "Step 4: Interpret the result. The expected value is positive ($40,000), so starting the business is a **logically sound** decision, assuming you can afford the potential loss.",
+          "missingPart": null
+        }
+      ]
+    },
+    {
+      "id": "ex-24",
+      "prompt": "Analyze this debate transcript for logical fallacies:\n\n**Person A**: 'We should ban all cars to reduce pollution.'\n**Person B**: 'That’s ridiculous! If we ban cars, how will people get to work? You’re just a tree-hugger who hates progress.'\n\nIdentify the fallacies in Person B’s response.",
+      "order": 5,
+      "type": "drag_sequence",
+      "options": [
+        "Straw Man",
+        "Ad Hominem",
+        "False Dilemma",
+        "Appeal to Authority"
+      ],
+      "correctSequence": [
+        "Straw Man",
+        "Ad Hominem"
+      ],
+      "explanation": "Person B commits two fallacies:\n1. **Straw Man**: Misrepresents Person A’s argument as 'ban all cars' without considering alternatives (e.g., electric cars, public transport).\n2. **Ad Hominem**: Attacks Person A personally ('tree-hugger who hates progress') instead of addressing the argument."
+    },
+    {
+      "id": "ex-25",
+      "prompt": "Evaluate this news headline using the media literacy framework: 'New Study: Vaccines Cause Autism.'\n\n1. What red flags does this headline raise?\n2. How would you verify the claim?\n3. What fallacies might be present?",
+      "order": 6,
+      "type": "socratic_ai",
+      "modelAnswer": "1. **Red Flags**:\n   - **Sensationalism**: The headline is designed to provoke fear and clicks.\n   - **Misleading Statistics**: The claim implies causation without evidence.\n   - **Fake News**: The study might not exist or could be misrepresented.\n\n2. **Verification Steps**:\n   - **Find the Study**: Is it published in a reputable, peer-reviewed journal?\n   - **Check the Sample Size**: Was the study conducted on a large, diverse group?\n   - **Look for Conflicts of Interest**: Was the study funded by anti-vaccine groups?\n   - **Cross-Reference**: Do other studies support or refute this claim?\n\n3. **Fallacies**:\n   - **False Cause**: Assuming correlation (vaccines and autism) equals causation.\n   - **Appeal to Authority**: Citing a single 'study' as definitive proof.\n   - **Hasty Generalization**: Drawing broad conclusions from limited data.",
+      "mustInclude": [
+        "sensationalism",
+        "misleading statistics",
+        "fake news",
+        "false cause",
+        "appeal to authority",
+        "hasty generalization"
+      ],
+      "hints": [
+        "What emotions does the headline evoke?",
+        "How would you confirm the study’s validity?",
+        "What logical errors might the headline contain?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    }
+  ]
+}

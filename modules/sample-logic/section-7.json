@@ -1,0 +1,326 @@
+{
+  "id": "section-7",
+  "title": "Assessment: Introduction to Logic",
+  "order": 7,
+  "description": "Test your understanding of logic with this 15-question assessment. Covers all sections: Principles of Reasoning, Deductive/Inductive Reasoning, Fallacies, Critical Thinking Tools, and Logic in the Real World.",
+  "instructions": "Answer all questions to the best of your ability. The assessment includes multiple-choice, drag-and-drop, Socratic AI, and worked examples. Aim for a score of 70% or higher to pass.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "What is the primary goal of logic?",
+      "order": 1,
+      "type": "mcq",
+      "options": [
+        "To win arguments",
+        "To distinguish good reasoning from bad reasoning",
+        "To memorize fallacies",
+        "To predict the future"
+      ],
+      "correctIndex": 1,
+      "explanation": "Logic helps us **distinguish good reasoning from bad reasoning** by providing tools to evaluate arguments, identify fallacies, and think critically.",
+      "section": "Principles of Reasoning"
+    },
+    {
+      "id": "q2",
+      "prompt": "Which of the following is an example of deductive reasoning?",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Most birds can fly. Penguins are birds. Therefore, penguins can fly.",
+        "All humans are mortal. Socrates is a human. Therefore, Socrates is mortal.",
+        "The sun has risen every morning. Therefore, it will rise tomorrow.",
+        "I’ve seen 100 swans, and all were white. Therefore, all swans are white."
+      ],
+      "correctIndex": 1,
+      "explanation": "Deductive reasoning starts with a general premise and moves to a specific conclusion. The correct example is a **valid syllogism**: All humans are mortal (general), Socrates is a human (specific), therefore Socrates is mortal (conclusion).",
+      "section": "Deductive Reasoning"
+    },
+    {
+      "id": "q3",
+      "prompt": "What is the key difference between deductive and inductive reasoning?",
+      "order": 3,
+      "type": "mcq",
+      "options": [
+        "Deductive reasoning is always true; inductive reasoning is always false.",
+        "Deductive reasoning guarantees the conclusion if premises are true; inductive reasoning provides probable support.",
+        "Deductive reasoning is used in science; inductive reasoning is used in math.",
+        "There is no difference."
+      ],
+      "correctIndex": 1,
+      "explanation": "**Deductive reasoning** guarantees the conclusion if the premises are true (e.g., syllogisms). **Inductive reasoning** provides probable support but does not guarantee the conclusion (e.g., scientific hypotheses).",
+      "section": "Deductive vs. Inductive Reasoning"
+    },
+    {
+      "id": "q4",
+      "prompt": "Identify the fallacy in this argument: 'You shouldn’t trust John’s opinion on climate change because he’s not a scientist.'",
+      "order": 4,
+      "type": "mcq",
+      "options": [
+        "Straw Man",
+        "Ad Hominem",
+        "False Dilemma",
+        "Appeal to Authority"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is an **Ad Hominem** fallacy. It attacks John’s character ('not a scientist') instead of addressing his argument about climate change.",
+      "section": "Logical Fallacies"
+    },
+    {
+      "id": "q5",
+      "prompt": "What is the purpose of a truth table in logic?",
+      "order": 5,
+      "type": "mcq",
+      "options": [
+        "To list all possible truth values of a proposition",
+        "To prove that an argument is valid",
+        "To identify fallacies in an argument",
+        "To rank arguments by strength"
+      ],
+      "correctIndex": 0,
+      "explanation": "A **truth table** lists all possible truth values of a proposition (e.g., P, Q) and their combinations. It helps determine the validity of logical statements.",
+      "section": "Critical Thinking Tools"
+    },
+    {
+      "id": "q6",
+      "prompt": "Explain why the following argument is fallacious: 'If we allow students to redo this test, soon they’ll expect to redo every assignment, and then they’ll never learn responsibility.'",
+      "order": 6,
+      "type": "socratic_ai",
+      "modelAnswer": "This argument commits the **Slippery Slope** fallacy. It assumes that a small first step (allowing a test redo) will inevitably lead to an extreme outcome (students never learning responsibility) without providing evidence for this chain of events.\n\nTo evaluate this argument logically:\n1. **Identify the Claim**: Allowing a test redo will lead to a loss of responsibility.\n2. **Assess the Evidence**: Is there proof that one redo will lead to a pattern of irresponsibility?\n3. **Consider Alternatives**: Could there be safeguards (e.g., limits on redos) to prevent abuse?\n4. **Evaluate the Conclusion**: The argument jumps to an extreme conclusion without justification.",
+      "mustInclude": [
+        "slippery slope",
+        "small first step",
+        "extreme outcome",
+        "lack of evidence"
+      ],
+      "hints": [
+        "What fallacy assumes an inevitable chain of events without proof?",
+        "Does the argument provide evidence for the claimed outcome?",
+        "Are there alternative ways to allow redos without losing responsibility?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding",
+      "section": "Logical Fallacies"
+    },
+    {
+      "id": "q7",
+      "prompt": "Sequence the steps of the scientific method:",
+      "order": 7,
+      "type": "drag_sequence",
+      "options": [
+        "Form a hypothesis",
+        "Analyze data",
+        "Ask a question",
+        "Draw conclusions",
+        "Conduct an experiment"
+      ],
+      "correctSequence": [
+        "Ask a question",
+        "Form a hypothesis",
+        "Conduct an experiment",
+        "Analyze data",
+        "Draw conclusions"
+      ],
+      "explanation": "The **scientific method** follows this order:\n1. **Ask a question** (e.g., 'Why does this happen?').\n2. **Form a hypothesis** (e.g., 'If X, then Y').\n3. **Conduct an experiment** to test the hypothesis.\n4. **Analyze data** from the experiment.\n5. **Draw conclusions** based on the data.",
+      "section": "Critical Thinking Tools"
+    },
+    {
+      "id": "q8",
+      "prompt": "What is the primary flaw in this argument? 'A recent survey found that 70% of people believe in ghosts. Therefore, ghosts must exist.'",
+      "order": 8,
+      "type": "mcq",
+      "options": [
+        "False Cause",
+        "Appeal to Popularity",
+        "Straw Man",
+        "Ad Hominem"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is an **Appeal to Popularity** fallacy. It assumes that because many people believe something (ghosts exist), it must be true. Belief does not equal evidence.",
+      "section": "Logical Fallacies"
+    },
+    {
+      "id": "q9",
+      "prompt": "Explain how the PREP method can improve your arguments in a debate.",
+      "order": 9,
+      "type": "socratic_ai",
+      "modelAnswer": "The **PREP method** (Point, Reason, Example, Point) improves arguments by:\n1. **Clarity**: It forces you to state your claim (**Point**) clearly upfront.\n2. **Evidence**: It requires you to provide **Reasons** and **Examples** to support your claim, making your argument more persuasive.\n3. **Structure**: It organizes your argument into a logical flow, making it easier for others to follow.\n4. **Reinforcement**: Restating your **Point** at the end reinforces your message and leaves a lasting impression.\n\nExample:\n- **Point**: We should reduce plastic use.\n- **Reason**: Plastic pollution harms marine life.\n- **Example**: A study found that 1 million seabirds die annually from plastic ingestion.\n- **Point**: Reducing plastic protects ecosystems.",
+      "mustInclude": [
+        "clarity",
+        "evidence",
+        "structure",
+        "reinforcement"
+      ],
+      "hints": [
+        "How does the PREP method make arguments clearer?",
+        "What role do examples play in persuasion?",
+        "Why is restating the point effective?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding",
+      "section": "Logic in the Real World"
+    },
+    {
+      "id": "q10",
+      "prompt": "Complete the truth table for the logical statement: P → Q",
+      "order": 10,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: List all possible truth values for P and Q.\nThere are 4 combinations:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q |\n|---|---|\n| T | T |\n| T | F |\n| F | T |\n| F | F |",
+            "keywords": ["T", "F", "4 combinations"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Recall the definition of P → Q.\nP → Q is **false** only when P is true and Q is false. Otherwise, it is **true**.\n\nFill in the truth table:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q | P → Q |\n|---|---|-------|\n| T | T |   T   |\n| T | F |   F   |\n| F | T |   T   |\n| F | F |   T   |",
+            "keywords": ["T", "F", "false only when P is true and Q is false"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Interpret the result.\nThe truth table shows that P → Q is only false in one case: when P is true and Q is false. This aligns with the definition of a conditional statement.",
+          "missingPart": null
+        }
+      ],
+      "section": "Critical Thinking Tools"
+    },
+    {
+      "id": "q11",
+      "prompt": "What is the expected value of this decision?\n- 50% chance to win $100.\n- 50% chance to lose $50.",
+      "order": 11,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: Calculate the expected value of winning.\nExpected Value (Win) = Probability × Gain\nExpected Value (Win) = 0.50 × $100",
+          "missingPart": {
+            "expectedAnswer": "$50",
+            "keywords": ["$50"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Calculate the expected value of losing.\nExpected Value (Loss) = Probability × Loss\nExpected Value (Loss) = 0.50 × -$50",
+          "missingPart": {
+            "expectedAnswer": "-$25",
+            "keywords": ["-$25"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Calculate the total expected value.\nExpected Value (Total) = Expected Value (Win) + Expected Value (Loss)\nExpected Value (Total) = $50 + (-$25)",
+          "missingPart": {
+            "expectedAnswer": "$25",
+            "keywords": ["$25"]
+          }
+        },
+        {
+          "id": "step-4",
+          "text": "Step 4: Interpret the result.\nThe expected value is **$25**, meaning this decision is **logically favorable** on average. However, consider whether you can afford the potential loss of $50.",
+          "missingPart": null
+        }
+      ],
+      "section": "Logic in the Real World"
+    },
+    {
+      "id": "q12",
+      "prompt": "Identify the fallacies in this argument: 'We should ban all video games because they cause violence. Studies show that violent people play video games, and my neighbor’s kid plays games and got into a fight.'",
+      "order": 12,
+      "type": "drag_sequence",
+      "options": [
+        "False Cause",
+        "Hasty Generalization",
+        "Appeal to Authority",
+        "Straw Man"
+      ],
+      "correctSequence": [
+        "False Cause",
+        "Hasty Generalization"
+      ],
+      "explanation": "This argument commits two fallacies:\n1. **False Cause**: It assumes that video games **cause** violence without proving causation (correlation ≠ causation).\n2. **Hasty Generalization**: It draws a broad conclusion ('ban all video games') based on limited evidence (one neighbor’s kid).",
+      "section": "Logical Fallacies"
+    },
+    {
+      "id": "q13",
+      "prompt": "Explain how bias in training data can lead to unfair AI outcomes, using the example of a hiring algorithm.",
+      "order": 13,
+      "type": "socratic_ai",
+      "modelAnswer": "Bias in training data can lead to unfair AI outcomes by perpetuating and amplifying existing inequalities. Here’s how it works in a hiring algorithm:\n\n1. **Historical Bias**: If past hiring data favors male candidates (e.g., 80% of hires were men), the AI learns to associate 'male' with 'good candidate.' It may downgrade resumes with words like 'women’s chess club' or 'sorority.'\n\n2. **Underrepresentation**: If the training data lacks diversity (e.g., few resumes from minority groups), the AI may perform poorly for those groups. For example, it might not recognize qualifications from historically Black colleges.\n\n3. **Stereotyping**: The AI might associate certain traits (e.g., names, schools) with 'good' or 'bad' candidates based on biased patterns. For example, it might favor resumes with names like 'John' over 'Jamal.'\n\n4. **Feedback Loops**: If the AI is used to screen candidates, it may recommend fewer women or minorities for interviews. This leads to fewer hires from those groups, reinforcing the bias in future training data.\n\n**Consequences**:\n- **Unfair Hiring Practices**: Qualified candidates from underrepresented groups are overlooked.\n- **Reinforced Inequality**: Existing disparities in the workplace are perpetuated.\n- **Legal Risks**: Companies may face lawsuits for discriminatory hiring practices.\n\n**Solutions**:\n- **Audit the Data**: Check for bias in training data.\n- **Use Diverse Datasets**: Ensure the data represents all groups.\n- **Test for Fairness**: Evaluate the AI’s performance across different groups.\n- **Explainability**: Use tools like SHAP or LIME to understand the AI’s decisions.",
+      "mustInclude": [
+        "historical bias",
+        "underrepresentation",
+        "stereotyping",
+        "feedback loops",
+        "unfair hiring practices",
+        "audit the data",
+        "diverse datasets"
+      ],
+      "hints": [
+        "How might past hiring data influence the AI?",
+        "What happens if the training data lacks diversity?",
+        "How can bias in AI be detected and fixed?"
+      ],
+      "minScore": 0.7,
+      "validationMode": "embedding",
+      "section": "Logic in the Real World"
+    },
+    {
+      "id": "q14",
+      "prompt": "What is the primary purpose of media literacy?",
+      "order": 14,
+      "type": "mcq",
+      "options": [
+        "To memorize news headlines",
+        "To critically evaluate information and sources",
+        "To write sensationalist articles",
+        "To avoid all media"
+      ],
+      "correctIndex": 1,
+      "explanation": "**Media literacy** is the ability to **critically evaluate information and sources**. It helps you identify bias, sensationalism, fake news, and misleading statistics.",
+      "section": "Logic in the Real World"
+    },
+    {
+      "id": "q15",
+      "prompt": "Evaluate this argument using the tools of critical thinking: 'Social media is harmful because it causes depression in teenagers.'\n\n1. What fallacies might be present?\n2. How would you verify the claim?\n3. What alternative explanations should be considered?",
+      "order": 15,
+      "type": "socratic_ai",
+      "modelAnswer": "1. **Fallacies**:\n   - **False Cause**: The argument assumes that social media **causes** depression without proving causation. Correlation does not equal causation.\n   - **Hasty Generalization**: It generalizes the impact of social media on all teenagers based on limited evidence.\n   - **Confirmation Bias**: The argument may ignore studies that show positive effects of social media (e.g., community building).\n\n2. **Verification Steps**:\n   - **Find the Study**: Is it published in a reputable, peer-reviewed journal?\n   - **Check the Sample Size**: Was the study conducted on a large, diverse group of teenagers?\n   - **Look for Conflicts of Interest**: Was the study funded by groups with an anti-social media agenda?\n   - **Cross-Reference**: Do other studies support or refute this claim?\n   - **Consider Methodology**: Did the study use self-reported data (less reliable) or clinical diagnoses (more reliable)?\n\n3. **Alternative Explanations**:\n   - **Pre-existing Conditions**: Teenagers with depression may use social media more frequently, not the other way around.\n   - **Cyberbullying**: It may not be social media itself but specific negative experiences (e.g., cyberbullying) that cause harm.\n   - **Screen Time**: Excessive screen time (not social media specifically) could be the issue.\n   - **Positive Effects**: Social media can provide support networks, education, and community for some teenagers.",
+      "mustInclude": [
+        "false cause",
+        "hasty generalization",
+        "confirmation bias",
+        "sample size",
+        "conflicts of interest",
+        "pre-existing conditions",
+        "cyberbullying",
+        "screen time"
+      ],
+      "hints": [
+        "What logical errors might the argument contain?",
+        "How would you confirm the study’s validity?",
+        "What other factors could explain the claim?"
+      ],
+      "minScore": 0.7,
+      "validationMode": "embedding",
+      "section": "Logic in the Real World"
+    }
+  ],
+  "passingScore": 70,
+  "scoring": {
+    "mcq": 1,
+    "drag_sequence": 2,
+    "socratic_ai": 3,
+    "worked_example": 3
+  },
+  "feedback": {
+    "80-100": "Excellent! You have a strong grasp of logic and critical thinking.",
+    "70-79": "Good job! You understand the key concepts but could benefit from more practice.",
+    "60-69": "You’re on the right track. Review the sections where you struggled and try again.",
+    "below 60": "Don’t worry! Logic is a skill that improves with practice. Review the material and retake the assessment."
+  }
+}

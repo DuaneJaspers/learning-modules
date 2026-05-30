@@ -1,0 +1,175 @@
+{
+  "id": "section-1",
+  "title": "Principles of Reasoning",
+  "order": 1,
+  "lessons": [
+    {
+      "id": "lesson-1-1",
+      "title": "What is Logic?",
+      "content": "Logic is the study of **reasoning**. It helps us distinguish good arguments from bad ones by providing tools to evaluate claims, identify fallacies, and think critically. Logic is used in everyday decision-making, science, mathematics, law, and even technology like AI.\n\n## Why Learn Logic?\n1. **Better Decision-Making**: Logic helps you evaluate options and avoid common pitfalls.\n2. **Stronger Arguments**: Learn to construct and deconstruct arguments effectively.\n3. **Critical Thinking**: Identify flaws in reasoning, whether in news, debates, or advertisements.\n4. **Problem-Solving**: Break down complex problems into manageable parts.\n\n## Key Concepts\n### 1. Arguments\nAn **argument** is a set of statements where some (premises) are intended to support another (conclusion).\nExample:\n- Premise: All humans are mortal.\n- Premise: Socrates is a human.\n- Conclusion: Socrates is mortal.\n\n### 2. Premises and Conclusions\n- **Premise**: A statement that provides evidence or support.\n- **Conclusion**: The statement being supported.\n\n### 3. Validity and Soundness\n- **Valid Argument**: If the premises are true, the conclusion must be true.\n- **Sound Argument**: A valid argument with true premises.\n\n## Real-World Example\n**Scenario**: A friend argues, 'We should ban all cars because they cause pollution.'\n**Logical Analysis**:\n1. Identify the premise: 'Cars cause pollution.' (True)\n2. Identify the conclusion: 'We should ban all cars.'\n3. Evaluate validity: Does the conclusion follow from the premise?\n4. Consider alternatives: Are there less extreme solutions (e.g., electric cars)?",
+      "order": 1
+    },
+    {
+      "id": "lesson-1-2",
+      "title": "Deductive vs. Inductive Reasoning",
+      "content": "Logic uses two primary types of reasoning: **deductive** and **inductive**.\n\n## Deductive Reasoning\n- **Definition**: Starts with a general premise and moves to a specific conclusion.\n- **Key Feature**: If the premises are true, the conclusion **must** be true.\n- **Example**:\n  - Premise: All humans are mortal.\n  - Premise: Socrates is a human.\n  - Conclusion: Socrates is mortal.\n\n## Inductive Reasoning\n- **Definition**: Starts with specific observations and moves to a general conclusion.\n- **Key Feature**: The conclusion is **probable**, not certain.\n- **Example**:\n  - Observation: The sun has risen every morning.\n  - Conclusion: The sun will rise tomorrow.\n\n## Comparing Deductive and Inductive Reasoning\n| Feature          | Deductive Reasoning               | Inductive Reasoning               |\n|-----------------|-----------------------------------|-----------------------------------|\n| **Certainty**   | Guarantees conclusion             | Provides probable support         |\n| **Structure**   | General → Specific                | Specific → General                |\n| **Use Case**    | Mathematics, formal logic         | Science, everyday decision-making |\n\n## Real-World Example\n**Deductive**: 'All birds have feathers. A penguin is a bird. Therefore, penguins have feathers.'\n**Inductive**: 'I’ve seen 100 swans, and all were white. Therefore, all swans are white.'",
+      "order": 2
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-1",
+      "prompt": "What is the primary goal of logic?",
+      "order": 1,
+      "type": "mcq",
+      "options": [
+        "To win arguments",
+        "To distinguish good reasoning from bad reasoning",
+        "To memorize fallacies",
+        "To predict the future"
+      ],
+      "correctIndex": 1,
+      "explanation": "Logic helps us **distinguish good reasoning from bad reasoning** by providing tools to evaluate arguments, identify fallacies, and think critically."
+    },
+    {
+      "id": "ex-2",
+      "prompt": "Identify whether this argument is deductive or inductive: 'Most birds can fly. A penguin is a bird. Therefore, penguins can fly.'",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Deductive",
+        "Inductive"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is an **inductive argument**. It starts with a general observation ('Most birds can fly') and applies it to a specific case ('A penguin is a bird'). The conclusion is probable but not certain (penguins cannot fly)."
+    },
+    {
+      "id": "ex-3",
+      "prompt": "Explain the difference between validity and soundness in deductive reasoning.",
+      "order": 3,
+      "type": "socratic_ai",
+      "modelAnswer": "In deductive reasoning:\n- **Validity** refers to the structure of the argument. An argument is valid if the conclusion logically follows from the premises, regardless of whether the premises are true. For example:\n  - Premise: All cats are dogs.\n  - Premise: All dogs are birds.\n  - Conclusion: All cats are birds.\n  This argument is **valid** because the conclusion follows from the premises, even though the premises are false.\n\n- **Soundness** refers to the truth of the premises **and** the validity of the argument. An argument is sound if it is valid **and** its premises are true. For example:\n  - Premise: All humans are mortal.\n  - Premise: Socrates is a human.\n  - Conclusion: Socrates is mortal.\n  This argument is **sound** because it is valid and its premises are true.",
+      "mustInclude": [
+        "validity",
+        "soundness",
+        "structure",
+        "truth of premises"
+      ],
+      "hints": [
+        "What does it mean for an argument to be valid?",
+        "How does soundness differ from validity?",
+        "Can an argument be valid but not sound?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    },
+    {
+      "id": "ex-4",
+      "prompt": "Complete the truth table for the logical statement: P ∧ Q (P AND Q).",
+      "order": 4,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: List all possible truth values for P and Q. There are 4 combinations:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q |\n|---|---|\n| T | T |\n| T | F |\n| F | T |\n| F | F |",
+            "keywords": ["T", "F", "4 combinations"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Recall the definition of P ∧ Q. P ∧ Q is **true** only when both P and Q are true. Otherwise, it is **false**. Fill in the truth table:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q | P ∧ Q |\n|---|---|-------|\n| T | T |   T   |\n| T | F |   F   |\n| F | T |   F   |\n| F | F |   F   |",
+            "keywords": ["T", "F", "true only when both are true"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Interpret the result. The truth table shows that P ∧ Q is only true when both P and Q are true. This aligns with the definition of the AND operator.",
+          "missingPart": null
+        }
+      ]
+    },
+    {
+      "id": "ex-5",
+      "prompt": "Complete the truth table for the logical statement: P → Q (If P, then Q).",
+      "order": 5,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: List all possible truth values for P and Q. There are 4 combinations:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q |\n|---|---|\n| T | T |\n| T | F |\n| F | T |\n| F | F |",
+            "keywords": ["T", "F", "4 combinations"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Recall the definition of P → Q. P → Q is **false** only when P is true and Q is false. Otherwise, it is **true**. Fill in the truth table:",
+          "missingPart": {
+            "expectedAnswer": "| P | Q | P → Q |\n|---|---|-------|\n| T | T |   T   |\n| T | F |   F   |\n| F | T |   T   |\n| F | F |   T   |",
+            "keywords": ["T", "F", "false only when P is true and Q is false"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Interpret the result. This shows that 'If P, then Q' is only false when P is true and Q is false.",
+          "missingPart": null
+        }
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "validity-soundness",
+      "type": "flowchart",
+      "title": "Validity vs Soundness",
+      "nodes": [
+        {
+          "id": "n1",
+          "label": "Premises True?",
+          "shape": "diamond",
+          "color": "#4A148C"
+        },
+        {
+          "id": "n2",
+          "label": "Conclusion Follows?",
+          "shape": "diamond",
+          "color": "#4A148C"
+        },
+        {
+          "id": "n3",
+          "label": "Valid",
+          "shape": "rounded",
+          "color": "#1A237E"
+        },
+        {
+          "id": "n4",
+          "label": "Sound",
+          "shape": "pill",
+          "color": "#2D5A27"
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "label": "Yes"
+        },
+        {
+          "from": "n2",
+          "to": "n3",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Premises True"
+        }
+      ]
+    }
+  ]
+}

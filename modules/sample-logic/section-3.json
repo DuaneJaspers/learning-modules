@@ -1,0 +1,151 @@
+{
+  "id": "section-3",
+  "title": "Inductive Reasoning",
+  "order": 3,
+  "lessons": [
+    {
+      "id": "lesson-3-1",
+      "title": "Introduction to Inductive Reasoning",
+      "content": "**Inductive reasoning** moves from specific observations to general conclusions. Unlike deductive reasoning, it deals in **probability**, not certainty.\n\n## Key Characteristics\n- **Probabilistic**: Conclusions are likely but not guaranteed.\n- **Evidence-Based**: Relies on observations, patterns, and data.\n- **Ampliative**: The conclusion goes beyond the premises (new knowledge).\n\n## Example\nObservation: The sun has risen every morning in recorded history.\nConclusion: The sun will rise tomorrow.\n\nThis is **inductive** because the conclusion is probable but not certain. A solar catastrophe could prevent it.",
+      "order": 1,
+      "diagrams": [
+        {
+          "id": "inductive-reasoning",
+          "type": "flowchart",
+          "title": "Inductive Reasoning Process",
+          "nodes": [
+            {
+              "id": "n1",
+              "label": "Specific Observations",
+              "shape": "rounded",
+              "color": "#2D5A27"
+            },
+            {
+              "id": "n2",
+              "label": "Identify Pattern",
+              "shape": "diamond",
+              "color": "#E65100"
+            },
+            {
+              "id": "n3",
+              "label": "General Conclusion",
+              "shape": "pill",
+              "color": "#1A237E"
+            }
+          ],
+          "edges": [
+            {
+              "from": "n1",
+              "to": "n2",
+              "label": "pattern?"
+            },
+            {
+              "from": "n2",
+              "to": "n3",
+              "label": "propose"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-3-2",
+      "title": "Types of Inductive Arguments",
+      "content": "Inductive reasoning takes many forms. Here are the most common:\n\n## 1. Generalization\nDraw a general conclusion from a sample.\nExample: 90% of surveyed voters support Policy X. Therefore, most voters support Policy X.\nRisk: Small or biased samples lead to false conclusions.\n\n## 2. Analogy\nArgue that if two things are similar in some ways, they’re similar in others.\nExample: Earth and Mars both have atmospheres. Earth has life. Therefore, Mars might have life.\nRisk: Disanalogies (differences) may invalidate the conclusion.\n\n## 3. Causal Reasoning\nInfer a cause-and-effect relationship from observed correlations.\nExample: Cities with more parks have lower obesity rates. Therefore, parks reduce obesity.\nRisk: Correlation ≠ causation (e.g., wealthier cities may have both).\n\n## 4. Statistical Syllogism\nApply a general statistic to a specific case.\nExample: 80% of startups fail. Your startup is a startup. Therefore, it will likely fail.\nRisk: Ignores unique factors about the specific case.\n\n## 5. Bayesian Reasoning\nUpdate beliefs based on new evidence (Bayes’ Theorem).\nExample: If a test is 99% accurate and 1% of people have a disease, a positive result means you have a ~50% chance of having the disease (not 99%).\nKey Insight: Prior probability matters!",
+      "order": 2,
+      "diagrams": [
+        {
+          "id": "bayes-theorem",
+          "type": "formula",
+          "title": "Bayes’ Theorem",
+          "latex": "P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}",
+          "explanation": "- **P(A|B)**: Probability of A given B (posterior).\n- **P(B|A)**: Probability of B given A (likelihood).\n- **P(A)**: Probability of A (prior).\n- **P(B)**: Probability of B (marginal likelihood)."
+        }
+      ]
+    },
+    {
+      "id": "lesson-3-3",
+      "title": "Strength of Inductive Arguments",
+      "content": "Inductive arguments are **strong** or **weak**, not valid or invalid. Strength depends on:\n\n## 1. Sample Size\nLarger samples → stronger arguments.\nWeak: I met 2 French people who were rude. All French people are rude.\nStrong: A study of 10,000 French people found 60% are polite.\n\n## 2. Sample Representativeness\nThe sample must reflect the population.\nWeak: A survey of Harvard students found 90% support free tuition. (Not representative of all students.)\n\n## 3. Quality of Evidence\nReliable sources → stronger arguments.\nWeak: My uncle said vaccines cause autism.\nStrong: Peer-reviewed studies show vaccines are safe.\n\n## 4. Alternative Explanations\nConsider other causes before concluding.\nWeak: Ice cream sales and drowning deaths rise in summer. Ice cream causes drowning.\nStrong: Both are caused by hot weather (more swimming + more ice cream).\n\n## 5. Predictive Power\nStrong arguments make accurate predictions.\nWeak: This stock will rise because it’s Tuesday.\nStrong: This stock has risen 80% of Tuesdays in the past year.\n\n## The Problem of Induction\nEven with strong evidence, inductive conclusions can be wrong. Philosopher **David Hume** argued that we assume the future will resemble the past, but this is an **unjustified assumption**.\nExample: The sun has risen every day. Therefore, it will rise tomorrow.\nCounterexample: A black swan event (e.g., the sun explodes).",
+      "order": 3
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-8",
+      "prompt": "Classify each argument as inductive or deductive:\n1. All humans are mortal. Socrates is human. Therefore, Socrates is mortal.\n2. The sun has risen every morning. Therefore, it will rise tomorrow.\n3. If it rains, the ground gets wet. It is raining. Therefore, the ground is wet.",
+      "order": 1,
+      "type": "mcq",
+      "options": [
+        "1: Deductive, 2: Inductive, 3: Deductive",
+        "1: Inductive, 2: Deductive, 3: Inductive",
+        "1: Deductive, 2: Deductive, 3: Inductive",
+        "1: Inductive, 2: Inductive, 3: Deductive"
+      ],
+      "correctIndex": 0,
+      "explanation": "1 and 3 are **deductive** (guaranteed conclusions). 2 is **inductive** (probable conclusion)."
+    },
+    {
+      "id": "ex-9",
+      "prompt": "Identify the type of inductive argument:\n'Cities with bike lanes have lower traffic fatalities. Amsterdam has bike lanes. Therefore, Amsterdam has lower traffic fatalities.'",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Generalization",
+        "Analogy",
+        "Causal Reasoning",
+        "Statistical Syllogism"
+      ],
+      "correctIndex": 3,
+      "explanation": "This is a **statistical syllogism** because it applies a general statistic to a specific case (Amsterdam)."
+    },
+    {
+      "id": "ex-10",
+      "prompt": "Explain why this inductive argument is weak: 'I ate sushi once and got sick. Therefore, all sushi is unsafe.'",
+      "order": 3,
+      "type": "socratic_ai",
+      "modelAnswer": "This argument is weak for three reasons:\n1. **Small sample size**: One instance is not enough to generalize about all sushi.\n2. **Alternative explanations**: You might have had food poisoning from another source, or the sushi was improperly prepared.\n3. **Biased sample**: Your experience may not reflect the safety of sushi in general (e.g., high-quality restaurants).\n\nInductive arguments require **large, representative samples** to be strong.",
+      "mustInclude": [
+        "small sample size",
+        "alternative explanations",
+        "biased sample"
+      ],
+      "hints": [
+        "How many times did you eat sushi? Is that enough to generalize?",
+        "Could something else have caused your illness?",
+        "Does your experience represent all sushi, or just one instance?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    },
+    {
+      "id": "ex-11",
+      "prompt": "Calculate the posterior probability using Bayes’ Theorem:\n- Prior probability of disease (P(A)): 1%\n- Probability of positive test if diseased (P(B|A)): 99%\n- Probability of positive test if healthy (P(B|¬A)): 5%\n\nWhat is P(A|B) (probability of disease given a positive test)?",
+      "order": 4,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: Calculate P(B) (probability of a positive test).\nP(B) = P(B|A) * P(A) + P(B|¬A) * P(¬A)\nP(B) = (0.99 * 0.01) + (0.05 * 0.99)",
+          "missingPart": {
+            "expectedAnswer": "0.0594",
+            "keywords": ["0.0594"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: Apply Bayes’ Theorem.\nP(A|B) = (P(B|A) * P(A)) / P(B)\nP(A|B) = (0.99 * 0.01) / 0.0594",
+          "missingPart": {
+            "expectedAnswer": "0.1667 or ~16.7%",
+            "keywords": ["0.1667", "16.7%", "16.67%"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: Interpret the result. Even with a positive test, the probability of having the disease is only ~16.7% because the disease is rare (low prior probability).",
+          "missingPart": null
+        }
+      ]
+    }
+  ]
+}

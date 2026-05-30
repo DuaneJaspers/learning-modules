@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1a1a2e" />
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#e94560" font-size="28" font-family="Arial, sans-serif" font-weight="bold">Debate Flowchart: PREP Method</text>
+
+  <!-- Flowchart -->
+  <g>
+    <!-- Point -->
+    <rect x="50" y="80" width="200" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="150" y="115" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">1. Point</text>
+    <text x="150" y="135" text-anchor="middle" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">State your claim clearly.</text>
+
+    <!-- Arrow to Reason -->
+    <path d="M250 110 L300 110" stroke="#e94560" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <!-- Reason -->
+    <rect x="350" y="80" width="200" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="450" y="115" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">2. Reason</text>
+    <text x="450" y="135" text-anchor="middle" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">Explain why it’s true.</text>
+
+    <!-- Arrow to Example -->
+    <path d="M550 110 L600 110" stroke="#e94560" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <!-- Example -->
+    <rect x="650" y="80" width="200" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="750" y="115" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">3. Example</text>
+    <text x="750" y="135" text-anchor="middle" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">Provide evidence or analogies.</text>
+
+    <!-- Arrow to Restate Point -->
+    <path d="M750 160 L750 200 L150 200 L150 240" stroke="#e94560" stroke-width="2" marker-end="url(#arrowhead)" />
+
+    <!-- Restate Point -->
+    <rect x="50" y="240" width="200" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+    <text x="150" y="275" text-anchor="middle" fill="white" font-size="16" font-family="Arial, sans-serif">4. Point</text>
+    <text x="150" y="295" text-anchor="middle" fill="#a5a5a5" font-size="12" font-family="Arial, sans-serif">Restate your claim.</text>
+  </g>
+
+  <!-- Arrowhead Marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560" />
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="50" y="320" width="700" height="60" rx="10" fill="#0f3460" stroke="#e94560" stroke-width="2" />
+  <text x="80" y="345" text-anchor="start" fill="white" font-size="14" font-family="Arial, sans-serif">PREP Method: A structured approach to building persuasive arguments.</text>
+</svg>

@@ -1,0 +1,157 @@
+{
+  "id": "section-5",
+  "title": "Critical Thinking Tools",
+  "order": 5,
+  "lessons": [
+    {
+      "id": "lesson-5-1",
+      "title": "Argument Mapping",
+      "content": "**Argument mapping** is a visual tool for breaking down complex arguments into their core components. It helps clarify relationships between premises and conclusions.\n\n## Why Use Argument Maps?\n- **Clarity**: Identify gaps, assumptions, and weak points.\n- **Structure**: See how premises support (or fail to support) conclusions.\n- **Debate**: Prepare counterarguments by targeting weak premises.\n\n## How to Map an Argument\n1. **Identify the Conclusion**: The main claim (e.g., 'We should ban plastic bags').\n2. **List Premises**: Statements supporting the conclusion (e.g., 'Plastic bags pollute oceans').\n3. **Add Sub-Premises**: Supporting evidence for premises (e.g., 'Studies show 80% of ocean plastic is bags').\n4. **Draw Arrows**: Show logical flow (premise → conclusion).\n5. **Label Relationships**: Use '+' for supporting, '-' for opposing.\n\n## Example\n**Argument**: 'We should ban plastic bags because they pollute oceans, harm wildlife, and alternatives exist.'\n\n**Map**:\n- Conclusion: Ban plastic bags\n  - Premise 1: Pollute oceans\n    - Sub-premise: 80% of ocean plastic is bags\n  - Premise 2: Harm wildlife\n    - Sub-premise: Sea turtles mistake bags for jellyfish\n  - Premise 3: Alternatives exist\n    - Sub-premise: Reusable bags are widely available\n\n## Tools for Mapping\n- **Pen and Paper**: Quick sketches for personal use.\n- **Software**: [Kialo](https://www.kialo.com/), [Argdown](https://argdown.org/), or [MindMeister](https://www.mindmeister.com/).\n- **Templates**: Use flowchart or tree diagrams.",
+      "order": 1,
+      "diagrams": [
+        {
+          "id": "argument-map-template",
+          "type": "flowchart",
+          "title": "Argument Map Template",
+          "nodes": [
+            {
+              "id": "conclusion",
+              "label": "Conclusion",
+              "shape": "pill",
+              "color": "#2D5A27"
+            },
+            {
+              "id": "premise1",
+              "label": "Premise 1",
+              "shape": "rounded",
+              "color": "#1A237E"
+            },
+            {
+              "id": "premise2",
+              "label": "Premise 2",
+              "shape": "rounded",
+              "color": "#1A237E"
+            },
+            {
+              "id": "subpremise1",
+              "label": "Sub-Premise",
+              "shape": "rounded",
+              "color": "#4A148C"
+            }
+          ],
+          "edges": [
+            {
+              "from": "premise1",
+              "to": "conclusion",
+              "label": "+"
+            },
+            {
+              "from": "premise2",
+              "to": "conclusion",
+              "label": "+"
+            },
+            {
+              "from": "subpremise1",
+              "to": "premise1",
+              "label": "+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-5-2",
+      "title": "Burden of Proof",
+      "content": "The **burden of proof** determines who must provide evidence in an argument. Misplacing it leads to fallacies like **appeal to ignorance**.\n\n## Who Bears the Burden?\n- **Default Rule**: The person making a claim bears the burden.\n  Example: If you claim 'Ghosts exist,' you must provide evidence.\n- **Exceptions**:\n  - **Courts**: Prosecution bears the burden ('innocent until proven guilty').\n  - **Science**: Theorists must support claims (e.g., 'Dark matter explains galaxy rotation').\n  - **Debate**: Affirmative side defends the resolution.\n\n## Shifting the Burden\nA fallacy occurs when someone **avoids their burden** or **demands proof of a negative**.\n\n### Example 1: Avoiding the Burden\nPerson A: 'Aliens built the pyramids.'\nPerson B: 'Prove they didn’t!'\n**Fallacy**: Person A shifts the burden to Person B (appeal to ignorance).\n\n### Example 2: Proving a Negative\nPerson A: 'There’s no evidence for God, so God doesn’t exist.'\nPerson B: 'Prove God *doesn’t* exist!'\n**Fallacy**: Person B demands proof of a negative, which is often impossible.\n\n## Strategies for Handling Burden\n1. **Clarify the Claim**: Ask, 'What evidence would support this?'\n2. **Demand Falsifiability**: A claim must be testable (e.g., 'This rock repels ghosts' is unfalsifiable).\n3. **Use Analogies**: 'If I claim invisible dragons live in my garage, do you have to prove they don’t?'\n4. **Agree on Standards**: Define what counts as sufficient evidence (e.g., peer-reviewed studies).",
+      "order": 2
+    },
+    {
+      "id": "lesson-5-3",
+      "title": "Occam’s Razor",
+      "content": "**Occam’s Razor** (or the **law of parsimony**) states: *The simplest explanation is usually the best.* It doesn’t guarantee truth but guides us toward **likely** explanations.\n\n## How to Apply It\n1. **List Explanations**: Identify all possible causes for an event.\n2. **Count Assumptions**: Fewer assumptions → better explanation.\n3. **Eliminate Unnecessary Complexity**: Avoid ad-hoc hypotheses.\n\n## Example\n**Scenario**: Your car won’t start.\n- **Complex Explanation**: 'A secret organization sabotaged my car because I know too much.' (Assumptions: secret org exists, they target you, they have access to your car).\n- **Simple Explanation**: 'The battery is dead.' (Assumption: battery can die).\n**Occam’s Razor**: The battery explanation is more likely.\n\n## When to Be Cautious\n- **Over-Simplification**: Some phenomena *are* complex (e.g., consciousness).\n- **False Dichotomies**: Don’t force a simple explanation if evidence points elsewhere.\n- **Unknown Unknowns**: New evidence may reveal complexity (e.g., germ theory vs 'bad air').\n\n## Real-World Uses\n- **Science**: Prefer theories with fewer assumptions (e.g., heliocentrism vs geocentrism).\n- **Medicine**: Diagnose common conditions first (e.g., 'Is it a cold or rare disease?').\n- **Everyday Life**: 'Did my friend ignore me, or are they busy?'",
+      "order": 3
+    },
+    {
+      "id": "lesson-5-4",
+      "title": "The Steel Man Technique",
+      "content": "The **steel man** technique is the opposite of a **straw man**. Instead of misrepresenting an opponent’s argument, you **strengthen it** to its best possible form before critiquing it.\n\n## Why Use Steel Man?\n- **Respect**: Shows intellectual honesty.\n- **Stronger Debates**: Forces you to address the best version of an argument.\n- **Learning**: Helps you understand opposing views deeply.\n\n## How to Steel Man an Argument\n1. **Listen Actively**: Restate the argument in your own words.\n2. **Ask Clarifying Questions**: 'Do you mean X or Y?'\n3. **Strengthen the Argument**: Add missing premises or evidence.\n4. **Address the Strongest Version**: Critique the improved argument.\n\n## Example\n**Original Argument**: 'Social media is bad because it causes depression.'\n**Straw Man**: 'So you want to ban all social media and live in the Stone Age?'\n**Steel Man**: 'Social media increases depression risk by:\n- Reducing face-to-face interactions.\n- Exposing users to curated, unrealistic lifestyles.\n- Enabling cyberbullying.\n\nHowever, it also has benefits like connecting people globally. How can we mitigate the harms while preserving the benefits?'\n\n## Benefits\n- **Avoids Fallacies**: No straw man, ad hominem, or red herrings.\n- **Builds Trust**: Opponents feel heard and respected.\n- **Improves Thinking**: Encourages nuance and evidence-based debate.",
+      "order": 4
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-16",
+      "prompt": "Map this argument: 'We should implement a four-day workweek because it increases productivity, reduces burnout, and improves work-life balance.'",
+      "order": 1,
+      "type": "drag_sequence",
+      "items": [
+        {
+          "id": "item-1",
+          "text": "Conclusion: Implement a four-day workweek"
+        },
+        {
+          "id": "item-2",
+          "text": "Premise 1: Increases productivity"
+        },
+        {
+          "id": "item-3",
+          "text": "Premise 2: Reduces burnout"
+        },
+        {
+          "id": "item-4",
+          "text": "Premise 3: Improves work-life balance"
+        }
+      ],
+      "correctOrder": [0, 1, 2, 3],
+      "labels": ["Conclusion", "Premise 1", "Premise 2", "Premise 3"]
+    },
+    {
+      "id": "ex-17",
+      "prompt": "Who bears the burden of proof in this scenario? 'Person A: Aliens have visited Earth. Person B: Prove they haven’t.'",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Person A (claimant)",
+        "Person B (skeptic)",
+        "Both equally",
+        "Neither"
+      ],
+      "correctIndex": 0,
+      "explanation": "Person A bears the burden because they made the positive claim ('Aliens have visited Earth'). Person B is not obligated to prove a negative."
+    },
+    {
+      "id": "ex-18",
+      "prompt": "Apply Occam’s Razor to this scenario: 'Your computer crashes. Which explanation is more likely?',\n1. A government agency hacked your computer to steal your cat memes.\n2. Your computer overheated because the fan is dusty.",
+      "order": 3,
+      "type": "mcq",
+      "options": [
+        "Explanation 1",
+        "Explanation 2",
+        "Both are equally likely",
+        "Neither"
+      ],
+      "correctIndex": 1,
+      "explanation": "Explanation 2 is simpler (fewer assumptions) and more likely. Overheating is a common issue, while government hacking for cat memes is speculative."
+    },
+    {
+      "id": "ex-19",
+      "prompt": "Steel man this argument: 'College is a waste of time because you can learn everything online for free.'",
+      "order": 4,
+      "type": "socratic_ai",
+      "modelAnswer": "A steel man of this argument might be:\n\n'College has drawbacks compared to online learning, including:\n1. **Cost**: Tuition and debt are significant burdens.\n2. **Accessibility**: Online courses are often free or low-cost, making education more accessible.\n3. **Flexibility**: Self-paced learning allows people to balance education with work/family.\n4. **Relevance**: Some college curricula lag behind industry needs, while online platforms update content faster.\n\nHowever, college also provides benefits like networking, structured learning, and credentials. How can we address the drawbacks while preserving these advantages?'\n\nThis version acknowledges the original argument’s strengths while adding nuance and evidence.",
+      "mustInclude": [
+        "cost",
+        "accessibility",
+        "flexibility",
+        "relevance"
+      ],
+      "hints": [
+        "What are the specific drawbacks of college mentioned?",
+        "What advantages does online learning offer?",
+        "How can we address the original argument’s weaknesses?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    }
+  ]
+}

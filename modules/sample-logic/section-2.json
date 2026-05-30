@@ -1,0 +1,159 @@
+{
+  "id": "section-2",
+  "title": "Deductive Reasoning",
+  "order": 2,
+  "lessons": [
+    {
+      "id": "lesson-2-1",
+      "title": "Categorical Syllogisms",
+      "content": "A **categorical syllogism** is a deductive argument with three parts: two premises and a conclusion. Each part is a categorical statement (e.g., 'All A are B').\n\n## Structure\n1. **Major Premise**: A general statement (e.g., 'All humans are mortal').\n2. **Minor Premise**: A specific statement (e.g., 'Socrates is human').\n3. **Conclusion**: The logical result (e.g., 'Socrates is mortal').\n\n## Validity Rules\nFor a syllogism to be valid, it must follow these rules:\n1. **Three Terms**: Only three terms (major, minor, middle).\n2. **Middle Term Distribution**: The middle term must be distributed in at least one premise.\n3. **No Illicit Terms**: No term can be distributed in the conclusion if it wasn’t in the premises.\n4. **Negative Premises**: If one premise is negative, the conclusion must be negative.\n5. **Particular Conclusion**: If both premises are universal, the conclusion cannot be particular.\n\n## Example\nMajor Premise: All mammals are warm-blooded.\nMinor Premise: All whales are mammals.\nConclusion: All whales are warm-blooded.\n\nThis is valid because:\n- The middle term ('mammals') is distributed in the major premise.\n- The conclusion follows from the premises.\n\n## Venn Diagrams\nUse Venn diagrams to test validity. For example, the diagram for the above syllogism would show:\n- A circle for 'Mammals' overlapping with 'Warm-blooded'.\n- A circle for 'Whales' entirely within 'Mammals'.\n- This forces 'Whales' to be within 'Warm-blooded'.",
+      "order": 1,
+      "diagrams": [
+        {
+          "id": "syllogism-venn",
+          "type": "venn",
+          "title": "Categorical Syllogism Venn Diagram",
+          "sets": [
+            {
+              "id": "A",
+              "label": "Mammals",
+              "color": "#1A237E"
+            },
+            {
+              "id": "B",
+              "label": "Warm-blooded",
+              "color": "#2D5A27"
+            },
+            {
+              "id": "C",
+              "label": "Whales",
+              "color": "#B71C1C"
+            }
+          ],
+          "intersections": [
+            {
+              "sets": ["A", "B"],
+              "label": "All A are B"
+            },
+            {
+              "sets": ["C", "A"],
+              "label": "All C are A"
+            },
+            {
+              "sets": ["C", "B"],
+              "label": "All C are B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-2-2",
+      "title": "Propositional Logic",
+      "content": "**Propositional logic** (or sentential logic) deals with propositions and their relationships using logical operators.\n\n## Logical Operators\n| Symbol | Name | Example | Meaning |\n|--------|------|---------|---------|\n| ¬ | Negation | ¬P | Not P |\n| ∧ | Conjunction | P ∧ Q | P and Q |\n| ∨ | Disjunction | P ∨ Q | P or Q |\n| → | Implication | P → Q | If P, then Q |\n| ↔ | Biconditional | P ↔ Q | P if and only if Q |\n\n## Truth Tables\nTruth tables show all possible truth values of a proposition. For example, the truth table for 'P → Q' is:\n\n| P | Q | P → Q |\n|---|---|-------|\n| T | T |   T   |\n| T | F |   F   |\n| F | T |   T   |\n| F | F |   T   |\n\nThis shows that 'P → Q' is only false when P is true and Q is false.\n\n## Common Forms\n1. **Modus Ponens**: If P → Q and P, then Q.\n   Example: If it rains, the ground gets wet. It is raining. Therefore, the ground is wet.\n2. **Modus Tollens**: If P → Q and ¬Q, then ¬P.\n   Example: If it rains, the ground gets wet. The ground is not wet. Therefore, it did not rain.\n3. **Disjunctive Syllogism**: If P ∨ Q and ¬P, then Q.\n   Example: Either the meeting is at 2 PM or 3 PM. It is not at 2 PM. Therefore, it is at 3 PM.",
+      "order": 2,
+      "diagrams": [
+        {
+          "id": "truth-table",
+          "type": "table",
+          "title": "Truth Table for P → Q",
+          "headers": ["P", "Q", "P → Q"],
+          "rows": [
+            ["T", "T", "T"],
+            ["T", "F", "F"],
+            ["F", "T", "T"],
+            ["F", "F", "T"]
+          ]
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-4",
+      "prompt": "Identify the major premise, minor premise, and conclusion in this syllogism: 'All dogs are loyal. Fido is a dog. Therefore, Fido is loyal.'",
+      "order": 1,
+      "type": "worked_example",
+      "steps": [
+        {
+          "id": "step-1",
+          "text": "Step 1: The major premise is the general statement.",
+          "missingPart": {
+            "expectedAnswer": "All dogs are loyal",
+            "keywords": ["All dogs are loyal"]
+          }
+        },
+        {
+          "id": "step-2",
+          "text": "Step 2: The minor premise is the specific statement.",
+          "missingPart": {
+            "expectedAnswer": "Fido is a dog",
+            "keywords": ["Fido is a dog"]
+          }
+        },
+        {
+          "id": "step-3",
+          "text": "Step 3: The conclusion is the logical result.",
+          "missingPart": {
+            "expectedAnswer": "Fido is loyal",
+            "keywords": ["Fido is loyal"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ex-5",
+      "prompt": "Is this syllogism valid? 'All birds can fly. Penguins are birds. Therefore, penguins can fly.'",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "Valid and sound",
+        "Valid but unsound",
+        "Invalid but sound",
+        "Invalid and unsound"
+      ],
+      "correctIndex": 1,
+      "explanation": "The syllogism is **valid** because the conclusion follows from the premises. However, it is **unsound** because the major premise ('All birds can fly') is false."
+    },
+    {
+      "id": "ex-6",
+      "prompt": "Construct a truth table for 'P ∧ (Q ∨ R)'.",
+      "order": 3,
+      "type": "drag_sequence",
+      "items": [
+        {
+          "id": "item-1",
+          "text": "List all combinations of P, Q, R (8 rows)"
+        },
+        {
+          "id": "item-2",
+          "text": "Calculate Q ∨ R for each row"
+        },
+        {
+          "id": "item-3",
+          "text": "Calculate P ∧ (Q ∨ R) for each row"
+        }
+      ],
+      "correctOrder": [0, 1, 2]
+    },
+    {
+      "id": "ex-7",
+      "prompt": "Explain why this argument is invalid: 'If it rains, the ground gets wet. The ground is wet. Therefore, it rained.'",
+      "order": 4,
+      "type": "socratic_ai",
+      "modelAnswer": "This argument commits the fallacy of **affirming the consequent**. The premise states 'If P, then Q' (P → Q), but the conclusion assumes 'If Q, then P' (Q → P). The ground could be wet for other reasons (e.g., a sprinkler), so the conclusion does not necessarily follow.",
+      "mustInclude": [
+        "affirming the consequent",
+        "Q does not imply P",
+        "other reasons for Q"
+      ],
+      "hints": [
+        "What does 'P → Q' mean? Does it mean 'Q → P'?",
+        "Can you think of another reason the ground might be wet?",
+        "This is a common fallacy. What is it called?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    }
+  ]
+}

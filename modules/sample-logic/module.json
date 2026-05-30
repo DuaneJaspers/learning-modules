@@ -1,616 +1,80 @@
 {
   "id": "sample-logic",
   "title": "Introduction to Logic",
-  "description": "A foundational module covering deductive and inductive reasoning, common fallacies, and argument analysis. Develops critical thinking skills applicable across all disciplines.",
+  "description": "A foundational module covering deductive and inductive reasoning, common fallacies, argument analysis, and real-world applications of logic. Includes interactive exercises and assessments.",
   "author": "Modular Learning Team",
-  "version": "2.0.0",
-  "estimatedMinutes": 60,
+  "version": "3.0.0",
+  "estimatedMinutes": 480,
   "sections": [
     {
       "id": "section-1",
-      "title": "Deductive Reasoning",
-      "order": 1,
-      "lessons": [
-        {
-          "id": "lesson-1-1",
-          "title": "What is Deductive Reasoning?",
-          "content": "**Deductive reasoning** is a form of logical thinking that moves from a general rule to a specific, guaranteed conclusion. When the premises are true and the reasoning is valid, the conclusion *must* be true — there is no room for doubt.\n\n## The Structure of a Deductive Argument\n\nEvery deductive argument has three parts:\n\n1. **Major premise** — A general statement or universal rule\n2. **Minor premise** — A specific case that falls under the major premise\n3. **Conclusion** — The logical outcome that follows necessarily\n\n### Classic Example\n\n- Major premise: All mammals have lungs.\n- Minor premise: Dolphins are mammals.\n- Conclusion: Dolphins have lungs.\n\nThis is a **categorical syllogism** — the oldest known form of deductive reasoning, studied since Aristotle. Notice what makes it powerful: if both premises are true, the conclusion is *unavoidable*. It doesn't depend on probability or likelihood — it is certain.\n\n## Validity vs Soundness\n\nThese two concepts are often confused, but the distinction is critical:\n\n- **Validity** means the *structure* of the argument is correct. The conclusion follows logically from the premises.\n- **Soundness** means the argument is valid AND all premises are actually true.\n\nAn argument can be valid but unsound:\n\n> All cats can fly. Whiskers is a cat. Therefore, Whiskers can fly.\n\nThe structure is perfectly valid (it matches the syllogistic form), but the first premise is false, making the conclusion false despite valid reasoning. This distinction — between getting the *form* right and getting the *facts* right — is the foundation of logical analysis.\n\n## Common Deductive Patterns\n\n### Modus Ponens (Affirming the Antecedent)\nIf P, then Q. P is true. Therefore, Q is true.\n> If it rains, the ground gets wet. It is raining. Therefore, the ground is getting wet.\n\n### Modus Tollens (Denying the Consequent)\nIf P, then Q. Q is false. Therefore, P is false.\n> If the plant is alive, it needs water. The plant does not need water. Therefore, the plant is not alive.\n\n### Hypothetical Syllogism\nIf P, then Q. If Q, then R. Therefore, if P, then R.\n> If I study, I learn. If I learn, I improve. Therefore, if I study, I improve.\n\nThese three patterns appear everywhere — in mathematics, law, computer science, and everyday reasoning. Recognizing them helps you construct stronger arguments and spot weaker ones.",
-          "order": 1,
-          "diagrams": [
-            {
-              "id": "deductive-reasoning-flow",
-              "type": "flowchart",
-              "title": "Deductive Reasoning Process",
-              "nodes": [
-                {
-                  "id": "n1",
-                  "label": "General Rule\n(Major Premise)",
-                  "shape": "rounded",
-                  "color": "#1A237E"
-                },
-                {
-                  "id": "n2",
-                  "label": "Specific Case\n(Minor Premise)",
-                  "shape": "rounded",
-                  "color": "#1A237E"
-                },
-                {
-                  "id": "n3",
-                  "label": "Apply\nSyllogism",
-                  "shape": "diamond",
-                  "color": "#4A148C"
-                },
-                {
-                  "id": "n4",
-                  "label": "Guaranteed\nConclusion",
-                  "shape": "pill",
-                  "color": "#2D5A27"
-                }
-              ],
-              "edges": [
-                {
-                  "from": "n1",
-                  "to": "n3",
-                  "label": ""
-                },
-                {
-                  "from": "n2",
-                  "to": "n3",
-                  "label": ""
-                },
-                {
-                  "from": "n3",
-                  "to": "n4",
-                  "label": "valid + true premises"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exercises": [
-        {
-          "id": "ex-1",
-          "prompt": "Complete the deductive argument:\n\nPremise 1: All reptiles have scales.\nPremise 2: ___\nConclusion: Snakes have scales.",
-          "order": 1,
-          "type": "worked_example",
-          "steps": [
-            {
-              "id": "step-1",
-              "text": "Step 1: Identify the major premise — 'All reptiles have scales.' This is the universal rule.",
-              "missingPart": null
-            },
-            {
-              "id": "step-2",
-              "text": "Step 2: What must the minor premise establish? It needs to connect 'snakes' to the category 'reptiles.'",
-              "missingPart": {
-                "expectedAnswer": "snakes are reptiles",
-                "keywords": [
-                  "snakes are reptiles",
-                  "all snakes are reptiles",
-                  "snakes belong to reptiles"
-                ]
-              }
-            },
-            {
-              "id": "step-3",
-              "text": "Step 3: Therefore, since snakes are reptiles and all reptiles have scales, snakes must have scales. This is a valid categorical syllogism.",
-              "missingPart": null
-            }
-          ],
-          "hint": "Think about what category snakes belong to."
-        },
-        {
-          "id": "ex-2",
-          "prompt": "Which of the following is a valid and sound deductive argument?",
-          "order": 2,
-          "type": "mcq",
-          "options": [
-            "All birds can fly. Penguins are birds. Therefore, penguins can fly.",
-            "All humans are mortal. Socrates is human. Therefore, Socrates is mortal.",
-            "Some cats are black. My pet is a cat. Therefore, my pet is black.",
-            "All squares have four sides. This shape has four sides. Therefore, it is a square."
-          ],
-          "correctIndex": 1,
-          "explanation": "Only option 2 is both valid AND sound. Option 1 has a false major premise (not all birds can fly). Option 3 commits the fallacy of the undistributed middle — 'some' doesn't guarantee 'this one.' Option 4 commits affirming the consequent — having four sides is necessary but not sufficient to be a square (rectangles also have four sides)."
-        },
-        {
-          "id": "ex-3",
-          "prompt": "Consider this argument: 'All professional athletes are disciplined. Alex is disciplined. Therefore, Alex is a professional athlete.' Explain what is wrong with the logical structure of this reasoning, and why the conclusion does not follow even if both statements are true.",
-          "order": 3,
-          "type": "socratic_ai",
-          "modelAnswer": "This argument commits the fallacy of affirming the consequent. The major premise says 'If athlete → disciplined,' but that doesn't mean 'If disciplined → athlete.' Being disciplined is a quality that many non-athletes also possess. The first statement establishes that all athletes share this trait, but it does not establish that ONLY athletes have this trait. The category 'disciplined people' is larger than the category 'athletes,' so you cannot reason backwards from the trait to the category.",
-          "mustInclude": [
-            "affirming the consequent",
-            "does not mean only athletes are disciplined",
-            "cannot reason backwards from the trait"
-          ],
-          "niceToHave": [
-            "category is larger than the subset",
-            "necessary but not sufficient",
-            "many non-athletes also possess this quality"
-          ],
-          "hints": [
-            "The first premise says all athletes are disciplined. But does it say that ONLY athletes are disciplined?",
-            "Think about other people who are disciplined — surgeons, musicians, soldiers. Are they all professional athletes?",
-            "This is a classic fallacy called 'affirming the consequent.' The trait (discipline) is necessary for being an athlete, but not sufficient to prove someone is an athlete."
-          ],
-          "minScore": 0.55,
-          "validationMode": "embedding"
-        }
-      ]
+      "title": "Principles of Reasoning",
+      "order": 1
     },
     {
       "id": "section-2",
-      "title": "Common Logical Fallacies",
-      "order": 2,
-      "lessons": [
-        {
-          "id": "lesson-2-1",
-          "title": "Identifying and Classifying Fallacies",
-          "content": "A **logical fallacy** is a flaw in reasoning that renders an argument invalid, unsound, or misleading. Recognizing fallacies is essential for critical thinking — it protects you from manipulation and helps you construct stronger arguments.\n\n## Why Fallacies Matter\n\nFallacies are not simply 'mistakes' — they are *patterns* of faulty reasoning that humans are psychologically prone to. Advertisers, politicians, and debaters use them deliberately because they are persuasive to people who don't recognize them. Learning to spot fallacies is a form of intellectual self-defense.\n\n## Five Common Fallacies\n\n### 1. Ad Hominem (Against the Person)\nAttacking the character or circumstances of the person making the argument, rather than the argument itself.\n\n> \"You can't trust Dr. Patel's research on climate change — she drives a gas-powered car.\"\n\nThe car Dr. Patel drives has no bearing on whether her data and methodology are sound. This fallacy diverts attention from the evidence to the person.\n\n### 2. Straw Man\nMisrepresenting someone's argument to make it easier to attack.\n\n> Person A: \"I think we should increase education funding.\"\n> Person B: \"So you want to cut military spending and leave our country defenseless?\"\n\nPerson B has replaced a reasonable position (more education funding) with an extreme, easier-to-attack position (zero military spending).\n\n### 3. False Dilemma (Black-and-White Thinking)\nPresenting only two options when more exist, forcing a false either/or choice.\n\n> \"You're either with us or against us.\"\n\nThis ignores neutral positions, partial agreement, or alternative perspectives. Reality rarely has only two sides.\n\n### 4. Slippery Slope\nClaiming that a small first step will inevitably lead to an extreme outcome, without providing evidence for the chain of causation.\n\n> \"If we allow students to redo this test, soon they'll want to redo every test, and then grades won't mean anything, and the entire education system will collapse.\"\n\nEach step in the chain needs independent justification. Without it, the argument is speculation, not reasoning.\n\n### 5. Appeal to Authority\nUsing an authority figure's opinion as evidence, especially when they are not an expert in the relevant field.\n\n> \"This celebrity endorses this diet, so it must work.\"\n\nExpertise in one domain (entertainment) does not transfer to another (nutrition). True authority requires relevant credentials and evidence.\n\n## The Meta-Pattern\n\nAll five fallacies share something in common: they bypass the *content* of the argument. Instead of engaging with reasons and evidence, they redirect attention — to the speaker, to a caricature, to extremes, to fear, or to status. When you notice an argument doing this, a fallacy alarm should go off.",
-          "order": 1,
-          "diagrams": [
-            {
-              "id": "fallacy-classification",
-              "type": "flowchart",
-              "title": "Fallacy Detection Flowchart",
-              "nodes": [
-                {
-                  "id": "n1",
-                  "label": "Hear an\nArgument",
-                  "shape": "rounded",
-                  "color": "#1A237E"
-                },
-                {
-                  "id": "n2",
-                  "label": "Does it address\nthe actual claim?",
-                  "shape": "diamond",
-                  "color": "#4A148C"
-                },
-                {
-                  "id": "n3",
-                  "label": "Ad Hominem\nor Straw Man",
-                  "shape": "rounded",
-                  "color": "#B71C1C"
-                },
-                {
-                  "id": "n4",
-                  "label": "Are there only\n2 options given?",
-                  "shape": "diamond",
-                  "color": "#4A148C"
-                },
-                {
-                  "id": "n5",
-                  "label": "False Dilemma",
-                  "shape": "rounded",
-                  "color": "#B71C1C"
-                },
-                {
-                  "id": "n6",
-                  "label": "Valid\nReasoning",
-                  "shape": "pill",
-                  "color": "#2D5A27"
-                }
-              ],
-              "edges": [
-                {
-                  "from": "n1",
-                  "to": "n2",
-                  "label": ""
-                },
-                {
-                  "from": "n2",
-                  "to": "n3",
-                  "label": "No"
-                },
-                {
-                  "from": "n2",
-                  "to": "n4",
-                  "label": "Yes"
-                },
-                {
-                  "from": "n4",
-                  "to": "n5",
-                  "label": "Yes"
-                },
-                {
-                  "from": "n4",
-                  "to": "n6",
-                  "label": "No"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exercises": [
-        {
-          "id": "ex-4",
-          "prompt": "Analyze this argument step by step: \"We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict.\"",
-          "order": 1,
-          "type": "worked_example",
-          "steps": [
-            {
-              "id": "step-1",
-              "text": "Step 1: Identify the conclusion — 'We should not trust Dr. Smith's opinion on climate policy.'",
-              "missingPart": null
-            },
-            {
-              "id": "step-2",
-              "text": "Step 2: Examine the reasons given. Reason 1: He went to college in Europe. Reason 2: European policies are always too strict.",
-              "missingPart": null
-            },
-            {
-              "id": "step-3",
-              "text": "Step 3: Classify the first fallacy. Attacking where someone studied instead of engaging with their argument is:",
-              "missingPart": {
-                "expectedAnswer": "ad hominem",
-                "keywords": [
-                  "ad hominem",
-                  "genetic fallacy",
-                  "attacking the person",
-                  "attacking the source"
-                ]
-              }
-            },
-            {
-              "id": "step-4",
-              "text": "Step 4: Classify the second fallacy. Claiming 'European policies are always too strict' from a single sweeping statement is a hasty generalization — there is no evidence provided.",
-              "missingPart": null
-            }
-          ],
-          "hint": "What type of fallacy attacks a person's background rather than their argument?"
-        },
-        {
-          "id": "ex-5",
-          "prompt": "Spot the errors in this passage:",
-          "order": 2,
-          "type": "error_spotting",
-          "content": "We should not trust Dr. Smith's opinion on climate policy. He went to college in Europe, and European policies are always too strict. Besides, either we follow American energy policy or we destroy our economy. There is no middle ground.",
-          "errors": [
-            {
-              "id": "err-1",
-              "description": "Ad Hominem (Genetic Fallacy) — dismissing the argument based on where Dr. Smith studied, not on the merits of his reasoning.",
-              "hint": "Is the location of someone's education relevant to the validity of their argument?"
-            },
-            {
-              "id": "err-2",
-              "description": "Hasty Generalization — claiming 'European policies are always too strict' based on a single sweeping statement with no evidence.",
-              "hint": "Can you generalize about all European policies from one observation?"
-            },
-            {
-              "id": "err-3",
-              "description": "False Dilemma — 'either we follow American energy policy or we destroy our economy' ignores hybrid approaches, gradual transitions, and the fact that many countries successfully combine different policies.",
-              "hint": "Are there really only two possible outcomes?"
-            }
-          ],
-          "explanation": "This passage contains three distinct fallacies: ad hominem (attacking the source), hasty generalization (sweeping claim about all European policies), and false dilemma (only two economic outcomes presented)."
-        },
-        {
-          "id": "ex-6",
-          "prompt": "Arrange the steps of evaluating an argument in the correct order:",
-          "order": 3,
-          "type": "drag_sequence",
-          "items": [
-            {
-              "id": "item-1",
-              "text": "Identify the conclusion being argued"
-            },
-            {
-              "id": "item-2",
-              "text": "Examine the premises and evidence provided"
-            },
-            {
-              "id": "item-3",
-              "text": "Check if the reasoning is structurally valid"
-            },
-            {
-              "id": "item-4",
-              "text": "Verify the premises are actually true"
-            },
-            {
-              "id": "item-5",
-              "text": "Check for logical fallacies or hidden assumptions"
-            }
-          ],
-          "correctOrder": [
-            0,
-            1,
-            2,
-            3,
-            4
-          ]
-        }
-      ]
+      "title": "Deductive Reasoning",
+      "order": 2
     },
     {
       "id": "section-3",
-      "title": "Inductive vs Deductive Reasoning",
-      "order": 3,
-      "lessons": [
-        {
-          "id": "lesson-3-1",
-          "title": "Two Modes of Reasoning",
-          "content": "So far we've focused on deductive reasoning — moving from general rules to specific conclusions. But there is another fundamental mode: **inductive reasoning**, which moves in the opposite direction — from specific observations to general conclusions.\n\n## Inductive Reasoning\n\nInductive reasoning builds general conclusions from patterns observed in specific instances.\n\n> Observation 1: The sun rose in the east today.\n> Observation 2: The sun rose in the east yesterday.\n> Observation 3: The sun rose in the east every day in recorded history.\n> Conclusion: The sun always rises in the east.\n\nNotice the critical difference: this conclusion is *probable* but not *guaranteed*. No matter how many observations you make, the next one could theoretically contradict the pattern. This is called the **problem of induction**, famously described by David Hume in the 18th century.\n\n## Key Differences\n\n| Aspect | Deductive | Inductive |\n|--------|-----------|-----------|\n| Direction | General → Specific | Specific → General |\n| Certainty | Guaranteed (if premises true) | Probable, never certain |\n| Conclusion | Follows necessarily | Goes beyond the evidence |\n| Risk | None (if valid + sound) | Always some uncertainty |\n| Use case | Math, logic, law | Science, prediction, daily life |\n\n## Why We Need Both\n\nPure deduction can only tell you what is already implicit in your premises — it never produces genuinely new knowledge. Pure induction can suggest new patterns but can never prove them with certainty. Science, for example, uses **both**:\n\n1. **Induction** to discover patterns from data (e.g., \"Every observed swan is white, so all swans are white\")\n2. **Deduction** to test predictions from those patterns (e.g., \"If all swans are white, the next swan we see will be white\")\n3. When a prediction fails (black swan found in Australia!), the inductive conclusion is revised\n\nThis cycle — inductive discovery, deductive testing, revision — is the engine of scientific progress.\n\n## The Black Swan Lesson\n\nBefore 1697, Europeans had only ever seen white swans. The inductive conclusion \"all swans are white\" seemed ironclad. Then Dutch explorers discovered black swans in Australia. The lesson? Inductive conclusions, no matter how well-supported, remain open to revision. This is not a weakness — it is the mechanism by which knowledge improves.",
-          "order": 1,
-          "diagrams": [
-            {
-              "id": "inductive-deductive-cycle",
-              "type": "flowchart",
-              "title": "The Reasoning Cycle",
-              "nodes": [
-                {
-                  "id": "n1",
-                  "label": "Observe\nSpecific Cases",
-                  "shape": "rounded",
-                  "color": "#2D5A27"
-                },
-                {
-                  "id": "n2",
-                  "label": "Inductive\nLeap",
-                  "shape": "diamond",
-                  "color": "#E65100"
-                },
-                {
-                  "id": "n3",
-                  "label": "General\nRule/Hypothesis",
-                  "shape": "rounded",
-                  "color": "#1A237E"
-                },
-                {
-                  "id": "n4",
-                  "label": "Deductive\nPrediction",
-                  "shape": "diamond",
-                  "color": "#4A148C"
-                },
-                {
-                  "id": "n5",
-                  "label": "Test Against\nNew Evidence",
-                  "shape": "rounded",
-                  "color": "#37474F"
-                }
-              ],
-              "edges": [
-                {
-                  "from": "n1",
-                  "to": "n2",
-                  "label": "pattern"
-                },
-                {
-                  "from": "n2",
-                  "to": "n3",
-                  "label": "propose"
-                },
-                {
-                  "from": "n3",
-                  "to": "n4",
-                  "label": "if-then"
-                },
-                {
-                  "from": "n4",
-                  "to": "n5",
-                  "label": "test"
-                },
-                {
-                  "from": "n5",
-                  "to": "n1",
-                  "label": "refine"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "exercises": [
-        {
-          "id": "ex-7",
-          "prompt": "Classify each argument as deductive or inductive, and explain your reasoning.",
-          "order": 1,
-          "type": "mcq",
-          "options": [
-            "Every crow ever observed is black. Therefore, all crows are black. → Inductive",
-            "All prime numbers greater than 2 are odd. 17 is a prime number greater than 2. Therefore, 17 is odd. → Deductive",
-            "Both arguments above are classified correctly",
-            "The first is deductive and the second is inductive"
-          ],
-          "correctIndex": 2,
-          "explanation": "Both classifications are correct. The crow argument generalizes from specific observations (inductive) — it is probable but not certain. The prime number argument applies a general rule to a specific case (deductive) — the conclusion is guaranteed if the premises are true."
-        },
-        {
-          "id": "ex-8",
-          "prompt": "A friend tells you: 'I've eaten at this restaurant five times and never gotten sick, so the food is always safe.' Explain why this reasoning is inductive and identify the specific risk in the conclusion.",
-          "order": 2,
-          "type": "socratic_ai",
-          "modelAnswer": "This is inductive reasoning because it generalizes from a limited number of specific observations (five visits) to a universal claim ('always safe'). The risk is that past performance doesn't guarantee future results — the restaurant could change suppliers, hire new kitchen staff, or have a bad day. Five observations is a very small sample, and the conclusion goes far beyond what the evidence supports. This is similar to the 'black swan' problem: no number of white swan observations proves all swans are white.",
-          "mustInclude": [
-            "generalizes from limited observations",
-            "past performance does not guarantee future results",
-            "small sample size"
-          ],
-          "niceToHave": [
-            "similar to the black swan problem",
-            "goes beyond what the evidence supports",
-            "universal claim from specific instances"
-          ],
-          "hints": [
-            "How many observations did your friend make? How many total meals has this restaurant served?",
-            "What could change between visit 5 and visit 6 that would make the food unsafe?",
-            "This is the same logical structure as 'every swan I've seen is white, so all swans are white.' What's the hidden assumption?"
-          ],
-          "minScore": 0.55,
-          "validationMode": "embedding"
-        },
-        {
-          "id": "ex-9",
-          "prompt": "A scientist observes that a new drug reduces symptoms in 8 out of 10 patients. Arrange the reasoning steps in logical order:",
-          "order": 3,
-          "type": "drag_sequence",
-          "items": [
-            {
-              "id": "item-1",
-              "text": "Observe: 8/10 patients show improvement"
-            },
-            {
-              "id": "item-2",
-              "text": "Form inductive hypothesis: The drug is effective"
-            },
-            {
-              "id": "item-3",
-              "text": "Make deductive prediction: If effective, a larger trial will show similar results"
-            },
-            {
-              "id": "item-4",
-              "text": "Test the prediction with a controlled trial of 500 patients"
-            },
-            {
-              "id": "item-5",
-              "text": "Revise or confirm the hypothesis based on new data"
-            }
-          ],
-          "correctOrder": [
-            0,
-            1,
-            2,
-            3,
-            4
-          ]
-        }
-      ]
+      "title": "Inductive Reasoning",
+      "order": 3
+    },
+    {
+      "id": "section-4",
+      "title": "Logical Fallacies",
+      "order": 4
+    },
+    {
+      "id": "section-5",
+      "title": "Critical Thinking Tools",
+      "order": 5
+    },
+    {
+      "id": "section-6",
+      "title": "Logic in the Real World",
+      "order": 6
+    },
+    {
+      "id": "section-7",
+      "title": "Assessment: Introduction to Logic",
+      "order": 7
     }
   ],
-  "assessment": {
-    "title": "Logic Fundamentals Assessment",
-    "passingScore": 0.7,
-    "exercises": [
-      {
-        "exerciseId": "ex-2",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-5",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-7",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-6",
-        "weight": 1.0
-      },
-      {
-        "exerciseId": "ex-3",
-        "weight": 1.5
-      }
-    ]
-  },
-  "flashcardDeck": {
-    "title": "Logic & Reasoning Key Terms",
-    "cards": [
-      {
-        "id": "fc-1",
-        "term": "Deductive Reasoning",
-        "definition": "Reasoning from general premises to a specific, guaranteed conclusion. If premises are true and structure is valid, the conclusion must be true.",
-        "context": "All mammals have lungs. Dolphins are mammals. Therefore, dolphins have lungs."
-      },
-      {
-        "id": "fc-2",
-        "term": "Inductive Reasoning",
-        "definition": "Reasoning from specific observations to general conclusions. Conclusions are probable but never certain, no matter how much evidence supports them.",
-        "context": "Every observed swan is white. Therefore, all swans are white. (Proven wrong when black swans were found in Australia.)"
-      },
-      {
-        "id": "fc-3",
-        "term": "Logical Fallacy",
-        "definition": "A pattern of faulty reasoning that renders an argument invalid, unsound, or misleading.",
-        "context": "Ad hominem, straw man, false dilemma, slippery slope, and appeal to authority are common fallacies."
-      },
-      {
-        "id": "fc-4",
-        "term": "Soundness",
-        "definition": "An argument that is both valid in structure and has true premises. Only sound arguments guarantee true conclusions.",
-        "context": "Validity + truth of premises = soundness. A valid argument with false premises is unsound."
-      },
-      {
-        "id": "fc-5",
-        "term": "Validity",
-        "definition": "The property of an argument where the conclusion follows necessarily from the premises, regardless of whether the premises are actually true.",
-        "context": "'All cats can fly. Dogs are cats. Therefore dogs can fly.' is valid in structure but unsound because the premise is false."
-      },
-      {
-        "id": "fc-6",
-        "term": "Ad Hominem",
-        "definition": "A fallacy where you attack the person making the argument rather than the argument itself.",
-        "context": "'You can't trust her economics advice — she's not even rich.' This attacks her background, not her reasoning."
-      },
-      {
-        "id": "fc-7",
-        "term": "False Dilemma",
-        "definition": "A fallacy that presents only two options when more exist, forcing a false either/or choice.",
-        "context": "'You're either with us or against us.' This ignores neutral or partially-aligned positions."
-      },
-      {
-        "id": "fc-8",
-        "term": "Straw Man",
-        "definition": "A fallacy where you misrepresent someone's argument to make it easier to attack.",
-        "context": "Person A: 'We should increase education funding.' Person B: 'So you want to leave our country defenseless?'"
-      },
-      {
-        "id": "fc-9",
-        "term": "Slippery Slope",
-        "definition": "A fallacy claiming a small step will inevitably lead to extreme consequences without evidence for each causal link.",
-        "context": "'If we allow students to redo this test, soon grades won't mean anything, and the education system will collapse.'"
-      },
-      {
-        "id": "fc-10",
-        "term": "Appeal to Authority",
-        "definition": "Using an authority figure's opinion as evidence, especially when they are not an expert in the relevant field.",
-        "context": "'This celebrity endorses this diet, so it must work.' Celebrity status ≠ nutrition expertise."
-      },
-      {
-        "id": "fc-11",
-        "term": "Hasty Generalization",
-        "definition": "Drawing a broad conclusion from insufficient or unrepresentative evidence.",
-        "context": "'I met two rude people from that city, so everyone there must be rude.' Two people is not a representative sample."
-      },
-      {
-        "id": "fc-12",
-        "term": "Problem of Induction",
-        "description": "The philosophical problem that no amount of specific observations can guarantee a general conclusion. Identified by David Hume.",
-        "context": "No matter how many white swans you observe, you cannot prove all swans are white — the next observation could always contradict the pattern."
-      },
-      {
-        "id": "fc-13",
-        "term": "Modus Ponens",
-        "definition": "A valid deductive pattern: If P then Q. P is true. Therefore Q is true.",
-        "context": "If it rains, the ground gets wet. It is raining. Therefore, the ground is getting wet."
-      },
-      {
-        "id": "fc-14",
-        "term": "Affirming the Consequent",
-        "definition": "An invalid deductive pattern: If P then Q. Q is true. Therefore P is true. This is a fallacy because Q could have other causes.",
-        "context": "If it's a dog, it has four legs. It has four legs. Therefore it's a dog. (But cats also have four legs.)"
-      },
-      {
-        "id": "fc-15",
-        "term": "Black Swan Event",
-        "definition": "An unexpected event that disproves a widely-held inductive conclusion. Named after the discovery of black swans in Australia disproved 'all swans are white.'",
-        "context": "Used metaphorically for any surprising event that contradicts long-held assumptions based on past experience."
-      }
-    ]
-  },
+  "assets": [
+    {
+      "id": "debate-flowchart",
+      "type": "image/svg+xml",
+      "path": "assets/debate-flowchart.svg",
+      "description": "Flowchart of the PREP method for structuring arguments."
+    },
+    {
+      "id": "media-bias-spectrum",
+      "type": "image/svg+xml",
+      "path": "assets/media-bias-spectrum.svg",
+      "description": "Spectrum of media bias from left to right."
+    },
+    {
+      "id": "truth-table",
+      "type": "image/svg+xml",
+      "path": "assets/truth-table.svg",
+      "description": "Truth table for P → Q (If P, then Q)."
+    }
+  ],
   "category": "logic",
   "tags": [
     "logic",
     "reasoning",
     "critical-thinking",
-    "beginner-friendly"
+    "beginner-friendly",
+    "fallacies",
+    "debate",
+    "media-literacy"
   ],
   "difficulty": "beginner",
   "prerequisites": [],
   "recommendedNext": [
-    "cryptography-basics",
-    "scientific-revolution"
+    "cryptography-basics"
   ]
 }

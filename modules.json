@@ -2,67 +2,40 @@
   "version": "2",
   "lastUpdated": "2026-05-30T00:00:00Z",
   "categories": [
-    {
-      "id": "computer-science",
-      "label": "Computer Science",
-      "icon": "💻"
-    },
-    {
-      "id": "history",
-      "label": "History",
-      "icon": "📜"
-    },
-    {
-      "id": "mathematics",
-      "label": "Mathematics",
-      "icon": "📐"
-    },
-    {
-      "id": "logic",
-      "label": "Logic & Reasoning",
-      "icon": "🧠"
-    }
+    {"id": "computer-science", "label": "Computer Science", "icon": "💻"},
+    {"id": "history", "label": "History", "icon": "📜"},
+    {"id": "mathematics", "label": "Mathematics", "icon": "📐"},
+    {"id": "logic", "label": "Logic & Reasoning", "icon": "🧠"}
   ],
   "paths": [
     {
       "id": "algebra-track",
       "title": "Algebra Track",
       "description": "From algebraic expressions to systems of equations — a complete path through high school algebra",
-      "modules": [
-        "algebra-foundations",
-        "linear-equations",
-        "graphing-linear",
-        "inequalities-systems"
-      ]
+      "modules": ["algebra-foundations", "linear-equations", "graphing-linear", "inequalities-systems"]
     },
     {
       "id": "crypto-track",
       "title": "Cryptography Track",
       "description": "From logical reasoning to classical ciphers and beyond",
-      "modules": [
-        "sample-logic",
-        "cryptography-basics"
-      ]
+      "modules": ["sample-logic", "cryptography-basics"]
     },
     {
       "id": "civilization-shifts",
       "title": "Civilization Shifts",
       "description": "How empires fall and paradigms break",
-      "modules": [
-        "fall-of-rome",
-        "scientific-revolution"
-      ]
+      "modules": ["fall-of-rome", "scientific-revolution"]
     }
   ],
   "modules": [
     {
       "id": "algebra-foundations",
       "title": "Algebra Foundations",
-      "description": "Master the building blocks of algebra: evaluating expressions, order of operations, and substituting values into algebraic expressions.",
+      "description": "Master the building blocks of algebra: evaluating expressions, order of of operations, and substituting values into algebraic expressions.",
       "author": "Modular Learning Team",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "estimatedMinutes": 45,
-      "checksum": "sha256:e339e7d0bf52a42eb104c0b3cc3a0dedd79a676efe4d260ab13dcda0910253ca",
+      "checksum": "sha256:4052e5af1b2112bd6e1a5d709b9915dd4ab5ecee73cb80612e943c2740b0b02d",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/algebra-foundations/module.json",
       "category": "mathematics",
       "tags": ["algebra", "expressions", "order-of-operations", "substitution", "beginner"],
@@ -92,7 +65,7 @@
       "author": "Modular Learning Team",
       "version": "1.0.0",
       "estimatedMinutes": 75,
-      "checksum": "sha256:a5ea4b912bd576836df5ab4aeaab97887e6981b96898208b91225245165cf793",
+      "checksum": "sha256:a5ea4b912bd576836df5ab4abeab97887e6981b96898208b91225245165cf793",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/graphing-linear/module.json",
       "category": "mathematics",
       "tags": ["algebra", "graphing", "slope", "linear-functions", "intermediate"],
@@ -118,24 +91,17 @@
     {
       "id": "sample-logic",
       "title": "Introduction to Logic",
-      "description": "A foundational module covering deductive and inductive reasoning, common fallacies, and argument analysis. Develops critical thinking skills applicable across all disciplines.",
+      "description": "A foundational module covering deductive and inductive reasoning, common fallacies, argument analysis, and real-world applications of logic.",
       "author": "Modular Learning Team",
       "version": "2.0.0",
       "estimatedMinutes": 60,
       "checksum": "sha256:88ad3d271d24a6794b705e1cfba3a65d4fc815b8a18f923a8432344a35cfc30b",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/sample-logic/module.json",
       "category": "logic",
-      "tags": [
-        "logic",
-        "reasoning",
-        "critical-thinking",
-        "beginner-friendly"
-      ],
+      "tags": ["logic", "reasoning", "critical-thinking", "beginner-friendly"],
       "difficulty": "beginner",
       "prerequisites": [],
-      "recommendedNext": [
-        "cryptography-basics"
-      ]
+      "recommendedNext": ["cryptography-basics"]
     },
     {
       "id": "cryptography-basics",
@@ -147,16 +113,9 @@
       "checksum": "sha256:644adc2c59b5160e2456eb134687a1845d142792c96e25b1f26bc3c7d3547932",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json",
       "category": "computer-science",
-      "tags": [
-        "cryptography",
-        "algorithms",
-        "history-of-tech",
-        "mathematics"
-      ],
+      "tags": ["cryptography", "algorithms", "history-of-tech", "mathematics"],
       "difficulty": "beginner",
-      "prerequisites": [
-        "sample-logic"
-      ],
+      "prerequisites": ["sample-logic"],
       "recommendedNext": []
     },
     {
@@ -169,17 +128,10 @@
       "checksum": "sha256:737993d813b55e72411bb31125366b7ab5347f17c363a0bfab38cf30d0d65bcb",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/fall-of-rome/module.json",
       "category": "history",
-      "tags": [
-        "rome",
-        "empire",
-        "decline",
-        "ancient-history"
-      ],
+      "tags": ["rome", "empire", "decline", "ancient-history"],
       "difficulty": "intermediate",
       "prerequisites": [],
-      "recommendedNext": [
-        "scientific-revolution"
-      ]
+      "recommendedNext": ["scientific-revolution"]
     },
     {
       "id": "scientific-revolution",
@@ -191,16 +143,9 @@
       "checksum": "sha256:2b1f18a1bf1f4e952793d6c78be8b93599086255f3d3a74544abaf9ad8d52774",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/scientific-revolution/module.json",
       "category": "history",
-      "tags": [
-        "science",
-        "history",
-        "scientific-method",
-        "paradigm-shift"
-      ],
+      "tags": ["science", "history", "scientific-method", "paradigm-shift"],
       "difficulty": "intermediate",
-      "prerequisites": [
-        "fall-of-rome"
-      ],
+      "prerequisites": ["fall-of-rome"],
       "recommendedNext": []
     }
   ]

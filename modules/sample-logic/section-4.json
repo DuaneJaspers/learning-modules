@@ -1,0 +1,187 @@
+{
+  "id": "section-4",
+  "title": "Logical Fallacies",
+  "order": 4,
+  "lessons": [
+    {
+      "id": "lesson-4-1",
+      "title": "Introduction to Fallacies",
+      "content": "A **logical fallacy** is an error in reasoning that undermines the validity of an argument. Fallacies can be **formal** (structural flaws) or **informal** (content flaws). Recognizing fallacies is essential for critical thinking.\n\n## Why Fallacies Matter\n- **Persuasion**: Fallacies are often used to manipulate (e.g., advertising, politics).\n- **Debate**: Spotting fallacies helps you counter weak arguments.\n- **Decision-Making**: Avoid flawed reasoning in personal and professional choices.\n\n## Formal vs Informal Fallacies\n| Type       | Definition                          | Example                                  |\n|------------|--------------------------------------|------------------------------------------|\n| **Formal** | Invalid structure (e.g., affirming the consequent). | If P → Q and Q, then P.                  |\n| **Informal** | Flawed content (e.g., ad hominem).    | You’re wrong because you’re stupid.      |\n\n## Common Categories\n1. **Relevance**: Premises irrelevant to the conclusion.\n2. **Weak Induction**: Poor evidence or reasoning.\n3. **Presumption**: Hidden assumptions or circular reasoning.\n4. **Ambiguity**: Unclear language or shifting meanings.",
+      "order": 1,
+      "diagrams": [
+        {
+          "id": "fallacy-categories",
+          "type": "flowchart",
+          "title": "Fallacy Categories",
+          "nodes": [
+            {
+              "id": "n1",
+              "label": "Logical Fallacies",
+              "shape": "rounded",
+              "color": "#1A237E"
+            },
+            {
+              "id": "n2",
+              "label": "Formal",
+              "shape": "rounded",
+              "color": "#B71C1C"
+            },
+            {
+              "id": "n3",
+              "label": "Informal",
+              "shape": "rounded",
+              "color": "#2D5A27"
+            },
+            {
+              "id": "n4",
+              "label": "Relevance",
+              "shape": "rounded",
+              "color": "#E65100"
+            },
+            {
+              "id": "n5",
+              "label": "Weak Induction",
+              "shape": "rounded",
+              "color": "#E65100"
+            },
+            {
+              "id": "n6",
+              "label": "Presumption",
+              "shape": "rounded",
+              "color": "#E65100"
+            },
+            {
+              "id": "n7",
+              "label": "Ambiguity",
+              "shape": "rounded",
+              "color": "#E65100"
+            }
+          ],
+          "edges": [
+            {
+              "from": "n1",
+              "to": "n2",
+              "label": ""
+            },
+            {
+              "from": "n1",
+              "to": "n3",
+              "label": ""
+            },
+            {
+              "from": "n3",
+              "to": "n4",
+              "label": ""
+            },
+            {
+              "from": "n3",
+              "to": "n5",
+              "label": ""
+            },
+            {
+              "from": "n3",
+              "to": "n6",
+              "label": ""
+            },
+            {
+              "from": "n3",
+              "to": "n7",
+              "label": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson-4-2",
+      "title": "Fallacies of Relevance",
+      "content": "Fallacies of relevance introduce premises that **don’t support the conclusion**.\n\n## 1. Ad Hominem (Personal Attack)\nAttacking the person instead of the argument.\nExample: You can’t trust Dr. Smith’s climate research—he’s not even a real scientist!\n\n## 2. Straw Man\nMisrepresenting an opponent’s argument to make it easier to attack.\nExample:\nPerson A: We should reduce military spending.\nPerson B: So you want to leave our country defenseless?\n\n## 3. Red Herring\nIntroducing irrelevant information to distract from the argument.\nExample: Why worry about climate change when there are people starving?\n\n## 4. Appeal to Authority\nUsing an authority figure as evidence when they’re not qualified.\nExample: A famous actor says this diet works, so it must be true.\n\n## 5. Appeal to Emotion\nManipulating emotions (fear, pity, anger) instead of using logic.\nExample: If you don’t support this law, children will suffer!\n\n## 6. Genetic Fallacy\nJudging an idea based on its origin, not its merit.\nExample: That theory came from Nazi scientists, so it must be wrong.\n\n## 7. Tu Quoque (You Too)\nDismissing an argument because the opponent doesn’t follow their own advice.\nExample: You say smoking is bad, but you smoke too!",
+      "order": 2
+    },
+    {
+      "id": "lesson-4-3",
+      "title": "Fallacies of Weak Induction",
+      "content": "Fallacies of weak induction use **poor evidence** or **unreliable reasoning**.\n\n## 1. Hasty Generalization\nDrawing a broad conclusion from a small or biased sample.\nExample: I met two rude Parisians. All Parisians are rude.\n\n## 2. False Cause (Post Hoc)\nAssuming causation from correlation.\nExample: I wore my lucky socks and aced the test. The socks caused my success.\n\n## 3. Slippery Slope\nClaiming a small step will inevitably lead to an extreme outcome.\nExample: If we allow same-sex marriage, next people will marry animals!\n\n## 4. Weak Analogy\nComparing two things that aren’t truly similar.\nExample: A brain is like a computer. Computers can be hacked, so brains can too.\n\n## 5. Appeal to Ignorance\nArguing that something is true because it hasn’t been proven false.\nExample: No one has proven ghosts don’t exist, so they must be real.\n\n## 6. Appeal to Popularity\nAssuming something is true because many people believe it.\nExample: Millions of people believe in astrology, so it must be accurate.\n\n## 7. Gambler’s Fallacy\nBelieving past random events affect future ones.\nExample: I’ve flipped heads 10 times in a row. Tails is due next!",
+      "order": 3
+    },
+    {
+      "id": "lesson-4-4",
+      "title": "Fallacies of Presumption and Ambiguity",
+      "content": "Fallacies of **presumption** assume what they’re trying to prove. Fallacies of **ambiguity** rely on unclear language.\n\n## Fallacies of Presumption\n### 1. Begging the Question (Circular Reasoning)\nThe conclusion is assumed in the premise.\nExample: The Bible is true because it says so.\n\n### 2. False Dilemma\nPresenting only two options when more exist.\nExample: You’re either with us or against us.\n\n### 3. No True Scotsman\nRedefining a term to exclude counterexamples.\nExample:\nPerson A: No Scotsman puts sugar in porridge.\nPerson B: My uncle is Scottish and puts sugar in porridge.\nPerson A: Well, no *true* Scotsman does that.\n\n### 4. Loaded Question\nAsking a question that assumes an unproven premise.\nExample: Have you stopped cheating on tests?\n\n## Fallacies of Ambiguity\n### 1. Equivocation\nUsing a word with multiple meanings ambiguously.\nExample: A feather is light. What is light cannot be dark. Therefore, a feather cannot be dark.\n\n### 2. Amphiboly\nGrammar or syntax creates ambiguity.\nExample: The police shot the man with the gun. (Who had the gun?)\n\n### 3. Composition/Division\nAssuming what’s true for the part is true for the whole (or vice versa).\nExample (Composition): Atoms are invisible. Humans are made of atoms. Therefore, humans are invisible.\nExample (Division): Humans are intelligent. You are human. Therefore, your big toe is intelligent.\n\n## Real-World Examples\n- **Politics**: Straw man (You want open borders!)\n- **Advertising**: Appeal to authority (celebrity endorsements)\n- **Social Media**: Hasty generalization (All X group are Y)",
+      "order": 4
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-12",
+      "prompt": "Identify the fallacy: 'You can’t trust John’s opinion on the economy—he’s not even a real economist!'",
+      "order": 1,
+      "type": "mcq",
+      "options": [
+        "Straw Man",
+        "Ad Hominem",
+        "Appeal to Authority",
+        "Genetic Fallacy"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is an **ad hominem** fallacy because it attacks John’s credentials instead of addressing his argument."
+    },
+    {
+      "id": "ex-13",
+      "prompt": "Identify the fallacy: 'If we allow students to redo tests, soon they’ll want to redo every assignment, and then grades will mean nothing!'",
+      "order": 2,
+      "type": "mcq",
+      "options": [
+        "False Cause",
+        "Slippery Slope",
+        "False Dilemma",
+        "Weak Analogy"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is a **slippery slope** fallacy because it assumes an inevitable extreme outcome without evidence."
+    },
+    {
+      "id": "ex-14",
+      "prompt": "Find the fallacies in this passage: 'No one has proven that aliens haven’t visited Earth, so they must be real. Besides, my uncle saw a UFO, and he’s a very smart man. If you don’t believe in aliens, you’re just closed-minded.'",
+      "order": 3,
+      "type": "error_spotting",
+      "errors": [
+        {
+          "id": "err-1",
+          "description": "Appeal to Ignorance — arguing that aliens must be real because their non-existence hasn’t been proven.",
+          "hint": "What does the lack of proof say about the truth of a claim?"
+        },
+        {
+          "id": "err-2",
+          "description": "Appeal to Authority — using the uncle’s intelligence as evidence for UFOs.",
+          "hint": "Is your uncle an expert in astronomy or UFO research?"
+        },
+        {
+          "id": "err-3",
+          "description": "Ad Hominem — attacking skeptics as 'closed-minded' instead of addressing their arguments.",
+          "hint": "Does calling someone 'closed-minded' refute their argument?"
+        }
+      ],
+      "explanation": "The passage contains three fallacies: **appeal to ignorance** (lack of proof ≠ truth), **appeal to authority** (uncle’s intelligence ≠ evidence), and **ad hominem** (attacking skeptics)."
+    },
+    {
+      "id": "ex-15",
+      "prompt": "Explain why this argument is fallacious: 'The theory of evolution is just a theory, so it’s not proven.'",
+      "order": 4,
+      "type": "socratic_ai",
+      "modelAnswer": "This argument commits the **equivocation** fallacy by exploiting the double meaning of 'theory':\n1. **Scientific theory**: A well-substantiated explanation (e.g., gravity, evolution).\n2. **Colloquial theory**: A guess or hypothesis.\n\nThe argument treats 'theory' as a guess (colloquial) to imply evolution is unproven, but in science, a theory is a rigorously tested framework. Evolution is supported by overwhelming evidence (fossils, genetics, observations).",
+      "mustInclude": [
+        "equivocation",
+        "double meaning of 'theory'",
+        "scientific vs colloquial"
+      ],
+      "hints": [
+        "What are the two meanings of 'theory'?",
+        "Is evolution supported by evidence?",
+        "Does calling something a 'theory' mean it’s unproven in science?"
+      ],
+      "minScore": 0.6,
+      "validationMode": "embedding"
+    }
+  ]
+}
