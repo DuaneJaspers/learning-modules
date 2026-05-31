@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <linearGradient id="clientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+    <linearGradient id="serverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="secureBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64B5F6"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#81C784"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="420" fill="url(#bg4)" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="bold">🌐 TLS Handshake — Browser Meets Server</text>
+
+  <!-- ===== CLIENT SIDE ===== -->
+  <rect x="15" y="50" width="180" height="355" rx="10" fill="none" stroke="#1565C0" stroke-width="1" opacity="0.4"/>
+  <rect x="30" y="55" width="150" height="36" rx="18" fill="url(#clientGrad)" filter="url(#shadow4)"/>
+  <text x="105" y="78" text-anchor="middle" fill="#BBDEFB" font-size="13" font-weight="bold">💻 Your Browser</text>
+
+  <!-- ===== SERVER SIDE ===== -->
+  <rect x="405" y="50" width="180" height="355" rx="10" fill="none" stroke="#2E7D32" stroke-width="1" opacity="0.4"/>
+  <rect x="420" y="55" width="150" height="36" rx="18" fill="url(#serverGrad)" filter="url(#shadow4)"/>
+  <text x="495" y="78" text-anchor="middle" fill="#A5D6A7" font-size="13" font-weight="bold">🖥️ Web Server</text>
+
+  <!-- Step 1: ClientHello (C→S) -->
+  <rect x="210" y="110" width="180" height="36" rx="8" fill="#1A237E" filter="url(#shadow4)"/>
+  <text x="300" y="133" text-anchor="middle" fill="#90CAF9" font-size="12" font-weight="bold">1️⃣ ClientHello</text>
+  <line x1="195" y1="128" x2="405" y2="128" stroke="#64B5F6" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <text x="300" y="100" text-anchor="middle" fill="#64B5F6" font-size="9">TLS version, cipher suites, random nonce</text>
+
+  <!-- Step 2: ServerHello + Cert (S→C) -->
+  <rect x="210" y="165" width="180" height="36" rx="8" fill="#1B5E20" filter="url(#shadow4)"/>
+  <text x="300" y="188" text-anchor="middle" fill="#A5D6A7" font-size="12" font-weight="bold">2️⃣ ServerHello + Cert</text>
+  <line x1="405" y1="183" x2="195" y2="183" stroke="#81C784" stroke-width="2" marker-end="url(#arrowLeft)"/>
+  <text x="300" y="210" text-anchor="middle" fill="#81C784" font-size="9">Chosen cipher, certificate chain 🔗</text>
+
+  <!-- Step 3: Key Exchange (C→S) -->
+  <rect x="210" y="225" width="180" height="36" rx="8" fill="#4A148C" filter="url(#shadow4)"/>
+  <text x="300" y="248" text-anchor="middle" fill="#CE93D8" font-size="12" font-weight="bold">3️⃣ Key Exchange</text>
+  <line x1="195" y1="243" x2="405" y2="243" stroke="#CE93D8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <text x="300" y="270" text-anchor="middle" fill="#CE93D8" font-size="9">🔑 Pre-master secret encrypted with server's public key</text>
+
+  <!-- Step 4: Change Cipher Spec (both) -->
+  <rect x="210" y="285" width="180" height="36" rx="8" fill="#E65100" filter="url(#shadow4)"/>
+  <text x="300" y="308" text-anchor="middle" fill="#FFCC80" font-size="12" font-weight="bold">4️⃣ Change Cipher Spec</text>
+  <line x1="195" y1="303" x2="405" y2="303" stroke="#FFB74D" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <line x1="405" y1="303" x2="195" y2="303" stroke="#FFB74D" stroke-width="2" marker-end="url(#arrowLeft)"/>
+  <text x="300" y="330" text-anchor="middle" fill="#FFB74D" font-size="9">↔️ Both sides: All further messages encrypted!</text>
+
+  <!-- Step 5: Finished (both) -->
+  <rect x="210" y="345" width="180" height="36" rx="8" fill="#2E7D32" filter="url(#shadow4)"/>
+  <text x="300" y="368" text-anchor="middle" fill="#C8E6C9" font-size="12" font-weight="bold">5️⃣ Finished ✅</text>
+  <line x1="195" y1="363" x2="405" y2="363" stroke="#81C784" stroke-width="2" marker-end="url(#arrowLeft)"/>
+  <line x1="405" y1="363" x2="195" y2="363" stroke="#81C784" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <text x="300" y="393" text-anchor="middle" fill="#81C784" font-size="9">↔️ Both verify: hash of entire handshake — no tampering!</text>
+
+  <!-- Security badge -->
+  <rect x="195" y="400" width="210" height="18" rx="9" fill="url(#secureBar)" filter="url(#shadow4)"/>
+  <text x="300" y="413" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="bold">🔒 Secure connection established!</text>
+</svg>

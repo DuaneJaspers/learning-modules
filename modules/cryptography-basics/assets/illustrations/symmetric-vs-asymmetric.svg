@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <linearGradient id="symGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="asymGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowBoth" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFB74D"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="380" fill="url(#bg5)" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="bold">🔑 Symmetric vs Asymmetric — Two Different Tools</text>
+
+  <!-- ═══════ SYMMETRIC (left half) ═══════ -->
+  <rect x="15" y="45" width="275" height="320" rx="10" fill="none" stroke="#2E7D32" stroke-width="1.5" opacity="0.3"/>
+  <rect x="50" y="52" width="205" height="30" rx="15" fill="url(#symGrad)" filter="url(#shadow5)"/>
+  <text x="152" y="72" text-anchor="middle" fill="#C8E6C9" font-size="13" font-weight="bold">🔐 Symmetric Encryption</text>
+
+  <!-- One key illustration -->
+  <rect x="80" y="95" width="60" height="60" rx="30" fill="#FFD54F" filter="url(#shadow5)"/>
+  <text x="110" y="125" text-anchor="middle" fill="#3E2723" font-size="18" font-weight="bold">K</text>
+  <text x="110" y="140" text-anchor="middle" fill="#3E2723" font-size="8">Same Key</text>
+
+  <!-- Both use same key -->
+  <rect x="170" y="95" width="60" height="60" rx="30" fill="#FFD54F" filter="url(#shadow5)"/>
+  <text x="200" y="125" text-anchor="middle" fill="#3E2723" font-size="18" font-weight="bold">K</text>
+  <text x="200" y="140" text-anchor="middle" fill="#3E2723" font-size="8">Same Key</text>
+
+  <!-- Labels under keys -->
+  <text x="110" y="175" text-anchor="middle" fill="#A5D6A7" font-size="10">Encrypt</text>
+  <text x="200" y="175" text-anchor="middle" fill="#A5D6A7" font-size="10">Decrypt</text>
+
+  <!-- Process flow -->
+  <rect x="35" y="190" width="235" height="22" rx="6" fill="#1B5E20" filter="url(#shadow5)"/>
+  <text x="152" y="205" text-anchor="middle" fill="#C8E6C9" font-size="10">Plaintext → Encrypt(K) → Ciphertext → Decrypt(K) → Plaintext</text>
+
+  <!-- Bullet points -->
+  <text x="42" y="230" fill="#81C784" font-size="10">⚡ Very fast (hardware-accelerated)</text>
+  <text x="42" y="248" fill="#81C784" font-size="10">📦 Best for bulk data (files, streams, video)</text>
+  <text x="42" y="266" fill="#81C784" font-size="10">🔐 AES, ChaCha20, DES (legacy)</text>
+  <text x="42" y="290" fill="#FF8A65" font-size="10">❌ Key distribution problem</text>
+  <text x="42" y="308" fill="#FF8A65" font-size="10">❌ N parties → N(N-1)/2 keys needed</text>
+
+  <!-- ===== VS divider ===== -->
+  <line x1="295" y1="50" x2="295" y2="360" stroke="#444466" stroke-width="1" stroke-dasharray="6,4"/>
+  <circle cx="295" cy="75" r="14" fill="#4A148C"/>
+  <text x="295" y="79" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold">VS</text>
+
+  <!-- ═══════ ASYMMETRIC (right half) ═══════ -->
+  <rect x="310" y="45" width="275" height="320" rx="10" fill="none" stroke="#1565C0" stroke-width="1.5" opacity="0.3"/>
+  <rect x="325" y="52" width="245" height="30" rx="15" fill="url(#asymGrad)" filter="url(#shadow5)"/>
+  <text x="447" y="72" text-anchor="middle" fill="#90CAF9" font-size="13" font-weight="bold">🔑 Asymmetric (Public Key)</text>
+
+  <!-- Two different keys -->
+  <rect x="340" y="95" width="55" height="55" rx="8" fill="#FFD54F" filter="url(#shadow5)"/>
+  <text x="367" y="117" text-anchor="middle" fill="#3E2723" font-size="11" font-weight="bold">🔓</text>
+  <text x="367" y="140" text-anchor="middle" fill="#3E2723" font-size="8">Public</text>
+
+  <rect x="500" y="95" width="55" height="55" rx="8" fill="#0D47A1" filter="url(#shadow5)"/>
+  <text x="527" y="117" text-anchor="middle" fill="#90CAF9" font-size="11" font-weight="bold">🔑</text>
+  <text x="527" y="140" text-anchor="middle" fill="#90CAF9" font-size="8">Private</text>
+
+  <!-- Arrow between keys -->
+  <line x1="395" y1="122" x2="500" y2="122" stroke="#FFB74D" stroke-width="1.5" marker-end="url(#arrowBoth)"/>
+
+  <!-- Labels -->
+  <text x="367" y="170" text-anchor="middle" fill="#BBDEFB" font-size="9">Share freely</text>
+  <text x="527" y="170" text-anchor="middle" fill="#BBDEFB" font-size="9">Keep secret!</text>
+
+  <!-- Process flow -->
+  <rect x="330" y="190" width="235" height="22" rx="6" fill="#0D47A1" filter="url(#shadow5)"/>
+  <text x="447" y="205" text-anchor="middle" fill="#BBDEFB" font-size="10">Plaintext → Encrypt(Pub) → Decrypt(Priv) → Plaintext</text>
+
+  <!-- Bullet points -->
+  <text x="337" y="230" fill="#90CAF9" font-size="10">🐢 100-1000× slower than symmetric</text>
+  <text x="337" y="248" fill="#90CAF9" font-size="10">✉️ Best for key exchange & signatures</text>
+  <text x="337" y="266" fill="#90CAF9" font-size="10">🔐 RSA, ECC, Diffie-Hellman</text>
+  <text x="337" y="290" fill="#A5D6A7" font-size="10">✅ Solves key distribution problem</text>
+  <text x="337" y="308" fill="#A5D6A7" font-size="10">✅ N parties → N key pairs only</text>
+
+  <!-- Bottom: Hybrid solution -->
+  <rect x="155" y="345" width="290" height="22" rx="11" fill="#4A148C" filter="url(#shadow5)"/>
+  <text x="300" y="360" text-anchor="middle" fill="#CE93D8" font-size="10" font-weight="bold">✨ TLS uses BOTH: asymmetric for handshake, symmetric for data</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowQ" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF7043"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="380" fill="url(#bg2)" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="bold">🤔 The Key Distribution Problem — A 2000-Year Chicken-and-Egg</text>
+
+  <!-- Panel border -->
+  <rect x="15" y="45" width="275" height="315" rx="10" fill="none" stroke="#333355" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="25" y="62" fill="#6666AA" font-size="10" font-weight="bold">IF you have a secure channel...</text>
+
+  <rect x="310" y="45" width="275" height="315" rx="10" fill="none" stroke="#333355" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="320" y="62" fill="#6666AA" font-size="10" font-weight="bold">IF you DON'T...</text>
+
+  <!-- LEFT PANEL: Have secure channel -->
+  <!-- Caesar sending a message -->
+  <text x="152" y="90" text-anchor="middle" fill="#E0E0E0" font-size="13" font-weight="bold">✅ You have a secure channel</text>
+
+  <rect x="30" y="105" width="100" height="50" rx="8" fill="#2D5A27" filter="url(#shadow2)"/>
+  <text x="80" y="125" text-anchor="middle" fill="#A5D6A7" font-size="11">👑 Caesar</text>
+  <text x="80" y="142" text-anchor="middle" fill="#C8E6C9" font-size="10">Has message</text>
+
+  <line x1="130" y1="130" x2="175" y2="130" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowQ)"/>
+
+  <rect x="180" y="105" width="100" height="50" rx="8" fill="#1565C0" filter="url(#shadow2)"/>
+  <text x="230" y="125" text-anchor="middle" fill="#90CAF9" font-size="11">📜 Secure courier</text>
+  <text x="230" y="142" text-anchor="middle" fill="#BBDEFB" font-size="10">Carries key safely</text>
+
+  <line x1="280" y1="130" x2="10" y2="200" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowQ)" stroke-dasharray="6,3"/>
+
+  <!-- But wait text -->
+  <rect x="20" y="175" width="260" height="50" rx="8" fill="#1B5E20" filter="url(#shadow2)"/>
+  <text x="150" y="195" text-anchor="middle" fill="#A5D6A7" font-size="11">🤔 If you already HAVE a secure channel...</text>
+  <text x="150" y="215" text-anchor="middle" fill="#C8E6C9" font-size="12" font-weight="bold">...why not just send the message through it?</text>
+
+  <!-- Conclusion left -->
+  <rect x="20" y="240" width="260" height="50" rx="8" fill="#1B5E20" opacity="0.6" filter="url(#shadow2)"/>
+  <text x="150" y="260" text-anchor="middle" fill="#A5D6A7" font-size="10">Circular logic! You need a secure channel</text>
+  <text x="150" y="278" text-anchor="middle" fill="#A5D6A7" font-size="10">to SHARE the key, but you need the key</text>
+  <text x="150" y="296" text-anchor="middle" fill="#FFB74D" font-size="11" font-weight="bold">to CREATE a secure channel!</text>
+
+  <!-- ===== RIGHT PANEL: No secure channel ===== -->
+  <text x="447" y="90" text-anchor="middle" fill="#E0E0E0" font-size="13" font-weight="bold">❌ No secure channel</text>
+
+  <!-- Alice -->
+  <rect x="325" y="105" width="85" height="55" rx="8" fill="#2D5A27" filter="url(#shadow2)"/>
+  <text x="367" y="125" text-anchor="middle" fill="#A5D6A7" font-size="11">👩 Alice</text>
+  <text x="367" y="140" text-anchor="middle" fill="#C8E6C9" font-size="10">Has key K</text>
+
+  <!-- Bob -->
+  <rect x="480" y="105" width="85" height="55" rx="8" fill="#1565C0" filter="url(#shadow2)"/>
+  <text x="522" y="125" text-anchor="middle" fill="#90CAF9" font-size="11">👨 Bob</text>
+  <text x="522" y="140" text-anchor="middle" fill="#BBDEFB" font-size="10">Needs key K</text>
+
+  <!-- Key flying -->
+  <rect x="325" y="175" width="85" height="30" rx="6" fill="#FF8F00" filter="url(#shadow2)"/>
+  <text x="367" y="195" text-anchor="middle" fill="#3E2723" font-size="11" font-weight="bold">🔑 Send key K</text>
+
+  <line x1="410" y1="190" x2="480" y2="190" stroke="#FF7043" stroke-width="2" marker-end="url(#arrowQ)"/>
+
+  <!-- Eve intercepts -->
+  <rect x="430" y="205" width="70" height="22" rx="6" fill="#B71C1C" filter="url(#shadow2)"/>
+  <text x="465" y="220" text-anchor="middle" fill="#FFCDD2" font-size="10" font-weight="bold">👁️ Eve</text>
+
+  <text x="465" y="248" text-anchor="middle" fill="#EF9A9A" font-size="10">Intercepts K!</text>
+
+  <!-- Conclusion right -->
+  <rect x="325" y="265" width="245" height="55" rx="8" fill="#4A148C" opacity="0.7" filter="url(#shadow2)"/>
+  <text x="447" y="285" text-anchor="middle" fill="#CE93D8" font-size="11">🔓 Eve now has key K too!</text>
+  <text x="447" y="305" text-anchor="middle" fill="#CE93D8" font-size="11">She can decrypt EVERYTHING</text>
+
+  <!-- Bottom resolution -->
+  <rect x="25" y="340" width="550" height="22" rx="11" fill="#4A148C" opacity="0.5"/>
+  <text x="300" y="356" text-anchor="middle" fill="#B39DDB" font-size="10">The solution? Asymmetric crypto — split the key into public (share freely) and private (keep secret) ✨</text>
+</svg>

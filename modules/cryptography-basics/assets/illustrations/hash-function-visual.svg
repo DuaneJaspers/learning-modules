@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <linearGradient id="funnel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A148C"/>
+      <stop offset="100%" stop-color="#1A237E"/>
+    </linearGradient>
+    <linearGradient id="outputBox" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowDown" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+      <path d="M 0 0 L 5 10 L 10 0 z" fill="#7E57C2"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="380" fill="url(#bg3)" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="bold">🌀 Hash Function — Arbitrary Input → Fixed Output</text>
+
+  <!-- ===== INPUTS (various sizes) ===== -->
+  <text x="85" y="55" text-anchor="middle" fill="#888" font-size="10">Different inputs (any size)</text>
+
+  <!-- Input 1: small -->
+  <rect x="20" y="65" width="130" height="30" rx="6" fill="#E65100" filter="url(#shadow3)"/>
+  <text x="85" y="84" text-anchor="middle" fill="#FFCC80" font-size="11">"hello"</text>
+
+  <!-- Input 2: medium -->
+  <rect x="20" y="105" width="130" height="30" rx="6" fill="#EF6C00" filter="url(#shadow3)"/>
+  <text x="85" y="124" text-anchor="middle" fill="#FFCC80" font-size="11">"Hello World!!!"</text>
+
+  <!-- Input 3: large -->
+  <rect x="20" y="145" width="130" height="30" rx="6" fill="#F57C00" filter="url(#shadow3)"/>
+  <text x="85" y="162" text-anchor="middle" fill="#FFCC80" font-size="10">"War and Peace"</text>
+  <text x="85" y="172" text-anchor="middle" fill="#FFE0B2" font-size="8">(587,287 words)</text>
+
+  <!-- Arrows into funnel -->
+  <line x1="150" y1="80" x2="195" y2="135" stroke="#7E57C2" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+  <line x1="150" y1="120" x2="195" y2="150" stroke="#7E57C2" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+  <line x1="150" y1="160" x2="195" y2="165" stroke="#7E57C2" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Funnel shape -->
+  <polygon points="200,80 200,180 280,230 280,180" fill="url(#funnel)" opacity="0.9" filter="url(#shadow3)"/>
+  <polygon points="320,80 320,180 280,230 280,180" fill="url(#funnel)" opacity="0.7" filter="url(#shadow3)"/>
+
+  <!-- Funnel label -->
+  <text x="260" y="155" text-anchor="middle" fill="#B39DDB" font-size="11" font-weight="bold">SHA-256</text>
+  <text x="260" y="175" text-anchor="middle" fill="#9575CD" font-size="9">Hash Function</text>
+
+  <!-- Gear icons inside funnel -->
+  <text x="245" y="125" fill="#7E57C2" font-size="14">⚙️</text>
+  <text x="270" y="140" fill="#7E57C2" font-size="10">⚙️</text>
+
+  <!-- Arrow down from funnel -->
+  <line x1="260" y1="230" x2="260" y2="270" stroke="#66BB6A" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+  <text x="275" y="255" text-anchor="middle" fill="#66BB6A" font-size="9">always 256 bits</text>
+
+  <!-- ===== OUTPUT ===== -->
+  <rect x="130" y="275" width="340" height="85" rx="10" fill="url(#outputBox)" filter="url(#shadow3)"/>
+  <text x="300" y="295" text-anchor="middle" fill="#C8E6C9" font-size="11" font-weight="bold">✅ Fixed-size output (256 bits / 32 bytes)</text>
+
+  <text x="300" y="318" text-anchor="middle" fill="#81C784" font-size="10">Input: "hello"</text>
+  <text x="300" y="335" text-anchor="middle" fill="#A5D6A7" font-size="11" font-family="monospace">2cf24dba5fb0a30e26e83b2ac5b9e29e</text>
+  <text x="300" y="351" text-anchor="middle" fill="#A5D6A7" font-size="11" font-family="monospace">1b161e5c1fa7425e73043362938b9824</text>
+
+  <!-- Key properties -->
+  <rect x="10" y="290" width="105" height="65" rx="6" fill="#1A237E" opacity="0.7" filter="url(#shadow3)"/>
+  <text x="62" y="308" text-anchor="middle" fill="#90CAF9" font-size="9">🔗 Properties</text>
+  <text x="62" y="323" text-anchor="middle" fill="#BBDEFB" font-size="9">✅ Deterministic</text>
+  <text x="62" y="337" text-anchor="middle" fill="#BBDEFB" font-size="9">✅ One-way</text>
+  <text x="62" y="351" text-anchor="middle" fill="#BBDEFB" font-size="9">✅ Collision-resistant</text>
+
+  <rect x="485" y="290" width="105" height="65" rx="6" fill="#E65100" opacity="0.7" filter="url(#shadow3)"/>
+  <text x="537" y="308" text-anchor="middle" fill="#FFCC80" font-size="9">💥 Avalanche</text>
+  <text x="537" y="323" text-anchor="middle" fill="#FFE0B2" font-size="9">Change 1 bit of</text>
+  <text x="537" y="337" text-anchor="middle" fill="#FFE0B2" font-size="9">input → 50% of</text>
+  <text x="537" y="351" text-anchor="middle" fill="#FFE0B2" font-size="9">output bits flip!</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A2E"/>
+      <stop offset="100%" stop-color="#16213E"/>
+    </linearGradient>
+    <linearGradient id="lockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#81D4FA"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4FC3F7"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4FC3F7"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFD54F"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="300" y="32" text-anchor="middle" fill="#E0E0E0" font-size="16" font-weight="bold">🔐 RSA Public Key Cryptography — The Lock and Key</text>
+
+  <!-- ===== BOB (sender) ===== -->
+  <rect x="20" y="60" width="160" height="36" rx="18" fill="#1B5E20" filter="url(#shadow)"/>
+  <text x="100" y="84" text-anchor="middle" fill="#C8E6C9" font-size="14" font-weight="bold">👤 Bob (Sender)</text>
+
+  <!-- Bob's message -->
+  <rect x="40" y="110" width="120" height="50" rx="8" fill="#2E7D32" filter="url(#shadow)"/>
+  <text x="100" y="133" text-anchor="middle" fill="#A5D6A7" font-size="11">Secret Message</text>
+  <text x="100" y="150" text-anchor="middle" fill="#E8F5E9" font-size="14" font-weight="bold">"HELLO"</text>
+
+  <!-- Bob encrypts arrow -->
+  <line x1="160" y1="135" x2="210" y2="135" stroke="#4FC3F7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="185" y="128" text-anchor="middle" fill="#4FC3F7" font-size="9">encrypt</text>
+
+  <!-- Public key padlock (open) -->
+  <rect x="220" y="100" width="160" height="70" rx="10" fill="#1A237E" filter="url(#shadow)"/>
+  <text x="300" y="120" text-anchor="middle" fill="#81D4FA" font-size="10">🔓 Alice's Public Key</text>
+  <rect x="250" y="130" width="100" height="28" rx="14" fill="url(#lockGrad)"/>
+  <text x="300" y="149" text-anchor="middle" fill="#3E2723" font-size="12" font-weight="bold">🔓 Pub: (n, e)</text>
+
+  <!-- Arrow down to ciphertext -->
+  <line x1="300" y1="170" x2="300" y2="200" stroke="#FFD54F" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <text x="315" y="190" text-anchor="middle" fill="#FFD54F" font-size="9">apply key</text>
+
+  <!-- Ciphertext (encrypted) -->
+  <rect x="220" y="205" width="160" height="50" rx="8" fill="#4A148C" filter="url(#shadow)"/>
+  <text x="300" y="225" text-anchor="middle" fill="#CE93D8" font-size="11">🔒 Encrypted Ciphertext</text>
+  <text x="300" y="244" text-anchor="middle" fill="#CE93D8" font-size="12" font-weight="bold">"X8$j2#pQ..."</text>
+
+  <!-- Send over channel -->
+  <line x1="380" y1="230" x2="440" y2="230" stroke="#E65100" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="410" y="222" text-anchor="middle" fill="#E65100" font-size="9">insecure</text>
+  <text x="410" y="248" text-anchor="middle" fill="#E65100" font-size="9">channel</text>
+
+  <!-- ===== ALICE (receiver) ===== -->
+  <rect x="450" y="205" width="130" height="50" rx="8" fill="#1565C0" filter="url(#shadow)"/>
+  <text x="515" y="225" text-anchor="middle" fill="#90CAF9" font-size="11">Receives</text>
+  <text x="515" y="244" text-anchor="middle" fill="#90CAF9" font-size="12" font-weight="bold">"X8$j2#pQ..."</text>
+
+  <!-- Alice decrypts arrow -->
+  <line x1="515" y1="255" x2="515" y2="290" stroke="#4FC3F7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="530" y="278" text-anchor="middle" fill="#4FC3F7" font-size="9">decrypt</text>
+
+  <!-- Alice's private key -->
+  <rect x="445" y="295" width="140" height="36" rx="10" fill="#0D47A1" filter="url(#shadow)"/>
+  <text x="515" y="308" text-anchor="middle" fill="#90CAF9" font-size="10">🔑 Alice's Private Key</text>
+  <rect x="475" y="310" width="80" height="18" rx="9" fill="url(#keyGrad)"/>
+  <text x="515" y="323" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="bold">🔑 Priv: d</text>
+
+  <!-- Alice reads -->
+  <rect x="445" y="345" width="140" height="36" rx="8" fill="#1B5E20" filter="url(#shadow)"/>
+  <text x="515" y="360" text-anchor="middle" fill="#A5D6A7" font-size="10">✅ Reads:</text>
+  <text x="515" y="374" text-anchor="middle" fill="#E8F5E9" font-size="13" font-weight="bold">"HELLO"</text>
+
+  <!-- Eve side note -->
+  <rect x="220" y="275" width="160" height="38" rx="8" fill="#4A148C" opacity="0.4"/>
+  <text x="300" y="293" text-anchor="middle" fill="#E91E63" font-size="11">👁️ Eve intercepts but</text>
+  <text x="300" y="306" text-anchor="middle" fill="#E91E63" font-size="11">can't decrypt (no Priv key)</text>
+
+  <!-- Legend -->
+  <line x1="20" y1="365" x2="50" y2="365" stroke="#4FC3F7" stroke-width="2"/>
+  <text x="54" y="369" fill="#888888" font-size="9">Encryption flow</text>
+  <line x1="150" y1="365" x2="180" y2="365" stroke="#E65100" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="184" y="369" fill="#888888" font-size="9">Insecure channel</text>
+</svg>
