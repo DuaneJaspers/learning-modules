@@ -14,7 +14,7 @@
         {
           "id": "lesson-1-1",
           "title": "Caesar Cipher",
-          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.\n\n![Caesar cipher wheel showing the shift pattern](assets/illustrations/caesar-wheel.svg)\n\n## How It Works\n\nNamed after Julius Caesar, who used it in his private correspondence, the cipher replaces each letter with another letter a fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n- A → D\n- B → E  \n- C → F\n- ...\n\n![Encryption flow: plaintext through Caesar cipher to ciphertext](assets/illustrations/encryption-flow.svg)\n\n### Mathematical Notation\n\nThe encryption function is: **E(x) = (x + n) mod 26**\n\nWhere:\n- **x** is the position of the letter in the alphabet (0-25)\n- **n** is the shift value (the key)\n- **mod 26** wraps around the alphabet\n\nTo decrypt: **D(x) = (x - n) mod 26**\n\n### Historical Context\n\nDespite its simplicity, the Caesar cipher was reasonably secure in Caesar's time because most of Caesar's enemies were illiterate. Today, it's trivially broken using frequency analysis or brute force (only 25 possible keys).\n\n> **Try it:** Encrypt the word \"ATTACK\" with a Caesar cipher using key 17. What does the ciphertext say?",
+          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.\n\n![Caesar cipher wheel showing the shift pattern](assets/illustrations/caesar-wheel.svg)\n\n## How It Works\n\nNamed after Julius Caesar, who used it in his private correspondence, the cipher replaces each letter with another letter a fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n- A → D\n- B → E  \n- C → F\n- ...\n\n![Encryption flow: plaintext through Caesar cipher to ciphertext](assets/illustrations/encryption-flow.svg)\n\n### Mathematical Notation\n\nThe encryption function is: **E(x) = (x + n) mod 26**\n\nWhere:\n- **x** is the position of the letter in the alphabet (0-25)\n- **n** is the shift value (the key)\n- **mod 26** wraps around the alphabet\n\nTo decrypt: **D(x) = (x - n) mod 26**\n\n### Historical Context\n\nDespite its simplicity, the Caesar cipher was reasonably secure in Caesar's time because most of Caesar's enemies were illiterate. Today, it's trivially broken using frequency analysis or brute force (only 25 possible keys).\n\n![Classical vs modern cryptography comparison](assets/illustrations/classical-vs-modern.svg)\n\n> **Try it:** Encrypt the word \"ATTACK\" with a Caesar cipher using key 17. What does the ciphertext say?",
           "order": 1,
           "diagrams": [
             {
@@ -86,6 +86,71 @@
                   "label": "-3"
                 }
               ]
+            },
+            {
+              "id": "caesar-vs-aes",
+              "type": "flowchart",
+              "title": "⚔️ Caesar Cipher vs AES — Then vs Now",
+              "nodes": [
+                {
+                  "id": "caesar-how",
+                  "label": "🏛️ Caesar: Shift each letter by fixed amount",
+                  "shape": "rounded",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "caesar-key",
+                  "label": "🔑 Caesar: Only 25 possible keys!",
+                  "shape": "diamond",
+                  "color": "#BF360C"
+                },
+                {
+                  "id": "caesar-broken",
+                  "label": "❌ Caesar: Broken in seconds by hand",
+                  "shape": "pill",
+                  "color": "#C62828"
+                },
+                {
+                  "id": "aes-how",
+                  "label": "🔒 AES: Complex substitution-permutation network",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "aes-key",
+                  "label": "🔑 AES-256: 2²⁵⁶ keys (more than atoms in universe)",
+                  "shape": "diamond",
+                  "color": "#1B5E20"
+                },
+                {
+                  "id": "aes-secure",
+                  "label": "✅ AES: Still secure after 20+ years of global analysis",
+                  "shape": "pill",
+                  "color": "#2E7D32"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "caesar-how",
+                  "to": "caesar-key",
+                  "label": "result:"
+                },
+                {
+                  "from": "caesar-key",
+                  "to": "caesar-broken",
+                  "label": "⇒"
+                },
+                {
+                  "from": "aes-how",
+                  "to": "aes-key",
+                  "label": "result:"
+                },
+                {
+                  "from": "aes-key",
+                  "to": "aes-secure",
+                  "label": "⇒"
+                }
+              ]
             }
           ]
         },
@@ -97,46 +162,60 @@
           "diagrams": [
             {
               "id": "freq-analysis-process",
-              "type": "process",
-              "title": "Frequency Analysis Process",
+              "type": "flowchart",
+              "title": "🔍 Frequency Analysis — How to Break a Cipher",
               "nodes": [
                 {
                   "id": "collect",
-                  "label": "Collect ciphertext samples"
+                  "label": "Collect ciphertext samples",
+                  "color": "#2D5A27",
+                  "shape": "rounded"
                 },
                 {
                   "id": "count",
-                  "label": "Count letter frequencies"
+                  "label": "Count letter frequencies",
+                  "color": "#1A237E",
+                  "shape": "diamond"
                 },
                 {
                   "id": "compare",
-                  "label": "Compare to language norms"
+                  "label": "Compare to language norms",
+                  "color": "#E65100",
+                  "shape": "pill"
                 },
                 {
                   "id": "hypothesis",
-                  "label": "Form shift hypothesis"
+                  "label": "Form shift hypothesis",
+                  "color": "#4A148C",
+                  "shape": "diamond"
                 },
                 {
                   "id": "verify",
-                  "label": "Verify against known words"
+                  "label": "Verify against known words",
+                  "color": "#37474F",
+                  "shape": "rounded"
                 }
               ],
               "edges": [
                 {
                   "from": "collect",
-                  "to": "count"
+                  "to": "count",
+                  "label": "sample text"
                 },
                 {
                   "from": "count",
-                  "to": "compare"
+                  "to": "compare",
+                  "label": "tally marks"
                 },
                 {
                   "from": "compare",
-                  "to": "hypothesis"
+                  "to": "hypothesis",
+                  "label": "match stats"
                 },
                 {
                   "from": "hypothesis",
-                  "to": "verify"
+                  "to": "verify",
+                  "label": "guess key"
                 }
               ]
             }
@@ -323,50 +402,124 @@
             {
               "id": "crypto-timeline",
               "type": "timeline",
-              "title": "Evolution of Cryptographic Protocols",
+              "title": "📅 Evolution of Cryptographic Protocols",
               "nodes": [
                 {
                   "id": "symmetric",
-                  "label": "Symmetric key (same key for encrypt/decrypt)",
+                  "label": "🔑 Symmetric: same key for both sides",
                   "color": "#2D5A27"
                 },
                 {
                   "id": "key-exchange",
-                  "label": "Diffie-Hellman key exchange (1976)",
+                  "label": "🤝 Diffie-Hellman (1976): share a secret without meeting",
                   "color": "#1A237E"
                 },
                 {
                   "id": "asymmetric",
-                  "label": "RSA asymmetric encryption (1977)",
+                  "label": "🔐 RSA (1977): encrypt with public key, decrypt with private",
                   "color": "#4A148C"
                 },
                 {
                   "id": "tls",
-                  "label": "TLS/SSL for secure web (1995)",
+                  "label": "🌐 TLS/SSL (1995): secure the web",
                   "color": "#37474F"
                 },
                 {
                   "id": "e2e",
-                  "label": "End-to-end encryption (2010s+)",
+                  "label": "📱 End-to-End (2010s+): even servers can't read your messages",
                   "color": "#E65100"
                 }
               ],
               "edges": [
                 {
                   "from": "symmetric",
-                  "to": "key-exchange"
+                  "to": "key-exchange",
+                  "label": "symmetric era"
                 },
                 {
                   "from": "key-exchange",
-                  "to": "asymmetric"
+                  "to": "asymmetric",
+                  "label": "key exchange!"
                 },
                 {
                   "from": "asymmetric",
-                  "to": "tls"
+                  "to": "tls",
+                  "label": "public key born"
                 },
                 {
                   "from": "tls",
-                  "to": "e2e"
+                  "to": "e2e",
+                  "label": "web goes secure"
+                }
+              ]
+            },
+            {
+              "id": "rsa-key-exchange",
+              "type": "flowchart",
+              "title": "🔐 RSA Key Exchange — How Alice and Bob Communicate Securely",
+              "nodes": [
+                {
+                  "id": "alice-gen",
+                  "label": "1. Alice generates key pair (Pub, Priv)",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "alice-shares",
+                  "label": "2. Alice sends her PUBLIC key to Bob",
+                  "shape": "pill",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "bob-encrypts",
+                  "label": "3. Bob encrypts message M using Alice's public key",
+                  "shape": "diamond",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "ciphertext",
+                  "label": "4. Ciphertext C = M^e mod n sent over insecure channel",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "alice-decrypts",
+                  "label": "5. Alice decrypts: M = C^d mod n using her PRIVATE key",
+                  "shape": "diamond",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "secure",
+                  "label": "✅ Bob and Alice share secret — Eve sees only gibberish",
+                  "shape": "pill",
+                  "color": "#37474F"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "alice-gen",
+                  "to": "alice-shares",
+                  "label": "publish"
+                },
+                {
+                  "from": "alice-shares",
+                  "to": "bob-encrypts",
+                  "label": "Bob receives Pub"
+                },
+                {
+                  "from": "bob-encrypts",
+                  "to": "ciphertext",
+                  "label": "C = M^e mod n"
+                },
+                {
+                  "from": "ciphertext",
+                  "to": "alice-decrypts",
+                  "label": "M = C^d mod n"
+                },
+                {
+                  "from": "alice-decrypts",
+                  "to": "secure",
+                  "label": "✅ success"
                 }
               ]
             }
@@ -493,7 +646,7 @@
             {
               "id": "avalanche-effect",
               "type": "flowchart",
-              "title": "Avalanche Effect — One Bit Changes Everything",
+              "title": "💥 Avalanche Effect — One Bit Changes Everything",
               "nodes": [
                 {
                   "id": "input-hello",
@@ -542,138 +695,211 @@
                 {
                   "from": "input-hello",
                   "to": "sha-hello",
-                  "label": ""
+                  "label": "input A"
                 },
                 {
                   "from": "sha-hello",
                   "to": "hash-hello",
-                  "label": ""
+                  "label": "256-bit hash"
                 },
                 {
                   "from": "hash-hello",
                   "to": "xor-compare",
-                  "label": ""
+                  "label": "compare"
                 },
                 {
                   "from": "input-hello2",
                   "to": "sha-hello2",
-                  "label": ""
+                  "label": "input B"
                 },
                 {
                   "from": "sha-hello2",
                   "to": "hash-hello2",
-                  "label": ""
+                  "label": "256-bit hash"
                 },
                 {
                   "from": "hash-hello2",
                   "to": "xor-compare",
-                  "label": ""
+                  "label": "compare"
                 }
               ]
             },
             {
               "id": "symmetric-vs-asymmetric",
-              "type": "process",
-              "title": "Symmetric vs Asymmetric Cryptography",
+              "type": "flowchart",
+              "title": "⚖️ Symmetric vs Asymmetric — Which One and Why?",
               "nodes": [
                 {
                   "id": "sym-keys",
-                  "label": "Symmetric: Same key for encrypt & decrypt"
+                  "label": "🔑 Symmetric: ONE key for both jobs",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
                 },
                 {
                   "id": "sym-speed",
-                  "label": "Symmetric: Very fast (hardware accelerated)"
+                  "label": "⚡ Symmetric: Blazing fast (hardware AES)",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
                 },
                 {
                   "id": "sym-use",
-                  "label": "Symmetric: Best for bulk data encryption"
+                  "label": "📦 Symmetric: Encrypts bulk data (files, streams)",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
                 },
                 {
                   "id": "sym-problem",
-                  "label": "Symmetric: Key distribution problem"
+                  "label": "❌ Symmetric: How do you SHARE the key securely?",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
                 },
                 {
                   "id": "asym-keys",
-                  "label": "Asymmetric: Key pair (public + private)"
+                  "label": "🔑🔓 Asymmetric: Key PAIR (public + private)",
+                  "shape": "diamond",
+                  "color": "#4A148C"
                 },
                 {
                   "id": "asym-speed",
-                  "label": "Asymmetric: Slow (100-1000x slower)"
+                  "label": "🐢 Asymmetric: 100-1000x slower than symmetric",
+                  "shape": "diamond",
+                  "color": "#4A148C"
                 },
                 {
                   "id": "asym-use",
-                  "label": "Asymmetric: Best for key exchange & signatures"
+                  "label": "✉️ Asymmetric: Key exchange + digital signatures",
+                  "shape": "diamond",
+                  "color": "#4A148C"
                 },
                 {
                   "id": "asym-solution",
-                  "label": "Asymmetric: Solves key distribution problem"
+                  "label": "✅ Asymmetric: Solves key distribution!",
+                  "shape": "diamond",
+                  "color": "#4A148C"
                 }
               ],
               "edges": [
                 {
                   "from": "sym-keys",
-                  "to": "sym-speed"
+                  "to": "sym-speed",
+                  "label": "results in"
                 },
                 {
                   "from": "sym-speed",
-                  "to": "sym-use"
+                  "to": "sym-use",
+                  "label": "best for"
                 },
                 {
                   "from": "sym-use",
-                  "to": "sym-problem"
+                  "to": "sym-problem",
+                  "label": "but..."
                 },
                 {
                   "from": "asym-keys",
-                  "to": "asym-speed"
+                  "to": "asym-speed",
+                  "label": "unfortunately"
                 },
                 {
                   "from": "asym-speed",
-                  "to": "asym-use"
+                  "to": "asym-use",
+                  "label": "best for"
                 },
                 {
                   "from": "asym-use",
-                  "to": "asym-solution"
+                  "to": "asym-solution",
+                  "label": "because it"
                 }
               ]
             },
             {
               "id": "shor-threat",
               "type": "timeline",
-              "title": "The Quantum Threat to Cryptography",
+              "title": "⚠️ The Quantum Threat — Timeline to PQC",
               "nodes": [
                 {
                   "id": "rsa-secure",
-                  "label": "Today: RSA-2048 secure on classical computers",
+                  "label": "✅ Today: RSA-2048 is safe (classical computers)",
                   "color": "#2D5A27"
                 },
                 {
                   "id": "shor-algorithm",
-                  "label": "Shor's Algorithm (1994): Factors exponentially faster",
+                  "label": "🧠 1994: Shor's Algorithm — factors numbers EXPONENTIALLY faster",
                   "color": "#1A237E"
                 },
                 {
                   "id": "quantum-break",
-                  "label": "Quantum computer with ~4000 logical qubits breaks RSA",
+                  "label": "💀 ~4000 logical qubits → RSA and ECC are BROKEN",
                   "color": "#E65100"
                 },
                 {
                   "id": "pqc-migration",
-                  "label": "PQC: Lattice, hash-based, code-based algorithms",
+                  "label": "🛡️ PQC: Lattice, hash-based, code-based algorithms fight back",
                   "color": "#4A148C"
                 }
               ],
               "edges": [
                 {
                   "from": "rsa-secure",
-                  "to": "shor-algorithm"
+                  "to": "shor-algorithm",
+                  "label": "but in theory..."
                 },
                 {
                   "from": "shor-algorithm",
-                  "to": "quantum-break"
+                  "to": "quantum-break",
+                  "label": "sufficient qubits →"
                 },
                 {
                   "from": "quantum-break",
-                  "to": "pqc-migration"
+                  "to": "pqc-migration",
+                  "label": "solution:"
+                }
+              ]
+            },
+            {
+              "id": "hash-properties",
+              "type": "flowchart",
+              "title": "🔗 Three Pillars of Cryptographic Hash Functions",
+              "nodes": [
+                {
+                  "id": "deterministic",
+                  "label": "1. Deterministic\nSame input → same hash, always",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "one-way",
+                  "label": "2. One-Way (Preimage Resistance)\nGiven hash H(m), can't find m",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "collision",
+                  "label": "3. Collision-Resistant\nCan't find m₁≠m₂ with same hash",
+                  "shape": "pill",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "example",
+                  "label": "SHA-256(\"hello\") = 2cf24dba...\nChange 1 bit → completely different!",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "deterministic",
+                  "to": "one-way",
+                  "label": "+1 requirement"
+                },
+                {
+                  "from": "one-way",
+                  "to": "collision",
+                  "label": "+1 requirement"
+                },
+                {
+                  "from": "collision",
+                  "to": "example",
+                  "label": "in practice:"
                 }
               ]
             }
@@ -737,27 +963,27 @@
                 {
                   "from": "plaintext-ecb",
                   "to": "ecb-process",
-                  "label": ""
+                  "label": "encrypt with ECB"
                 },
                 {
                   "from": "ecb-process",
                   "to": "ciphertext-ecb",
-                  "label": ""
+                  "label": "⚠️ repeats!"
                 },
                 {
                   "from": "ciphertext-ecb",
                   "to": "vs-label",
-                  "label": ""
+                  "label": "vs"
                 },
                 {
                   "from": "plaintext-cbc",
                   "to": "cbc-process",
-                  "label": ""
+                  "label": "encrypt with CBC"
                 },
                 {
                   "from": "cbc-process",
                   "to": "ciphertext-cbc",
-                  "label": ""
+                  "label": "✅ all unique!"
                 }
               ]
             }
