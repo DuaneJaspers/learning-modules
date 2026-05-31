@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "lastUpdated": "2026-05-31T17:12:03Z",
+  "lastUpdated": "2026-05-31T17:24:10Z",
   "modules": [
     {
       "id": "algebra-foundations",
@@ -19,7 +19,7 @@
       "author": "Modular Learning Team",
       "version": "2.0.0",
       "estimatedMinutes": 180,
-      "checksum": "sha256:a38f99f286772dffa9b989a6ff2e079b3747146aac0fe100ae5dda3bde97cb8e",
+      "checksum": "sha256:04bd431907fc4fabd4a3a855458b041d5c06f35899fab0ebd6614badf6751361",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json"
     },
     {
