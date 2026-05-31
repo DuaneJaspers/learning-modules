@@ -14,7 +14,7 @@
         {
           "id": "lesson-1-1",
           "title": "Caesar Cipher",
-          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.\n\n![Caesar cipher wheel showing the shift pattern](assets/illustrations/caesar-wheel.svg)\n\n## How It Works\n\nNamed after Julius Caesar, who used it in his private correspondence, the cipher replaces each letter with another letter a fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n- A → D\n- B → E  \n- C → F\n- ...\n\n![Encryption flow: plaintext through Caesar cipher to ciphertext](assets/illustrations/encryption-flow.svg)\n\n### Mathematical Notation\n\nThe encryption function is: **E(x) = (x + n) mod 26**\n\nWhere:\n- **x** is the position of the letter in the alphabet (0-25)\n- **n** is the shift value (the key)\n- **mod 26** wraps around the alphabet\n\nTo decrypt: **D(x) = (x - n) mod 26**\n\n### Historical Context\n\nDespite its simplicity, the Caesar cipher was reasonably secure in Caesar's time because most of Caesar's enemies were illiterate. Today, it's trivially broken using frequency analysis or brute force (only 25 possible keys).",
+          "content": "The **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.\n\n![Caesar cipher wheel showing the shift pattern](assets/illustrations/caesar-wheel.svg)\n\n## How It Works\n\nNamed after Julius Caesar, who used it in his private correspondence, the cipher replaces each letter with another letter a fixed number of positions down the alphabet.\n\nFor example, with a shift of 3:\n- A → D\n- B → E  \n- C → F\n- ...\n\n![Encryption flow: plaintext through Caesar cipher to ciphertext](assets/illustrations/encryption-flow.svg)\n\n### Mathematical Notation\n\nThe encryption function is: **E(x) = (x + n) mod 26**\n\nWhere:\n- **x** is the position of the letter in the alphabet (0-25)\n- **n** is the shift value (the key)\n- **mod 26** wraps around the alphabet\n\nTo decrypt: **D(x) = (x - n) mod 26**\n\n### Historical Context\n\nDespite its simplicity, the Caesar cipher was reasonably secure in Caesar's time because most of Caesar's enemies were illiterate. Today, it's trivially broken using frequency analysis or brute force (only 25 possible keys).\n\n> **Try it:** Encrypt the word \"ATTACK\" with a Caesar cipher using key 17. What does the ciphertext say?",
           "order": 1,
           "diagrams": [
             {
@@ -63,7 +63,7 @@
                 {
                   "from": "plaintext",
                   "to": "encrypt",
-                  "label": ""
+                  "label": "input"
                 },
                 {
                   "from": "encrypt",
@@ -73,12 +73,12 @@
                 {
                   "from": "ciphertext",
                   "to": "transmit",
-                  "label": ""
+                  "label": "via"
                 },
                 {
                   "from": "transmit",
                   "to": "decrypt",
-                  "label": ""
+                  "label": "receive"
                 },
                 {
                   "from": "decrypt",
@@ -194,13 +194,13 @@
           "order": 2,
           "type": "mcq",
           "options": [
-            "MJQQT — each letter is shifted forward by 5 positions in the alphabet",
-            "WORLD — the cipher wraps around to common English words",
-            "CZGGJ — each letter is shifted by 2 positions instead of 5",
-            "PYTHON — the result depends on the programming language used to encrypt"
+            "HELLO — each letter shifts backward by 3 positions in the alphabet",
+            "WORLD — a common English word, not related to the cipher",
+            "MJQQT — shift each letter forward by 5 instead of backward",
+            "CZGGJ — shift each letter backward by 2 instead of 3"
           ],
           "correctIndex": 0,
-          "explanation": "The correct answer is MJQQT. Each letter shifts forward by 5: H→M, E→J, L→Q, L→Q, O→T. Option B is a random word with no cipher relationship. Option C uses the wrong shift value. Option D is nonsensical — Caesar cipher doesn't involve programming languages."
+          "explanation": "The correct answer is HELLO. To decrypt with key 3, reverse the shift: K→H, H→E, O→L, O→L, R→O. Option B is a random word with no cipher relationship. Option C shifts forward instead of backward. Option D uses the wrong shift value (2 instead of 3)."
         },
         {
           "id": "caesar-socratic",
@@ -224,7 +224,7 @@
             "Kerckhoffs principle"
           ],
           "minScore": 0.55,
-          "validationMode": "embedding"
+          "validationMode": "keyword"
         },
         {
           "id": "caesar-socratic-ai",
@@ -251,6 +251,61 @@
           ],
           "minScore": 0.55,
           "validationMode": "embedding"
+        },
+        {
+          "id": "caesar-flow-drag",
+          "prompt": "Arrange the steps of Caesar cipher communication in the correct order.",
+          "order": 5,
+          "type": "drag_sequence",
+          "items": [
+            {
+              "id": "cf-item-0",
+              "text": "Choose a shift key"
+            },
+            {
+              "id": "cf-item-1",
+              "text": "Write plaintext message"
+            },
+            {
+              "id": "cf-item-2",
+              "text": "Shift each letter by the key"
+            },
+            {
+              "id": "cf-item-3",
+              "text": "Send ciphertext"
+            },
+            {
+              "id": "cf-item-4",
+              "text": "Reverse the shift on each letter"
+            },
+            {
+              "id": "cf-item-5",
+              "text": "Read original message"
+            }
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "hint": "Plan, write, encrypt, transmit, decrypt, read."
+        },
+        {
+          "id": "mod-arithmetic",
+          "prompt": "Compute 7³ mod 5. Type your answer as a number.",
+          "order": 6,
+          "type": "numeric_input",
+          "acceptedAnswers": [
+            {
+              "answer": "3",
+              "tolerance": 0
+            }
+          ],
+          "tolerance": 0,
+          "hint": "First compute 7³ = 343, then find the remainder when dividing by 5."
         }
       ]
     },
@@ -272,23 +327,28 @@
               "nodes": [
                 {
                   "id": "symmetric",
-                  "label": "Symmetric key (same key for encrypt/decrypt)"
+                  "label": "Symmetric key (same key for encrypt/decrypt)",
+                  "color": "#2D5A27"
                 },
                 {
                   "id": "key-exchange",
-                  "label": "Diffie-Hellman key exchange (1976)"
+                  "label": "Diffie-Hellman key exchange (1976)",
+                  "color": "#1A237E"
                 },
                 {
                   "id": "asymmetric",
-                  "label": "RSA asymmetric encryption (1977)"
+                  "label": "RSA asymmetric encryption (1977)",
+                  "color": "#4A148C"
                 },
                 {
                   "id": "tls",
-                  "label": "TLS/SSL for secure web (1995)"
+                  "label": "TLS/SSL for secure web (1995)",
+                  "color": "#37474F"
                 },
                 {
                   "id": "e2e",
-                  "label": "End-to-end encryption (2010s+)"
+                  "label": "End-to-end encryption (2010s+)",
+                  "color": "#E65100"
                 }
               ],
               "edges": [
@@ -395,7 +455,7 @@
             "no shared secret required"
           ],
           "minScore": 0.55,
-          "validationMode": "embedding"
+          "validationMode": "keyword"
         },
         {
           "id": "protocol-errors",
@@ -427,8 +487,348 @@
         {
           "id": "lesson-3-1",
           "title": "Hash Functions and Digital Signatures",
-          "content": "**Hash functions** and **digital signatures** are the invisible backbone of modern digital security. You use them hundreds of times a day — every HTTPS connection, every software update, every password verification relies on these tools.\n\n## Hash Functions\n\nA hash function takes input of any size and produces a fixed-size output (the \"hash\" or \"digest\"). A cryptographic hash function has three essential properties:\n\n1. **Deterministic**: The same input always produces the same hash\n2. **One-way**: Given a hash, it is computationally infeasible to find the input that produced it\n3. **Collision-resistant**: It is extremely unlikely that two different inputs produce the same hash\n\n### SHA-256\n\nThe most widely used hash function today. It produces a 256-bit (32-byte) digest:\n- \"hello\" → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824`\n- \"hello!\" → `ce0609...` (completely different — the avalanche effect)\n\nThe **avalanche effect** means that changing even one bit of input changes approximately 50% of the output bits. This makes it impossible to predict how changes to the input affect the hash.\n\n### What Hashes Are Used For\n- **Password storage**: Websites store hashes of passwords, not the passwords themselves\n- **File integrity**: Verify that a downloaded file hasn't been tampered with\n- **Blockchain**: Each block contains the hash of the previous block, creating a tamper-evident chain\n- **Digital signatures**: Sign the hash of a message (efficient) rather than the full message\n\n## The Quantum Threat\n\nCurrent public key cryptography (RSA, ECC) relies on mathematical problems that quantum computers could potentially solve:\n- **Shor's algorithm** can factor large numbers efficiently → breaks RSA and ECC\n- **Grover's algorithm** provides quadratic speedup for brute force → weakens symmetric ciphers but doesn't break them (doubling key size is sufficient)\n\n### Post-Quantum Cryptography\n\nNIST has begun standardizing **post-quantum algorithms** based on mathematical problems believed to resist quantum attacks:\n- **Lattice-based**: Shortest Vector Problem in high dimensions\n- **Hash-based**: Merkle tree signatures\n- **Code-based**: Error-correcting code problems\n- **Multivariate**: Systems of multivariate polynomial equations\n\nThe transition to post-quantum cryptography is already underway — Google, Apple, and Signal have begun implementing hybrid systems that combine classical and post-quantum algorithms to protect against both current and future threats.",
-          "order": 1
+          "content": "**Hash functions** and **digital signatures** are the invisible backbone of modern digital security. You use them hundreds of times a day — every HTTPS connection, every software update, every password verification relies on these tools.\n\n## Hash Functions\n\nA hash function takes input of any size and produces a fixed-size output (the \"hash\" or \"digest\"). A cryptographic hash function has three essential properties:\n\n1. **Deterministic**: The same input always produces the same hash\n2. **One-way**: Given a hash, it is computationally infeasible to find the input that produced it\n3. **Collision-resistant**: It is extremely unlikely that two different inputs produce the same hash\n\n### SHA-256\n\nThe most widely used hash function today. It produces a 256-bit (32-byte) digest:\n- \"hello\" → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824`\n- \"hello!\" → `ce0609...` (completely different — the avalanche effect)\n\nThe **avalanche effect** means that changing even one bit of input changes approximately 50% of the output bits. This makes it impossible to predict how changes to the input affect the hash.\n\n### What Hashes Are Used For\n- **Password storage**: Websites store hashes of passwords, not the passwords themselves\n- **File integrity**: Verify that a downloaded file hasn't been tampered with\n- **Blockchain**: Each block contains the hash of the previous block, creating a tamper-evident chain\n- **Digital signatures**: Sign the hash of a message (efficient) rather than the full message\n\n## The Quantum Threat\n\nCurrent public key cryptography (RSA, ECC) relies on mathematical problems that quantum computers could potentially solve:\n- **Shor's algorithm** can factor large numbers efficiently → breaks RSA and ECC\n- **Grover's algorithm** provides quadratic speedup for brute force → weakens symmetric ciphers but doesn't break them (doubling key size is sufficient)\n\n### Post-Quantum Cryptography\n\nNIST has begun standardizing **post-quantum algorithms** based on mathematical problems believed to resist quantum attacks:\n- **Lattice-based**: Shortest Vector Problem in high dimensions\n- **Hash-based**: Merkle tree signatures\n- **Code-based**: Error-correcting code problems\n- **Multivariate**: Systems of multivariate polynomial equations\n\nThe transition to post-quantum cryptography is already underway — Google, Apple, and Signal have begun implementing hybrid systems that combine classical and post-quantum algorithms to protect against both current and future threats.\n\n## HMAC: Keyed-Hash Authentication\n\nA plain hash like SHA-256 has no secret key — anyone can compute it. This makes it unsuitable for authentication. **HMAC** (Hash-based Message Authentication Code) solves this by combining a secret key with the hash function.\n\nHMAC is used in TLS, SSH, IPsec, and JWT. It provides **integrity** (detect tampering) and **authentication** (verify the sender knows the key), but not secrecy.\n\n### Why Not Just Hash Passwords?\n\nStoring passwords as raw SHA-256 hashes is dangerous because:\n- **Rainbow tables**: Precomputed hash dictionaries make reverse-lookup trivial\n- **Speed**: SHA-256 is designed to be fast — exactly wrong for passwords\n- **No salt**: Identical passwords produce identical hashes\n\n### Key Derivation Functions\n\n- **PBKDF2**: Repeatedly applies HMAC. Slow but not memory-hard\n- **bcrypt**: Resistant to GPU attacks\n- **Argon2**: Memory-hard, the current gold standard\n\n## Real-World Hash Failures\n\n- **MD5**: Practical collision attack by 2009. Used in Flame malware\n- **SHA-1**: SHAttered attack (2017) produced first public collision\n- **SHA-256**: Currently secure as of 2025\n\n> **Try it:** Run `echo -n 'hello' | sha256sum` and compare to the hash in this lesson.",
+          "order": 1,
+          "diagrams": [
+            {
+              "id": "avalanche-effect",
+              "type": "flowchart",
+              "title": "Avalanche Effect — One Bit Changes Everything",
+              "nodes": [
+                {
+                  "id": "input-hello",
+                  "label": "Input: \"hello\"",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "sha-hello",
+                  "label": "SHA-256",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "hash-hello",
+                  "label": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "xor-compare",
+                  "label": "XOR difference: ~50% bits flipped",
+                  "shape": "pill",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "input-hello2",
+                  "label": "Input: \"hello!\" (1 char different)",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "sha-hello2",
+                  "label": "SHA-256",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "hash-hello2",
+                  "label": "ce0609a15f6c58767af1ddc38b4c8c253e1db6d0cdb1ecea2ed7a6ab4da4e3a9",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "input-hello",
+                  "to": "sha-hello",
+                  "label": ""
+                },
+                {
+                  "from": "sha-hello",
+                  "to": "hash-hello",
+                  "label": ""
+                },
+                {
+                  "from": "hash-hello",
+                  "to": "xor-compare",
+                  "label": ""
+                },
+                {
+                  "from": "input-hello2",
+                  "to": "sha-hello2",
+                  "label": ""
+                },
+                {
+                  "from": "sha-hello2",
+                  "to": "hash-hello2",
+                  "label": ""
+                },
+                {
+                  "from": "hash-hello2",
+                  "to": "xor-compare",
+                  "label": ""
+                }
+              ]
+            },
+            {
+              "id": "symmetric-vs-asymmetric",
+              "type": "process",
+              "title": "Symmetric vs Asymmetric Cryptography",
+              "nodes": [
+                {
+                  "id": "sym-keys",
+                  "label": "Symmetric: Same key for encrypt & decrypt"
+                },
+                {
+                  "id": "sym-speed",
+                  "label": "Symmetric: Very fast (hardware accelerated)"
+                },
+                {
+                  "id": "sym-use",
+                  "label": "Symmetric: Best for bulk data encryption"
+                },
+                {
+                  "id": "sym-problem",
+                  "label": "Symmetric: Key distribution problem"
+                },
+                {
+                  "id": "asym-keys",
+                  "label": "Asymmetric: Key pair (public + private)"
+                },
+                {
+                  "id": "asym-speed",
+                  "label": "Asymmetric: Slow (100-1000x slower)"
+                },
+                {
+                  "id": "asym-use",
+                  "label": "Asymmetric: Best for key exchange & signatures"
+                },
+                {
+                  "id": "asym-solution",
+                  "label": "Asymmetric: Solves key distribution problem"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "sym-keys",
+                  "to": "sym-speed"
+                },
+                {
+                  "from": "sym-speed",
+                  "to": "sym-use"
+                },
+                {
+                  "from": "sym-use",
+                  "to": "sym-problem"
+                },
+                {
+                  "from": "asym-keys",
+                  "to": "asym-speed"
+                },
+                {
+                  "from": "asym-speed",
+                  "to": "asym-use"
+                },
+                {
+                  "from": "asym-use",
+                  "to": "asym-solution"
+                }
+              ]
+            },
+            {
+              "id": "shor-threat",
+              "type": "timeline",
+              "title": "The Quantum Threat to Cryptography",
+              "nodes": [
+                {
+                  "id": "rsa-secure",
+                  "label": "Today: RSA-2048 secure on classical computers",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "shor-algorithm",
+                  "label": "Shor's Algorithm (1994): Factors exponentially faster",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "quantum-break",
+                  "label": "Quantum computer with ~4000 logical qubits breaks RSA",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "pqc-migration",
+                  "label": "PQC: Lattice, hash-based, code-based algorithms",
+                  "color": "#4A148C"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "rsa-secure",
+                  "to": "shor-algorithm"
+                },
+                {
+                  "from": "shor-algorithm",
+                  "to": "quantum-break"
+                },
+                {
+                  "from": "quantum-break",
+                  "to": "pqc-migration"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson-3-2",
+          "title": "Symmetric Encryption: AES and Block Ciphers",
+          "content": "**Symmetric encryption** is the workhorse of modern cryptography. When you visit an HTTPS website, stream a video, or send a WhatsApp message, symmetric encryption protects the bulk of your data.\n\n## Block Ciphers\n\nUnlike the Caesar cipher (which encrypts one letter at a time), modern ciphers work on **fixed-size blocks** of data (typically 128 bits / 16 bytes).\n\n## AES: The Advanced Encryption Standard\n\nAES supports three key sizes:\n- **AES-128**: 128-bit key, 10 rounds. Used where speed matters most\n- **AES-192**: 192-bit key, 12 rounds. Balance of security and speed\n- **AES-256**: 256-bit key, 14 rounds. Used for classified government data\n\n## Block Cipher Modes\n\n### ECB (Electronic Codebook) — Never Use This\nIdentical plaintext blocks produce identical ciphertext blocks.\n\n### CBC (Cipher Block Chaining)\nEach plaintext block is XORed with the previous ciphertext block. Requires a random **Initialization Vector (IV)**.\n\n### GCM (Galois/Counter Mode) — The Modern Standard\nCombines encryption with **authentication** in a single operation.\n\n## The Golden Rule\n\n> **Never roll your own cryptography.** Use well-audited libraries. Prefer **AES-256-GCM** or **ChaCha20-Poly1305**.\n\n> **Try it:** `echo 'Hello' | openssl enc -aes-256-cbc -pbkdf2 -iter 100000 | base64`",
+          "order": 2,
+          "diagrams": [
+            {
+              "id": "ecb-vs-cbc",
+              "type": "flowchart",
+              "title": "ECB vs CBC Mode — Identical Blocks Leak Patterns",
+              "nodes": [
+                {
+                  "id": "plaintext-ecb",
+                  "label": "Plaintext: [Block1] [Block1] [Block2]",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "ecb-process",
+                  "label": "ECB: Each block encrypted independently",
+                  "shape": "diamond",
+                  "color": "#E65100"
+                },
+                {
+                  "id": "ciphertext-ecb",
+                  "label": "Ciphertext: [A] [A] [C]  ← Block1 repeats!",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "vs-label",
+                  "label": "vs",
+                  "shape": "pill",
+                  "color": "#37474F"
+                },
+                {
+                  "id": "plaintext-cbc",
+                  "label": "Plaintext: [Block1] [Block1] [Block2]",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "cbc-process",
+                  "label": "CBC: Each block XORed with previous ciphertext",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "ciphertext-cbc",
+                  "label": "Ciphertext: [X] [Y] [Z]  ← All different!",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "plaintext-ecb",
+                  "to": "ecb-process",
+                  "label": ""
+                },
+                {
+                  "from": "ecb-process",
+                  "to": "ciphertext-ecb",
+                  "label": ""
+                },
+                {
+                  "from": "ciphertext-ecb",
+                  "to": "vs-label",
+                  "label": ""
+                },
+                {
+                  "from": "plaintext-cbc",
+                  "to": "cbc-process",
+                  "label": ""
+                },
+                {
+                  "from": "cbc-process",
+                  "to": "ciphertext-cbc",
+                  "label": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson-3-3",
+          "title": "TLS Handshake and Hybrid Encryption",
+          "content": "**TLS (Transport Layer Security)** is the protocol that secures nearly every interaction on the modern internet — HTTPS, email, VoIP, and API calls all rely on it.\n\n## The TLS Handshake\n\n1. **ClientHello**: Browser sends supported TLS versions and cipher suites\n2. **ServerHello + Certificate**: Server responds with chosen cipher and its digital certificate\n3. **Key Exchange**: Client encrypts a pre-master secret using the server's public key\n4. **Change Cipher Spec**: Both sides signal encryption begins\n5. **Finished**: Both sides send a hash of the handshake to verify integrity\n\n## Certificate Chains\n\nYour browser verifies: Server Cert → Intermediate CA → Root CA (pre-installed in your OS/browser).\n\n## Hybrid Encryption\n\n- **Asymmetric** (RSA/ECC): Used only for key exchange. Solves key distribution\n- **Symmetric** (AES-GCM): Used for bulk data. Fast, hardware-accelerated\n\n## TLS Misconceptions\n\n- TLS is **not** end-to-end encryption (terminates at the server)\n- HTTPS does **not** mean the site is trustworthy\n- Certificate expiration matters\n\n## Quick Reference: Tools & Commands\n\n- `openssl enc -aes-256-cbc -pbkdf2` — Encrypt a file with AES\n- `gpg --gen-key` — Generate a PGP key pair\n- `sha256sum <file>` — Compute a SHA-256 hash\n- `openssl s_client -connect <host>:443` — Inspect a TLS handshake\n- `openssl genrsa -out key.pem 2048` — Generate an RSA private key\n\n> **Try it:** `openssl s_client -connect example.com:443` shows the raw TLS handshake.",
+          "order": 3,
+          "diagrams": [
+            {
+              "id": "tls-handshake-flow",
+              "type": "flowchart",
+              "title": "TLS 1.3 Handshake Flow",
+              "nodes": [
+                {
+                  "id": "client-hello",
+                  "label": "ClientHello: supported versions + ciphers",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "server-hello",
+                  "label": "ServerHello: chosen cipher + certificate",
+                  "shape": "rounded",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "key-exchange",
+                  "label": "Key Exchange: derive session keys",
+                  "shape": "diamond",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "change-cipher",
+                  "label": "Change Cipher Spec: encrypt from now on",
+                  "shape": "pill",
+                  "color": "#37474F"
+                },
+                {
+                  "id": "finished",
+                  "label": "Finished: verify handshake integrity",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "client-hello",
+                  "to": "server-hello",
+                  "label": "Client → Server"
+                },
+                {
+                  "from": "server-hello",
+                  "to": "key-exchange",
+                  "label": "Server → Client"
+                },
+                {
+                  "from": "key-exchange",
+                  "to": "change-cipher",
+                  "label": "Both sides"
+                },
+                {
+                  "from": "change-cipher",
+                  "to": "finished",
+                  "label": "Both sides"
+                }
+              ]
+            }
+          ]
         }
       ],
       "exercises": [
@@ -461,17 +861,17 @@
         },
         {
           "id": "quantum-mcq",
-          "prompt": "Which property of a hash function ensures that two different messages cannot produce the same hash?",
+          "prompt": "Which property of a hash function ensures that two different inputs cannot produce the same output?",
           "order": 2,
           "type": "mcq",
           "options": [
-            "Lattice-based cryptography, which relies on the hardness of high-dimensional lattice problems",
-            "Determinism",
-            "AES-256 with a longer key length, since quantum computers cannot brute-force symmetric ciphers efficiently",
-            "Classical RSA with larger key sizes, since quantum computers would just take longer to break them"
+            "Collision resistance — it is computationally infeasible to find two inputs with the same hash",
+            "Determinism — the same input always produces the same hash",
+            "Preimage resistance — given a hash, you cannot find the original input",
+            "Avalanche effect — changing one bit of input changes ~50% of output bits"
           ],
           "correctIndex": 0,
-          "explanation": "Lattice-based cryptography is a leading post-quantum approach because the underlying mathematical problems (like Learning With Errors) are believed to be hard for both classical and quantum computers. Option B is not an algorithm. Option C is partially true (Grover's algorithm only provides quadratic speedup against symmetric ciphers) but doesn't address the asymmetric encryption gap. Option D is wrong — larger RSA keys don't help against Shor's algorithm, which factors numbers in polynomial time."
+          "explanation": "Collision resistance guarantees that finding two inputs with the same hash is computationally infeasible. Determinism (B) is necessary but doesn't prevent collisions. Preimage resistance (C) deals with reversing a hash, not collisions. The avalanche effect (D) describes how sensitive the output is to input changes, not collision avoidance."
         },
         {
           "id": "quantum-socratic",
@@ -497,6 +897,160 @@
           ],
           "minScore": 0.55,
           "validationMode": "embedding"
+        },
+        {
+          "id": "key-space-calc",
+          "prompt": "A cipher has a 56-bit key. How many possible keys are there? Express as a single number or in scientific notation (e.g., 7.2*10^16).",
+          "order": 4,
+          "type": "numeric_input",
+          "acceptedAnswers": [
+            {
+              "answer": "72057594037927936",
+              "tolerance": 0
+            },
+            {
+              "answer": "7.2*10^16",
+              "tolerance": 0
+            },
+            {
+              "answer": "7.2 × 10^16",
+              "tolerance": 0
+            }
+          ],
+          "tolerance": 0,
+          "hint": "With 56 bits, each bit can be 0 or 1. How many total combinations?"
+        },
+        {
+          "id": "tls-handshake-drag",
+          "prompt": "Order the steps of a TLS handshake.",
+          "order": 5,
+          "type": "drag_sequence",
+          "items": [
+            {
+              "id": "tls-item-0",
+              "text": "ClientHello"
+            },
+            {
+              "id": "tls-item-1",
+              "text": "ServerHello + Certificate"
+            },
+            {
+              "id": "tls-item-2",
+              "text": "Key Exchange"
+            },
+            {
+              "id": "tls-item-3",
+              "text": "Change Cipher Spec"
+            },
+            {
+              "id": "tls-item-4",
+              "text": "Finished"
+            }
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "hint": "Client starts, server responds, keys are exchanged, encryption begins, both confirm."
+        },
+        {
+          "id": "sha-errors",
+          "prompt": "Identify the errors in reasoning in the following text about hash functions:",
+          "order": 6,
+          "type": "error_spotting",
+          "content": "SHA-256 is a type of encryption that can be reversed if you have the right key [ERROR:1]. It produces a variable-length output depending on the input size [ERROR:2]. Two different inputs can produce the same output, which is called a collision [CORRECT].",
+          "errors": [
+            {
+              "id": "err-1",
+              "description": "SHA-256 is a hash function, not encryption. It cannot be reversed.",
+              "hint": "Is SHA-256 encryption or hashing?"
+            },
+            {
+              "id": "err-2",
+              "description": "SHA-256 produces a fixed 256-bit output regardless of input size.",
+              "hint": "Does the hash size change with input?"
+            }
+          ],
+          "explanation": "SHA-256 is a hash function, not encryption. It always produces a fixed 256-bit output."
+        },
+        {
+          "id": "ecb-weakness-mcq",
+          "prompt": "Why is ECB mode considered insecure for encrypting messages longer than one block?",
+          "order": 7,
+          "type": "mcq",
+          "options": [
+            "Identical plaintext blocks produce identical ciphertext blocks, leaking patterns",
+            "It requires too much memory to decrypt",
+            "It is significantly slower than all other modes",
+            "It cannot use a key longer than 128 bits"
+          ],
+          "correctIndex": 0,
+          "explanation": "ECB encrypts each block independently, so identical plaintext blocks produce identical ciphertext blocks.",
+          "hint": "Think about the ECB penguin — what information is preserved?"
+        },
+        {
+          "id": "aes-encryption-drag",
+          "prompt": "Arrange the steps of AES-CBC encryption in the correct order.",
+          "order": 8,
+          "type": "drag_sequence",
+          "items": [
+            {
+              "id": "aes-item-0",
+              "text": "Divide plaintext into 16-byte blocks"
+            },
+            {
+              "id": "aes-item-1",
+              "text": "Generate a random 128-bit IV"
+            },
+            {
+              "id": "aes-item-2",
+              "text": "XOR first block with IV"
+            },
+            {
+              "id": "aes-item-3",
+              "text": "Encrypt XORed block with AES key"
+            },
+            {
+              "id": "aes-item-4",
+              "text": "XOR next block with previous ciphertext block"
+            },
+            {
+              "id": "aes-item-5",
+              "text": "Repeat for all blocks"
+            },
+            {
+              "id": "aes-item-6",
+              "text": "Prepend IV to ciphertext"
+            }
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "hint": "Prepare data, apply CBC chaining, prepare final output."
+        },
+        {
+          "id": "tls-hybrid-mcq",
+          "prompt": "Why does TLS use hybrid encryption (asymmetric + symmetric) rather than just one type?",
+          "order": 9,
+          "type": "mcq",
+          "options": [
+            "Asymmetric encryption is fast enough for bulk data, and symmetric provides key distribution",
+            "Symmetric encryption is faster for bulk data, while asymmetric solves the key distribution problem",
+            "Both are equally fast, but using two ciphers is more secure than one",
+            "Symmetric encryption provides key distribution, and asymmetric encrypts the bulk data"
+          ],
+          "correctIndex": 1,
+          "explanation": "Hybrid encryption combines the strengths of both: asymmetric crypto solves the key distribution problem, while symmetric crypto handles bulk data efficiently.",
+          "hint": "Consider the speed difference and the key distribution problem."
         }
       ]
     }
@@ -522,7 +1076,7 @@
         "weight": 1.5
       },
       {
-        "exerciseId": "protocol-error",
+        "exerciseId": "protocol-errors",
         "weight": 1.0
       }
     ]
@@ -618,5 +1172,15 @@
   "recommendedNext": [
     "network-security",
     "advanced-cryptography"
+  ],
+  "learningObjectives": [
+    "Explain how the Caesar cipher works and why it's trivially breakable",
+    "Apply frequency analysis and brute force to break a substitution cipher",
+    "Describe the key distribution problem and how asymmetric cryptography solves it",
+    "Perform RSA encryption and decryption with small parameters",
+    "Explain the three essential properties of cryptographic hash functions",
+    "Compare symmetric and asymmetric encryption in speed, key management, and use cases",
+    "Describe the TLS handshake and how hybrid encryption secures web traffic",
+    "Identify the quantum computing threat and explain post-quantum approaches"
   ]
 }
