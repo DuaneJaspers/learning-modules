@@ -578,7 +578,8 @@
         "id": "fc-12",
         "term": "Problem of Induction",
         "description": "The philosophical problem that no amount of specific observations can guarantee a general conclusion. Identified by David Hume.",
-        "context": "No matter how many white swans you observe, you cannot prove all swans are white — the next observation could always contradict the pattern."
+        "context": "No matter how many white swans you observe, you cannot prove all swans are white — the next observation could always contradict the pattern.",
+        "definition": "The philosophical problem that inductive reasoning cannot be justified deductively — past observations don't guarantee future outcomes. David Hume argued we assume nature is uniform without proof."
       },
       {
         "id": "fc-13",

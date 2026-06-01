@@ -165,6 +165,55 @@
             3,
             1
           ]
+        },
+        {
+          "id": "republic-mcq",
+          "type": "mcq",
+          "prompt": "Which factor was most critical in the Roman Republic's transformation into an autocratic empire?",
+          "options": [
+            "The concentration of military power in the hands of individual generals loyal to themselves rather than the Senate",
+            "The adoption of Christianity as the official religion",
+            "Foreign invasions by Germanic tribes",
+            "A shortage of agricultural land in Italy"
+          ],
+          "correctIndex": 0,
+          "explanation": "The late Republic saw generals like Marius, Sulla, Pompey, and Caesar build personal armies loyal to them rather than to Rome. When soldiers owe their loyalty to their general instead of the state, the Republic's institutions lose their authority.",
+          "points": 5,
+          "hint": "Think about who controlled the armies in the late Republic — and who paid them."
+        },
+        {
+          "id": "republic-drag",
+          "type": "drag_sequence",
+          "prompt": "Arrange the key events in Rome's transition from Republic to autocracy in chronological order.",
+          "items": [
+            {
+              "id": "rd-item-0",
+              "text": "Marius reforms the army, allowing landless citizens to enlist",
+              "order": 0
+            },
+            {
+              "id": "rd-item-1",
+              "text": "Sulla marches on Rome with his army — first civil war",
+              "order": 1
+            },
+            {
+              "id": "rd-item-2",
+              "text": "First Triumvirate: Caesar, Pompey, Crassus share power",
+              "order": 2
+            },
+            {
+              "id": "rd-item-3",
+              "text": "Caesar crosses the Rubicon, defeats Pompey, becomes dictator",
+              "order": 3
+            },
+            {
+              "id": "rd-item-4",
+              "text": "Octavian defeats Antony at Actium, Senate grants him title 'Augustus'",
+              "order": 4
+            }
+          ],
+          "points": 10,
+          "hint": "Start with military reforms and end with the establishment of the Principate."
         }
       ]
     },
@@ -330,6 +379,27 @@
           ],
           "minScore": 0.55,
           "validationMode": "embedding"
+        },
+        {
+          "id": "crisis-error",
+          "type": "error_spotting",
+          "prompt": "Identify the logical and historical errors in the following argument about the Crisis of the Third Century:\n\n\"The Crisis of the Third Century proves that the Roman Empire was always doomed. From its very founding, Rome was too big to govern effectively. The Barracks Emperors rose to power because the Senate was corrupt, and if Rome had just adopted a more democratic system, none of the crisis would have happened. Diocletian's Tetrarchy was a desperate attempt that failed immediately because dividing power never works.\"",
+          "errors": [
+            {
+              "id": "err-1",
+              "description": "Assumes Rome was 'too big to govern' from its founding, ignoring centuries of successful governance",
+              "highlight": "From its very founding, Rome was too big to govern effectively",
+              "explanation": "Rome governed effectively for centuries — the Crisis was caused by specific factors in the 3rd century (civil wars, economic collapse, plague, external invasions), not an inevitable flaw. This is the fallacy of retrospective determinism."
+            },
+            {
+              "id": "err-2",
+              "description": "Claims Diocletian's Tetrarchy 'failed immediately' — historically inaccurate",
+              "highlight": "Diocletian's Tetrarchy was a desperate attempt that failed immediately",
+              "explanation": "The Tetrarchy actually stabilized the empire for over 20 years and ended the Crisis. It broke down after Diocletian's abdication due to succession disputes, but calling it an 'immediate failure' is historically wrong."
+            }
+          ],
+          "points": 10,
+          "hint": "Look for oversimplifications and statements contradicted by historical timeline."
         }
       ]
     },
@@ -472,6 +542,34 @@
           ],
           "minScore": 0.55,
           "validationMode": "embedding"
+        },
+        {
+          "id": "decline-socratic-ai",
+          "type": "socratic_ai",
+          "prompt": "Some historians argue the Roman Empire never really \"fell\" — it transformed into medieval Europe, with the Eastern Empire continuing for another millennium. Defend or challenge this perspective using evidence from the module. Consider: institutional continuity, cultural legacy, and the experience of ordinary people.",
+          "mustInclude": [
+            "institutional continuity",
+            "cultural legacy",
+            "eastern empire"
+          ],
+          "niceToHave": [
+            "economic systems",
+            "barbarian integration",
+            "church role"
+          ],
+          "hints": [
+            "Think about what 'fell' actually means — political control, cultural identity, or economic systems?",
+            "The Eastern Roman (Byzantine) Empire continued until 1453 — does this change your answer?"
+          ],
+          "modelAnswer": "A strong answer should acknowledge both sides: the Western Empire's political structure did collapse in 476, but Roman institutions (law, language, the Church, urban administration) persisted and evolved into medieval systems. The Eastern Empire continued for centuries with unbroken institutional continuity. For ordinary people in the West, life changed gradually rather than catastrophically — tax collection shifted to local lords, but many Roman traditions survived. The 'fall' narrative is partly a 18th-century construct popularized by Gibbon.",
+          "points": 15,
+          "assessmentPrompt": "The Roman Empire transformed rather than collapsed — it was an evolution, not an extinction. Evaluate this claim.",
+          "scoringCriteria": {
+            "both_sides_addressed": "Addresses both the 'fall' and 'transformation' perspectives",
+            "evidence_used": "Cites specific evidence from the module",
+            "institutional_analysis": "Analyzes institutional continuity (law, church, administration)",
+            "nuance": "Acknowledges the Eastern Empire's continuation"
+          }
         }
       ]
     }
