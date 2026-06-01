@@ -152,6 +152,18 @@
                 }
               ]
             }
+          ],
+          "exercises": [
+            {
+              "id": "caesar-encrypt-try",
+              "type": "text_input",
+              "prompt": "Encrypt the word ATTACK with a Caesar cipher using key 17. What is the ciphertext?",
+              "order": 0,
+              "expectedAnswer": "RKKRTB",
+              "caseSensitive": false,
+              "hint": "A=0 shift by 17: A(0)→R(17), T(19)→K(10), T(19)→K(10), A(0)→R(17), C(2)→T(19), K(10)→B(1).",
+              "maxLength": 200
+            }
           ]
         },
         {
@@ -305,6 +317,22 @@
                 }
               ]
             }
+          ],
+          "exercises": [
+            {
+              "id": "vigenere-inline-mcq",
+              "type": "mcq",
+              "prompt": "What makes the Vigenère cipher stronger than the Caesar cipher?",
+              "options": [
+                "Each letter uses a different shift determined by a keyword",
+                "It uses two keys instead of one",
+                "It encrypts entire words at a time",
+                "It uses a larger character set"
+              ],
+              "correctIndex": 0,
+              "explanation": "The keyword provides a different shift for each position, masking frequency patterns.",
+              "hint": "What varies from letter to letter?"
+            }
           ]
         },
         {
@@ -371,6 +399,18 @@
                   "label": "guess key"
                 }
               ]
+            }
+          ],
+          "exercises": [
+            {
+              "id": "caesar-decrypt-try",
+              "type": "text_input",
+              "prompt": "Given ciphertext 'KHOOR' was encrypted with Caesar key 3, decrypt it.",
+              "order": 0,
+              "expectedAnswer": "HELLO",
+              "caseSensitive": false,
+              "hint": "Reverse the shift: subtract 3 from each letter position.",
+              "maxLength": 200
             }
           ]
         }
@@ -538,6 +578,39 @@
           ],
           "tolerance": 0,
           "hint": "First compute 7³ = 343, then find the remainder when dividing by 5."
+        },
+        {
+          "id": "vigenere-encrypt",
+          "type": "text_input",
+          "prompt": "Encrypt 'SECRET' with the Vigenère cipher using keyword 'CODE'. What is the ciphertext?",
+          "expectedAnswer": "USFVGH",
+          "caseSensitive": false,
+          "hint": "Keyword: C=2, O=14, D=3, E=4. Apply to each letter: S+C=U, E+O=S, C+D=F, R+E=V, E+C=G, T+O=H.",
+          "maxLength": 20
+        },
+        {
+          "id": "vigenere-vs-caesar-mcq",
+          "type": "mcq",
+          "prompt": "Why did the Vigenère cipher resist frequency analysis for 300 years while Caesar was trivially breakable?",
+          "options": [
+            "Different keyword letters produce different shifts, masking statistical patterns",
+            "The Vigenère cipher uses a larger alphabet",
+            "Vigenère ciphertext cannot be written down",
+            "The keyword is encrypted separately from the message"
+          ],
+          "correctIndex": 0,
+          "explanation": "Because each position gets a different shift from the keyword, the same plaintext letter encrypts to different ciphertext letters. This breaks simple frequency counting.",
+          "points": 5,
+          "hint": "Think about what changes letter-by-letter between Caesar and Vigenère."
+        },
+        {
+          "id": "vigenere-keyword-length",
+          "type": "text_input",
+          "prompt": "You observe the trigram 'KXR' appears at positions 0 and 15 in Vigenère ciphertext. What is the most likely keyword length?",
+          "expectedAnswer": "5",
+          "caseSensitive": false,
+          "hint": "The distance between repeats is 15. Keyword length divides this distance. Common divisors: 1, 3, 5, 15. Kasiski examination looks for the GCD across multiple repeats.",
+          "maxLength": 10
         }
       ]
     },
@@ -548,8 +621,8 @@
       "lessons": [
         {
           "id": "lesson-2-1",
-          "title": "Public Key Cryptography",
-          "content": "**Public key cryptography** is one of the most important inventions in computer science. It solves a fundamental problem: how can two people communicate securely without having met to share a secret key?\n\n## The Key Distribution Problem\n\nIn traditional (symmetric) cryptography, both sender and receiver need the same key. If Caesar wants to send a message to his general, he must first share the shift value (the key) through some secure channel. But if you already have a secure channel, why not just send the message through it?\n\nThis chicken-and-egg problem — the **key distribution problem** — plagued cryptography for millennia. Military and diplomatic organizations solved it with human couriers carrying codebooks, but this was slow, expensive, and vulnerable to interception.\n\n![The key distribution problem visual](illustrations/key-distribution-problem.svg)\n\n## The Asymmetric Breakthrough (1970s)\n\nThe solution was elegant: instead of one key, use **two keys** that are mathematically related but in different directions:\n\n- **Public key** — shared openly with everyone, used to *encrypt* messages\n- **Private key** — kept secret by the owner, used to *decrypt* messages\n\nThe mathematical relationship is a **trapdoor function**: easy to compute in one direction (encrypt), computationally infeasible to reverse (derive the private key from the public key).\n\n### RSA (1977)\n\nRivest, Shamir, and Adleman created the first practical public key system. It relies on the fact that:\n\n![RSA public key encryption lock and key visual](illustrations/rsa-lock-and-key.svg)\n- **Easy**: Multiply two large prime numbers together → get their product N\n- **Hard**: Given N, find the two prime factors\n\nA 2048-bit RSA key uses primes that are each ~300 digits long. There is no known algorithm (the only known exception is Shor's quantum algorithm, which can factor such numbers in reasonable time on classical computers.\n\n![Symmetric vs Asymmetric key comparison](illustrations/symmetric-vs-asymmetric.svg)\n\n### Diffie-Hellman Key Exchange (1976)\n\nEven before RSA, Diffie and Hellman showed how two parties could establish a shared secret over an insecure channel. Their protocol doesn't encrypt messages directly — it creates a shared secret that can then be used as a symmetric key.\n\n## Digital Signatures\n\nPublic key cryptography also enables **digital signatures** — the electronic equivalent of a handwritten signature:\n- The sender encrypts a message hash with their *private* key (signing)\n- Anyone can verify the signature using the sender's *public* key\n\nThis provides both authentication (proving who sent it) and integrity (proving it wasn't modified). Without digital signatures, modern e-commerce, banking, and secure communication would be impossible.",
+          "title": "The Key Distribution Problem & Asymmetric Crypto",
+          "content": "**Public key cryptography** is one of the most important inventions in computer science. It solves a fundamental problem: how can two people communicate securely without having met to share a secret key?\n\n## The Key Distribution Problem\n\nIn traditional (symmetric) cryptography, both sender and receiver need the same key. If Caesar wants to send a message to his general, he must first share the shift value (the key) through some secure channel. But if you already have a secure channel, why not just send the message through it?\n\nThis chicken-and-egg problem — the **key distribution problem** — plagued cryptography for millennia. Military and diplomatic organizations solved it with human couriers carrying codebooks, but this was slow, expensive, and vulnerable to interception.\n\n![The key distribution problem visual](illustrations/key-distribution-problem.svg)",
           "order": 1,
           "diagrams": [
             {
@@ -605,47 +678,71 @@
                   "label": "web goes secure"
                 }
               ]
-            },
+            }
+          ],
+          "exercises": [
+            {
+              "id": "keydist-inline-mcq",
+              "type": "mcq",
+              "prompt": "What is the fundamental problem that public key cryptography solves?",
+              "options": [
+                "How to share a secret key without a secure channel",
+                "How to make encryption faster than symmetric ciphers",
+                "How to encrypt messages longer than the key",
+                "How to prevent all types of cryptanalytic attacks"
+              ],
+              "correctIndex": 0,
+              "explanation": "The key distribution problem: symmetric encryption requires both parties to have the same key, but sharing it securely is itself a problem. Public key crypto solves this by separating encryption and decryption keys.",
+              "hint": "What can't you do securely before you start communicating?"
+            }
+          ]
+        },
+        {
+          "id": "lesson-2-2",
+          "title": "RSA, Diffie-Hellman & Digital Signatures",
+          "content": "## The Asymmetric Breakthrough (1970s)\n\nThe solution was elegant: instead of one key, use **two keys** that are mathematically related but in different directions:\n\n- **Public key** — shared openly with everyone, used to *encrypt* messages\n- **Private key** — kept secret by the owner, used to *decrypt* messages\n\nThe mathematical relationship is a **trapdoor function**: easy to compute in one direction (encrypt), computationally infeasible to reverse (derive the private key from the public key).\n\n### RSA (1977)\n\nRivest, Shamir, and Adleman created the first practical public key system. It relies on the fact that:\n\n![RSA public key encryption lock and key visual](illustrations/rsa-lock-and-key.svg)\n- **Easy**: Multiply two large prime numbers together → get their product N\n- **Hard**: Given N, find the two prime factors\n\nA 2048-bit RSA key uses primes that are each ~300 digits long. There is no known algorithm (the only known exception is Shor's quantum algorithm, which can factor such numbers in reasonable time on classical computers.\n\n![Symmetric vs Asymmetric key comparison](illustrations/symmetric-vs-asymmetric.svg)\n\n### Diffie-Hellman Key Exchange (1976)\n\nEven before RSA, Diffie and Hellman showed how two parties could establish a shared secret over an insecure channel. Their protocol doesn't encrypt messages directly — it creates a shared secret that can then be used as a symmetric key.\n\n## Digital Signatures\n\nPublic key cryptography also enables **digital signatures** — the electronic equivalent of a handwritten signature:\n- The sender encrypts a message hash with their *private* key (signing)\n- Anyone can verify the signature using the sender's *public* key\n\nThis provides both authentication (proving who sent it) and integrity (proving it wasn't modified). Without digital signatures, modern e-commerce, banking, and secure communication would be impossible.",
+          "order": 2,
+          "diagrams": [
             {
               "id": "rsa-key-exchange",
               "type": "flowchart",
-              "title": "🔐 RSA Key Exchange — How Alice and Bob Communicate Securely",
+              "title": "RSA Key Exchange — How Alice and Bob Communicate Securely",
               "nodes": [
                 {
                   "id": "alice-gen",
-                  "label": "1. Alice generates key pair (Pub, Priv)",
+                  "label": "Alice generates key pair",
                   "shape": "rounded",
                   "color": "#2D5A27"
                 },
                 {
                   "id": "alice-shares",
-                  "label": "2. Alice sends her PUBLIC key to Bob",
-                  "shape": "pill",
+                  "label": "Alice shares public key",
+                  "shape": "diamond",
                   "color": "#1A237E"
                 },
                 {
                   "id": "bob-encrypts",
-                  "label": "3. Bob encrypts message M using Alice's public key",
+                  "label": "Bob encrypts with public key",
                   "shape": "diamond",
-                  "color": "#E65100"
+                  "color": "#1A237E"
                 },
                 {
                   "id": "ciphertext",
-                  "label": "4. Ciphertext C = M^e mod n sent over insecure channel",
-                  "shape": "rounded",
-                  "color": "#4A148C"
+                  "label": "Ciphertext sent",
+                  "shape": "pill",
+                  "color": "#37474F"
                 },
                 {
                   "id": "alice-decrypts",
-                  "label": "5. Alice decrypts: M = C^d mod n using her PRIVATE key",
+                  "label": "Alice decrypts with private key",
                   "shape": "diamond",
-                  "color": "#2D5A27"
+                  "color": "#1A237E"
                 },
                 {
                   "id": "secure",
-                  "label": "✅ Bob and Alice share secret — Eve sees only gibberish",
-                  "shape": "pill",
-                  "color": "#37474F"
+                  "label": "Secure message received",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
                 }
               ],
               "edges": [
@@ -657,24 +754,40 @@
                 {
                   "from": "alice-shares",
                   "to": "bob-encrypts",
-                  "label": "Bob receives Pub"
+                  "label": "public key"
                 },
                 {
                   "from": "bob-encrypts",
                   "to": "ciphertext",
-                  "label": "C = M^e mod n"
+                  "label": "encrypts"
                 },
                 {
                   "from": "ciphertext",
                   "to": "alice-decrypts",
-                  "label": "M = C^d mod n"
+                  "label": "send"
                 },
                 {
                   "from": "alice-decrypts",
                   "to": "secure",
-                  "label": "✅ success"
+                  "label": "decrypt"
                 }
               ]
+            }
+          ],
+          "exercises": [
+            {
+              "id": "rsa-inline-mcq",
+              "type": "mcq",
+              "prompt": "What mathematical problem makes RSA secure?",
+              "options": [
+                "Factoring the product of two large primes",
+                "Finding the discrete logarithm of a large number",
+                "Solving a system of linear equations",
+                "Computing the inverse of a large matrix"
+              ],
+              "correctIndex": 0,
+              "explanation": "RSA's security relies on the fact that multiplying two large primes is easy, but factoring their product back into the original primes is computationally infeasible for large enough numbers.",
+              "hint": "What's easy to do but hard to undo?"
             }
           ]
         }
@@ -1056,6 +1169,18 @@
                 }
               ]
             }
+          ],
+          "exercises": [
+            {
+              "id": "hash-hello-try",
+              "type": "text_input",
+              "prompt": "Run 'echo -n hello | sha256sum' in a terminal. What are the first 12 characters of the hash?",
+              "order": 0,
+              "expectedAnswer": "2cf24dba5fb0",
+              "caseSensitive": false,
+              "hint": "The full hash from the lesson content: 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+              "maxLength": 200
+            }
           ]
         },
         {
@@ -1140,12 +1265,24 @@
                 }
               ]
             }
+          ],
+          "exercises": [
+            {
+              "id": "aes-mode-try",
+              "type": "text_input",
+              "prompt": "Why should you never use ECB mode for encrypting messages longer than one block? Answer in one sentence.",
+              "order": 0,
+              "expectedAnswer": "identical plaintext blocks produce identical ciphertext blocks",
+              "caseSensitive": false,
+              "hint": "Think about what happens when two identical blocks are encrypted.",
+              "maxLength": 200
+            }
           ]
         },
         {
           "id": "lesson-3-3",
           "title": "TLS Handshake and Hybrid Encryption",
-          "content": "**TLS (Transport Layer Security)** is the protocol that secures nearly every interaction on the modern internet — HTTPS, email, VoIP, and API calls all rely on it.\n\n## The TLS Handshake\n\n![TLS handshake visual](illustrations/tls-handshake-visual.svg)\n\n1. **ClientHello**: Browser sends supported TLS versions and cipher suites\n2. **ServerHello + Certificate**: Server responds with chosen cipher and its digital certificate\n3. **Key Exchange**: Client encrypts a pre-master secret using the server's public key\n4. **Change Cipher Spec**: Both sides signal encryption begins\n5. **Finished**: Both sides send a hash of the handshake to verify integrity\n\n## Certificate Chains\n\nYour browser verifies: Server Cert → Intermediate CA → Root CA (pre-installed in your OS/browser).\n\n## Hybrid Encryption\n\n- **Asymmetric** (RSA/ECC): Used only for key exchange. Solves key distribution\n- **Symmetric** (AES-GCM): Used for bulk data. Fast, hardware-accelerated\n\n## TLS Misconceptions\n\n- TLS is **not** end-to-end encryption (terminates at the server)\n- HTTPS does **not** mean the site is trustworthy\n- Certificate expiration matters\n\n## Quick Reference: Tools & Commands\n\n- `openssl enc -aes-256-cbc -pbkdf2` — Encrypt a file with AES\n- `gpg --gen-key` — Generate a PGP key pair\n- `sha256sum <file>` — Compute a SHA-256 hash\n- `openssl s_client -connect <host>:443` — Inspect a TLS handshake\n- `openssl genrsa -out key.pem 2048` — Generate an RSA private key\n\n> **Try it:** `openssl s_client -connect example.com:443` shows the raw TLS handshake.",
+          "content": "**TLS (Transport Layer Security)** is the protocol that secures nearly every interaction on the modern internet — HTTPS, email, VoIP, and API calls all rely on it.\n\n## The TLS Handshake\n\n![TLS handshake visual](illustrations/tls-handshake-visual.svg)\n\n1. **ClientHello**: Browser sends supported TLS versions and cipher suites\n2. **ServerHello + Certificate**: Server responds with chosen cipher and its digital certificate\n3. **Key Exchange**: Client encrypts a pre-master secret using the server's public key\n4. **Change Cipher Spec**: Both sides signal encryption begins\n5. **Finished**: Both sides send a hash of the handshake to verify integrity\n\n## Certificate Chains\n\nYour browser verifies: Server Cert → Intermediate CA → Root CA (pre-installed in your OS/browser).\n\n## Hybrid Encryption\n\n- **Asymmetric** (RSA/ECC): Used only for key exchange. Solves key distribution\n- **Symmetric** (AES-GCM): Used for bulk data. Fast, hardware-accelerated\n\n## TLS Misconceptions\n\n- TLS is **not** end-to-end encryption (terminates at the server)\n- HTTPS does **not** mean the site is trustworthy\n- Certificate expiration matters\n\n## Quick Reference: Tools & Commands\n\n- `openssl enc -aes-256-cbc -pbkdf2` — Encrypt a file with AES\n- `gpg --gen-key` — Generate a PGP key pair\n- `sha256sum <file>` — Compute a SHA-256 hash\n- `openssl s_client -connect <host>:443` — Inspect a TLS handshake\n- `openssl genrsa -out key.pem 2048` — Generate an RSA private key\n\n> **Try it:** `openssl s_client -connect example.com:443` shows the raw TLS handshake.\n\n## Certificate Validation\n\nWhen your browser receives the server's certificate, it performs several checks:\n\n1. **Chain of trust**: The certificate must chain to a root CA trusted by your OS/browser. Your system ships with ~150 pre-installed root certificates.\n2. **Domain match**: The certificate's Common Name (CN) or Subject Alternative Name (SAN) must match the domain. A cert for `google.com` won't work for `evil-google.com`.\n3. **Expiration check**: Certificates have a validity period — typically 90 days to 1 year. An expired certificate triggers a browser warning.\n4. **Revocation check**: The browser checks if the certificate has been revoked via OCSP (Online Certificate Status Protocol) or CRL (Certificate Revocation List).\n\n### Real-World TLS Failures\n\n- **2014 Heartbleed**: OpenSSL bug allowed attackers to read server memory — the worst TLS vulnerability in history. Affected 17% of all HTTPS servers.\n- **2013 DigiNotar collapse**: A compromised Dutch CA issued fraudulent certificates for Google and intelligence agencies. All major browsers revoked trust in DigiNotar overnight.\n- **2017 Equifax breach**: An expired certificate prevented detection of data exfiltration for months.\n\n## TLS Versions\n\n| Version | Year | Status |\n|---------|------|--------|\n| SSL 2.0 | 1995 | Insecure — DROWN attack |\n| SSL 3.0 | 1996 | Insecure — POODLE attack |\n| TLS 1.0 | 1999 | Deprecated 2021 |\n| TLS 1.1 | 2006 | Deprecated 2021 |\n| TLS 1.2 | 2008 | Widely used, secure with proper configuration |\n| TLS 1.3 | 2018 | Current standard, simplified handshake, forward secrecy mandatory |\n\n**TLS 1.3 removed**: RSA key exchange, CBC mode, SHA-1, MD5, RC4, DES, 3DES, and export ciphers. It kept only AEAD ciphers (AES-GCM, ChaCha20-Poly1305).\n\n## Forward Secrecy\n\nA critical TLS property: even if an attacker records your encrypted traffic today and later steals the server's private key, they **cannot decrypt past sessions**. TLS 1.3 mandates forward secrecy through ephemeral Diffie-Hellman key exchange.\n\n## The Golden Rule (Revisited)\n\n> **Never roll your own cryptography.** TLS is the result of 25+ years of cryptanalysis by the world's best security researchers. Use TLS. Use a well-audited library (OpenSSL, BoringSSL, LibreSSL). Do not attempt to implement your own transport security.\n\n> **Try it:** `openssl s_client -connect example.com:443 -tls1_3` to inspect a real TLS 1.3 handshake.\n",
           "order": 3,
           "diagrams": [
             {
@@ -1206,6 +1343,18 @@
                   "label": "Both sides"
                 }
               ]
+            }
+          ],
+          "exercises": [
+            {
+              "id": "tls-purpose-try",
+              "type": "text_input",
+              "prompt": "What is the main purpose of the TLS handshake? Answer in one sentence.",
+              "order": 0,
+              "expectedAnswer": "to establish a secure encrypted connection between client and server",
+              "caseSensitive": false,
+              "hint": "What needs to happen before any data is transmitted over HTTPS?",
+              "maxLength": 200
             }
           ]
         }
