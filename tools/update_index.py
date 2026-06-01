@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MODULES_DIR = ROOT / "modules"
 INDEX_FILE = ROOT / "modules.json"
 
-VALID_EXERCISE_TYPES = {"mcq", "worked_example", "socratic", "drag_sequence", "error_spotting"}
+VALID_EXERCISE_TYPES = {"mcq", "worked_example", "socratic", "drag_sequence", "error_spotting", "text_input", "numeric_input"}
 REQUIRED_MODULE_FIELDS = {"id", "title", "description", "version", "author", "sections"}
 REQUIRED_SECTION_FIELDS = {"id", "title", "order", "lessons"}
 REQUIRED_LESSON_FIELDS = {"id", "title", "content"}
@@ -153,6 +153,12 @@ def main():
                 "estimatedMinutes": data.get("estimatedMinutes", 60),
                 "checksum": f"sha256:{checksum}",
                 "downloadUrl": download_url,
+                "category": data.get("category", ""),
+                "difficulty": data.get("difficulty", "beginner"),
+                "tags": data.get("tags", []),
+                "prerequisites": data.get("prerequisites", []),
+                "recommendedNext": data.get("recommendedNext", []),
+                "assets": data.get("assets", []),
             })
 
     # Report
