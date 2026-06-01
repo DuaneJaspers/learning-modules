@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "lastUpdated": "2026-06-01T05:56:37Z",
+  "lastUpdated": "2026-06-01T11:55:01Z",
   "modules": [
     {
       "id": "algebra-foundations",
@@ -29,7 +29,7 @@
       "author": "Modular Learning Team",
       "version": "2.0.0",
       "estimatedMinutes": 180,
-      "checksum": "sha256:737993d813b55e72411bb31125366b7ab5347f17c363a0bfab38cf30d0d65bcb",
+      "checksum": "sha256:982f14daafddb448b2bd4dfda68a768f30c0d055d2b051d3df1287432b17efc8",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/fall-of-rome/module.json"
     },
     {
@@ -69,7 +69,7 @@
       "author": "Modular Learning Team",
       "version": "3.0.0",
       "estimatedMinutes": 480,
-      "checksum": "sha256:4cb12299eee40741d12892466779a5c7b4931b0577ef7e313f02ac89267997d4",
+      "checksum": "sha256:c28a29275f895ba7d32bcd4e387df28c26a94f5db2fbcf4f59b62182a366e9f8",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/sample-logic/module.json"
     },
     {
