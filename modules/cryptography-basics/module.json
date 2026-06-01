@@ -4,7 +4,7 @@
   "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
   "author": "Modular Learning Team",
   "version": "2.0.0",
-  "estimatedMinutes": 180,
+  "estimatedMinutes": 210,
   "sections": [
     {
       "id": "section-1",
@@ -155,10 +155,163 @@
           ]
         },
         {
+          "id": "lesson-1-1b",
+          "title": "The Vigenère Cipher",
+          "content": "The **Vigenère cipher** is the natural evolution of the Caesar cipher. Instead of using a single shift value for the entire message, it uses a **keyword** to determine a different shift for each letter.\n\n## From Caesar to Vigenère\n\nThe Caesar cipher has one fatal flaw: every letter in the message is shifted by the same amount. This makes frequency analysis trivial — count the most common letter in the ciphertext, assume it maps to 'E', and you've cracked the key.\n\nThe Vigenère cipher fixes this. Each letter in the keyword specifies a different Caesar shift:\n- Keyword letter 'A' → shift 0\n- Keyword letter 'B' → shift 1\n- Keyword letter 'C' → shift 2\n- ... and so on through 'Z' → shift 25\n\n![Vigenère table showing letter mapping](illustrations/vigenere-table.svg)\n\n## How It Works\n\nEncrypting \"ATTACK\" with keyword \"KEY\":\n```\nPlaintext:  A  T  T  A  C  K\nKey:        K  E  Y  K  E  Y\nShift:      10 4  24 10 4  24\nCiphertext: K  X  R  K  G  I\n```\n\nEach letter gets its own shift from the keyword. The keyword repeats as needed for longer messages.\n\n## Why It Was Considered Unbreakable\n\nFor over 300 years, the Vigenère cipher was called *le chiffre indéchiffrable* — the unbreakable cipher. Why?\n\n- The same plaintext letter can encrypt to different ciphertext letters (because the keyword shifts vary)\n- The same ciphertext letter can come from different plaintext letters\n- Traditional frequency analysis fails because the shifts mask the statistical patterns\n\n## How It Was Broken (1863)\n\nFriedrich Kasiski discovered a weakness: if the same sequence of plaintext happens to align with the same part of the keyword, you get the same ciphertext. This reveals the **keyword length**.\n\nOnce you know the keyword length, you can break the cipher:\n1. **Kasiski examination**: Find repeated ciphertext sequences and measure the distances between them. The keyword length is likely a divisor of these distances.\n2. **Frequency analysis per column**: Treat each position as its own Caesar cipher and crack each one independently using frequency analysis.\n\nFor example, if the keyword is 5 letters long, letters at positions 0, 5, 10, 15... all share the same Caesar shift. Position 0's distribution should match English — just rotated. Find the rotation for each of the 5 positions and you've recovered the keyword.\n\n## The Lesson\n\nThe Vigenère cipher teaches a fundamental principle: **security through complexity doesn't work**. Adding more steps (a keyword + multiple shifts) made the cipher seem more secure, but it was still breakable with systematic analysis.\n\nThis is why modern cryptography doesn't rely on \"clever\" algorithms kept secret. It relies on **mathematically proven security properties** and **publicly scrutinized algorithms** like AES.\n\n> **Try it:** Encrypt \"SECRET\" with the Vigenère cipher using keyword \"CODE\". What is the ciphertext?",
+          "order": 2,
+          "diagrams": [
+            {
+              "id": "vigenere-vs-caesar",
+              "type": "flowchart",
+              "title": "🔑 Vigenère vs Caesar — Why Keyword-Based Encryption Masks Patterns",
+              "nodes": [
+                {
+                  "id": "plaintext",
+                  "label": "📝 Plaintext: ATTACK",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                },
+                {
+                  "id": "caesar-path",
+                  "label": "Caesar: Shift everything by 3",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "caesar-result",
+                  "label": "DWWDFN — every A→D",
+                  "shape": "rounded",
+                  "color": "#B71C1C"
+                },
+                {
+                  "id": "vigenere-path",
+                  "label": "Vigenère: Shift by KEY repeating",
+                  "shape": "diamond",
+                  "color": "#1B5E20"
+                },
+                {
+                  "id": "vigenere-result",
+                  "label": "KXRKGI — A→K, T→X, each shift varies",
+                  "shape": "rounded",
+                  "color": "#2E7D32"
+                },
+                {
+                  "id": "freq-analysis",
+                  "label": "Frequency analysis: Caesar leaks patterns immediately",
+                  "shape": "pill",
+                  "color": "#37474F"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "plaintext",
+                  "to": "caesar-path",
+                  "label": "method 1"
+                },
+                {
+                  "from": "plaintext",
+                  "to": "vigenere-path",
+                  "label": "method 2"
+                },
+                {
+                  "from": "caesar-path",
+                  "to": "caesar-result",
+                  "label": "single shift"
+                },
+                {
+                  "from": "caesar-result",
+                  "to": "freq-analysis",
+                  "label": "trivially broken"
+                },
+                {
+                  "from": "vigenere-path",
+                  "to": "vigenere-result",
+                  "label": "varying shifts"
+                },
+                {
+                  "from": "vigenere-result",
+                  "to": "freq-analysis",
+                  "label": "requires Kasiski examination"
+                }
+              ]
+            },
+            {
+              "id": "kasiski-analysis",
+              "type": "flowchart",
+              "title": "🔍 Kasiski Examination — Cracking the Unbreakable Cipher",
+              "nodes": [
+                {
+                  "id": "ciphertext",
+                  "label": "📜 Intercepted ciphertext",
+                  "shape": "rounded",
+                  "color": "#4A148C"
+                },
+                {
+                  "id": "find-repeats",
+                  "label": "Find repeated trigrams",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "gcd",
+                  "label": "GCD of distances → keyword length",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "split-columns",
+                  "label": "Split into columns by length",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "freq-per-column",
+                  "label": "Frequency analysis on each column",
+                  "shape": "diamond",
+                  "color": "#1A237E"
+                },
+                {
+                  "id": "plaintext",
+                  "label": "🔓 Recovered plaintext",
+                  "shape": "rounded",
+                  "color": "#2D5A27"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "ciphertext",
+                  "to": "find-repeats",
+                  "label": "examine"
+                },
+                {
+                  "from": "find-repeats",
+                  "to": "gcd",
+                  "label": "distances found"
+                },
+                {
+                  "from": "gcd",
+                  "to": "split-columns",
+                  "label": "length = 5"
+                },
+                {
+                  "from": "split-columns",
+                  "to": "freq-per-column",
+                  "label": "5 columns"
+                },
+                {
+                  "from": "freq-per-column",
+                  "to": "plaintext",
+                  "label": "each cracked"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "lesson-1-2",
           "title": "Breaking the Caesar Cipher",
-          "content": "Despite its simplicity, the Caesar cipher can be broken using several well-established techniques. Understanding these attacks teaches fundamental principles of cryptanalysis that apply to all ciphers.\n\n## Brute Force Attack\n\nSince there are only 25 possible keys (shifts of 1–25), an attacker can try all of them and read the resulting plaintext. This is the simplest possible attack and works against any cipher with a small key space.\n\nFor the Caesar cipher, brute force is straightforward. Given the ciphertext \"KHOOR\":\n- Try shift 1: \"KHOOR\" → \"JGNNQ\" — gibberish\n- Try shift 2: \"KHOOR\" → \"IFMMP\" — gibberish\n- Try shift 3: \"KHOOR\" → \"HELLO\" — readable English! ✓\n\nThe attacker stops at shift 3 because the output is meaningful. With only 25 keys to check, this takes seconds by hand.\n\nA key space of 25 is catastrophically small by modern standards. AES-256 has 2²⁵⁶ possible keys — more than the number of atoms in the observable universe.\n\n## Frequency Analysis\n\nA more elegant approach exploits the statistical properties of language. In English text, certain letters appear with predictable frequency:\n- **E** appears ~12.7% of the time\n- **T** appears ~9.1% of the time\n- **A** appears ~8.2% of the time\n- **Z** appears ~0.07% of the time\n\n![English letter frequency histogram](illustrations/frequency-histogram.svg)\n\nBy counting letter frequencies in the ciphertext and comparing them to known language statistics, you can make educated guesses about the key. If the most common letter in the ciphertext is 'H', and we hypothesize it represents 'E' (the most common English letter), the key would be 3 (since E+3=H).\n\n### Why Frequency Analysis Matters\n\nThis technique isn't just historical — it breaks any cipher that preserves statistical patterns. The Caesar cipher, Vigenère cipher, and simple substitution ciphers all leak statistical information. Modern ciphers like AES are specifically designed to produce output indistinguishable from random noise, eliminating frequency patterns entirely.\n\n## Known Plaintext Attack\n\nIf you know even a small part of the original message (like a standard header or greeting), you can deduce the key immediately. For example, if you know the message starts with \"DEAR\" and the ciphertext starts with \"GHDU\", the shift is clearly 3.\n\nThis illustrates a broader principle: **a cipher's security should depend only on the secrecy of the key, not on the secrecy of the algorithm or any known plaintext patterns.** This is Kerckhoffs' principle, formulated in 1883, and it remains a cornerstone of modern cryptography.",
-          "order": 2,
+          "content": "Despite its simplicity, the Caesar cipher can be broken using several well-established techniques. Understanding these attacks teaches fundamental principles of cryptanalysis that apply to all ciphers.\n\n## Brute Force Attack\n\nSince there are only 25 possible keys (shifts of 1–25), an attacker can try all of them and read the resulting plaintext. This is the simplest possible attack and works against any cipher with a small key space.\n\nFor the Caesar cipher, brute force is straightforward. Given the ciphertext \"KHOOR\":\n- Try shift 1: \"KHOOR\" → \"JGNNQ\" — gibberish\n- Try shift 2: \"KHOOR\" → \"IFMMP\" — gibberish\n- Try shift 3: \"KHOOR\" → \"HELLO\" — readable English! ✓\n\nThe attacker stops at shift 3 because the output is meaningful. With only 25 keys to check, this takes seconds by hand.\n\nA key space of 25 is catastrophically small by modern standards. AES-256 has 2²⁵⁶ possible keys — comparable to the estimated number of atoms in the observable universe (~10⁸⁰).\n\n## Frequency Analysis\n\nA more elegant approach exploits the statistical properties of language. In English text, certain letters appear with predictable frequency:\n- **E** appears ~12.7% of the time\n- **T** appears ~9.1% of the time\n- **A** appears ~8.2% of the time\n- **Z** appears ~0.07% of the time\n\n![English letter frequency histogram](illustrations/frequency-histogram.svg)\n\nBy counting letter frequencies in the ciphertext and comparing them to known language statistics, you can make educated guesses about the key. If the most common letter in the ciphertext is 'H', and we hypothesize it represents 'E' (the most common English letter), the key would be 3 (since E+3=H).\n\n### Why Frequency Analysis Matters\n\nThis technique isn't just historical — it breaks any cipher that preserves statistical patterns. The Caesar cipher, Vigenère cipher, and simple substitution ciphers all leak statistical information. Modern ciphers like AES are specifically designed to produce output indistinguishable from random noise, eliminating frequency patterns entirely.\n\n## Known Plaintext Attack\n\nIf you know even a small part of the original message (like a standard header or greeting), you can deduce the key immediately. For example, if you know the message starts with \"DEAR\" and the ciphertext starts with \"GHDU\", the shift is clearly 3.\n\nThis illustrates a broader principle: **a cipher's security should depend only on the secrecy of the key, not on the secrecy of the algorithm or any known plaintext patterns.** This is Kerckhoffs' principle, formulated in 1883, and it remains a cornerstone of modern cryptography.",
+          "order": 3,
           "diagrams": [
             {
               "id": "freq-analysis-process",
@@ -396,7 +549,7 @@
         {
           "id": "lesson-2-1",
           "title": "Public Key Cryptography",
-          "content": "**Public key cryptography** is one of the most important inventions in computer science. It solves a fundamental problem: how can two people communicate securely without having met to share a secret key?\n\n## The Key Distribution Problem\n\nIn traditional (symmetric) cryptography, both sender and receiver need the same key. If Caesar wants to send a message to his general, he must first share the shift value (the key) through some secure channel. But if you already have a secure channel, why not just send the message through it?\n\nThis chicken-and-egg problem — the **key distribution problem** — plagued cryptography for millennia. Military and diplomatic organizations solved it with human couriers carrying codebooks, but this was slow, expensive, and vulnerable to interception.\n\n![The key distribution problem visual](illustrations/key-distribution-problem.svg)\n\n## The Asymmetric Breakthrough (1970s)\n\nThe solution was elegant: instead of one key, use **two keys** that are mathematically related but in different directions:\n\n- **Public key** — shared openly with everyone, used to *encrypt* messages\n- **Private key** — kept secret by the owner, used to *decrypt* messages\n\nThe mathematical relationship is a **trapdoor function**: easy to compute in one direction (encrypt), computationally infeasible to reverse (derive the private key from the public key).\n\n### RSA (1977)\n\nRivest, Shamir, and Adleman created the first practical public key system. It relies on the fact that:\n\n![RSA public key encryption lock and key visual](illustrations/rsa-lock-and-key.svg)\n- **Easy**: Multiply two large prime numbers together → get their product N\n- **Hard**: Given N, find the two prime factors\n\nA 2048-bit RSA key uses primes that are each ~300 digits long. There is no known algorithm (including quantum algorithms other than Shor's) that can factor such numbers in reasonable time on classical computers.\n\n![Symmetric vs Asymmetric key comparison](illustrations/symmetric-vs-asymmetric.svg)\n\n### Diffie-Hellman Key Exchange (1976)\n\nEven before RSA, Diffie and Hellman showed how two parties could establish a shared secret over an insecure channel. Their protocol doesn't encrypt messages directly — it creates a shared secret that can then be used as a symmetric key.\n\n## Digital Signatures\n\nPublic key cryptography also enables **digital signatures** — the electronic equivalent of a handwritten signature:\n- The sender encrypts a message hash with their *private* key (signing)\n- Anyone can verify the signature using the sender's *public* key\n\nThis provides both authentication (proving who sent it) and integrity (proving it wasn't modified). Without digital signatures, modern e-commerce, banking, and secure communication would be impossible.",
+          "content": "**Public key cryptography** is one of the most important inventions in computer science. It solves a fundamental problem: how can two people communicate securely without having met to share a secret key?\n\n## The Key Distribution Problem\n\nIn traditional (symmetric) cryptography, both sender and receiver need the same key. If Caesar wants to send a message to his general, he must first share the shift value (the key) through some secure channel. But if you already have a secure channel, why not just send the message through it?\n\nThis chicken-and-egg problem — the **key distribution problem** — plagued cryptography for millennia. Military and diplomatic organizations solved it with human couriers carrying codebooks, but this was slow, expensive, and vulnerable to interception.\n\n![The key distribution problem visual](illustrations/key-distribution-problem.svg)\n\n## The Asymmetric Breakthrough (1970s)\n\nThe solution was elegant: instead of one key, use **two keys** that are mathematically related but in different directions:\n\n- **Public key** — shared openly with everyone, used to *encrypt* messages\n- **Private key** — kept secret by the owner, used to *decrypt* messages\n\nThe mathematical relationship is a **trapdoor function**: easy to compute in one direction (encrypt), computationally infeasible to reverse (derive the private key from the public key).\n\n### RSA (1977)\n\nRivest, Shamir, and Adleman created the first practical public key system. It relies on the fact that:\n\n![RSA public key encryption lock and key visual](illustrations/rsa-lock-and-key.svg)\n- **Easy**: Multiply two large prime numbers together → get their product N\n- **Hard**: Given N, find the two prime factors\n\nA 2048-bit RSA key uses primes that are each ~300 digits long. There is no known algorithm (the only known exception is Shor's quantum algorithm, which can factor such numbers in reasonable time on classical computers.\n\n![Symmetric vs Asymmetric key comparison](illustrations/symmetric-vs-asymmetric.svg)\n\n### Diffie-Hellman Key Exchange (1976)\n\nEven before RSA, Diffie and Hellman showed how two parties could establish a shared secret over an insecure channel. Their protocol doesn't encrypt messages directly — it creates a shared secret that can then be used as a symmetric key.\n\n## Digital Signatures\n\nPublic key cryptography also enables **digital signatures** — the electronic equivalent of a handwritten signature:\n- The sender encrypts a message hash with their *private* key (signing)\n- Anyone can verify the signature using the sender's *public* key\n\nThis provides both authentication (proving who sent it) and integrity (proving it wasn't modified). Without digital signatures, modern e-commerce, banking, and secure communication would be impossible.",
           "order": 1,
           "diagrams": [
             {
@@ -908,7 +1061,7 @@
         {
           "id": "lesson-3-2",
           "title": "Symmetric Encryption: AES and Block Ciphers",
-          "content": "**Symmetric encryption** is the workhorse of modern cryptography. When you visit an HTTPS website, stream a video, or send a WhatsApp message, symmetric encryption protects the bulk of your data.\n\n## Block Ciphers\n\nUnlike the Caesar cipher (which encrypts one letter at a time), modern ciphers work on **fixed-size blocks** of data (typically 128 bits / 16 bytes).\n\n## AES: The Advanced Encryption Standard\n\nAES supports three key sizes:\n- **AES-128**: 128-bit key, 10 rounds. Used where speed matters most\n- **AES-192**: 192-bit key, 12 rounds. Balance of security and speed\n- **AES-256**: 256-bit key, 14 rounds. Used for classified government data\n\n## Block Cipher Modes\n\n### ECB (Electronic Codebook) — Never Use This\nIdentical plaintext blocks produce identical ciphertext blocks.\n\n### CBC (Cipher Block Chaining)\nEach plaintext block is XORed with the previous ciphertext block. Requires a random **Initialization Vector (IV)**.\n\n### GCM (Galois/Counter Mode) — The Modern Standard\nCombines encryption with **authentication** in a single operation.\n\n## The Golden Rule\n\n> **Never roll your own cryptography.** Use well-audited libraries. Prefer **AES-256-GCM** or **ChaCha20-Poly1305**.\n\n> **Try it:** `echo 'Hello' | openssl enc -aes-256-cbc -pbkdf2 -iter 100000 | base64`",
+          "content": "**Symmetric encryption** is the workhorse of modern cryptography. When you visit an HTTPS website, stream a video, or send a WhatsApp message, symmetric encryption protects the bulk of your data.\n\n## Block Ciphers\n\nUnlike the Caesar cipher (which encrypts one letter at a time), modern ciphers work on **fixed-size blocks** of data (typically 128 bits / 16 bytes).\n\n## AES: The Advanced Encryption Standard\n\nAES supports three key sizes:\n- **AES-128**: 128-bit key, 10 rounds. Used where speed matters most\n- **AES-192**: 192-bit key, 12 rounds. Balance of security and speed\n- **AES-256**: 256-bit key, 14 rounds. Used for classified government data\n\n### How AES Works (Simplified)\n\nEach AES round performs four operations on the 16-byte block arranged as a 4×4 grid:\n\n1. **SubBytes**: Replace each byte using a lookup table (S-box). This is the non-linear step — the heart of AES security.\n2. **ShiftRows**: Cyclically shift each row left by 0, 1, 2, or 3 positions. This spreads bytes across columns.\n3. **MixColumns**: Mix the bytes within each column using matrix multiplication in a finite field. Provides diffusion.\n4. **AddRoundKey**: XOR the block with a round key derived from the original key.\n\nThe last round skips MixColumns.\n\n### Key Expansion\n\nThe original key (128, 192, or 256 bits) is expanded into multiple **round keys** — one per round plus the initial key. The key schedule uses the same S-box and a round constant to ensure each round key is different.\n\n### Why AES Is Secure\n\n- **Substitution-Permutation Network**: Repeated rounds of substitution (confusion) and permutation (diffusion) make the relationship between plaintext and ciphertext incomprehensible\n- **No known practical attack**: As of 2025, the best known attack on AES-128 is a related-key attack requiring 2⁹⁹ operations — still computationally infeasible\n- **Hardware acceleration**: Modern CPUs have AES-NI instructions that perform rounds in hardware, making AES blindingly fast (~1-2 cycles per byte)\n\n### AES in the Real World\n\n- **Disk encryption**: BitLocker, FileVault, LUKS\n- **Wireless**: WPA2/WPA3 Wi-Fi encryption\n- **Messaging**: WhatsApp, Signal (AES-256 for message storage)\n- **Web**: TLS 1.3 uses AES-GCM as its primary cipher\n- **Government**: AES-256 is approved for TOP SECRET by the NSA\n\n## Block Cipher Modes\n\n### ECB (Electronic Codebook) — Never Use This\nIdentical plaintext blocks produce identical ciphertext blocks. Consider encrypting an image with ECB — the outline is still clearly visible because identical pixel regions encrypt identically.\n\n### CBC (Cipher Block Chaining)\nEach plaintext block is XORed with the previous ciphertext block. Requires a random **Initialization Vector (IV)**. The IV must be unpredictable — using a predictable IV (like a counter) led to the BEAST attack on TLS 1.0.\n\n### GCM (Galois/Counter Mode) — The Modern Standard\nCombines encryption with **authentication** in a single operation. GCM provides:\n- **Confidentiality** (AES encryption)\n- **Integrity** (GMAC authentication tag)\n- **Authentication** (prove the message wasn't tampered with)\n\nGCM is an **Authenticated Encryption with Associated Data (AEAD)** mode — the gold standard for modern protocols.\n\n## The Golden Rule\n\n> **Never roll your own cryptography.** Use well-audited libraries. Prefer **AES-256-GCM** or **ChaCha20-Poly1305**. Cryptography is one of the few fields where DIY is actively dangerous — even experts make catastrophic mistakes.\n\n> **Try it:** `echo 'Hello' | openssl enc -aes-256-cbc -pbkdf2 -iter 100000 | base64`",
           "order": 2,
           "diagrams": [
             {
@@ -1392,9 +1545,7 @@
     "mathematics"
   ],
   "difficulty": "beginner",
-  "prerequisites": [
-    "sample-logic"
-  ],
+  "prerequisites": [],
   "recommendedNext": [
     "network-security",
     "advanced-cryptography"

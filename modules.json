@@ -17,9 +17,9 @@
       "title": "Cryptography Basics",
       "description": "An introduction to the fundamentals of cryptography, covering classical ciphers, cryptographic protocols, and modern cryptographic concepts.",
       "author": "Modular Learning Team",
-      "version": "2.0.0",
-      "estimatedMinutes": 180,
-      "checksum": "sha256:04bd431907fc4fabd4a3a855458b041d5c06f35899fab0ebd6614badf6751361",
+      "version": "2.1.0",
+      "estimatedMinutes": 210,
+      "checksum": "sha256:996570f25688b49f6894d18857e0e0e16822b9d0063eda7902dae9d79b925219",
       "downloadUrl": "https://raw.githubusercontent.com/DuaneJaspers/learning-modules/main/modules/cryptography-basics/module.json",
       "assets": [
         { "path": "illustrations/caesar-wheel.svg", "checksum": "sha256:421139ddad849d9306f99782ea3ba3249ea48abd462df1cfc9c7bcd6a3c47e2a" },
@@ -30,7 +30,8 @@
         { "path": "illustrations/key-distribution-problem.svg", "checksum": "sha256:8dd94668c5e19e389ed5de339e3ac0b7d8cd5df6d08cc9954bc159b239c0d141" },
         { "path": "illustrations/rsa-lock-and-key.svg", "checksum": "sha256:309ccea8ce4d005d0dda9e70ae5b7c2911f5febe051746ba882f9ddc0b6593b7" },
         { "path": "illustrations/symmetric-vs-asymmetric.svg", "checksum": "sha256:dddeeb0525ce80320a16f811a22efb2b8f75654cca8d9aeec1655ed5b74e5f67" },
-        { "path": "illustrations/tls-handshake-visual.svg", "checksum": "sha256:04e5aa81f498660d5d68db5609c2ba9b9bb2a3defa745d54456df450aae70256" }
+        { "path": "illustrations/tls-handshake-visual.svg", "checksum": "sha256:04e5aa81f498660d5d68db5609c2ba9b9bb2a3defa745d54456df450aae70256" },
+        { "path": "illustrations/vigenere-table.svg", "checksum": "sha256:22234b8125e627d63693fba39b84506c594c260e323b86c52a78c4442a0edaa5" }
       ]
     },
     {
