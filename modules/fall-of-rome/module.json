@@ -179,7 +179,8 @@
           "correctIndex": 0,
           "explanation": "The late Republic saw generals like Marius, Sulla, Pompey, and Caesar build personal armies loyal to them rather than to Rome. When soldiers owe their loyalty to their general instead of the state, the Republic's institutions lose their authority.",
           "points": 5,
-          "hint": "Think about who controlled the armies in the late Republic — and who paid them."
+          "hint": "Think about who controlled the armies in the late Republic — and who paid them.",
+          "order": 4
         },
         {
           "id": "republic-drag",
@@ -188,32 +189,35 @@
           "items": [
             {
               "id": "rd-item-0",
-              "text": "Marius reforms the army, allowing landless citizens to enlist",
-              "order": 0
+              "text": "Marius reforms the army, allowing landless citizens to enlist"
             },
             {
               "id": "rd-item-1",
-              "text": "Sulla marches on Rome with his army — first civil war",
-              "order": 1
+              "text": "Sulla marches on Rome with his army — first civil war"
             },
             {
               "id": "rd-item-2",
-              "text": "First Triumvirate: Caesar, Pompey, Crassus share power",
-              "order": 2
+              "text": "First Triumvirate: Caesar, Pompey, Crassus share power"
             },
             {
               "id": "rd-item-3",
-              "text": "Caesar crosses the Rubicon, defeats Pompey, becomes dictator",
-              "order": 3
+              "text": "Caesar crosses the Rubicon, defeats Pompey, becomes dictator"
             },
             {
               "id": "rd-item-4",
-              "text": "Octavian defeats Antony at Actium, Senate grants him title 'Augustus'",
-              "order": 4
+              "text": "Octavian defeats Antony at Actium, Senate grants him title 'Augustus'"
             }
           ],
           "points": 10,
-          "hint": "Start with military reforms and end with the establishment of the Principate."
+          "hint": "Start with military reforms and end with the establishment of the Principate.",
+          "order": 5,
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
         }
       ]
     },
@@ -399,7 +403,8 @@
             }
           ],
           "points": 10,
-          "hint": "Look for oversimplifications and statements contradicted by historical timeline."
+          "hint": "Look for oversimplifications and statements contradicted by historical timeline.",
+          "order": 4
         }
       ]
     },
@@ -569,7 +574,8 @@
             "evidence_used": "Cites specific evidence from the module",
             "institutional_analysis": "Analyzes institutional continuity (law, church, administration)",
             "nuance": "Acknowledges the Eastern Empire's continuation"
-          }
+          },
+          "order": 4
         }
       ]
     }

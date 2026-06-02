@@ -24,10 +24,14 @@ ROOT = Path(__file__).resolve().parent.parent
 MODULES_DIR = ROOT / "modules"
 INDEX_FILE = ROOT / "modules.json"
 
-VALID_EXERCISE_TYPES = {"mcq", "worked_example", "socratic", "drag_sequence", "error_spotting", "text_input", "numeric_input"}
+# Known exercise types. NOTE: 'numeric_input' is recognized here as a known
+# authoring type, but is NOT yet implemented in the Android Kotlin model —
+# modules using it will fail at parse time until the type is added.
+VALID_EXERCISE_TYPES = {"mcq", "worked_example", "socratic", "drag_sequence", "error_spotting", "text_input", "numeric_input", "socratic_ai"}
 REQUIRED_MODULE_FIELDS = {"id", "title", "description", "version", "author", "sections"}
 REQUIRED_SECTION_FIELDS = {"id", "title", "order", "lessons"}
 REQUIRED_LESSON_FIELDS = {"id", "title", "content"}
+REQUIRED_EXERCISE_FIELDS = {"id", "type", "prompt", "order"}
 
 
 def sha256_file(path: Path) -> str:
@@ -36,6 +40,37 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: f.read(8192), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def validate_exercise(ex: dict, where: str, path: Path) -> list[str]:
+    """Validate a single exercise. Returns list of errors."""
+    errors = []
+    etype = ex.get("type")
+    eid = ex.get("id", "?")
+
+    # Unknown type → no point checking further
+    if etype and etype not in VALID_EXERCISE_TYPES:
+        errors.append(f"{path}: {where}/exercise '{eid}' unknown type '{etype}'")
+        return errors
+
+    # Required fields (catches missing 'order' which kotlinx.serialization requires)
+    missing = REQUIRED_EXERCISE_FIELDS - set(ex.keys())
+    if missing:
+        errors.append(f"{path}: {where}/exercise '{eid}' (type={etype}) missing fields: {missing}")
+
+    if etype == "mcq":
+        ci = ex.get("correctIndex")
+        opts = ex.get("options", [])
+        if ci is not None and (ci < 0 or ci >= len(opts)):
+            errors.append(f"{path}: {where}/exercise '{eid}' correctIndex {ci} out of range (0..{len(opts)-1})")
+
+    if etype == "drag_sequence":
+        items = ex.get("items", [])
+        order = ex.get("correctOrder", [])
+        if len(items) != len(order):
+            errors.append(f"{path}: {where}/exercise '{eid}' drag_sequence items/order length mismatch ({len(items)} vs {len(order)})")
+
+    return errors
 
 
 def validate_module(data: dict, path: Path) -> list[str]:
@@ -75,28 +110,18 @@ def validate_module(data: dict, path: Path) -> list[str]:
             if l_missing:
                 errors.append(f"{path}: section '{sid}' lesson[{j}] missing fields: {l_missing}")
 
-            # Exercises
+            # Lesson-level exercises
             for k, ex in enumerate(lesson.get("exercises", [])):
-                etype = ex.get("type")
-                if etype and etype not in VALID_EXERCISE_TYPES:
-                    errors.append(f"{path}: {sid}/{lesson.get('id', j)}/exercise[{k}] unknown type '{etype}'")
-
-                if etype == "mcq":
-                    ci = ex.get("correctIndex")
-                    opts = ex.get("options", [])
-                    if ci is not None and (ci < 0 or ci >= len(opts)):
-                        errors.append(f"{path}: {sid}/exercise[{k}] correctIndex {ci} out of range (0..{len(opts)-1})")
-
-                if etype == "drag_sequence":
-                    items = ex.get("items", [])
-                    order = ex.get("correctOrder", [])
-                    if len(items) != len(order):
-                        errors.append(f"{path}: {sid}/exercise[{k}] drag_sequence items/order length mismatch")
+                errors.extend(validate_exercise(ex, f"{sid}/{lesson.get('id', j)}/lesson-ex[{k}]", path))
 
             # Flashcards
             for fc in lesson.get("flashcards", []):
                 if "term" not in fc or "definition" not in fc:
                     errors.append(f"{path}: {sid}/{lesson.get('id', j)} flashcard missing term/definition")
+
+        # Section-level exercises (was missing in original validator!)
+        for k, ex in enumerate(section.get("exercises", [])):
+            errors.extend(validate_exercise(ex, f"{sid}/section-ex[{k}]", path))
 
         # Assessment
         assessment = section.get("assessment")
